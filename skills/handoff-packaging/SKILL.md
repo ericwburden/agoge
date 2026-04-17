@@ -9,6 +9,8 @@ metadata:
 
 Turn verified requirements and supporting business context into a downstream-ready handoff package without drifting into implementation planning.
 
+For this repository's Business Analyst workflows, this is the preferred default path for packaging local Markdown handoff artifacts and remediating handoff-check failures.
+
 ## Quick start
 1) Read the verified requirements and supporting source artifacts.
 2) Summarize the business problem and desired outcome.

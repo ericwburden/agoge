@@ -6,9 +6,17 @@ Capture the business problem, goals, stakeholders, success criteria, scope bound
 
 Use this artifact early in discovery to separate the underlying business need from proposed solutions.
 
+This checked-in file is the canonical template definition. Create an instantiated project copy before filling it out for live BA work.
+
 ## Completion Guidance
 
 This artifact is complete when the business problem, desired outcomes, affected stakeholders, and scope boundaries are clear enough to support process analysis and requirement discovery without relying on chat context.
+
+## Related Checks
+
+- Primary: [`business-objectives.check.md`](D:/Projects/agoge/checks/business-objectives.check.md)
+- Cross-cutting: [`traceability.check.md`](D:/Projects/agoge/checks/traceability.check.md)
+- Cross-cutting: [`business-analyst-boundary.check.md`](D:/Projects/agoge/checks/business-analyst-boundary.check.md)
 
 ## Problem Statement
 

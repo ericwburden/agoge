@@ -59,6 +59,8 @@ By default, this role should produce:
 - a requirements specification artifact covering verified requirements, non-requirements, assumptions, constraints, and acceptance considerations
 - a requirements handoff artifact covering downstream-ready traceability, risks, dependencies, unresolved questions, and next decision points
 
+In this repository, those outputs should be instantiated from the reusable artifact definitions in [`artifacts/`](D:/Projects/agoge/artifacts) rather than authored directly in the checked-in template files.
+
 For AI-enabled or agentic projects, this role may also produce:
 
 - acceptance validation criteria for agent outputs

@@ -9,6 +9,8 @@ metadata:
 
 Verify which requirements are actually supported by the available discovery evidence and strengthen the requirements specification artifact without drifting into implementation planning.
 
+For this repository's Business Analyst workflows, this is the preferred default verification path for local Markdown artifacts and check remediation.
+
 ## Quick start
 1) Read the available source artifacts and supporting evidence.
 2) Identify candidate requirements and test whether each one is supported.

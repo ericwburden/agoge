@@ -9,6 +9,8 @@ metadata:
 
 Prepare meetings by gathering local context, tailoring agendas or pre-reads, and enriching them with relevant research or artifact references.
 
+For this repository's Business Analyst workflows, this is the preferred default meeting-prep path. Treat Notion-based variants as reference implementations unless the task explicitly requires Notion.
+
 ## Quick start
 1) Confirm meeting goal, attendees, duration, and desired decisions or outcomes.
 2) Gather context from local Markdown files, prior notes, artifacts, and relevant repository documents.

@@ -6,9 +6,17 @@ Capture verified business requirements in a structured form that emphasizes clar
 
 Use this artifact after enough discovery has occurred to state the requirements clearly and verify that they support the business objective.
 
+This checked-in file is the canonical template definition. Create an instantiated project copy before filling it out for live BA work.
+
 ## Completion Guidance
 
 This artifact is complete when the requirements are clear, verifiable, scoped, and traceable to business goals or process needs, and when unresolved questions are explicitly separated from confirmed requirements.
+
+## Related Checks
+
+- Primary: [`requirements-specification.check.md`](D:/Projects/agoge/checks/requirements-specification.check.md)
+- Cross-cutting: [`traceability.check.md`](D:/Projects/agoge/checks/traceability.check.md)
+- Cross-cutting: [`business-analyst-boundary.check.md`](D:/Projects/agoge/checks/business-analyst-boundary.check.md)
 
 ## Source Context
 

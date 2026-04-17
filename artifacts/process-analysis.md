@@ -6,9 +6,17 @@ Capture current-state and future-state process understanding, including actors, 
 
 Use this artifact when the business problem depends on how work currently flows and how that flow needs to change.
 
+This checked-in file is the canonical template definition. Create an instantiated project copy before filling it out for live BA work.
+
 ## Completion Guidance
 
 This artifact is complete when a downstream reader can understand how the process works today, what should change, and where the major gaps, rules, and exceptions are without inferring missing business context.
+
+## Related Checks
+
+- Primary: [`process-analysis.check.md`](D:/Projects/agoge/checks/process-analysis.check.md)
+- Cross-cutting: [`traceability.check.md`](D:/Projects/agoge/checks/traceability.check.md)
+- Cross-cutting: [`business-analyst-boundary.check.md`](D:/Projects/agoge/checks/business-analyst-boundary.check.md)
 
 ## Process In Scope
 

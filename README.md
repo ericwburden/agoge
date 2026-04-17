@@ -36,7 +36,11 @@ Use the templates in `agents/` when starting a new project or defining a new age
 
 The first concrete role in [`agents/`](D:/Projects/agoge/agents) is [`business-analyst.md`](D:/Projects/agoge/agents/business-analyst.md), which is intended for project kickoff and discovery work focused on requirements and process understanding.
 
-The first concrete artifact set in [`artifacts/`](D:/Projects/agoge/artifacts) is also aligned to the Business Analyst role, covering business objectives, process analysis, requirements specification, and downstream requirements handoff.
+The first concrete artifact set in [`artifacts/`](D:/Projects/agoge/artifacts) is also aligned to the Business Analyst role, covering business objectives, process analysis, requirements specification, and downstream requirements handoff. These checked-in files are reusable definitions; live project work should use instantiated copies in a project workspace.
+
+The first concrete check set in [`checks/`](D:/Projects/agoge/checks) is aligned to that same Business Analyst role and artifact chain, acting as a definition-of-done quality gate for BA outputs.
+
+The intended BA lifecycle across this repo is: select an artifact definition, instantiate a project-specific working copy, populate it, run the required checks, remediate failures with the linked skills, and only then hand the output downstream.
 
 ## Vendored Skills
 

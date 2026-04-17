@@ -9,6 +9,8 @@ metadata:
 
 Convert a local Markdown spec into linked implementation plans, tasks, and status-ready downstream outputs.
 
+For this repository, this is the preferred local-Markdown downstream bridge once Business Analyst artifacts have passed their required checks. Treat Notion-based variants as reference implementations unless the task explicitly requires Notion.
+
 ## Quick start
 1) Locate and read the local spec or requirements artifact.
 2) Parse requirements, constraints, ambiguities, and dependencies.

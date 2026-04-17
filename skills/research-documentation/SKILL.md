@@ -9,6 +9,8 @@ metadata:
 
 Pull relevant local sources, synthesize findings, and publish clear Markdown briefs or reports with explicit source grounding.
 
+For this repository's Business Analyst workflows, this is the preferred default research and synthesis path. Treat Notion-based variants as reference implementations unless the task explicitly requires Notion.
+
 ## Quick start
 1) Identify the question, decision, or documentation goal.
 2) Find relevant local sources such as notes, artifacts, specs, meeting outputs, or supporting documents.

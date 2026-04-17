@@ -6,9 +6,17 @@ Capture the downstream-ready summary of verified requirements, traceability, ris
 
 Use this artifact to prepare product, architecture, delivery, or implementation roles to continue the work without losing the business context established during discovery.
 
+This checked-in file is the canonical template definition. Create an instantiated project copy before filling it out for live BA work.
+
 ## Completion Guidance
 
 This artifact is complete when a downstream role can understand the business problem, the verified requirements, how those requirements trace back to objectives and process needs, and what unresolved risks or questions still matter.
+
+## Related Checks
+
+- Primary: [`requirements-handoff.check.md`](D:/Projects/agoge/checks/requirements-handoff.check.md)
+- Cross-cutting: [`traceability.check.md`](D:/Projects/agoge/checks/traceability.check.md)
+- Cross-cutting: [`business-analyst-boundary.check.md`](D:/Projects/agoge/checks/business-analyst-boundary.check.md)
 
 ## Handoff Summary
 
