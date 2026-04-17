@@ -17,8 +17,35 @@ The project exists to collect lessons learned across different projects and turn
 - A place to develop and refine reusable instructions and workflows.
 - Documentation-first setup so future structure can evolve intentionally.
 
+## Product Specifications
+
+Product specifications in this project should prefer [Allium](https://github.com/juxt/allium) over ad hoc prose or loosely structured requirements notes.
+
+Allium is installed globally in the local Codex environment and should be treated as the default specification format when defining expected product behavior.
+
+## Repository Structure
+
+- [`agents/`](D:/Projects/agoge/agents) stores reusable `AGENTS.md` templates and agent operating patterns.
+- [`templates/`](D:/Projects/agoge/templates) stores reusable scaffolding for plans, reviews, retros, and other repeatable project artifacts.
+- [`notes/`](D:/Projects/agoge/notes) stores structured working notes that capture lessons learned, observations, and candidate practices before they become standards.
+- [`checks/`](D:/Projects/agoge/checks) stores evaluation and validation patterns for judging workflow quality and adherence to standards.
+- [`workflows/`](D:/Projects/agoge/workflows) stores reusable multi-skill workflow definitions.
+- [`skills/`](D:/Projects/agoge/skills) stores vendored or imported skill content used as building blocks.
+
+Use the templates in `agents/` when starting a new project or defining a new agent operating mode. Use the templates in `workflows/` when you want repeatable orchestration across multiple skills, tools, and validation steps. Use `templates/` for reusable artifact formats, `notes/` for maturing lessons into durable guidance, and `checks/` for the criteria that determine whether a workflow is actually working.
+
+## Vendored Skills
+
+The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.
+
+- Upstream source: [ComposioHQ/awesome-codex-skills](https://github.com/ComposioHQ/awesome-codex-skills)
+- Fork: [ericwburden/awesome-codex-skills](https://github.com/ericwburden/awesome-codex-skills)
+
+This keeps the skills available inside this repository while preserving a clear path for future refreshes from upstream or from the fork.
+
 ## Next Steps
 
-- Initialize Git once `git` is available in the environment.
-- Add a directory structure for instructions, skills, workflows, and experiments.
 - Define contribution conventions and evaluation criteria for new patterns.
+- Decide how local changes to vendored subtree content should be managed and synced.
+- Add initial agent and workflow patterns using the templates in `agents/` and `workflows/`.
+- Add initial standards and connect them to templates, notes, and checks.

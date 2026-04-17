@@ -11,6 +11,7 @@ This repository is an experimentation space for Codex instructions, skills, work
 - Document new conventions close to where they are introduced.
 - Optimize for reusable workflows rather than project-specific hacks.
 - Treat experiments as candidates for standardization, comparison, or rejection.
+- Prefer Allium specifications for product behavior instead of informal requirement writeups.
 
 ## Expected Repository Direction
 
@@ -29,6 +30,7 @@ Over time, this project should accumulate:
 - Keep terminology consistent across files and directories.
 - If a proposed change introduces process overhead, justify it.
 - Prefer documentation and automation that reduce ambiguity for future agents.
+- When defining product specifications, default to Allium unless there is a clear reason not to.
 
 ## Change Standard
 
