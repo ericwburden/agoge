@@ -26,13 +26,15 @@ Allium is installed globally in the local Codex environment and should be treate
 ## Repository Structure
 
 - [`agents/`](D:/Projects/agoge/agents) stores reusable `AGENTS.md` templates and agent operating patterns.
-- [`templates/`](D:/Projects/agoge/templates) stores reusable scaffolding for plans, reviews, retros, and other repeatable project artifacts.
+- [`artifacts/`](D:/Projects/agoge/artifacts) stores reusable scaffolding for plans, reviews, retros, and other repeatable project artifacts.
 - [`notes/`](D:/Projects/agoge/notes) stores structured working notes that capture lessons learned, observations, and candidate practices before they become standards.
 - [`checks/`](D:/Projects/agoge/checks) stores evaluation and validation patterns for judging workflow quality and adherence to standards.
 - [`workflows/`](D:/Projects/agoge/workflows) stores reusable multi-skill workflow definitions.
 - [`skills/`](D:/Projects/agoge/skills) stores vendored or imported skill content used as building blocks.
 
-Use the templates in `agents/` when starting a new project or defining a new agent operating mode. Use the templates in `workflows/` when you want repeatable orchestration across multiple skills, tools, and validation steps. Use `templates/` for reusable artifact formats, `notes/` for maturing lessons into durable guidance, and `checks/` for the criteria that determine whether a workflow is actually working.
+Use the templates in `agents/` when starting a new project or defining a new agent operating mode. Use the templates in `workflows/` when you want repeatable orchestration across multiple skills, tools, and validation steps. Use `artifacts/` for reusable artifact formats, `notes/` for maturing lessons into durable guidance, and `checks/` for the criteria that determine whether a workflow is actually working.
+
+The first concrete role in [`agents/`](D:/Projects/agoge/agents) is [`business-analyst.md`](D:/Projects/agoge/agents/business-analyst.md), which is intended for project kickoff and discovery work focused on requirements and process understanding.
 
 ## Vendored Skills
 

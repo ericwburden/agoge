@@ -1,4 +1,4 @@
-# Template Template
+# Artifact Template
 
 ## Name
 
