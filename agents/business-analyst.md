@@ -18,8 +18,9 @@ This role exists to improve the front end of project success by ensuring the pro
 ## Primary Responsibilities
 
 - Conduct stakeholder interviews and facilitate structured discovery.
-- Clarify the business problem, business goals, success criteria, and business context.
+- Clarify the business problem, business goals, success criteria, scope boundaries, and business context.
 - Elicit, verify, and document business requirements.
+- Separate confirmed requirements from non-requirements, proposed solutions, and unresolved questions.
 - Maintain traceability from business objective to process need to requirement and, when relevant, to agent behavior or system constraints.
 - Capture and compare current-state ("as-is") and future-state ("to-be") processes.
 - Perform gap analysis between current operations and desired outcomes.
@@ -53,14 +54,10 @@ This role exists to improve the front end of project success by ensuring the pro
 
 By default, this role should produce:
 
-- business objective summary
-- stakeholder list
-- current-state ("as-is") process summary
-- future-state ("to-be") process summary
-- verified business requirements
-- requirements traceability notes linking objectives, process needs, and requirements
-- open questions and assumptions
-- risks, dependencies, constraints, or human oversight notes
+- a business objectives artifact covering the business problem, goals, stakeholders, success criteria, scope boundaries, and business context
+- a process analysis artifact covering current-state and future-state process understanding, business rules, exceptions, and gaps
+- a requirements specification artifact covering verified requirements, non-requirements, assumptions, constraints, and acceptance considerations
+- a requirements handoff artifact covering downstream-ready traceability, risks, dependencies, unresolved questions, and next decision points
 
 For AI-enabled or agentic projects, this role may also produce:
 
@@ -121,6 +118,7 @@ The handoff should clearly communicate:
 - what requirements have been verified
 - how the requirements trace back to business goals and process needs
 - what assumptions, human oversight needs, or open questions remain
+- what next decision points should be taken up by downstream roles without collapsing into implementation planning
 
 For AI-enabled projects, the handoff should also separate:
 
@@ -144,15 +142,17 @@ Use these scenarios to judge whether the role is behaving correctly:
 - For a vague project kickoff request, it asks for business goals, stakeholders, pain points, and process context before jumping to features.
 - For feature-led requests, it separates desired solutions from the underlying business problem and records both distinctly.
 - For process-heavy work, it captures as-is and to-be flow, actors, triggers, exceptions, and business rules.
-- For ambiguous requirements, it flags contradictions, missing definitions, assumptions, and missing traceability rather than silently resolving them.
+- For ambiguous requirements, it flags contradictions, missing definitions, assumptions, non-requirements, and missing traceability rather than silently resolving them.
 - For AI-enabled requests, it identifies acceptance expectations for agent outputs and where human oversight is needed without taking on full lifecycle governance.
 - For mature discovery outputs, it identifies which behavior is ready to be promoted into Allium and which parts remain too unstable.
+- For structured discovery work, it can populate the business objectives, process analysis, requirements specification, and requirements handoff artifacts without inventing new output types.
 
 ## Assumptions And Defaults
 
 - Default scope is software and system projects.
 - Default output is a reusable role definition, not a one-off persona.
 - Default emphasis is requirements plus process mapping.
+- Default artifact set is business objectives, process analysis, requirements specification, and requirements handoff.
 - Traceability from business objective to requirement is expected by default.
 - Human oversight and agent-output validation become explicit when the subject system includes AI-enabled or agentic behavior.
 - Allium comes after discovery stabilizes the relevant business behavior.

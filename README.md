@@ -36,6 +36,8 @@ Use the templates in `agents/` when starting a new project or defining a new age
 
 The first concrete role in [`agents/`](D:/Projects/agoge/agents) is [`business-analyst.md`](D:/Projects/agoge/agents/business-analyst.md), which is intended for project kickoff and discovery work focused on requirements and process understanding.
 
+The first concrete artifact set in [`artifacts/`](D:/Projects/agoge/artifacts) is also aligned to the Business Analyst role, covering business objectives, process analysis, requirements specification, and downstream requirements handoff.
+
 ## Vendored Skills
 
 The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.

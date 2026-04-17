@@ -1,0 +1,61 @@
+# Requirements Handoff
+
+## Purpose
+
+Capture the downstream-ready summary of verified requirements, traceability, risks, unresolved questions, and role-to-role handoff information.
+
+Use this artifact to prepare product, architecture, delivery, or implementation roles to continue the work without losing the business context established during discovery.
+
+## Completion Guidance
+
+This artifact is complete when a downstream role can understand the business problem, the verified requirements, how those requirements trace back to objectives and process needs, and what unresolved risks or questions still matter.
+
+## Handoff Summary
+
+Provide a short summary of what is being handed off and why.
+
+## Business Problem And Desired Outcome
+
+State the problem being addressed and the desired business outcome.
+
+## Verified Requirements
+
+Summarize the requirements that are ready for downstream use.
+
+## Traceability
+
+Show how the requirements map back to:
+
+- business objectives
+- process needs
+- major business rules
+
+## Risks And Dependencies
+
+List material risks, dependencies, constraints, or external conditions that downstream roles need to know.
+
+## Assumptions And Open Questions
+
+List assumptions still in play and questions that remain unresolved.
+
+## Human Oversight And AI Notes
+
+If the system includes AI-enabled or agentic behavior, capture:
+
+- expected human review or approval points
+- escalation triggers
+- acceptance expectations for agent outputs
+- AI or agent-specific constraints separate from business objectives
+
+## Recommended Downstream Consumers
+
+Identify which roles should consume this handoff, such as:
+
+- product owner
+- architect
+- delivery lead
+- implementation agent
+
+## Next Decision Points
+
+Describe the most important downstream decisions that remain, without turning this artifact into implementation planning.
