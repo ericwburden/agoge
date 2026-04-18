@@ -18,6 +18,7 @@ Validate that a role definition brief is explicit enough to support design of th
 - Success criteria are present.
 - Primary responsibilities are separated from out-of-scope responsibilities.
 - Default outputs are stated clearly enough to drive the support-system design.
+- The role's Allium relationship is explicit when product behavior or specifications are relevant.
 - Source references, assumptions, and open questions are visible.
 
 ## Scoring Or Outcome

@@ -33,13 +33,14 @@ Turn a role idea, source references, and observed practice into a clear reusable
 2. If the starting point is raw workshop notes, interview notes, or transcripts, use `meeting-notes-and-actions` first to normalize candidate responsibilities, out-of-scope items, open questions, assumptions, and boundary decisions.
 3. If the role still depends on multiple local or external references, use `research-documentation` or `content-research-writer` to synthesize that material before drafting.
 4. Instantiate [`artifacts/role-definition-brief.md`](D:/Projects/agoge/artifacts/role-definition-brief.md) into the working location if a working copy does not already exist.
-5. Use `role-definition` to populate the instantiated artifact with the role's job-to-be-done, audience, lifecycle position, responsibilities, boundaries, success criteria, outputs, source references, assumptions, and open questions.
+5. Use `role-definition` to populate the instantiated artifact with the role's job-to-be-done, audience, lifecycle position, responsibilities, boundaries, success criteria, outputs, Allium relationship, source references, assumptions, and open questions.
 6. Run [`role-definition-brief.check.md`](D:/Projects/agoge/checks/role-definition-brief.check.md), [`role-package-traceability.check.md`](D:/Projects/agoge/checks/role-package-traceability.check.md) when enough of the package exists, and [`role-builder-boundary.check.md`](D:/Projects/agoge/checks/role-builder-boundary.check.md).
 
 ## Decision Points
 
 - If the role idea is still mostly personality language, convert it into a job-to-be-done before drafting.
 - If the inputs are mostly raw workshop notes or discussion fragments, normalize them before drafting instead of treating them as an already-stable role definition.
+- If the role touches product behavior, specification refinement, or spec-code alignment, make its Allium relationship explicit instead of leaving that dependency implicit.
 - If multiple plausible role boundaries exist, preserve the ambiguity as an open question instead of silently picking one.
 - If the role depends on a tool-specific pattern, describe the underlying method separately from the tool assumption.
 

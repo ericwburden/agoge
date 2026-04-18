@@ -16,6 +16,7 @@ Use after more than one role-package artifact exists. Do not apply this check to
 ## Criteria
 
 - The support-system design clearly derives from the role's job-to-be-done, outputs, and boundaries.
+- The role's Allium relationship remains consistent from the role definition through the support system and final handoff when it is relevant.
 - The package review reflects the actual role definition and support-system design rather than a different implicit role shape.
 - The role-package handoff reflects the reviewed package honestly rather than inventing missing support, readiness, or adoption expectations.
 - Missing workflows, checks, or skills are surfaced as gaps rather than silently skipped.

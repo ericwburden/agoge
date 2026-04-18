@@ -16,6 +16,7 @@ Validate that a role-package review records meaningful findings, remediation dec
 - Findings about coherence, gaps, duplication, or role drift are explicit.
 - Remediation decisions are recorded clearly.
 - Readiness is stated as ready, conditionally ready, or not ready with reasoning.
+- The review reflects whether the role's Allium relationship is clear and consistent when it is relevant.
 - Remaining risks and next steps are visible.
 - The review does not collapse into vague approval language without concrete findings.
 

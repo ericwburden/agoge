@@ -23,6 +23,23 @@ Product specifications in this project should prefer [Allium](https://github.com
 
 Allium is installed globally in the local Codex environment and should be treated as the default specification format when defining expected product behavior.
 
+Roles in this repository should be Allium-aware even when they are not Allium-first. Each role package should make explicit:
+
+- when the role consumes existing Allium specifications
+- when the role helps identify behavior that is ready to become or update an Allium specification
+- when the role must route uncertainty back to discovery or specification work instead of improvising behavior
+
+The current Allium capability is already provided by the installed skills:
+
+- [allium](C:/Users/ericw/.codex/skills/allium/SKILL.md)
+- [elicit](C:/Users/ericw/.codex/skills/allium/skills/elicit/SKILL.md)
+- [tend](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md)
+- [distill](C:/Users/ericw/.codex/skills/allium/skills/distill/SKILL.md)
+- [propagate](C:/Users/ericw/.codex/skills/allium/skills/propagate/SKILL.md)
+- [weed](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md)
+
+This repo does not currently need a separate generic “Allium interaction” skill on top of that package.
+
 ## Repository Structure
 
 - [`roles/`](D:/Projects/agoge/roles) stores reusable role templates and role operating patterns.

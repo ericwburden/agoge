@@ -50,6 +50,17 @@ List the responsibilities this role should explicitly not own.
 
 Describe the major artifacts, decisions, or deliverables the role should produce by default.
 
+## Allium Relationship
+
+State whether this role should:
+
+- consume existing Allium specifications
+- help identify behavior that is ready to become or update an Allium specification
+- refine or maintain Allium specifications directly
+- route specification work to another role or skill
+
+If Allium is not relevant to the role, say that explicitly.
+
 ## Source Material And References
 
 Capture the references, examples, or observed practices this role is derived from.

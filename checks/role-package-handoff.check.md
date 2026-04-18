@@ -17,6 +17,7 @@ Validate that a role-package handoff is downstream-usable without forcing adopte
 - Adoption guidance is clear enough that a downstream consumer knows how to start.
 - Recommended consumers are identified.
 - Current limitations and required conventions are visible.
+- Allium expectations are explicit enough that adopters know how the role should interact with specifications.
 - Next adoption steps are concrete.
 - The handoff does not invent missing readiness, support, or adoption confidence that was not established in the reviewed package.
 

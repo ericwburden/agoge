@@ -33,7 +33,7 @@ Turn a stable role definition into an operational support package of artifacts, 
 3. If local precedents still need synthesis before design decisions can be made honestly, use `research-documentation` first rather than folding unsynthesized references into the support-system artifact.
 4. If a candidate support pattern is useful but tool-coupled, use `pattern-adaptation` to determine what should be preserved, stripped, adapted, or rejected before building it into the role package.
 5. Instantiate [`artifacts/role-support-system.md`](D:/Projects/agoge/artifacts/role-support-system.md) into the working location if a working copy does not already exist.
-6. Use `role-support-system-design` to populate the instantiated artifact with the role's artifact set, workflow set, check set, skill support map, tooling preferences, lifecycle, and known gaps.
+6. Use `role-support-system-design` to populate the instantiated artifact with the role's artifact set, workflow set, check set, skill support map, tooling preferences, Allium touchpoints, lifecycle, and known gaps.
 7. Run [`role-support-system.check.md`](D:/Projects/agoge/checks/role-support-system.check.md), [`role-package-traceability.check.md`](D:/Projects/agoge/checks/role-package-traceability.check.md), and [`role-builder-boundary.check.md`](D:/Projects/agoge/checks/role-builder-boundary.check.md).
 
 ## Decision Points
@@ -41,6 +41,7 @@ Turn a stable role definition into an operational support package of artifacts, 
 - If the role's outputs are too vague to derive artifacts, return to the role-definition workflow first.
 - If the support-system design starts leaning on generic synthesis instead of the dedicated `role-*` skills, simplify the chain and restore the role-specific primary path.
 - If an existing skill is useful but tool-coupled, use `pattern-adaptation` to preserve the method explicitly and document the local adaptation rather than importing the whole tool assumption.
+- If the role touches product behavior, make its expected relationship to Allium explicit instead of leaving specification interaction implicit.
 - If the support system would add overhead without improving repeatability, simplify it before proceeding.
 
 ## Validation

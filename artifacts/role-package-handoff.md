@@ -50,6 +50,15 @@ List the limits, exclusions, or known weak areas adopters should understand befo
 
 Capture the conventions, tool preferences, or local-first assumptions adopters should preserve.
 
+## Allium Expectations
+
+Describe the role's expected relationship to Allium that adopters should preserve, including:
+
+- whether the role consumes existing specifications
+- whether it helps identify, create, refine, or defer specification work
+- which installed Allium skills are part of the role's support model
+- any boundaries on when the role should not improvise behavior outside the specification chain
+
 ## Next Adoption Steps
 
 List the concrete next steps needed to adopt, adapt, or extend the role package downstream.

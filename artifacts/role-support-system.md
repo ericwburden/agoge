@@ -46,6 +46,17 @@ List the supporting skills, grouped as:
 
 Capture any explicit tool-preference decisions, such as local-first patterns or adaptation rules for tool-coupled methods.
 
+## Allium Touchpoints
+
+Describe how the role interacts with Allium across its lifecycle, including:
+
+- which workflows should consume existing specifications
+- when the role should produce, refine, or defer Allium work
+- which installed Allium skills are relevant
+- where specification gaps should be routed instead of improvised
+
+If the role has no meaningful Allium relationship, state that explicitly.
+
 ## Lifecycle And Handoffs
 
 Describe how the role moves from role idea or workshop intake through definition, support-system design, quality review, and downstream adoption handoff.

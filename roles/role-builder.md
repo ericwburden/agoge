@@ -12,6 +12,7 @@ This role exists to turn role ideas into coherent operating packages rather than
 - The role's default outputs are clear and reusable.
 - Supporting artifacts, workflows, checks, and skills form a coherent whole.
 - Tool-coupled patterns are adapted into repo-preferred operating models when needed.
+- Role packages make explicit when the role should consume, produce, refine, or route to Allium specifications.
 - The resulting role package can be handed off for adoption without relying on chat-only reconstruction.
 - The resulting role package reduces ambiguity for downstream agents rather than creating more process overhead.
 
@@ -24,6 +25,7 @@ This role exists to turn role ideas into coherent operating packages rather than
 - Define or refine the workflows required to produce those artifacts consistently.
 - Identify the checks needed to act as definition-of-done quality gates for the role's outputs.
 - Review available skills and classify them as direct support, adaptations, or non-core dependencies.
+- Determine the role's expected relationship to Allium and the existing Allium skill set when product behavior or behavioral specifications are relevant.
 - Adapt tool-specific skills into repo-preferred local patterns when the underlying method is reusable.
 - Ensure role artifacts, workflows, checks, and skills align around the same lifecycle and terminology.
 - Surface gaps, overlaps, or role drift before the package is treated as complete.
@@ -91,6 +93,7 @@ Use these workflows to carry the role through its default operating lifecycle:
 - Distinguish reusable role structure from project-instance outputs.
 - Treat checks as part of the role contract, not as optional afterthoughts.
 - Keep tool preference explicit when the repo has a default operating model.
+- Make Allium touchpoints explicit when the role interacts with product behavior, specifications, test propagation, or spec-code alignment.
 - If a referenced pattern is strong but too broad, adopt the useful parts without importing the full role shape.
 
 ## Quality Standard
@@ -120,6 +123,7 @@ The handoff should clearly communicate:
 - what outputs it should produce
 - what workflows and checks make the role operational
 - what skills the role relies on directly
+- what relationship the role has to Allium and which existing Allium skills it expects to use or defer to
 - where the role stops and adjacent roles should take over
 - what limitations, tool preferences, and adoption expectations downstream consumers should preserve
 
@@ -132,6 +136,7 @@ This role is grounded in the process used to create the initial [`Business Analy
 - derive workflows from the artifact chain
 - derive checks from the artifacts and role boundaries
 - derive skill support from existing capabilities, adapting tool-specific patterns when needed
+- make the role's Allium relationship explicit rather than leaving specification behavior implicit
 - review the resulting package for coherence and tighten the lifecycle until it is operational
 
 ## Validation Scenarios
@@ -143,6 +148,7 @@ Use these scenarios to judge whether the role is behaving correctly:
 - For a workflow gap, it adds or refines workflows so the role can reliably produce and validate its outputs.
 - For a check gap, it adds quality gates and ties remediation back to the correct skills or prior workflow stages.
 - For a tool-coupled external pattern, it preserves the useful method while adapting it to the repo's preferred local operating model.
+- For a role that touches product behavior, it explicitly defines whether the role consumes Allium, produces it, refines it, or routes spec work to another role or skill.
 - For workshop-led role-design work, it can normalize meeting outputs into candidate responsibilities, boundaries, assumptions, and open questions before defining the role.
 - For a partially complete role package, it identifies coherence gaps between the role, artifacts, workflows, checks, and skills before declaring the role ready.
 - For structured role-design work, it can populate the role definition brief, role support system, role package review, and role package handoff artifacts without inventing extra output types by default.

@@ -40,6 +40,8 @@ The first concrete workflow set in this directory is aligned to the [`Business A
 
 The local-Markdown skills above are the default operating path for this repository. Treat the `notion-*` skills as reference implementations or optional adaptation sources, not as equal defaults for BA work here.
 
+Business Analyst work should also be Allium-aware: consume existing Allium specs when they already define relevant behavior, and use the installed Allium skills only when mature verified behavior is ready to become or update a specification.
+
 ### Downstream Or Adjacent Only
 
 - [`create-plan`](D:/Projects/agoge/skills/create-plan/SKILL.md): useful after BA handoff, but not part of core BA discovery.
@@ -83,6 +85,8 @@ The intended Role Builder lifecycle in this repo is: role idea or workshop intak
 
 The dedicated `role-*` skills and `pattern-adaptation` are the primary operating path for this repository's Role Builder workflows. Generic synthesis skills remain available, but they should be used only as supporting input steps rather than as the main Role Builder path.
 
+Role Builder work should make each role's relationship to Allium explicit whenever the role touches product behavior, specification refinement, test propagation, or spec-code alignment.
+
 ## Solution Architect Workflow Set
 
 The next concrete workflow set in this directory is aligned to the [`Solution Architect`](D:/Projects/agoge/roles/solution-architect.md) role and the Solution Architect artifact library in [`artifacts/`](D:/Projects/agoge/artifacts).
@@ -92,7 +96,7 @@ The next concrete workflow set in this directory is aligned to the [`Solution Ar
 - [`solution-architect-handoff.md`](D:/Projects/agoge/workflows/solution-architect-handoff.md) packages completed architecture for downstream planning, implementation, and verification roles.
 - [`solution-architect-quality-review.md`](D:/Projects/agoge/workflows/solution-architect-quality-review.md) runs the Solution Architect check chain and routes remediation before downstream use.
 
-The intended Solution Architect lifecycle in this repo is: validated BA handoff -> solution design -> architecture review -> architecture handoff -> quality review and remediation -> downstream technical work.
+The intended Solution Architect lifecycle in this repo is: validated BA handoff -> solution design -> architecture review -> architecture handoff -> final quality review and remediation -> downstream technical work.
 
 ## Solution Architect Skill Review
 
@@ -116,3 +120,5 @@ The intended Solution Architect lifecycle in this repo is: validated BA handoff 
 ### Remaining Design Choice
 
 - No dedicated interface-framing or integration-contracts skill exists yet. For now, interface and contract coverage is embedded directly in `architecture-design`, the architecture artifacts, and the Solution Architect checks.
+
+Solution Architect work should treat existing Allium specifications as behavioral input constraints, but architecture artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.

@@ -17,6 +17,7 @@ Validate that the proposed support system for a role makes the role operational 
 - The check set includes both primary and cross-cutting quality gates where needed.
 - Supporting skills are classified clearly as direct support, local adaptations, or adjacent/downstream only.
 - Tooling preferences are explicit when multiple operating models are possible.
+- Allium touchpoints are explicit when the role interacts with specifications or behavioral definition.
 - Lifecycle and handoff expectations are clear.
 - Gaps and risks are surfaced rather than ignored.
 

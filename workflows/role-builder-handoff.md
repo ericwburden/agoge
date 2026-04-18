@@ -34,13 +34,14 @@ Turn a reviewed reusable role package into an adoption-facing handoff that anoth
 2. Confirm the review outcome marks the package ready or conditionally ready with explicit limits.
 3. If supporting notes still need synthesis before adoption guidance can be written honestly, use `research-documentation` first.
 4. Instantiate [`artifacts/role-package-handoff.md`](D:/Projects/agoge/artifacts/role-package-handoff.md) into the working location if a working copy does not already exist.
-5. Use `role-handoff-packaging` to populate the instantiated artifact with the package summary, reviewed inputs, review outcome, adoption guidance, recommended consumers, current limitations, required conventions, and next adoption steps.
+5. Use `role-handoff-packaging` to populate the instantiated artifact with the package summary, reviewed inputs, review outcome, adoption guidance, recommended consumers, current limitations, required conventions, Allium expectations, and next adoption steps.
 6. Run [`role-package-handoff.check.md`](D:/Projects/agoge/checks/role-package-handoff.check.md), [`role-package-traceability.check.md`](D:/Projects/agoge/checks/role-package-traceability.check.md), and [`role-builder-boundary.check.md`](D:/Projects/agoge/checks/role-builder-boundary.check.md).
 
 ## Decision Points
 
 - If the review outcome is not ready, stop and route remediation back through the review or earlier artifacts rather than packaging an unready role.
 - If the package is conditionally ready, keep the limits explicit in the handoff instead of smoothing them over.
+- If the role has an Allium relationship, make that contract explicit for adopters instead of assuming they will infer it from earlier artifacts.
 - If adopter-specific context would materially change the handoff, state the adaptation need explicitly rather than pretending the current package is universal.
 
 ## Validation
