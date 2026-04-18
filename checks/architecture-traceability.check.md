@@ -16,6 +16,7 @@ Use after more than one Solution Architect artifact exists. Do not apply this ch
 ## Criteria
 
 - Architectural drivers connect back to business objectives, process needs, requirements, or explicit technical constraints.
+- Architectural treatment of existing behavioral specifications is explicit when those specifications materially constrain the design.
 - Architecture decisions reflect the actual solution architecture rather than an unstated alternative.
 - The architecture review reflects the actual strengths, risks, and unresolved issues in the architecture artifacts rather than inventing a separate narrative.
 - The architecture handoff preserves the reasoning, risks, and review outcome already captured in earlier architecture artifacts.

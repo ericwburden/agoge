@@ -14,9 +14,11 @@ Validate that the architecture handoff is complete enough for downstream roles t
 
 - The architecture being handed off is summarized clearly.
 - Review status and material architecture findings are visible.
+- Readiness ownership and any material handoff conditions are explicit when the architecture is not simply ready.
 - Major interface, dependency, or integration hotspots are visible.
 - Verification focus areas are explicit.
 - Architecture fitness criteria are visible enough to guide downstream verification or planning.
+- The relationship to any existing behavioral specification is explicit when specification work materially constrains the architecture.
 - Unresolved decisions and risks are present.
 - Downstream consumers are identified.
 - Next decision points are included.
@@ -39,6 +41,7 @@ If the handoff depends on implied context not captured in the artifact, fail the
 
 - [`architecture-handoff-packaging`](D:/Projects/agoge/skills/architecture-handoff-packaging/SKILL.md) when the handoff needs stronger packaging, better hotspot framing, or clearer downstream guidance.
 - [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md) when architecture context is still scattered across local notes.
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md) or [`tend`](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md) when the handoff must explain how existing behavioral specifications constrain the architecture or where specification gaps remain downstream-relevant.
 
 ## Failure Response
 

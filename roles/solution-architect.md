@@ -133,7 +133,9 @@ The handoff should clearly communicate:
 - what system shape is being proposed
 - what decisions have already been made and why
 - what the architecture review found and whether the package is actually ready for downstream use
+- who owns the current readiness decision and any conditions on downstream use
 - what risks, constraints, and dependency hotspots matter most
+- how existing or candidate behavioral specifications constrain the architecture or still need upstream refinement
 - what remains unresolved
 - what downstream roles should decide next without collapsing into implementation tasking
 

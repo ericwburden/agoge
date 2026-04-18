@@ -30,6 +30,16 @@ Summarize the proposed solution shape, major components, and key architectural d
 
 Summarize the current architecture review status, the most important findings, and any material conditions on downstream use.
 
+## Readiness Ownership And Conditions
+
+If the architecture is not simply ready, make the ownership and clearance conditions explicit.
+
+Capture:
+
+- the decision owner or approver for the current readiness state
+- any condition owners responsible for required follow-up, clarification, or approval
+- the conditions that must be satisfied before downstream work should treat the architecture as fully ready
+
 ## Interface, Dependency, And Integration Hotspots
 
 List the interface seams, ownership boundaries, integrations, external dependencies, and architectural hotspots that downstream roles should watch closely.
@@ -41,6 +51,17 @@ Identify the architectural assumptions, risk areas, or boundary conditions that 
 ## Architecture Fitness Criteria
 
 Summarize the architecture-level criteria that downstream verification or planning should preserve, validate, or monitor.
+
+## Specification Relationship
+
+If Allium or another behavioral specification materially constrained the architecture, summarize that relationship here.
+
+Capture:
+
+- which specifications were treated as architectural inputs
+- where the architecture preserves or relies on existing specified behavior
+- which specification gaps, conflicts, or unstable behaviors still matter downstream
+- whether any architectural issue should route back to upstream specification work rather than be solved in planning or implementation
 
 ## Unresolved Decisions And Risks
 

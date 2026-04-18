@@ -24,7 +24,7 @@ Summarize the problem space and the part of the system this architecture is addr
 
 ## Input Context
 
-Reference the business objectives, process analysis, requirements specification, and requirements handoff this architecture depends on.
+Reference the business objectives, process analysis, requirements specification, requirements handoff, and any existing behavioral specifications this architecture depends on.
 
 ## Architectural Drivers
 
@@ -58,6 +58,17 @@ List the major integrations, external systems, and dependency assumptions the ar
 ## Constraints
 
 Capture the technical, policy, platform, operational, or delivery constraints that materially shape the architecture.
+
+## Specification Relationship
+
+If Allium or another behavioral specification is in scope, record how the proposed architecture relates to it.
+
+Capture:
+
+- which specification or specification areas materially constrain the architecture
+- which parts of the architecture assume or preserve already-specified behavior
+- where the architecture depends on behavior that is missing, ambiguous, unstable, or still requires upstream specification work
+- any architectural consequences of specification gaps or conflicts that downstream roles should understand
 
 ## Architecture Fitness Criteria
 

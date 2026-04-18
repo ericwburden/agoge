@@ -20,6 +20,7 @@ Validate that the solution architecture artifact clearly expresses the intended 
 - Major flows, interface seams, and integration points are described clearly enough for downstream use.
 - Important contract assumptions or failure expectations are explicit when they materially affect the design.
 - Constraints, risks, and open questions are visible.
+- The relationship to any existing behavioral specification is explicit when specification work materially constrains the architecture.
 - Architecture fitness criteria are explicit enough for downstream verification or planning to use.
 - Trust boundaries and human control points are recorded when AI-enabled or agentic behavior is relevant.
 
@@ -42,6 +43,7 @@ If architectural reasoning depends on missing or unstated evidence, fail the che
 - [`architecture-design`](D:/Projects/agoge/skills/architecture-design/SKILL.md) when the architecture needs stronger structure, clearer boundaries, or more explicit interface framing.
 - [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md) when relevant technical or domain constraints are spread across multiple local sources and need synthesis.
 - [`meeting-notes-and-actions`](D:/Projects/agoge/skills/meeting-notes-and-actions/SKILL.md) when architecture inputs are still embedded in workshop notes or transcript material.
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md) or [`tend`](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md) when the architecture depends on existing behavioral specifications that need to be interpreted, reconciled, or clarified.
 
 ## Failure Response
 

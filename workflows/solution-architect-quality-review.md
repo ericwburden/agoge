@@ -37,7 +37,7 @@ Apply the Solution Architect check chain to instantiated architecture artifacts,
 2. Run the primary checks for the supporting architecture artifacts and the handoff artifact.
 3. Run [`architecture-traceability.check.md`](D:/Projects/agoge/checks/architecture-traceability.check.md) across the full chain.
 4. Run [`solution-architect-boundary.check.md`](D:/Projects/agoge/checks/solution-architect-boundary.check.md) across all artifacts in scope.
-5. Record failures by artifact and defect type: missing architectural drivers, weak boundaries, unsupported assumptions, hidden tradeoffs, broken traceability, weak readiness ownership, or role drift.
+5. Record failures by artifact and defect type: missing architectural drivers, weak boundaries, unsupported assumptions, hidden tradeoffs, broken traceability, weak readiness ownership, missing specification relationship, unstable behavioral constraints, or role drift.
 6. Route remediation to the appropriate earlier Solution Architect or BA artifact rather than patching the latest artifact in isolation.
 7. Re-run the failed checks until the full chain passes or until remaining gaps are explicitly recorded as unresolved and the work is intentionally held open.
 
