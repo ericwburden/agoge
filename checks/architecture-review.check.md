@@ -1,0 +1,50 @@
+# Architecture Review Check
+
+## Purpose
+
+Validate that the architecture review artifact records a usable readiness judgment, the material findings behind that judgment, and the remediation needed before architecture is handed downstream.
+
+## Applies To
+
+- instantiated copies of [`artifacts/architecture-review.md`](D:/Projects/agoge/artifacts/architecture-review.md)
+- Use after the first architecture design pass and before downstream architecture handoff.
+- Do not use as a substitute for validating the underlying architecture artifacts themselves.
+
+## Criteria
+
+- The review scope and reviewed inputs are identified clearly.
+- The overall assessment is explicit.
+- Readiness or approval status is stated clearly.
+- Key findings are visible and materially relevant.
+- Interface or contract observations are surfaced when boundary quality is part of the review concern.
+- Unresolved risks and questions are explicit.
+- Required remediation is routed to the earliest artifact that should be reworked.
+- The recommended next step is consistent with the actual review outcome.
+
+## Scoring Or Outcome
+
+Pass/fail.
+
+The artifact passes only if a downstream reader can understand whether the architecture is ready, why, and what still needs to change without reconstructing the review from chat context.
+
+## Evidence Required
+
+- The architecture review artifact.
+- The reviewed solution architecture and architecture decisions artifacts.
+- Any supporting BA or technical references needed to interpret the findings honestly.
+
+If the review artifact does not show how it reached its readiness judgment, fail the check.
+
+## Supporting Skills
+
+- [`architecture-review`](D:/Projects/agoge/skills/architecture-review/SKILL.md) when the review artifact needs stronger findings, clearer readiness language, or better remediation routing.
+- [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md) when conflicting technical context needs synthesis before a review judgment can be made honestly.
+
+## Failure Response
+
+- Rework the review artifact before relying on it as the decision point for downstream handoff.
+- If the review reveals blocked architecture, route remediation to the earliest design artifact rather than papering over the defect in the review summary.
+
+## Notes
+
+This check protects the review stage from becoming a vague approval ritual. It requires the review to be explicit, durable, and actionable.

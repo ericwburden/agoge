@@ -44,3 +44,16 @@ The next concrete check set in this directory supports the [`Role Builder`](D:/P
 - [`role-builder-boundary.check.md`](D:/Projects/agoge/checks/role-builder-boundary.check.md) validates that role-design outputs stay inside the intended role boundary.
 
 These checks are definition-of-done quality gates for the Role Builder lifecycle: define the role, design the support system, review the package, package it for adoption, and remediate failures at the earliest stage that introduced the defect.
+
+## Solution Architect Check Set
+
+The next concrete check set in this directory supports the [`Solution Architect`](D:/Projects/agoge/roles/solution-architect.md) role and its artifact library.
+
+- [`solution-architecture.check.md`](D:/Projects/agoge/checks/solution-architecture.check.md) validates the solution architecture artifact.
+- [`architecture-decisions.check.md`](D:/Projects/agoge/checks/architecture-decisions.check.md) validates the architecture decisions artifact.
+- [`architecture-review.check.md`](D:/Projects/agoge/checks/architecture-review.check.md) validates the durable architecture review artifact.
+- [`architecture-handoff.check.md`](D:/Projects/agoge/checks/architecture-handoff.check.md) validates the architecture handoff artifact.
+- [`architecture-traceability.check.md`](D:/Projects/agoge/checks/architecture-traceability.check.md) validates linkage from upstream BA artifacts through the architecture chain.
+- [`solution-architect-boundary.check.md`](D:/Projects/agoge/checks/solution-architect-boundary.check.md) validates that architecture outputs stay within role boundaries.
+
+These checks are definition-of-done quality gates for the Solution Architect lifecycle: define the solution shape, record the major decisions, review the architecture explicitly, package the architecture handoff, and remediate failures at the earliest stage that introduced the defect.

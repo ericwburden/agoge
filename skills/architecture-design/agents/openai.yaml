@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Design"
+  short_description: "Shape validated requirements into architecture."
+  default_prompt: "Design a solution architecture from validated requirements and record the major decisions."

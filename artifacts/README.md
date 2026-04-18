@@ -41,3 +41,16 @@ The next concrete artifact set in this directory is aligned to the [`Role Builde
 Use this set when defining or tightening a reusable role package rather than producing project-specific delivery artifacts. Instantiate the needed artifact files into the working location before filling them out.
 
 The intended Role Builder lifecycle is: select template, instantiate working copy, populate the role definition, derive the support system, review the package, package it for adoption, and remediate any failed checks before treating the role as reusable downstream.
+
+## Solution Architect Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Solution Architect`](D:/Projects/agoge/roles/solution-architect.md) role.
+
+- [`solution-architecture.md`](D:/Projects/agoge/artifacts/solution-architecture.md) defines the reusable structure for capturing architectural drivers, system boundaries, major components, flows, interfaces, integrations, constraints, and risks.
+- [`architecture-decisions.md`](D:/Projects/agoge/artifacts/architecture-decisions.md) defines the reusable structure for capturing major architectural choices, alternatives, rationale, and consequences.
+- [`architecture-review.md`](D:/Projects/agoge/artifacts/architecture-review.md) defines the reusable structure for capturing durable architecture review findings, readiness, remediation, and unresolved concerns before handoff.
+- [`architecture-handoff.md`](D:/Projects/agoge/artifacts/architecture-handoff.md) defines the reusable structure for packaging reviewed architecture for downstream planning, implementation, and verification roles.
+
+Use this set when validated BA outputs need to be turned into a technical solution shape and downstream architectural handoff. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Solution Architect lifecycle is: select template, instantiate working copy, define the solution architecture, record major decisions, review the architecture explicitly, package the architecture handoff, run checks, remediate failures, and only then move the architecture downstream.

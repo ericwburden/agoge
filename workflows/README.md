@@ -82,3 +82,37 @@ The intended Role Builder lifecycle in this repo is: role idea or workshop intak
 - [`requirements-verification`](D:/Projects/agoge/skills/requirements-verification/SKILL.md): plausible model for future role-package verification or traceability support if Role Builder needs stronger dedicated validation skills.
 
 The dedicated `role-*` skills and `pattern-adaptation` are the primary operating path for this repository's Role Builder workflows. Generic synthesis skills remain available, but they should be used only as supporting input steps rather than as the main Role Builder path.
+
+## Solution Architect Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Solution Architect`](D:/Projects/agoge/roles/solution-architect.md) role and the Solution Architect artifact library in [`artifacts/`](D:/Projects/agoge/artifacts).
+
+- [`solution-architect-design.md`](D:/Projects/agoge/workflows/solution-architect-design.md) turns validated BA outputs into a solution architecture and architecture decision record.
+- [`solution-architect-review.md`](D:/Projects/agoge/workflows/solution-architect-review.md) reviews drafted architecture, records findings, and decides whether the package is ready for downstream use.
+- [`solution-architect-handoff.md`](D:/Projects/agoge/workflows/solution-architect-handoff.md) packages completed architecture for downstream planning, implementation, and verification roles.
+- [`solution-architect-quality-review.md`](D:/Projects/agoge/workflows/solution-architect-quality-review.md) runs the Solution Architect check chain and routes remediation before downstream use.
+
+The intended Solution Architect lifecycle in this repo is: validated BA handoff -> solution design -> architecture review -> architecture handoff -> quality review and remediation -> downstream technical work.
+
+## Solution Architect Skill Review
+
+### Direct Support
+
+- [`architecture-design`](D:/Projects/agoge/skills/architecture-design/SKILL.md): preferred local-Markdown path for turning validated BA outputs into a solution shape, explicit interfaces and contracts, and a decision record.
+- [`architecture-review`](D:/Projects/agoge/skills/architecture-review/SKILL.md): preferred local-Markdown path for reviewing architecture readiness, recording findings, and deciding whether the design should move downstream.
+- [`architecture-handoff-packaging`](D:/Projects/agoge/skills/architecture-handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed architecture into a downstream-ready handoff.
+- [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when technical constraints, local references, or architectural context need to be combined before architecture work can proceed cleanly.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/agoge/skills/meeting-notes-and-actions/SKILL.md): normalize architecture workshop notes or technical design-session transcripts.
+- [`content-research-writer`](D:/Projects/agoge/skills/content-research-writer/SKILL.md): optional external research and citation support when architecture direction depends on external patterns, standards, or market context.
+
+### Downstream Or Adjacent Only
+
+- [`spec-to-implementation`](D:/Projects/agoge/skills/spec-to-implementation/SKILL.md): downstream bridge from mature architecture and requirements into implementation planning.
+- [`create-plan`](D:/Projects/agoge/skills/create-plan/SKILL.md): useful after architecture handoff, but not part of core Solution Architect work.
+
+### Remaining Design Choice
+
+- No dedicated interface-framing or integration-contracts skill exists yet. For now, interface and contract coverage is embedded directly in `architecture-design`, the architecture artifacts, and the Solution Architect checks.

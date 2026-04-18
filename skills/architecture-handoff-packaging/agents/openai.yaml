@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Handoff"
+  short_description: "Package reviewed architecture downstream."
+  default_prompt: "Package the reviewed architecture for downstream planning, implementation, and verification."

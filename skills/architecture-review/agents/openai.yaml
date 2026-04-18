@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Review"
+  short_description: "Review architecture readiness and risks."
+  default_prompt: "Review the architecture package, record findings, and assess readiness for downstream handoff."

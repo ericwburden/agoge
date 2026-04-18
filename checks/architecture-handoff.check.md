@@ -1,0 +1,49 @@
+# Architecture Handoff Check
+
+## Purpose
+
+Validate that the architecture handoff is complete enough for downstream roles to continue without reconstructing the solution shape or design rationale from earlier artifacts.
+
+## Applies To
+
+- instantiated copies of [`artifacts/architecture-handoff.md`](D:/Projects/agoge/artifacts/architecture-handoff.md)
+- Use when architecture is being passed to planning, implementation, or verification roles.
+- Do not use to validate implementation plans or sprint/task decomposition.
+
+## Criteria
+
+- The architecture being handed off is summarized clearly.
+- Review status and material architecture findings are visible.
+- Major interface, dependency, or integration hotspots are visible.
+- Verification focus areas are explicit.
+- Unresolved decisions and risks are present.
+- Downstream consumers are identified.
+- Next decision points are included.
+- The handoff does not collapse into implementation planning, task decomposition, or delivery management.
+
+## Scoring Or Outcome
+
+Pass/fail.
+
+The artifact passes only if a downstream technical role can proceed without rediscovering the architecture from earlier notes.
+
+## Evidence Required
+
+- The architecture handoff artifact.
+- The solution architecture and architecture decisions artifacts when needed to confirm completeness.
+
+If the handoff depends on implied context not captured in the artifact, fail the check.
+
+## Supporting Skills
+
+- [`architecture-handoff-packaging`](D:/Projects/agoge/skills/architecture-handoff-packaging/SKILL.md) when the handoff needs stronger packaging, better hotspot framing, or clearer downstream guidance.
+- [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md) when architecture context is still scattered across local notes.
+
+## Failure Response
+
+- Rework the handoff artifact before passing architecture downstream.
+- Keep architecture work open until major risks, decisions, and hotspots are explicit.
+
+## Notes
+
+This check protects the architect-to-downstream boundary by ensuring the handoff is self-sufficient without becoming an implementation plan.
