@@ -65,6 +65,8 @@ The intended Role Builder lifecycle in this repo is: role idea or workshop intak
 
 The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`solution-architect.md`](D:/Projects/agoge/roles/solution-architect.md), which is intended for turning validated BA outputs into an explicit solution shape, architectural decision record, reviewed architecture package, and downstream technical handoff.
 
+The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`technical-planner.md`](D:/Projects/agoge/roles/technical-planner.md), which is intended for turning reviewed architecture and validated requirements into an implementation strategy, explicit sequencing and dependency handling, a reviewed planning package, and downstream implementation handoff.
+
 ## Vendored Skills
 
 The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.

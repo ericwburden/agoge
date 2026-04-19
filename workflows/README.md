@@ -122,3 +122,39 @@ The intended Solution Architect lifecycle in this repo is: validated BA handoff 
 - No dedicated interface-framing or integration-contracts skill exists yet. For now, interface and contract coverage is embedded directly in `architecture-design`, the architecture artifacts, and the Solution Architect checks.
 
 Solution Architect work should treat existing Allium specifications as behavioral input constraints, but architecture artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Technical Planner Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Technical Planner`](D:/Projects/agoge/roles/technical-planner.md) role and the Technical Planner artifact library in [`artifacts/`](D:/Projects/agoge/artifacts).
+
+- [`technical-planner-planning.md`](D:/Projects/agoge/workflows/technical-planner-planning.md) turns reviewed architecture and validated requirements into an implementation strategy and sequencing plan.
+- [`technical-planner-review.md`](D:/Projects/agoge/workflows/technical-planner-review.md) reviews drafted planning outputs, records findings, and decides whether the package is ready for downstream use.
+- [`technical-planner-handoff.md`](D:/Projects/agoge/workflows/technical-planner-handoff.md) packages completed planning outputs for downstream implementation and verification roles.
+- [`technical-planner-quality-review.md`](D:/Projects/agoge/workflows/technical-planner-quality-review.md) runs the Technical Planner check chain and routes remediation before downstream use.
+
+The intended Technical Planner lifecycle in this repo is: reviewed architecture handoff -> implementation strategy and sequencing -> planning review -> implementation handoff -> final quality review and remediation -> downstream technical work.
+
+## Technical Planner Skill Review
+
+### Direct Support
+
+- [`spec-to-implementation`](D:/Projects/agoge/skills/spec-to-implementation/SKILL.md): preferred local-Markdown path for turning reviewed architecture and validated requirements into implementation strategy, sequencing, and downstream planning structure.
+- [`handoff-packaging`](D:/Projects/agoge/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed planning outputs into a downstream-ready implementation handoff.
+- [`research-documentation`](D:/Projects/agoge/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when planning context, dependency notes, or rollout constraints need to be combined before execution planning can proceed cleanly.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/agoge/skills/meeting-notes-and-actions/SKILL.md): normalize planning workshops, dependency reviews, or implementation working-session transcripts.
+- [`content-research-writer`](D:/Projects/agoge/skills/content-research-writer/SKILL.md): optional external research and citation support when execution order depends on external standards, migration patterns, or platform constraints.
+
+### Downstream Or Adjacent Only
+
+- [`create-plan`](D:/Projects/agoge/skills/create-plan/SKILL.md): useful for ad hoc planning requests in chat, but not the default artifact-chain path for this repository.
+- [`requirements-verification`](D:/Projects/agoge/skills/requirements-verification/SKILL.md): upstream quality support rather than a core Technical Planner dependency.
+- [`architecture-review`](D:/Projects/agoge/skills/architecture-review/SKILL.md): upstream architecture-readiness support rather than a default Technical Planner skill.
+
+### Remaining Design Choice
+
+- No dedicated sequencing-specific or planning-review skill exists yet. For now, sequencing and review coverage is embedded directly in `spec-to-implementation`, the planning artifacts, and the Technical Planner checks.
+
+Technical Planner work should treat existing Allium specifications as behavioral scope and verification constraints, but planning artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
