@@ -57,3 +57,16 @@ The next concrete check set in this directory supports the [`Solution Architect`
 - [`solution-architect-boundary.check.md`](D:/Projects/agoge/checks/solution-architect-boundary.check.md) validates that architecture outputs stay within role boundaries.
 
 These checks are definition-of-done quality gates for the Solution Architect lifecycle: define the solution shape, record the major decisions, review the architecture explicitly, package the architecture handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Technical Planner Check Set
+
+The next concrete check set in this directory supports the [`Technical Planner`](D:/Projects/agoge/roles/technical-planner.md) role and its artifact library.
+
+- [`implementation-strategy.check.md`](D:/Projects/agoge/checks/implementation-strategy.check.md) validates the implementation strategy artifact.
+- [`sequencing-and-dependencies.check.md`](D:/Projects/agoge/checks/sequencing-and-dependencies.check.md) validates the sequencing and dependencies artifact.
+- [`implementation-plan-review.check.md`](D:/Projects/agoge/checks/implementation-plan-review.check.md) validates the durable planning review artifact.
+- [`implementation-handoff.check.md`](D:/Projects/agoge/checks/implementation-handoff.check.md) validates the implementation handoff artifact.
+- [`planning-traceability.check.md`](D:/Projects/agoge/checks/planning-traceability.check.md) validates linkage from upstream BA and architecture artifacts through the planning chain.
+- [`technical-planner-boundary.check.md`](D:/Projects/agoge/checks/technical-planner-boundary.check.md) validates that planning outputs stay within role boundaries.
+
+These checks are definition-of-done quality gates for the Technical Planner lifecycle: define the implementation strategy, define sequencing and dependencies, review the plan explicitly, package the implementation handoff, and remediate failures at the earliest stage that introduced the defect.
