@@ -106,3 +106,16 @@ The next concrete artifact set in this directory is aligned to the [`Code Review
 Use this set when a completed implementation package needs to be turned into a downstream-ready independent review package rather than only a collection of comments or an approval label. Instantiate the needed artifact files into the project workspace before filling them out.
 
 The intended Code Reviewer lifecycle is: select template, instantiate working copy, define review scope, record findings explicitly, decide the review posture, package the review handoff, run checks, remediate failures, and only then move the review package downstream.
+
+## Release / Handoff Manager Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Release / Handoff Manager`](D:/Projects/orpheum/roles/release-handoff-manager.md) role.
+
+- [`release-candidate-summary.md`](D:/Projects/orpheum/artifacts/release-candidate-summary.md) defines the reusable structure for capturing the target release scope, reviewed inputs, included and excluded scope, release-sensitive hotspots, and candidate limits.
+- [`release-readiness-decision.md`](D:/Projects/orpheum/artifacts/release-readiness-decision.md) defines the reusable structure for capturing the release posture, approval limits, required conditions, unresolved risks, and decision owners before handoff.
+- [`rollout-and-operations-notes.md`](D:/Projects/orpheum/artifacts/rollout-and-operations-notes.md) defines the reusable structure for capturing environment assumptions, protection rules, sequencing, monitoring, rollback triggers, communication notes, and operational caveats.
+- [`release-handoff.md`](D:/Projects/orpheum/artifacts/release-handoff.md) defines the reusable structure for packaging reviewed release outputs for downstream release-adjacent, operational, or adoption consumers.
+
+Use this set when reviewed implementation, review, and verification outputs need to be turned into a downstream-ready release or adoption package rather than only a summary or approval label. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Release / Handoff Manager lifecycle is: select template, instantiate working copy, define the release candidate, make rollout notes explicit, review the release posture, package the release handoff, run checks, remediate failures, and only then move the release package downstream.

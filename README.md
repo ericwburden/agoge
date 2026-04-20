@@ -75,6 +75,8 @@ The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`implementat
 
 The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md), which is intended for turning a completed implementation package into explicit review scope, concrete findings, an independent review decision, and a downstream handoff for implementation, verification, or release-adjacent consumers.
 
+The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`release-handoff-manager.md`](D:/Projects/orpheum/roles/release-handoff-manager.md), which is intended for turning reviewed implementation, review, and verification outputs into explicit release scope, release posture, rollout caveats, and a downstream release or adoption handoff.
+
 ## Vendored Skills
 
 The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.

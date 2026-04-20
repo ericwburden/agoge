@@ -109,3 +109,16 @@ The next concrete check set in this directory supports the [`Code Reviewer`](D:/
 - [`code-reviewer-boundary.check.md`](D:/Projects/orpheum/checks/code-reviewer-boundary.check.md) validates that review outputs stay within independent review role boundaries.
 
 These checks are definition-of-done quality gates for the Code Reviewer lifecycle: frame review scope, record findings explicitly, make the review decision explicit, package the review handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Release / Handoff Manager Check Set
+
+The next concrete check set in this directory supports the [`Release / Handoff Manager`](D:/Projects/orpheum/roles/release-handoff-manager.md) role and its artifact library.
+
+- [`release-candidate-summary.check.md`](D:/Projects/orpheum/checks/release-candidate-summary.check.md) validates the release candidate summary artifact.
+- [`release-readiness-decision.check.md`](D:/Projects/orpheum/checks/release-readiness-decision.check.md) validates the release readiness decision artifact.
+- [`rollout-and-operations-notes.check.md`](D:/Projects/orpheum/checks/rollout-and-operations-notes.check.md) validates the rollout and operations notes artifact.
+- [`release-handoff.check.md`](D:/Projects/orpheum/checks/release-handoff.check.md) validates the release handoff artifact.
+- [`release-traceability.check.md`](D:/Projects/orpheum/checks/release-traceability.check.md) validates linkage from implementation, review, and verification packages through the release chain.
+- [`release-handoff-manager-boundary.check.md`](D:/Projects/orpheum/checks/release-handoff-manager-boundary.check.md) validates that release outputs stay within release packaging role boundaries.
+
+These checks are definition-of-done quality gates for the Release / Handoff Manager lifecycle: frame the release candidate, make the release posture explicit, preserve rollout caveats, package the release handoff, and remediate failures at the earliest stage that introduced the defect.

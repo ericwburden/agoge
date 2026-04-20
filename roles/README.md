@@ -21,6 +21,7 @@ Start from [`role.template.md`](D:/Projects/agoge/roles/role.template.md) when c
 - [`qa-verification-lead.md`](D:/Projects/agoge/roles/qa-verification-lead.md) defines the verification role that turns reviewed requirements, architecture, planning, and implementation context into a verification strategy, traceable evidence matrix, reviewed readiness judgment, and downstream verification handoff.
 - [`implementation-engineer.md`](D:/Projects/orpheum/roles/implementation-engineer.md) defines the implementation role that turns reviewed planning and architecture direction into a concrete change set, explicit implementation evidence, a reviewed implementation package, and downstream review-ready handoff.
 - [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md) defines the review role that turns a completed implementation package into explicit review scope, concrete findings, an independent review decision, and downstream handoff guidance.
+- [`release-handoff-manager.md`](D:/Projects/orpheum/roles/release-handoff-manager.md) defines the release packaging role that turns reviewed implementation, review, and verification outputs into explicit release posture, rollout notes, and downstream release or adoption handoff guidance.
 
 Use the Business Analyst role when a project needs help clarifying business goals, documenting as-is and to-be processes, verifying requirements, maintaining traceability, and preparing downstream roles for solutioning without mixing in implementation ownership too early.
 
@@ -37,3 +38,5 @@ Use the QA / Verification Lead role when reviewed requirements, architecture, pl
 Use the Implementation Engineer role when reviewed implementation direction needs to be turned into an explicit code change set, durable implementation evidence, a reviewed implementation package, and a downstream handoff without collapsing into planning, formal review ownership, or release operations.
 
 Use the Code Reviewer role when a completed implementation package needs independent defect-finding, explicit approval posture, and downstream-ready review context without collapsing into implementation ownership, full QA authority, or release approval.
+
+Use the Release / Handoff Manager role when reviewed implementation, review, and verification outputs need to be turned into explicit release posture, rollout caveats, and downstream-ready handoff guidance without collapsing into deployment execution, engineering ownership, or QA authority.
