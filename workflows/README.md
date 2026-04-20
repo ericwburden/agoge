@@ -328,3 +328,42 @@ The intended Release / Handoff Manager lifecycle in this repo is: reviewed imple
 - If repeated usage reveals consistent friction around repository-specific release rubrics, cross-project approval conventions, or deployment-authorization phrasing, that should trigger a later hardening pass rather than being hidden as informal operator intuition.
 
 Release / Handoff Manager work should treat existing Allium specifications as behavioral release anchors, but release artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Product Owner Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Product Owner`](D:/Projects/orpheum/roles/product-owner.md) role and the Product Owner artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`product-owner-direction.md`](D:/Projects/orpheum/workflows/product-owner-direction.md) turns validated requirements, product feedback, and delivery learnings into explicit product direction and backlog prioritization artifacts.
+- [`product-owner-review.md`](D:/Projects/orpheum/workflows/product-owner-review.md) reviews the drafted product package, records the product posture, and decides whether it is ready, conditional, or blocked.
+- [`product-owner-handoff.md`](D:/Projects/orpheum/workflows/product-owner-handoff.md) packages reviewed product outputs for downstream solutioning, planning, delivery, release-feedback, or approval consumers.
+- [`product-owner-quality-review.md`](D:/Projects/orpheum/workflows/product-owner-quality-review.md) runs the Product Owner check chain and routes remediation before downstream use.
+
+The intended Product Owner lifecycle in this repo is: validated discovery and feedback context -> product direction and backlog prioritization -> product decision review -> product handoff -> final quality review and remediation -> downstream solutioning, planning, delivery, or approval work.
+
+## Product Owner Skill Review
+
+### Direct Support
+
+- [`product-priority-framing`](D:/Projects/orpheum/skills/product-priority-framing/SKILL.md): preferred direct-support skill for turning validated requirements, feedback, and delivery learnings into explicit product direction, tradeoff framing, acceptance guardrails, deferred-scope discipline, and reprioritization triggers.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): preferred local-Markdown grounding path for turning validated needs, commitments, and acceptance-sensitive constraints into explicit product direction and prioritization.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when discovery, feedback, release learnings, and decision notes need to be combined before product work can proceed cleanly.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed product outputs into a downstream-ready handoff.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize prioritization workshops, stakeholder sessions, release-learnings reviews, or product decision meetings.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when product direction depends on market, platform, or standards context.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain product direction.
+- [`distill`](C:/Users/ericw/.codex/skills/allium/skills/distill/SKILL.md): useful when mature product intent should be sharpened into clearer behavioral commitments.
+- [`tend`](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md): useful when prioritization or product review reveals a real specification gap that should be refined upstream.
+
+### Remaining Design Choice
+
+- A dedicated repo-native product-priority skill now exists for this role, but the package still intentionally does not define a broader repository-specific roadmap-governance or delivery-commitment skill.
+- The package intentionally keeps product ownership separate from broad discovery execution, technical design, sprint administration, and release operations.
+- If repeated usage reveals consistent friction around broader repository-specific roadmap governance, cross-team delivery-commitment conventions, or release-feedback intake into prioritization, that should trigger a later hardening pass rather than being hidden as informal product judgment.
+
+Product Owner work should treat existing Allium specifications as behavioral product anchors, but product artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.

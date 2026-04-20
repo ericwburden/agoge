@@ -119,3 +119,16 @@ The next concrete artifact set in this directory is aligned to the [`Release / H
 Use this set when reviewed implementation, review, and verification outputs need to be turned into a downstream-ready release or adoption package rather than only a summary or approval label. Instantiate the needed artifact files into the project workspace before filling them out.
 
 The intended Release / Handoff Manager lifecycle is: select template, instantiate working copy, define the release candidate, make rollout notes explicit, review the release posture, package the release handoff, run checks, remediate failures, and only then move the release package downstream.
+
+## Product Owner Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Product Owner`](D:/Projects/orpheum/roles/product-owner.md) role.
+
+- [`product-direction.md`](D:/Projects/orpheum/artifacts/product-direction.md) defines the reusable structure for capturing current product goal, target users or stakeholders, value hypotheses, constraints, scope boundaries, and priority themes.
+- [`backlog-prioritization.md`](D:/Projects/orpheum/artifacts/backlog-prioritization.md) defines the reusable structure for capturing ordered work, ordering rationale, acceptance-oriented conditions, deferred scope, sequencing notes, and reprioritization triggers.
+- [`product-decision-review.md`](D:/Projects/orpheum/artifacts/product-decision-review.md) defines the reusable structure for capturing the product decision posture, risks, tradeoffs, conditions, and decision ownership before handoff.
+- [`product-handoff.md`](D:/Projects/orpheum/artifacts/product-handoff.md) defines the reusable structure for packaging reviewed product outputs for downstream solutioning, planning, delivery, release-feedback, or approval consumers.
+
+Use this set when validated requirements, feedback, and delivery learnings need to be turned into a downstream-ready product direction package rather than only backlog edits or meeting notes. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Product Owner lifecycle is: select template, instantiate working copy, define product direction, make backlog priorities explicit, review the current product posture, package the product handoff, run checks, remediate failures, and only then move the product package downstream.

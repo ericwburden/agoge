@@ -122,3 +122,16 @@ The next concrete check set in this directory supports the [`Release / Handoff M
 - [`release-handoff-manager-boundary.check.md`](D:/Projects/orpheum/checks/release-handoff-manager-boundary.check.md) validates that release outputs stay within release packaging role boundaries.
 
 These checks are definition-of-done quality gates for the Release / Handoff Manager lifecycle: frame the release candidate, make the release posture explicit, preserve rollout caveats, package the release handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Product Owner Check Set
+
+The next concrete check set in this directory supports the [`Product Owner`](D:/Projects/orpheum/roles/product-owner.md) role and its artifact library.
+
+- [`product-direction.check.md`](D:/Projects/orpheum/checks/product-direction.check.md) validates the product direction artifact.
+- [`backlog-prioritization.check.md`](D:/Projects/orpheum/checks/backlog-prioritization.check.md) validates the backlog prioritization artifact.
+- [`product-decision-review.check.md`](D:/Projects/orpheum/checks/product-decision-review.check.md) validates the product decision review artifact.
+- [`product-handoff.check.md`](D:/Projects/orpheum/checks/product-handoff.check.md) validates the product handoff artifact.
+- [`product-traceability.check.md`](D:/Projects/orpheum/checks/product-traceability.check.md) validates linkage from validated discovery and supporting evidence through the product chain.
+- [`product-owner-boundary.check.md`](D:/Projects/orpheum/checks/product-owner-boundary.check.md) validates that product outputs stay within product-ownership role boundaries.
+
+These checks are definition-of-done quality gates for the Product Owner lifecycle: define product direction, make priorities explicit, review the product posture, package the product handoff, and remediate failures at the earliest stage that introduced the defect.

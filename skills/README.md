@@ -84,6 +84,7 @@ Codex skills are modular instruction bundles that tell Codex how to execute a ta
 - [gh-fix-ci/](./gh-fix-ci/) - Inspect failing GitHub Actions checks, summarize failures, and propose fixes.
 - [implementation-package-prep/](./implementation-package-prep/) - Prepare downstream-ready implementation packages with explicit change inventory, evidence capture, self-review, and handoff context.
 - [implementation-skill-discovery/](./implementation-skill-discovery/) - Decide when recurring Implementation Engineer friction justifies a new dedicated implementation skill.
+- [product-priority-framing/](./product-priority-framing/) - Frame Product Owner direction, tradeoffs, acceptance guardrails, deferred scope, and reprioritization triggers from validated product inputs.
 - [release-readiness-packaging/](./release-readiness-packaging/) - Package reviewed delivery outputs into explicit release candidate, release posture, rollout caveat, and re-approval-ready artifacts.
 - [review-findings-authoring/](./review-findings-authoring/) - Author durable Code Reviewer findings with severity, confidence, affected-location, evidence-basis, and re-review discipline.
 - [mcp-builder/](./mcp-builder/) - Build and evaluate MCP servers with best practices and an evaluation harness.

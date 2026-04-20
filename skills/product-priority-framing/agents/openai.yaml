@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Priority Framing"
+  short_description: "Frame product priorities, tradeoffs, and acceptance guardrails."
+  default_prompt: "Use this skill to turn validated product inputs into explicit product direction, priority tradeoffs, acceptance guardrails, and reprioritization triggers."
