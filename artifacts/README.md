@@ -145,3 +145,16 @@ The next concrete artifact set in this directory is aligned to the [`Security / 
 Use this set when reviewed delivery context and governing obligations need to be turned into a downstream-ready security/compliance package rather than only ad hoc risk notes or checklist comments. Instantiate the needed artifact files into the project workspace before filling them out.
 
 The intended Security / Compliance Specialist lifecycle is: select template, instantiate working copy, define security/compliance scope, make controls and evidence expectations explicit, review the current posture, package the downstream handoff, run checks, remediate failures, and only then move the package downstream.
+
+## Scenario Designer Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Scenario Designer`](D:/Projects/orpheum/roles/scenario-designer.md) role.
+
+- [`scenario-definition.md`](D:/Projects/orpheum/artifacts/scenario-definition.md) defines the reusable structure for capturing a scenario's intent, lifecycle window, trigger conditions, participating roles, entry conditions, target outputs, exit conditions, and core sequence.
+- [`scenario-integration-map.md`](D:/Projects/orpheum/artifacts/scenario-integration-map.md) defines the reusable structure for capturing participating role-owned workflows, handoff contracts, branching rules, synchronization points, shared dependencies, and failure-routing expectations.
+- [`scenario-review.md`](D:/Projects/orpheum/artifacts/scenario-review.md) defines the reusable structure for capturing the current scenario posture, integration risks, remediation decisions, and readiness conditions before handoff.
+- [`scenario-handoff.md`](D:/Projects/orpheum/artifacts/scenario-handoff.md) defines the reusable structure for packaging reviewed scenario outputs for downstream adoption, tailoring, or execution-planning consumers.
+
+Use this set when existing role-local workflows need to be turned into a downstream-ready reusable multi-role scenario package rather than only a phase name, planning note, or ad hoc project plan. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Scenario Designer lifecycle is: select template, instantiate working copy, define the scenario boundary, map the role integration logic, review the scenario posture explicitly, package the scenario handoff, run checks, remediate failures, and only then move the scenario package downstream.

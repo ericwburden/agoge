@@ -148,3 +148,16 @@ The next concrete check set in this directory supports the [`Security / Complian
 - [`security-compliance-specialist-boundary.check.md`](D:/Projects/orpheum/checks/security-compliance-specialist-boundary.check.md) validates that security/compliance outputs stay within role boundaries.
 
 These checks are definition-of-done quality gates for the Security / Compliance Specialist lifecycle: frame the security/compliance scope, map controls and evidence, review the posture explicitly, package the downstream handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Scenario Designer Check Set
+
+The next concrete check set in this directory supports the [`Scenario Designer`](D:/Projects/orpheum/roles/scenario-designer.md) role and its artifact library.
+
+- [`scenario-definition.check.md`](D:/Projects/orpheum/checks/scenario-definition.check.md) validates the scenario definition artifact.
+- [`scenario-integration-map.check.md`](D:/Projects/orpheum/checks/scenario-integration-map.check.md) validates the scenario integration map artifact.
+- [`scenario-review.check.md`](D:/Projects/orpheum/checks/scenario-review.check.md) validates the durable scenario review artifact.
+- [`scenario-handoff.check.md`](D:/Projects/orpheum/checks/scenario-handoff.check.md) validates the scenario handoff artifact.
+- [`scenario-traceability.check.md`](D:/Projects/orpheum/checks/scenario-traceability.check.md) validates linkage from role-owned workflows, artifact contracts, and gating assumptions through the scenario chain.
+- [`scenario-designer-boundary.check.md`](D:/Projects/orpheum/checks/scenario-designer-boundary.check.md) validates that scenario outputs stay within Scenario Designer role boundaries.
+
+These checks are definition-of-done quality gates for the Scenario Designer lifecycle: define the scenario boundary, map the integration logic, review the scenario posture explicitly, package the scenario handoff, and remediate failures at the earliest stage that introduced the defect.

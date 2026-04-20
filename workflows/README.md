@@ -407,3 +407,48 @@ The intended Security / Compliance Specialist lifecycle in this repo is: reviewe
 - If repeated usage still reveals consistent friction around stronger exception specialization or stronger architecture/release bridges, that should trigger a later hardening pass rather than being hidden as informal specialist judgment.
 
 Security / Compliance Specialist work should treat existing Allium specifications as behavioral security/compliance anchors, but the artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Scenario Designer Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Scenario Designer`](D:/Projects/orpheum/roles/scenario-designer.md) role and the Scenario Designer artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`scenario-designer-composition.md`](D:/Projects/orpheum/workflows/scenario-designer-composition.md) turns a repeatable multi-role activity into a scenario definition and scenario integration map.
+- [`scenario-designer-review.md`](D:/Projects/orpheum/workflows/scenario-designer-review.md) reviews the drafted scenario package, records the readiness posture, and decides whether it is ready, conditional, or blocked.
+- [`scenario-designer-handoff.md`](D:/Projects/orpheum/workflows/scenario-designer-handoff.md) packages reviewed scenario outputs for downstream adoption, tailoring, or execution-planning consumers.
+- [`scenario-designer-quality-review.md`](D:/Projects/orpheum/workflows/scenario-designer-quality-review.md) runs the Scenario Designer check chain and routes remediation before downstream use.
+
+The intended Scenario Designer lifecycle in this repo is: scenario idea and source role packages -> scenario definition and integration mapping -> scenario review -> scenario handoff -> final quality review and remediation -> downstream adoption or execution-planning work.
+
+## Scenario Designer Skill Review
+
+### Direct Support
+
+- [`scenario-composition`](D:/Projects/orpheum/skills/scenario-composition/SKILL.md): preferred direct-support skill for turning a repeatable multi-role activity plus the relevant role packages into explicit scenario definition, integration mapping, and scenario-posture outputs.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path for combining role-package context, scenario intent, and public orchestration references before scenario work can proceed cleanly.
+- [`pattern-adaptation`](D:/Projects/orpheum/skills/pattern-adaptation/SKILL.md): preferred local-first path for translating tool-coupled or framework-specific orchestration patterns into repo-native scenario structure.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed scenario outputs into a downstream-ready scenario handoff.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize scenario-design workshops, phase-design sessions, or rough multi-role planning discussions.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when scenario design depends on public orchestration or process references.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain scenario gates or downstream flow.
+- [`tend`](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md): useful when scenario design reveals a real specification gap that should be refined upstream.
+- [`propagate`](C:/Users/ericw/.codex/skills/allium/skills/propagate/SKILL.md): useful when mature behavioral specifications should shape downstream steps inside the scenario.
+- [`weed`](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md): useful when scenario confidence depends on checking for specification-to-implementation drift at a scenario-sensitive gate.
+
+### Upstream Or Adjacent Only
+
+- [`role-definition`](D:/Projects/orpheum/skills/role-definition/SKILL.md) and [`role-support-system-design`](D:/Projects/orpheum/skills/role-support-system-design/SKILL.md): upstream Role Builder support when the scenario reveals that a role package itself needs strengthening.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): useful when scenario gating depends heavily on validated requirements, but still adjacent rather than core.
+
+### Remaining Design Choice
+
+- A dedicated repo-native scenario-composition skill now exists for this role, but the package still intentionally does not define a broader scenario-simulation, orchestration-runtime, or execution-engine skill.
+- The package intentionally keeps reusable scenario design separate from role-package design and from project-instance execution management.
+- If repeated usage reveals consistent friction around scenario dry-run validation or scenario-to-role-package evolution beyond the new composition skill, that should trigger a later hardening pass rather than being hidden as informal coordination intuition.
+
+Scenario Designer work should treat existing Allium specifications as behavioral scenario anchors, but scenario artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.

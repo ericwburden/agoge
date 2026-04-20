@@ -81,6 +81,8 @@ The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`product-own
 
 The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`security-compliance-specialist.md`](D:/Projects/orpheum/roles/security-compliance-specialist.md), which is intended for turning reviewed delivery context, obligations, risk surfaces, and control expectations into explicit security/compliance scope, control mapping, reviewed posture, and downstream handoff guidance.
 
+The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`scenario-designer.md`](D:/Projects/orpheum/roles/scenario-designer.md), which is intended for turning a repeatable multi-role activity into an explicit scenario package with participating roles, sequencing, handoffs, integration requirements, reviewed readiness, and downstream adoption guidance.
+
 ## Vendored Skills
 
 The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.
