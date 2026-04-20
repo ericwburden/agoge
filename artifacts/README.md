@@ -132,3 +132,16 @@ The next concrete artifact set in this directory is aligned to the [`Product Own
 Use this set when validated requirements, feedback, and delivery learnings need to be turned into a downstream-ready product direction package rather than only backlog edits or meeting notes. Instantiate the needed artifact files into the project workspace before filling them out.
 
 The intended Product Owner lifecycle is: select template, instantiate working copy, define product direction, make backlog priorities explicit, review the current product posture, package the product handoff, run checks, remediate failures, and only then move the product package downstream.
+
+## Security / Compliance Specialist Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Security / Compliance Specialist`](D:/Projects/orpheum/roles/security-compliance-specialist.md) role.
+
+- [`security-compliance-scope.md`](D:/Projects/orpheum/artifacts/security-compliance-scope.md) defines the reusable structure for capturing in-scope systems, assets, data types, obligations, trust boundaries, threat surfaces, assumptions, and open questions.
+- [`controls-and-evidence-matrix.md`](D:/Projects/orpheum/artifacts/controls-and-evidence-matrix.md) defines the reusable structure for capturing required controls, expected evidence, control owners, compensating controls, waivers, and unresolved gaps.
+- [`security-compliance-review.md`](D:/Projects/orpheum/artifacts/security-compliance-review.md) defines the reusable structure for capturing the current security/compliance posture, decision limits, residual risks, and required follow-up before handoff.
+- [`security-compliance-handoff.md`](D:/Projects/orpheum/artifacts/security-compliance-handoff.md) defines the reusable structure for packaging reviewed security/compliance outputs for downstream architecture, planning, implementation, verification, release, or approval consumers.
+
+Use this set when reviewed delivery context and governing obligations need to be turned into a downstream-ready security/compliance package rather than only ad hoc risk notes or checklist comments. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Security / Compliance Specialist lifecycle is: select template, instantiate working copy, define security/compliance scope, make controls and evidence expectations explicit, review the current posture, package the downstream handoff, run checks, remediate failures, and only then move the package downstream.

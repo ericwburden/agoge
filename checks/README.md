@@ -135,3 +135,16 @@ The next concrete check set in this directory supports the [`Product Owner`](D:/
 - [`product-owner-boundary.check.md`](D:/Projects/orpheum/checks/product-owner-boundary.check.md) validates that product outputs stay within product-ownership role boundaries.
 
 These checks are definition-of-done quality gates for the Product Owner lifecycle: define product direction, make priorities explicit, review the product posture, package the product handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Security / Compliance Specialist Check Set
+
+The next concrete check set in this directory supports the [`Security / Compliance Specialist`](D:/Projects/orpheum/roles/security-compliance-specialist.md) role and its artifact library.
+
+- [`security-compliance-scope.check.md`](D:/Projects/orpheum/checks/security-compliance-scope.check.md) validates the security/compliance scope artifact.
+- [`controls-and-evidence-matrix.check.md`](D:/Projects/orpheum/checks/controls-and-evidence-matrix.check.md) validates the controls/evidence matrix artifact.
+- [`security-compliance-review.check.md`](D:/Projects/orpheum/checks/security-compliance-review.check.md) validates the security/compliance review artifact.
+- [`security-compliance-handoff.check.md`](D:/Projects/orpheum/checks/security-compliance-handoff.check.md) validates the security/compliance handoff artifact.
+- [`security-compliance-traceability.check.md`](D:/Projects/orpheum/checks/security-compliance-traceability.check.md) validates linkage from reviewed delivery and obligation inputs through the security/compliance chain.
+- [`security-compliance-specialist-boundary.check.md`](D:/Projects/orpheum/checks/security-compliance-specialist-boundary.check.md) validates that security/compliance outputs stay within role boundaries.
+
+These checks are definition-of-done quality gates for the Security / Compliance Specialist lifecycle: frame the security/compliance scope, map controls and evidence, review the posture explicitly, package the downstream handoff, and remediate failures at the earliest stage that introduced the defect.

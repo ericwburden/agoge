@@ -23,6 +23,7 @@ Start from [`role.template.md`](D:/Projects/agoge/roles/role.template.md) when c
 - [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md) defines the review role that turns a completed implementation package into explicit review scope, concrete findings, an independent review decision, and downstream handoff guidance.
 - [`release-handoff-manager.md`](D:/Projects/orpheum/roles/release-handoff-manager.md) defines the release packaging role that turns reviewed implementation, review, and verification outputs into explicit release posture, rollout notes, and downstream release or adoption handoff guidance.
 - [`product-owner.md`](D:/Projects/orpheum/roles/product-owner.md) defines the product-governance role that turns validated requirements, product feedback, and delivery learnings into explicit product direction, backlog prioritization, reviewed product decisions, and downstream product handoff guidance.
+- [`security-compliance-specialist.md`](D:/Projects/orpheum/roles/security-compliance-specialist.md) defines the security/compliance role that turns reviewed delivery context, obligations, control expectations, and risk surfaces into explicit scope framing, control mapping, reviewed posture, and downstream handoff guidance.
 
 Use the Business Analyst role when a project needs help clarifying business goals, documenting as-is and to-be processes, verifying requirements, maintaining traceability, and preparing downstream roles for solutioning without mixing in implementation ownership too early.
 
@@ -43,3 +44,5 @@ Use the Code Reviewer role when a completed implementation package needs indepen
 Use the Release / Handoff Manager role when reviewed implementation, review, and verification outputs need to be turned into explicit release posture, rollout caveats, and downstream-ready handoff guidance without collapsing into deployment execution, engineering ownership, or QA authority.
 
 Use the Product Owner role when validated requirements, feedback, and delivery learnings need to be turned into explicit product direction, accountable prioritization, reviewed product decisions, and downstream-ready handoff guidance without collapsing into broad discovery, technical design, sprint administration, or release operations.
+
+Use the Security / Compliance Specialist role when reviewed delivery context and governing obligations need to be turned into explicit risk framing, control expectations, reviewed security/compliance posture, and downstream-ready handoff guidance without collapsing into legal sign-off, technical implementation, QA authority, or release execution.

@@ -87,6 +87,7 @@ Codex skills are modular instruction bundles that tell Codex how to execute a ta
 - [product-priority-framing/](./product-priority-framing/) - Frame Product Owner direction, tradeoffs, acceptance guardrails, deferred scope, and reprioritization triggers from validated product inputs.
 - [release-readiness-packaging/](./release-readiness-packaging/) - Package reviewed delivery outputs into explicit release candidate, release posture, rollout caveat, and re-approval-ready artifacts.
 - [review-findings-authoring/](./review-findings-authoring/) - Author durable Code Reviewer findings with severity, confidence, affected-location, evidence-basis, and re-review discipline.
+- [security-controls-and-exceptions/](./security-controls-and-exceptions/) - Frame security/compliance controls, evidence expectations, compensating controls, exceptions, approval limits, and re-review triggers from reviewed delivery context.
 - [mcp-builder/](./mcp-builder/) - Build and evaluate MCP servers with best practices and an evaluation harness.
 - [webapp-testing/](./webapp-testing/) - Run targeted web app tests and summarize results.
 

@@ -367,3 +367,43 @@ The intended Product Owner lifecycle in this repo is: validated discovery and fe
 - If repeated usage reveals consistent friction around broader repository-specific roadmap governance, cross-team delivery-commitment conventions, or release-feedback intake into prioritization, that should trigger a later hardening pass rather than being hidden as informal product judgment.
 
 Product Owner work should treat existing Allium specifications as behavioral product anchors, but product artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Security / Compliance Specialist Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Security / Compliance Specialist`](D:/Projects/orpheum/roles/security-compliance-specialist.md) role and the Security / Compliance Specialist artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`security-compliance-specialist-scoping.md`](D:/Projects/orpheum/workflows/security-compliance-specialist-scoping.md) turns reviewed delivery context and governing obligations into explicit security/compliance scope and controls/evidence artifacts.
+- [`security-compliance-specialist-review.md`](D:/Projects/orpheum/workflows/security-compliance-specialist-review.md) reviews the drafted security/compliance package, records the posture, and decides whether it is ready, conditional, or blocked.
+- [`security-compliance-specialist-handoff.md`](D:/Projects/orpheum/workflows/security-compliance-specialist-handoff.md) packages reviewed security/compliance outputs for downstream architecture, planning, implementation, verification, release, or approval consumers.
+- [`security-compliance-specialist-quality-review.md`](D:/Projects/orpheum/workflows/security-compliance-specialist-quality-review.md) runs the Security / Compliance Specialist check chain and routes remediation before downstream use.
+
+The intended Security / Compliance Specialist lifecycle in this repo is: reviewed delivery and obligation context -> security/compliance scope and controls/evidence mapping -> security/compliance review -> security/compliance handoff -> final quality review and remediation -> downstream architecture, planning, implementation, verification, release, or approval work.
+
+## Security / Compliance Specialist Skill Review
+
+### Direct Support
+
+- [`security-controls-and-exceptions`](D:/Projects/orpheum/skills/security-controls-and-exceptions/SKILL.md): preferred direct-support skill for turning reviewed delivery and obligation context into explicit controls, evidence expectations, compensating controls, exception posture, approval limits, and re-review discipline.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path for turning reviewed delivery, policy, vendor, obligation, and operational context into explicit security/compliance framing.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): preferred local-Markdown grounding path when risk or obligation posture depends heavily on validated needs, commitments, or acceptance-sensitive constraints.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed security/compliance outputs into a downstream-ready handoff.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize security review sessions, audit notes, stakeholder meetings, or obligation workshops.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when obligation framing depends on platform, standards, or regulatory context.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain security/compliance posture.
+- [`distill`](C:/Users/ericw/.codex/skills/allium/skills/distill/SKILL.md): useful when mature policy-sensitive intent should be sharpened into clearer behavioral commitments.
+- [`tend`](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md): useful when review reveals a real policy or approval-behavior gap that should be refined upstream.
+- [`weed`](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md): useful when confidence depends on checking for specification-to-implementation drift in a security-sensitive area.
+
+### Remaining Design Choice
+
+- A dedicated repo-native security/compliance framing skill now exists for this role, but the package still intentionally does not define a broader legal-interpretation, control-implementation, or deployment-authorization skill.
+- The package intentionally keeps security/compliance framing separate from legal sign-off, technical implementation, QA authority, and release execution.
+- If repeated usage still reveals consistent friction around stronger exception specialization or stronger architecture/release bridges, that should trigger a later hardening pass rather than being hidden as informal specialist judgment.
+
+Security / Compliance Specialist work should treat existing Allium specifications as behavioral security/compliance anchors, but the artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
