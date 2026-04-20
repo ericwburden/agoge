@@ -19,6 +19,8 @@ Start from [`role.template.md`](D:/Projects/agoge/roles/role.template.md) when c
 - [`solution-architect.md`](D:/Projects/agoge/roles/solution-architect.md) defines the architecture role that turns validated requirements into a solution shape, decision record, review outcome, and downstream technical handoff.
 - [`technical-planner.md`](D:/Projects/agoge/roles/technical-planner.md) defines the execution-planning role that turns reviewed architecture and validated requirements into an implementation strategy, sequencing plan, reviewed planning package, and downstream implementation handoff.
 - [`qa-verification-lead.md`](D:/Projects/agoge/roles/qa-verification-lead.md) defines the verification role that turns reviewed requirements, architecture, planning, and implementation context into a verification strategy, traceable evidence matrix, reviewed readiness judgment, and downstream verification handoff.
+- [`implementation-engineer.md`](D:/Projects/orpheum/roles/implementation-engineer.md) defines the implementation role that turns reviewed planning and architecture direction into a concrete change set, explicit implementation evidence, a reviewed implementation package, and downstream review-ready handoff.
+- [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md) defines the review role that turns a completed implementation package into explicit review scope, concrete findings, an independent review decision, and downstream handoff guidance.
 
 Use the Business Analyst role when a project needs help clarifying business goals, documenting as-is and to-be processes, verifying requirements, maintaining traceability, and preparing downstream roles for solutioning without mixing in implementation ownership too early.
 
@@ -31,3 +33,7 @@ Use the Solution Architect role when validated BA outputs need to be turned into
 Use the Technical Planner role when reviewed architecture and validated requirements need to be turned into an execution-ready implementation strategy, explicit sequencing and dependency handling, reviewed readiness, and a downstream implementation handoff without collapsing into sprint administration or code ownership.
 
 Use the QA / Verification Lead role when reviewed requirements, architecture, planning, and implementation context need to be turned into an evidence-based verification strategy, explicit coverage and gap framing, reviewed readiness, and a downstream verification handoff without collapsing into implementation ownership or release operations.
+
+Use the Implementation Engineer role when reviewed implementation direction needs to be turned into an explicit code change set, durable implementation evidence, a reviewed implementation package, and a downstream handoff without collapsing into planning, formal review ownership, or release operations.
+
+Use the Code Reviewer role when a completed implementation package needs independent defect-finding, explicit approval posture, and downstream-ready review context without collapsing into implementation ownership, full QA authority, or release approval.

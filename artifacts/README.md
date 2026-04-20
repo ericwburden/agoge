@@ -80,3 +80,29 @@ The next concrete artifact set in this directory is aligned to the [`QA / Verifi
 Use this set when reviewed delivery artifacts and implementation evidence need to be turned into a downstream-ready verification package. Instantiate the needed artifact files into the project workspace before filling them out.
 
 The intended QA / Verification Lead lifecycle is: select template, instantiate working copy, define the verification strategy, map verification coverage, review the evidence package explicitly, package the verification handoff, run checks, remediate failures, and only then move the verification package downstream.
+
+## Implementation Engineer Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Implementation Engineer`](D:/Projects/orpheum/roles/implementation-engineer.md) role.
+
+- [`implementation-record.md`](D:/Projects/orpheum/artifacts/implementation-record.md) defines the reusable structure for capturing implementation scope, upstream traceability, changed areas, deviations, blockers, and deferred work.
+- [`implementation-evidence.md`](D:/Projects/orpheum/artifacts/implementation-evidence.md) defines the reusable structure for capturing local validation activities, observed results, provenance, skipped checks, and evidence gaps.
+- [`implementation-readiness-review.md`](D:/Projects/orpheum/artifacts/implementation-readiness-review.md) defines the reusable structure for capturing durable implementation-package findings, readiness, remediation, and upstream routing before handoff.
+- [`implementation-package-handoff.md`](D:/Projects/orpheum/artifacts/implementation-package-handoff.md) defines the reusable structure for packaging reviewed implementation outputs for downstream code review, verification, and release-adjacent roles.
+
+Use this set when reviewed planning and architecture direction need to be turned into a downstream-ready implementation package rather than only a raw code diff. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Implementation Engineer lifecycle is: select template, instantiate working copy, record the implemented slice and evidence, review implementation readiness explicitly, package the implementation handoff, run checks, remediate failures, and only then move the implementation package downstream.
+
+## Code Reviewer Artifacts
+
+The next concrete artifact set in this directory is aligned to the [`Code Reviewer`](D:/Projects/orpheum/roles/code-reviewer.md) role.
+
+- [`code-review-scope.md`](D:/Projects/orpheum/artifacts/code-review-scope.md) defines the reusable structure for capturing the reviewed change boundary, reviewed inputs, upstream conformance anchors, hotspots, and review limits.
+- [`review-findings.md`](D:/Projects/orpheum/artifacts/review-findings.md) defines the reusable structure for capturing durable review findings, severity, confidence, affected areas, and requested remediation or evidence.
+- [`review-decision.md`](D:/Projects/orpheum/artifacts/review-decision.md) defines the reusable structure for capturing the review posture, blocking versus non-blocking concerns, required remediation, and unresolved risks before handoff.
+- [`review-handoff.md`](D:/Projects/orpheum/artifacts/review-handoff.md) defines the reusable structure for packaging reviewed code-review outputs for downstream implementation, verification, release-adjacent, or human approval consumers.
+
+Use this set when a completed implementation package needs to be turned into a downstream-ready independent review package rather than only a collection of comments or an approval label. Instantiate the needed artifact files into the project workspace before filling them out.
+
+The intended Code Reviewer lifecycle is: select template, instantiate working copy, define review scope, record findings explicitly, decide the review posture, package the review handoff, run checks, remediate failures, and only then move the review package downstream.

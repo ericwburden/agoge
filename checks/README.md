@@ -83,3 +83,29 @@ The next concrete check set in this directory supports the [`QA / Verification L
 - [`qa-verification-boundary.check.md`](D:/Projects/agoge/checks/qa-verification-boundary.check.md) validates that verification outputs stay within role boundaries.
 
 These checks are definition-of-done quality gates for the QA / Verification Lead lifecycle: define the verification strategy, map coverage and evidence, review the verification package explicitly, package the verification handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Implementation Engineer Check Set
+
+The next concrete check set in this directory supports the [`Implementation Engineer`](D:/Projects/orpheum/roles/implementation-engineer.md) role and its artifact library.
+
+- [`implementation-record.check.md`](D:/Projects/orpheum/checks/implementation-record.check.md) validates the implementation record artifact.
+- [`implementation-evidence.check.md`](D:/Projects/orpheum/checks/implementation-evidence.check.md) validates the implementation evidence artifact.
+- [`implementation-readiness-review.check.md`](D:/Projects/orpheum/checks/implementation-readiness-review.check.md) validates the durable implementation readiness review artifact.
+- [`implementation-package-handoff.check.md`](D:/Projects/orpheum/checks/implementation-package-handoff.check.md) validates the implementation package handoff artifact.
+- [`implementation-traceability.check.md`](D:/Projects/orpheum/checks/implementation-traceability.check.md) validates linkage from upstream requirements, architecture, planning, and specifications through the implementation chain.
+- [`implementation-engineer-boundary.check.md`](D:/Projects/orpheum/checks/implementation-engineer-boundary.check.md) validates that implementation outputs stay within role boundaries.
+
+These checks are definition-of-done quality gates for the Implementation Engineer lifecycle: capture the implementation record, capture implementation evidence, review the implementation package explicitly, package the downstream handoff, and remediate failures at the earliest stage that introduced the defect.
+
+## Code Reviewer Check Set
+
+The next concrete check set in this directory supports the [`Code Reviewer`](D:/Projects/orpheum/roles/code-reviewer.md) role and its artifact library.
+
+- [`code-review-scope.check.md`](D:/Projects/orpheum/checks/code-review-scope.check.md) validates the code review scope artifact.
+- [`review-findings.check.md`](D:/Projects/orpheum/checks/review-findings.check.md) validates the durable review findings artifact.
+- [`review-decision.check.md`](D:/Projects/orpheum/checks/review-decision.check.md) validates the review decision artifact.
+- [`review-handoff.check.md`](D:/Projects/orpheum/checks/review-handoff.check.md) validates the review handoff artifact.
+- [`review-traceability.check.md`](D:/Projects/orpheum/checks/review-traceability.check.md) validates linkage from the implementation package and upstream commitments through the review chain.
+- [`code-reviewer-boundary.check.md`](D:/Projects/orpheum/checks/code-reviewer-boundary.check.md) validates that review outputs stay within independent review role boundaries.
+
+These checks are definition-of-done quality gates for the Code Reviewer lifecycle: frame review scope, record findings explicitly, make the review decision explicit, package the review handoff, and remediate failures at the earliest stage that introduced the defect.

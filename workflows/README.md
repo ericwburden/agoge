@@ -195,3 +195,92 @@ The intended QA / Verification Lead lifecycle in this repo is: reviewed requirem
 - No dedicated evidence-review or coverage-mapping skill exists yet. For now, coverage and review discipline is embedded directly in `requirements-verification`, the verification artifacts, and the QA / Verification Lead checks.
 
 QA / Verification Lead work should treat existing Allium specifications as behavioral verification anchors, but verification artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Implementation Engineer Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Implementation Engineer`](D:/Projects/orpheum/roles/implementation-engineer.md) role and the Implementation Engineer artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`implementation-engineer-execution.md`](D:/Projects/orpheum/workflows/implementation-engineer-execution.md) turns reviewed planning and architecture handoff into an implementation record and implementation evidence package.
+- [`implementation-engineer-review.md`](D:/Projects/orpheum/workflows/implementation-engineer-review.md) reviews drafted implementation outputs, records findings, and decides whether the package is ready for downstream use.
+- [`implementation-engineer-handoff.md`](D:/Projects/orpheum/workflows/implementation-engineer-handoff.md) packages completed implementation outputs for downstream review, verification, and release-adjacent roles.
+- [`implementation-engineer-quality-review.md`](D:/Projects/orpheum/workflows/implementation-engineer-quality-review.md) runs the Implementation Engineer check chain and routes remediation before downstream use.
+
+The intended Implementation Engineer lifecycle in this repo is: reviewed implementation handoff -> implementation record and evidence -> implementation readiness review -> implementation package handoff -> final quality review and remediation -> downstream review and verification work.
+
+## Implementation Engineer Skill Review
+
+### Direct Support
+
+- [`implementation-package-prep`](D:/Projects/orpheum/skills/implementation-package-prep/SKILL.md): preferred direct-support skill for turning implemented work into an explicit implementation record, evidence package, implementation-package self-review, and downstream handoff.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when planning, architecture, requirement, code, and evidence context need to be combined before implementation packaging can proceed cleanly.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed implementation outputs into a downstream-ready handoff.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize implementation working-session notes, defect notes, or debug-session transcripts.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when implementation depends on external standards, platform guidance, or integration references.
+- [`webapp-testing`](D:/Projects/orpheum/skills/webapp-testing/SKILL.md): conditional implementation-evidence support when the slice includes browser-based or web-application behavior.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain the implementation.
+- [`weed`](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md): useful when implementation confidence depends on checking for specification-to-code drift.
+
+### Downstream Or Adjacent Only
+
+- [`spec-to-implementation`](D:/Projects/orpheum/skills/spec-to-implementation/SKILL.md): upstream planning support rather than a default Implementation Engineer dependency.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): downstream verification support rather than a core implementation skill.
+- [`gh-address-comments`](D:/Projects/orpheum/skills/gh-address-comments/SKILL.md) and [`gh-fix-ci`](D:/Projects/orpheum/skills/gh-fix-ci/SKILL.md): useful in repository-specific GitHub workflows, but not core to the repo-neutral role package.
+
+### Remaining Design Choice
+
+- A dedicated repo-native packaging skill now exists for this role, but the package still intentionally does not define a generic implementation-execution coding skill.
+- The package intentionally treats implementation-package readiness review as an internal self-review step, not as a replacement for future Code Reviewer or QA / Verification Lead work.
+- [`implementation-skill-discovery`](D:/Projects/orpheum/skills/implementation-skill-discovery/SKILL.md) is the explicit mechanism for deciding when that "future skill" should stop being deferred and what narrow shape it should take.
+- The standard trigger point for that decision is repeated failure or remediation patterns observed during [`implementation-engineer-quality-review.md`](D:/Projects/orpheum/workflows/implementation-engineer-quality-review.md).
+
+Implementation Engineer work should treat existing Allium specifications as behavioral implementation constraints, but implementation artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Code Reviewer Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Code Reviewer`](D:/Projects/orpheum/roles/code-reviewer.md) role and the Code Reviewer artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`code-reviewer-analysis.md`](D:/Projects/orpheum/workflows/code-reviewer-analysis.md) turns a completed implementation package into explicit review scope and durable review findings.
+- [`code-reviewer-decision.md`](D:/Projects/orpheum/workflows/code-reviewer-decision.md) reviews the drafted findings package, records the review posture, and decides whether the change is approved, conditional, or blocked.
+- [`code-reviewer-handoff.md`](D:/Projects/orpheum/workflows/code-reviewer-handoff.md) packages reviewed code-review outputs for downstream implementation, verification, release-adjacent, or human approval consumers.
+- [`code-reviewer-quality-review.md`](D:/Projects/orpheum/workflows/code-reviewer-quality-review.md) runs the Code Reviewer check chain and routes remediation before downstream use.
+
+The intended Code Reviewer lifecycle in this repo is: reviewed implementation package -> code review scope and findings -> review decision -> review handoff -> final quality review and remediation -> downstream implementation, verification, or approval work.
+
+## Code Reviewer Skill Review
+
+### Direct Support
+
+- [`review-findings-authoring`](D:/Projects/orpheum/skills/review-findings-authoring/SKILL.md): preferred direct-support skill for turning implementation context into explicit Code Reviewer findings with severity, confidence, location, evidence-basis, and re-review discipline.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when implementation context, upstream commitments, code signals, and evidence notes need to be combined before review artifacts can be written honestly.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): preferred local-Markdown grounding path when review findings hinge on requirement conformance, acceptance commitments, or unsupported behavior claims.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for packaging reviewed code-review outputs into a downstream-ready handoff.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize review notes, implementation walkthrough notes, or defect-discussion transcripts.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when review depends on external standards, platform guidance, or integration references.
+- [`webapp-testing`](D:/Projects/orpheum/skills/webapp-testing/SKILL.md): conditional support when a suspected finding depends on targeted browser or application reproduction.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain review judgment.
+- [`weed`](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md): useful when review confidence depends on checking for specification-to-code drift.
+
+### Downstream Or Adjacent Only
+
+- [`gh-address-comments`](D:/Projects/orpheum/skills/gh-address-comments/SKILL.md): useful after review when implementation owners need to address submitted feedback, but not a core Code Reviewer authoring skill.
+- [`gh-fix-ci`](D:/Projects/orpheum/skills/gh-fix-ci/SKILL.md): useful when failing CI materially affects review posture, but still adjacent rather than core.
+
+### Remaining Design Choice
+
+- A dedicated repo-native findings-authoring skill now exists for this role, but the package still intentionally does not define a generic repository-specific review-rubric or approval skill.
+- The package intentionally keeps code review separate from implementation ownership and from broader QA or verification authority.
+- If repeated usage reveals consistent friction around repository-specific review rubrics or broader approval conventions, that should trigger a later hardening pass rather than being hidden as informal reviewer intuition.
+
+Code Reviewer work should treat existing Allium specifications as behavioral review anchors, but review artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.

@@ -71,6 +71,10 @@ The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`technical-pla
 
 The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`qa-verification-lead.md`](D:/Projects/agoge/roles/qa-verification-lead.md), which is intended for turning reviewed requirements, architecture, planning, and implementation context into an explicit verification strategy, traceable coverage matrix, evidence review, and downstream verification handoff.
 
+The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`implementation-engineer.md`](D:/Projects/orpheum/roles/implementation-engineer.md), which is intended for turning reviewed planning and architecture direction into a concrete change set, explicit implementation evidence, reviewed implementation-package readiness, and a downstream handoff for review and verification roles.
+
+The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md), which is intended for turning a completed implementation package into explicit review scope, concrete findings, an independent review decision, and a downstream handoff for implementation, verification, or release-adjacent consumers.
+
 ## Vendored Skills
 
 The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.
