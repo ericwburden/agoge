@@ -284,3 +284,47 @@ The intended Code Reviewer lifecycle in this repo is: reviewed implementation pa
 - If repeated usage reveals consistent friction around repository-specific review rubrics or broader approval conventions, that should trigger a later hardening pass rather than being hidden as informal reviewer intuition.
 
 Code Reviewer work should treat existing Allium specifications as behavioral review anchors, but review artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
+
+## Release / Handoff Manager Workflow Set
+
+The next concrete workflow set in this directory is aligned to the [`Release / Handoff Manager`](D:/Projects/orpheum/roles/release-handoff-manager.md) role and the Release / Handoff Manager artifact library in [`artifacts/`](D:/Projects/orpheum/artifacts).
+
+- [`release-handoff-manager-packaging.md`](D:/Projects/orpheum/workflows/release-handoff-manager-packaging.md) turns reviewed implementation, review, and verification packages into an explicit release candidate summary and rollout notes package.
+- [`release-handoff-manager-readiness-review.md`](D:/Projects/orpheum/workflows/release-handoff-manager-readiness-review.md) reviews the drafted release package, records the release posture, and decides whether the candidate is ready, conditional, or blocked.
+- [`release-handoff-manager-handoff.md`](D:/Projects/orpheum/workflows/release-handoff-manager-handoff.md) packages reviewed release outputs for downstream release-adjacent, operational, or adoption consumers.
+- [`release-handoff-manager-quality-review.md`](D:/Projects/orpheum/workflows/release-handoff-manager-quality-review.md) runs the Release / Handoff Manager check chain and routes remediation before downstream use.
+
+The intended Release / Handoff Manager lifecycle in this repo is: reviewed implementation, review, and verification packages -> release candidate summary and rollout notes -> release readiness decision -> release handoff -> final quality review and remediation -> downstream release-adjacent or adoption work.
+
+## Release / Handoff Manager Skill Review
+
+### Direct Support
+
+- [`release-readiness-packaging`](D:/Projects/orpheum/skills/release-readiness-packaging/SKILL.md): preferred direct-support skill for turning reviewed implementation, review, and verification packages into explicit release candidate framing, release posture, rollout caveats, and re-approval discipline.
+- [`handoff-packaging`](D:/Projects/orpheum/skills/handoff-packaging/SKILL.md): preferred local-Markdown path for turning reviewed delivery artifacts into a downstream-ready release or adoption package.
+- [`research-documentation`](D:/Projects/orpheum/skills/research-documentation/SKILL.md): preferred local-Markdown synthesis path when implementation, review, verification, operational, and approval context need to be combined before release packaging can proceed cleanly.
+- [`requirements-verification`](D:/Projects/orpheum/skills/requirements-verification/SKILL.md): preferred local-Markdown grounding path when release framing depends heavily on validated behavior or acceptance commitments.
+
+### Use As-Is
+
+- [`meeting-notes-and-actions`](D:/Projects/orpheum/skills/meeting-notes-and-actions/SKILL.md): normalize release coordination notes, operational review notes, approval notes, or adoption notes.
+- [`content-research-writer`](D:/Projects/orpheum/skills/content-research-writer/SKILL.md): optional external research and citation support when release packaging depends on external platform guidance, compliance notes, or downstream communication expectations.
+- [`webapp-testing`](D:/Projects/orpheum/skills/webapp-testing/SKILL.md): conditional support when release posture depends on targeted validation or demonstration evidence beyond the current package summary.
+
+### Allium-Aware Support
+
+- [`allium`](C:/Users/ericw/.codex/skills/allium/SKILL.md): useful when existing behavioral specifications materially constrain rollout or downstream release communication.
+- [`weed`](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md): useful when release confidence depends on checking for specification-to-code drift.
+
+### Downstream Or Adjacent Only
+
+- deployment tools and environment-specific operational systems remain downstream or adjacent concerns rather than core repo-neutral role-package support.
+- [`gh-fix-ci`](D:/Projects/orpheum/skills/gh-fix-ci/SKILL.md): useful when failing CI materially affects release posture, but still adjacent rather than core.
+
+### Remaining Design Choice
+
+- A dedicated repo-native release-packaging skill now exists for this role, but the package still intentionally does not define a generic repository-specific release-rubric or deployment-authorization skill.
+- The package intentionally keeps release packaging separate from deployment execution, implementation ownership, and broader QA authority.
+- If repeated usage reveals consistent friction around repository-specific release rubrics, cross-project approval conventions, or deployment-authorization phrasing, that should trigger a later hardening pass rather than being hidden as informal operator intuition.
+
+Release / Handoff Manager work should treat existing Allium specifications as behavioral release anchors, but release artifacts themselves remain Markdown-first in this repository unless a later repo convention says otherwise.
