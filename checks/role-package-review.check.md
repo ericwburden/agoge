@@ -1,3 +1,27 @@
+---
+id: role-package-review
+kind: check
+title: Role Package Review Check
+version: 1
+summary: Validate that a role-package review records meaningful findings, remediation
+  decisions, and a defensible readiness assessment for the role package.
+mode: headings
+severity: error
+applies_to:
+- role-package-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Role In Scope
+- Reviewed Inputs
+- Review Findings
+- Remediation Decisions
+- Readiness Assessment
+- Remaining Risks
+- Recommended Next Steps
+---
+
 # Role Package Review Check
 
 ## Purpose

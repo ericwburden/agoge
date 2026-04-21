@@ -1,3 +1,32 @@
+---
+id: role-definition-brief
+kind: check
+title: Role Definition Brief Check
+version: 1
+summary: Validate that a role definition brief is explicit enough to support design
+  of the role's artifacts, workflows, checks, and supporting skills.
+mode: headings
+severity: error
+applies_to:
+- role-definition-brief
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Role Name
+- Job To Be Done
+- Intended Audience And Consumers
+- Lifecycle Position
+- Success Criteria
+- Primary Responsibilities
+- Out Of Scope
+- Default Outputs
+- Allium Relationship
+- Source Material And References
+- Assumptions
+- Open Questions
+---
+
 # Role Definition Brief Check
 
 ## Purpose

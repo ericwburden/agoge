@@ -1,3 +1,34 @@
+---
+id: implementation-handoff
+kind: check
+title: Implementation Handoff Check
+version: 1
+summary: Validate that the implementation handoff is complete enough for downstream
+  implementation and verification roles to continue without reconstructing the execution
+  structure or planning rationale from earlier artifacts.
+mode: headings
+severity: error
+applies_to:
+- implementation-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Handoff Summary
+- Planning Summary
+- Review Status And Key Findings
+- Readiness Ownership And Conditions
+- Ordered Slices And Dependency Hotspots
+- Slice Exit Criteria Summary
+- Verification And Test Strategy Touchpoints
+- Rollout, Migration, And Control-Point Watchouts
+- Specification Relationship
+- Unresolved Decisions And Risks
+- Deferred Or Not Included
+- Recommended Downstream Consumers
+- Next Decision Points
+---
+
 # Implementation Handoff Check
 
 ## Purpose

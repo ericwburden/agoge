@@ -1,3 +1,29 @@
+---
+id: product-owner-review
+kind: workflow
+title: Product Owner Review
+version: 1
+summary: Review the drafted product package, record the durable product decision posture,
+  and decide whether the package is ready, conditional, or blocked for downstream
+  solutioning or planning.
+role: product-owner
+inputs:
+- product-direction
+- backlog-prioritization
+outputs:
+- product-decision-review
+skills:
+- product-priority-framing
+- requirements-verification
+- research-documentation
+- meeting-notes-and-actions
+checks:
+- product-decision-review
+- product-traceability
+- product-owner-boundary
+handoff_to: []
+---
+
 # Product Owner Review
 
 ## Purpose

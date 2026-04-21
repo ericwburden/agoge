@@ -1,3 +1,33 @@
+---
+id: security-compliance-specialist-quality-review
+kind: workflow
+title: Security / Compliance Specialist Quality Review
+version: 1
+summary: Run the Security / Compliance Specialist check chain across the package,
+  confirm whether it is coherent and downstream-usable, and route remediation to the
+  earliest artifact that introduced any defect.
+role: security-compliance-specialist
+inputs:
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+outputs: []
+skills:
+- security-controls-and-exceptions
+- research-documentation
+- requirements-verification
+- handoff-packaging
+checks:
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+handoff_to: []
+---
+
 # Security / Compliance Specialist Quality Review
 
 ## Purpose

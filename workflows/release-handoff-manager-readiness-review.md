@@ -1,3 +1,29 @@
+---
+id: release-handoff-manager-readiness-review
+kind: workflow
+title: Release / Handoff Manager Readiness Review
+version: 1
+summary: Review the drafted release package, record the durable release posture, and
+  decide whether the candidate is ready, ready with conditions, or blocked pending
+  remediation or approval.
+role: release-handoff-manager
+inputs:
+- release-candidate-summary
+- rollout-and-operations-notes
+outputs:
+- release-readiness-decision
+skills:
+- release-readiness-packaging
+- research-documentation
+- handoff-packaging
+- requirements-verification
+checks:
+- release-readiness-decision
+- release-traceability
+- release-handoff-manager-boundary
+handoff_to: []
+---
+
 # Release / Handoff Manager Readiness Review
 
 ## Purpose

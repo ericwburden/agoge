@@ -1,3 +1,19 @@
+---
+id: review-decision
+kind: artifact
+title: Review Decision
+version: 1
+summary: Capture the durable decision record for a drafted code review package, including
+  the findings considered, the current review status, remediation conditions, unresolved
+  risks, and what should happen next.
+template: true
+default_output_path: docs/verification/review-decision.md
+checks:
+- review-decision
+- review-traceability
+- code-reviewer-boundary
+---
+
 # Review Decision
 
 ## Purpose

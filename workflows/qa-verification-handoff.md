@@ -1,3 +1,27 @@
+---
+id: qa-verification-handoff
+kind: workflow
+title: QA / Verification Handoff
+version: 1
+summary: Turn completed verification outputs into a downstream-ready handoff for implementation,
+  review, or release-adjacent roles.
+role: null
+inputs:
+- verification-strategy
+- verification-matrix
+- evidence-review
+outputs:
+- verification-handoff
+skills:
+- handoff-packaging
+- research-documentation
+checks:
+- verification-handoff
+- verification-traceability
+- qa-verification-boundary
+handoff_to: []
+---
+
 # QA / Verification Handoff
 
 ## Purpose

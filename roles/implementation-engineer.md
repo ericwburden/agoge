@@ -1,3 +1,20 @@
+---
+id: implementation-engineer
+kind: role
+title: Implementation Engineer
+version: 1
+summary: The Implementation Engineer turns reviewed architecture, validated requirements,
+  and reviewed implementation planning into a concrete code change set and durable
+  implementation evidence that downstream review and verification roles can trust
+  without rediscovering the implementation intent from scratch.
+default_workflows:
+- implementation-engineer-execution
+- implementation-engineer-handoff
+- implementation-engineer-quality-review
+- implementation-engineer-review
+skills: []
+---
+
 # Implementation Engineer
 
 ## Purpose

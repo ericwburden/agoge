@@ -1,3 +1,32 @@
+---
+id: implementation-engineer-quality-review
+kind: workflow
+title: Implementation Engineer Quality Review
+version: 1
+summary: Run the full Implementation Engineer check chain against an implementation
+  package and route remediation before downstream use.
+role: implementation-engineer
+inputs:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+outputs: []
+skills:
+- implementation-package-prep
+- research-documentation
+- handoff-packaging
+- implementation-skill-discovery
+checks:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+- implementation-traceability
+- implementation-engineer-boundary
+handoff_to: []
+---
+
 # Implementation Engineer Quality Review
 
 ## Purpose

@@ -1,3 +1,19 @@
+---
+id: implementation-handoff
+kind: artifact
+title: Implementation Handoff
+version: 1
+summary: Capture the downstream-ready planning summary, ordered slices, dependency
+  hotspots, readiness conditions, and unresolved issues that implementation and verification
+  roles need to continue the work.
+template: true
+default_output_path: docs/planning/implementation-handoff.md
+checks:
+- implementation-handoff
+- planning-traceability
+- technical-planner-boundary
+---
+
 # Implementation Handoff
 
 ## Purpose

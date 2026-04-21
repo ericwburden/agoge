@@ -1,3 +1,30 @@
+---
+id: backlog-prioritization
+kind: check
+title: Backlog Prioritization Check
+version: 1
+summary: Validate that the backlog prioritization artifact makes the current ordering,
+  rationale, acceptance-oriented conditions, deferred scope, and reprioritization
+  triggers explicit.
+mode: headings
+severity: error
+applies_to:
+- backlog-prioritization
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Decision Scope
+- Prioritized Work Set
+- Ordering Rationale
+- Acceptance-Oriented Conditions
+- Deferred Or Excluded Scope
+- Sequencing And Dependency Notes
+- Stakeholder Tensions And Tradeoffs
+- Reprioritization Triggers
+- Recommended Next Step
+---
+
 # Backlog Prioritization Check
 
 ## Purpose

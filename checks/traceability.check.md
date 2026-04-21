@@ -1,3 +1,20 @@
+---
+id: traceability
+kind: check
+title: Traceability Check
+version: 1
+summary: Validate that the Business Analyst artifact chain preserves traceability
+  from business objectives to process needs to verified requirements and downstream
+  handoff.
+mode: presence
+severity: error
+applies_to:
+- business-objectives
+- process-analysis
+- requirements-specification
+- requirements-handoff
+---
+
 # Traceability Check
 
 ## Purpose

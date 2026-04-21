@@ -1,3 +1,31 @@
+---
+id: implementation-package-handoff
+kind: check
+title: Implementation Package Handoff Check
+version: 1
+summary: Validate that the implementation package handoff artifact preserves the implementation
+  scope, change footprint, evidence posture, readiness state, and revalidation logic
+  needed by downstream review and verification roles.
+mode: headings
+severity: error
+applies_to:
+- implementation-package-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Handoff Summary
+- Implemented Scope Summary
+- Change Footprint Summary
+- Evidence Posture Summary
+- Review Status And Key Findings
+- Known Issues And Residual Risks
+- Specification Relationship
+- Revalidation Triggers
+- Recommended Downstream Consumers
+- Next Decision Points
+---
+
 # Implementation Package Handoff Check
 
 ## Purpose

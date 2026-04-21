@@ -1,3 +1,33 @@
+---
+id: implementation-record
+kind: check
+title: Implementation Record Check
+version: 1
+summary: Validate that the implementation record artifact clearly expresses what implementation
+  slice was attempted, what upstream artifacts governed it, what changed, and where
+  deviations or blockers still matter.
+mode: headings
+severity: error
+applies_to:
+- implementation-record
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Implementation Scope And Objective
+- Input Context
+- Traceability Map
+- Target Slice Or Change Boundary
+- Planned Versus Actual Scope
+- Change Summary
+- Change Inventory
+- Changed Components And Affected Areas
+- Interface, Schema, And Contract Effects
+- Deviations From Plan Or Specification
+- Blockers, Risks, And Open Questions
+- Deferred Or Intentionally Not Included
+---
+
 # Implementation Record Check
 
 ## Purpose

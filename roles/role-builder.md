@@ -1,3 +1,18 @@
+---
+id: role-builder
+kind: role
+title: Role Builder
+version: 1
+summary: The Role Builder defines reusable agent roles and the supporting structures
+  needed for those roles to work consistently across projects.
+default_workflows:
+- role-builder-handoff
+- role-builder-quality-review
+- role-builder-role-definition
+- role-builder-support-system
+skills: []
+---
+
 # Role Builder
 
 ## Purpose

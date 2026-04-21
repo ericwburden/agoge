@@ -1,3 +1,20 @@
+---
+id: scenario-handoff
+kind: artifact
+title: Scenario Handoff
+version: 1
+summary: Package the completed Scenario Designer outputs into a downstream-ready handoff
+  that lets adopters, workflow authors, project leads, or execution-planning consumers
+  use the scenario without reconstructing the multi-role choreography from earlier
+  artifacts.
+template: true
+default_output_path: docs/orpheum/scenario-handoff.md
+checks:
+- scenario-handoff
+- scenario-traceability
+- scenario-designer-boundary
+---
+
 # Scenario Handoff
 
 ## Purpose

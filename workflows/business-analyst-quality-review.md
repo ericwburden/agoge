@@ -1,3 +1,30 @@
+---
+id: business-analyst-quality-review
+kind: workflow
+title: Business Analyst Quality Review
+version: 1
+summary: Apply the Business Analyst check chain to instantiated BA artifacts, identify
+  failures by artifact and defect type, and route remediation before downstream handoff
+  or Allium promotion.
+role: business-analyst
+inputs: []
+outputs: []
+skills:
+- requirements-verification
+- handoff-packaging
+- research-documentation
+- meeting-intelligence
+- meeting-notes-and-actions
+checks:
+- traceability
+- business-analyst-boundary
+- business-objectives
+- process-analysis
+- requirements-specification
+- requirements-handoff
+handoff_to: []
+---
+
 # Business Analyst Quality Review
 
 ## Purpose

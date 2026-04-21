@@ -1,3 +1,19 @@
+---
+id: backlog-prioritization
+kind: artifact
+title: Backlog Prioritization
+version: 1
+summary: Capture the current ordering of candidate work, the rationale behind that
+  ordering, acceptance-oriented conditions, deferred scope, and the tradeoffs that
+  shaped the decision.
+template: true
+default_output_path: docs/product/backlog-prioritization.md
+checks:
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+---
+
 # Backlog Prioritization
 
 ## Purpose

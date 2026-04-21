@@ -1,3 +1,31 @@
+---
+id: security-compliance-specialist-handoff
+kind: workflow
+title: Security / Compliance Specialist Handoff
+version: 1
+summary: Package reviewed security/compliance outputs into a downstream-ready handoff
+  that architecture, planning, implementation, verification, release, or approval
+  consumers can use without reconstructing the risk and obligation posture from earlier
+  artifacts.
+role: security-compliance-specialist
+inputs:
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+outputs:
+- security-compliance-handoff
+skills:
+- security-controls-and-exceptions
+- handoff-packaging
+- research-documentation
+- requirements-verification
+checks:
+- security-compliance-handoff
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+handoff_to: []
+---
+
 # Security / Compliance Specialist Handoff
 
 ## Purpose

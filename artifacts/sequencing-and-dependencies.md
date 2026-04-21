@@ -1,3 +1,18 @@
+---
+id: sequencing-and-dependencies
+kind: artifact
+title: Sequencing And Dependencies
+version: 1
+summary: Capture the intended execution order, dependency structure, and critical
+  path for the planned implementation work.
+template: true
+default_output_path: docs/planning/sequencing-and-dependencies.md
+checks:
+- sequencing-and-dependencies
+- planning-traceability
+- technical-planner-boundary
+---
+
 # Sequencing And Dependencies
 
 ## Purpose

@@ -1,3 +1,18 @@
+---
+id: verification-strategy
+kind: artifact
+title: Verification Strategy
+version: 1
+summary: Capture the verification approach that turns reviewed requirements, architecture,
+  planning, and implementation context into a coherent evidence strategy.
+template: true
+default_output_path: docs/verification/verification-strategy.md
+checks:
+- verification-strategy
+- verification-traceability
+- qa-verification-boundary
+---
+
 # Verification Strategy
 
 ## Purpose

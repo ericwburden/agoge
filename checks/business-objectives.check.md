@@ -1,3 +1,32 @@
+---
+id: business-objectives
+kind: check
+title: Business Objectives Check
+version: 1
+summary: Validate that the business objectives artifact is complete enough to support
+  process analysis and requirement discovery without relying on unstated chat context.
+mode: headings
+severity: error
+applies_to:
+- business-objectives
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Problem Statement
+- Business Context
+- Business Objectives
+- Success Criteria
+- Stakeholders
+- In Scope
+- Out Of Scope
+- Constraints
+- Assumptions
+- Proposed Solutions Mentioned
+- Open Questions
+- Stakeholder Confirmation
+---
+
 # Business Objectives Check
 
 ## Purpose

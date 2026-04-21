@@ -1,3 +1,26 @@
+---
+id: role-builder-support-system
+kind: workflow
+title: Role Builder Support System
+version: 1
+summary: Turn a stable role definition into an operational support package of artifacts,
+  workflows, checks, skills, and tooling preferences.
+role: role-builder
+inputs:
+- role-definition-brief
+outputs:
+- role-support-system
+skills:
+- role-support-system-design
+- pattern-adaptation
+- research-documentation
+checks:
+- role-support-system
+- role-package-traceability
+- role-builder-boundary
+handoff_to: []
+---
+
 # Role Builder Support System
 
 ## Purpose

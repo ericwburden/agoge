@@ -1,3 +1,35 @@
+---
+id: solution-architect-design
+kind: workflow
+title: Solution Architect Design
+version: 1
+summary: Turn validated BA outputs and explicit product direction into a proposed
+  solution architecture and explicit architecture decision record.
+role: solution-architect
+inputs:
+- requirements-handoff
+- requirements-specification
+- business-objectives
+- process-analysis
+- product-direction
+- backlog-prioritization
+- product-handoff
+outputs:
+- solution-architecture
+- architecture-decisions
+skills:
+- architecture-design
+- meeting-notes-and-actions
+- research-documentation
+- content-research-writer
+checks:
+- solution-architecture
+- architecture-decisions
+- architecture-traceability
+- solution-architect-boundary
+handoff_to: []
+---
+
 # Solution Architect Design
 
 ## Purpose

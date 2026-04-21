@@ -1,3 +1,33 @@
+---
+id: scenario-designer-quality-review
+kind: workflow
+title: Scenario Designer Quality Review
+version: 1
+summary: Run the Scenario Designer check chain across the scenario package, confirm
+  whether the package is coherent and downstream-usable, and route remediation to
+  the earliest artifact or role-package decision that introduced any defect.
+role: scenario-designer
+inputs:
+- scenario-definition
+- scenario-integration-map
+- scenario-review
+- scenario-handoff
+outputs: []
+skills:
+- scenario-composition
+- research-documentation
+- pattern-adaptation
+- handoff-packaging
+checks:
+- scenario-definition
+- scenario-integration-map
+- scenario-review
+- scenario-handoff
+- scenario-traceability
+- scenario-designer-boundary
+handoff_to: []
+---
+
 # Scenario Designer Quality Review
 
 ## Purpose

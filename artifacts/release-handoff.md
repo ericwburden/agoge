@@ -1,3 +1,19 @@
+---
+id: release-handoff
+kind: artifact
+title: Release Handoff
+version: 1
+summary: Package the completed release outputs into a downstream-ready handoff that
+  lets release-adjacent, operational, or adoption consumers use the package without
+  reconstructing rollout intent, approval posture, or caveats from earlier artifacts.
+template: true
+default_output_path: docs/release/release-handoff.md
+checks:
+- release-handoff
+- release-traceability
+- release-handoff-manager-boundary
+---
+
 # Release Handoff
 
 ## Purpose

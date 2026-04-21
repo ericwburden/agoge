@@ -1,3 +1,20 @@
+---
+id: product-owner
+kind: role
+title: Product Owner
+version: 1
+summary: The Product Owner turns validated requirements, product feedback, and delivery
+  learnings into explicit product direction, prioritization, and acceptance-oriented
+  decision framing that downstream solutioning and delivery roles can trust without
+  reconstructing product intent from scattered notes or stakeholder conversations.
+default_workflows:
+- product-owner-direction
+- product-owner-handoff
+- product-owner-quality-review
+- product-owner-review
+skills: []
+---
+
 # Product Owner
 
 ## Purpose

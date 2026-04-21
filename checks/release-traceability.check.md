@@ -1,3 +1,16 @@
+---
+id: release-traceability
+kind: check
+title: Release Traceability Check
+version: 1
+summary: Validate that release candidate summary, readiness decision, rollout notes,
+  and release handoff stay traceable to the reviewed implementation, code review,
+  and verification packages that justify downstream release or adoption consideration.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Release Traceability Check
 
 ## Purpose

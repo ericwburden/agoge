@@ -1,3 +1,25 @@
+---
+id: architecture-decisions
+kind: check
+title: Architecture Decisions Check
+version: 1
+summary: Validate that architectural decisions are explicit, traceable, and supported
+  by rationale rather than implied by the final design alone.
+mode: headings
+severity: error
+applies_to:
+- architecture-decisions
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Decision Summary
+- Major Decisions
+- Deferred Decisions
+- Architecture Assumptions
+- Risks And Tradeoffs
+---
+
 # Architecture Decisions Check
 
 ## Purpose

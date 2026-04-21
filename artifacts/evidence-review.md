@@ -1,3 +1,19 @@
+---
+id: evidence-review
+kind: artifact
+title: Evidence Review
+version: 1
+summary: Capture the durable review record for a drafted verification package, including
+  the evidence reviewed, the findings that matter, the current readiness state, and
+  the remediation needed before downstream use.
+template: true
+default_output_path: docs/verification/evidence-review.md
+checks:
+- evidence-review
+- verification-traceability
+- qa-verification-boundary
+---
+
 # Evidence Review
 
 ## Purpose

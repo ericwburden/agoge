@@ -1,3 +1,19 @@
+---
+id: rollout-and-operations-notes
+kind: artifact
+title: Rollout And Operations Notes
+version: 1
+summary: Capture the rollout-sensitive, environment-sensitive, operational, communication,
+  monitoring, and rollback notes that downstream release-adjacent consumers need in
+  order to use the reviewed package responsibly.
+template: true
+default_output_path: docs/release/rollout-and-operations-notes.md
+checks:
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+---
+
 # Rollout And Operations Notes
 
 ## Purpose

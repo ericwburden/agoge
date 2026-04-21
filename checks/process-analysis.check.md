@@ -1,3 +1,33 @@
+---
+id: process-analysis
+kind: check
+title: Process Analysis Check
+version: 1
+summary: Validate that the process analysis artifact accurately captures current-state
+  and future-state process understanding, including the operational details needed
+  for strong requirements work.
+mode: headings
+severity: error
+applies_to:
+- process-analysis
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Process In Scope
+- Objective Of The Process Change
+- Process Needs
+- Current-State ("As-Is") Process
+- Current-State Pain Points
+- Future-State ("To-Be") Process
+- Business Rules
+- Exceptions And Edge Cases
+- Gaps
+- Dependencies
+- Human Oversight Notes
+- Open Questions
+---
+
 # Process Analysis Check
 
 ## Purpose

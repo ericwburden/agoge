@@ -1,3 +1,21 @@
+---
+id: implementation-traceability
+kind: check
+title: Implementation Traceability Check
+version: 1
+summary: Validate that the Implementation Engineer artifact chain preserves traceability
+  from upstream requirements, architecture, planning, and relevant specifications
+  through the implementation record, evidence package, readiness review, and downstream
+  handoff.
+mode: presence
+severity: error
+applies_to:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+---
+
 # Implementation Traceability Check
 
 ## Purpose

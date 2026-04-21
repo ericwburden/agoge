@@ -1,3 +1,19 @@
+---
+id: security-compliance-review
+kind: artifact
+title: Security / Compliance Review
+version: 1
+summary: Capture the durable review outcome for a drafted Security / Compliance Specialist
+  package, including the current posture, blocking versus conditional issues, residual
+  risks, and what should happen next.
+template: true
+default_output_path: docs/security/security-compliance-review.md
+checks:
+- security-compliance-review
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+---
+
 # Security / Compliance Review
 
 ## Purpose

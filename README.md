@@ -1,100 +1,176 @@
-# agoge
+# Orpheum
 
-`agoge` is a training ground for Codex instructions, skills, workflows, and supporting delivery patterns.
+`orpheum` is a scenario catalog and Rust CLI for applying reusable AI-assisted SDLC workflows to real projects.
 
-The project exists to collect lessons learned across different projects and turn them into a cohesive software delivery lifecycle for AI-assisted work. The emphasis is on repeatable practice, clear operating conventions, reusable scaffolding, and pragmatic evaluation of what actually improves outcomes.
+This repository now has two closely related responsibilities:
 
-## Goals
+- maintain the canonical catalog of scenarios, roles, workflows, artifacts, and checks
+- provide the `orpheum` CLI that resolves that catalog into lightweight project-local orchestration state under `.orpheum/`
 
-- Capture effective instruction and workflow patterns.
-- Turn one-off project lessons into reusable operating guidance.
-- Create a safe place to test AI-assisted SDLC approaches.
-- Document conventions that improve reliability, speed, and collaboration.
+The goal is not to build a heavyweight autonomous orchestrator. The goal is to make AI-assisted delivery more repeatable: explicit scenario selection, explicit artifact expectations, explicit checks, and a small, machine-readable control surface that an agent can use inside an ordinary project repo.
 
-## Initial Scope
+## What Orpheum Is
 
-- Project-level guidance for agents working in this repository.
-- A place to develop and refine reusable instructions and workflows.
-- Documentation-first setup so future structure can evolve intentionally.
+At a high level, Orpheum has three layers:
 
-## Product Specifications
+1. Catalog layer: this repository contains the reusable SDLC building blocks.
+2. Session layer: the CLI applies a selected scenario into a target project and creates a local `.orpheum/` control directory.
+3. Project output layer: durable deliverables live in the target project, not in Orpheum.
 
-Product specifications in this project should prefer [Allium](https://github.com/juxt/allium) over ad hoc prose or loosely structured requirements notes.
+In practice, that means:
 
-Allium is installed globally in the local Codex environment and should be treated as the default specification format when defining expected product behavior.
+- humans and agents can inspect available scenarios with the CLI
+- a scenario can be applied to a project without copying the whole catalog into it
+- prompts, state, and checks are derived from machine-readable metadata rather than prose scraping
 
-Roles in this repository should be Allium-aware even when they are not Allium-first. Each role package should make explicit:
+## Current CLI Surface
 
-- when the role consumes existing Allium specifications
-- when the role helps identify behavior that is ready to become or update an Allium specification
-- when the role must route uncertainty back to discovery or specification work instead of improvising behavior
+The Rust workspace lives at the repo root and currently ships these v1 commands:
 
-The current Allium capability is already provided by the installed skills:
+- `orpheum init`
+- `orpheum scenario list`
+- `orpheum scenario show <id>`
+- `orpheum scenario apply <id>`
+- `orpheum status`
+- `orpheum prompt current`
+- `orpheum check run`
+- `orpheum doctor`
 
-- [allium](C:/Users/ericw/.codex/skills/allium/SKILL.md)
-- [elicit](C:/Users/ericw/.codex/skills/allium/skills/elicit/SKILL.md)
-- [tend](C:/Users/ericw/.codex/skills/allium/skills/tend/SKILL.md)
-- [distill](C:/Users/ericw/.codex/skills/allium/skills/distill/SKILL.md)
-- [propagate](C:/Users/ericw/.codex/skills/allium/skills/propagate/SKILL.md)
-- [weed](C:/Users/ericw/.codex/skills/allium/skills/weed/SKILL.md)
+All implemented commands support `--json`.
 
-This repo does not currently need a separate generic “Allium interaction” skill on top of that package.
+The CLI is intentionally metadata-first. It resolves scenarios from YAML frontmatter embedded in catalog Markdown files under:
+
+- [scenarios](C:/Users/ericw/Projects/orpheum/scenarios/README.md)
+- [roles](C:/Users/ericw/Projects/orpheum/roles/README.md)
+- [workflows](C:/Users/ericw/Projects/orpheum/workflows/README.md)
+- [artifacts](C:/Users/ericw/Projects/orpheum/artifacts/README.md)
+- [checks](C:/Users/ericw/Projects/orpheum/checks/README.md)
+
+Catalog-dependent commands can locate the catalog in three ways:
+
+- `--catalog <path>`
+- `ORPHEUM_CATALOG=<path>`
+- runtime discovery from the current working directory or executable location when you are working from the Orpheum repo itself
+
+Commands like `init`, `status`, and `prompt current` are project-local and do not require catalog loading.
+
+## Quick Start
+
+Build and run the CLI from this repository:
+
+```bash
+cargo run -p orpheum -- scenario list
+```
+
+Initialize a consumer project for local agents:
+
+```bash
+cargo run -p orpheum -- init
+```
+
+Inspect a scenario:
+
+```bash
+cargo run -p orpheum -- scenario show project-planning
+```
+
+Apply a scenario to a target project:
+
+```bash
+cargo run -p orpheum -- scenario apply project-planning --project /path/to/project
+```
+
+After applying a scenario, the target project gets a small `.orpheum/` control surface:
+
+- `.orpheum/ACTIVE.md`
+- `.orpheum/session.json`
+- `.orpheum/scenario.json`
+- `.orpheum/state.json`
+- `.orpheum/prompts/current.md`
+- `.orpheum/logs/checks.json`
+
+From the target project root, you can then run:
+
+```bash
+orpheum init
+orpheum status
+orpheum prompt current
+orpheum check run
+orpheum doctor
+```
+
+`orpheum init` installs a project-local skill at `.codex/skills/orpheum/SKILL.md` so local agents have an explicit Orpheum usage contract. If a `.gitignore` already exists, `init` also adds `.orpheum/` when that entry is missing.
+
+## Default SDLC Scenario Chain
+
+The current standard path through the catalog is:
+
+1. [Project Discovery](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.definition.md)
+2. [Project Planning](C:/Users/ericw/Projects/orpheum/scenarios/project-planning.definition.md)
+3. [Delivery Slice Planning](C:/Users/ericw/Projects/orpheum/scenarios/delivery-slice-planning.definition.md)
+4. [Implementation and Release Prep](C:/Users/ericw/Projects/orpheum/scenarios/implementation-and-release-prep.definition.md)
+5. [Review Remediation Loop](C:/Users/ericw/Projects/orpheum/scenarios/review-remediation-loop.definition.md) when bounded remediation is needed
+6. [Verification And Release Gate](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.definition.md) when a distinct final downstream gate is needed
+7. [Release Feedback To Reprioritization](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.definition.md)
+
+For security-sensitive or approval-sensitive work, use [Secure Delivery / Secure Feature Lifecycle](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md) instead of the standard chain when those concerns need to shape the work end to end.
+
+For designing and hardening scenarios themselves, see [Scenario Implementation](C:/Users/ericw/Projects/orpheum/scenarios/scenario-implementation.definition.md).
 
 ## Repository Structure
 
-- [`roles/`](D:/Projects/agoge/roles) stores reusable role templates and role operating patterns.
-- [`artifacts/`](D:/Projects/agoge/artifacts) stores reusable scaffolding for plans, reviews, retros, and other repeatable project artifacts.
-- [`notes/`](D:/Projects/agoge/notes) stores structured working notes that capture lessons learned, observations, and candidate practices before they become standards.
-- [`checks/`](D:/Projects/agoge/checks) stores evaluation and validation patterns for judging workflow quality and adherence to standards.
-- [`workflows/`](D:/Projects/agoge/workflows) stores reusable multi-skill workflow definitions.
-- [`skills/`](D:/Projects/agoge/skills) stores vendored or imported skill content used as building blocks.
+- [crates/orpheum-cli](C:/Users/ericw/Projects/orpheum/crates/orpheum-cli) contains the `orpheum` binary and command-line interface.
+- [crates/orpheum-core](C:/Users/ericw/Projects/orpheum/crates/orpheum-core) contains catalog loading, dependency resolution, session management, prompt generation, checks, and doctor logic.
+- [scenarios](C:/Users/ericw/Projects/orpheum/scenarios/README.md) contains reusable multi-role SDLC scenarios.
+- [roles](C:/Users/ericw/Projects/orpheum/roles/README.md) contains reusable role packages.
+- [workflows](C:/Users/ericw/Projects/orpheum/workflows/README.md) contains reusable role-owned workflow definitions.
+- [artifacts](C:/Users/ericw/Projects/orpheum/artifacts/README.md) contains reusable artifact definitions and templates.
+- [checks](C:/Users/ericw/Projects/orpheum/checks/README.md) contains validation patterns used by roles and scenarios.
+- [notes](C:/Users/ericw/Projects/orpheum/notes/README.md) contains design notes, sourcing notes, and other durable working context.
+- [skills](C:/Users/ericw/Projects/orpheum/skills/README.md) contains vendored or locally maintained skills used by the catalog.
 
-Use the templates in `roles/` when starting a new role definition or defining a new agent operating mode. Use the templates in `workflows/` when you want repeatable orchestration across multiple skills, tools, and validation steps. Use `artifacts/` for reusable artifact formats, `notes/` for maturing lessons into durable guidance, and `checks/` for the criteria that determine whether a workflow is actually working.
+## Metadata Contract
 
-The first concrete role in [`roles/`](D:/Projects/agoge/roles) is [`business-analyst.md`](D:/Projects/agoge/roles/business-analyst.md), which is intended for project kickoff and discovery work focused on requirements and process understanding.
+The CLI does not infer dependencies from prose at runtime.
 
-The first concrete artifact set in [`artifacts/`](D:/Projects/agoge/artifacts) is also aligned to the Business Analyst role, covering business objectives, process analysis, requirements specification, and downstream requirements handoff. These checked-in files are reusable definitions; live project work should use instantiated copies in a project workspace.
+Instead, the canonical catalog files carry YAML frontmatter that provides the machine-readable contract for:
 
-The first concrete check set in [`checks/`](D:/Projects/agoge/checks) is aligned to that same Business Analyst role and artifact chain, acting as a definition-of-done quality gate for BA outputs.
+- scenario dependencies
+- workflow inputs and outputs
+- role default workflows and skills
+- artifact output paths and attached checks
+- check execution mode and target artifacts
 
-The intended BA lifecycle across this repo is: select an artifact definition, instantiate a project-specific working copy, populate it, run the required checks, remediate failures with the linked skills, and only then hand the output downstream.
+That frontmatter is the integration contract the CLI relies on. The surrounding Markdown remains the human-facing explanation.
 
-The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`role-builder.md`](D:/Projects/agoge/roles/role-builder.md), which is intended for designing reusable agent roles together with their artifact, workflow, check, skill, and adoption handoff packages.
+## Validation Model
 
-The intended Role Builder lifecycle in this repo is: role idea or workshop intake, role definition, support-system design, quality review, and adoption handoff. The dedicated `role-*` skills are the primary operating path for that lifecycle, with generic synthesis skills used only as supporting input steps when needed.
+The v1 check engine is intentionally narrow. It currently supports:
 
-In this repository, `Role Builder hardening pass` is the explicit short trigger for the standard Role Builder quality-review step.
+- artifact presence checks
+- required heading checks
 
-The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`solution-architect.md`](D:/Projects/agoge/roles/solution-architect.md), which is intended for turning validated BA outputs into an explicit solution shape, architectural decision record, reviewed architecture package, and downstream technical handoff.
+`orpheum check run` records results in `.orpheum/logs/checks.json` and mirrors summarized status back into `.orpheum/state.json`.
 
-The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`technical-planner.md`](D:/Projects/agoge/roles/technical-planner.md), which is intended for turning reviewed architecture and validated requirements into an implementation strategy, explicit sequencing and dependency handling, a reviewed planning package, and downstream implementation handoff.
+## Product Specification Convention
 
-The next concrete role in [`roles/`](D:/Projects/agoge/roles) is [`qa-verification-lead.md`](D:/Projects/agoge/roles/qa-verification-lead.md), which is intended for turning reviewed requirements, architecture, planning, and implementation context into an explicit verification strategy, traceable coverage matrix, evidence review, and downstream verification handoff.
+When this repository defines product behavior, it should prefer [Allium](https://github.com/juxt/allium) over ad hoc prose requirements unless there is a clear reason not to.
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`implementation-engineer.md`](D:/Projects/orpheum/roles/implementation-engineer.md), which is intended for turning reviewed planning and architecture direction into a concrete change set, explicit implementation evidence, reviewed implementation-package readiness, and a downstream handoff for review and verification roles.
+That preference still applies even though Orpheum now has a working CLI. The catalog should continue to optimize for reusable structure, explicit reasoning, and durable operating conventions.
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`code-reviewer.md`](D:/Projects/orpheum/roles/code-reviewer.md), which is intended for turning a completed implementation package into explicit review scope, concrete findings, an independent review decision, and a downstream handoff for implementation, verification, or release-adjacent consumers.
+## Development Notes
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`release-handoff-manager.md`](D:/Projects/orpheum/roles/release-handoff-manager.md), which is intended for turning reviewed implementation, review, and verification outputs into explicit release scope, release posture, rollout caveats, and a downstream release or adoption handoff.
+- Workspace root: [Cargo.toml](C:/Users/ericw/Projects/orpheum/Cargo.toml)
+- Binary crate: [crates/orpheum-cli/Cargo.toml](C:/Users/ericw/Projects/orpheum/crates/orpheum-cli/Cargo.toml)
+- Core crate: [crates/orpheum-core/Cargo.toml](C:/Users/ericw/Projects/orpheum/crates/orpheum-core/Cargo.toml)
+- CLI integration tests: [crates/orpheum-cli/tests/cli.rs](C:/Users/ericw/Projects/orpheum/crates/orpheum-cli/tests/cli.rs)
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`product-owner.md`](D:/Projects/orpheum/roles/product-owner.md), which is intended for turning validated requirements, product feedback, and delivery learnings into explicit product direction, backlog prioritization, reviewed product decisions, and a downstream handoff for solutioning, planning, and approval work.
+Useful commands:
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`security-compliance-specialist.md`](D:/Projects/orpheum/roles/security-compliance-specialist.md), which is intended for turning reviewed delivery context, obligations, risk surfaces, and control expectations into explicit security/compliance scope, control mapping, reviewed posture, and downstream handoff guidance.
+```bash
+cargo fmt
+cargo test
+cargo run -p orpheum -- doctor --json
+```
 
-The next concrete role in [`roles/`](D:/Projects/orpheum/roles) is [`scenario-designer.md`](D:/Projects/orpheum/roles/scenario-designer.md), which is intended for turning a repeatable multi-role activity into an explicit scenario package with participating roles, sequencing, handoffs, integration requirements, reviewed readiness, and downstream adoption guidance.
-
-## Vendored Skills
-
-The [`skills/`](D:/Projects/agoge/skills) directory is imported from the `awesome-codex-skills` project as a squashed Git subtree.
-
-- Upstream source: [ComposioHQ/awesome-codex-skills](https://github.com/ComposioHQ/awesome-codex-skills)
-- Fork: [ericwburden/awesome-codex-skills](https://github.com/ericwburden/awesome-codex-skills)
-
-This keeps the skills available inside this repository while preserving a clear path for future refreshes from upstream or from the fork.
-
-## Next Steps
-
-- Define contribution conventions and evaluation criteria for new patterns.
-- Decide how local changes to vendored subtree content should be managed and synced.
-- Add initial role and workflow patterns using the templates in `roles/` and `workflows/`.
-- Add initial standards and connect them to templates, notes, and checks.
+`orpheum doctor` will report catalog or project-health issues, including whether `.orpheum/` is ignored in the target project.

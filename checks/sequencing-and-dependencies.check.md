@@ -1,3 +1,30 @@
+---
+id: sequencing-and-dependencies
+kind: check
+title: Sequencing And Dependencies Check
+version: 1
+summary: Validate that sequencing, dependencies, critical path assumptions, and parallelization
+  opportunities are explicit enough for downstream roles to execute against the plan
+  without guessing at work order.
+mode: headings
+severity: error
+applies_to:
+- sequencing-and-dependencies
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Sequencing Summary
+- Workstream Order
+- Dependency Map
+- Critical Path
+- Parallelization Opportunities
+- Decision Gates And Spikes
+- Integration, Migration, Or Rollout Checkpoints
+- Verification Touchpoints
+- Remaining Sequencing Risks And Assumptions
+---
+
 # Sequencing And Dependencies Check
 
 ## Purpose

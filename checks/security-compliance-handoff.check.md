@@ -1,3 +1,29 @@
+---
+id: security-compliance-handoff
+kind: check
+title: Security / Compliance Handoff Check
+version: 1
+summary: Validate that the security/compliance handoff packages the current scope,
+  posture, controls, conditions, and next-step guidance clearly enough for downstream
+  consumers.
+mode: headings
+severity: error
+applies_to:
+- security-compliance-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Current Assessment Scope
+- Security / Compliance Package Included
+- Current Posture
+- Active Controls, Conditions, And Gaps
+- Follow-Up Owners
+- Re-Review Or Re-Approval Triggers
+- Upstream Routing Notes
+- Recommended Next Consumer
+---
+
 # Security / Compliance Handoff Check
 
 ## Purpose

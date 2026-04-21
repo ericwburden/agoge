@@ -1,3 +1,33 @@
+---
+id: qa-verification-quality-review
+kind: workflow
+title: QA / Verification Quality Review
+version: 1
+summary: Apply the QA / Verification Lead check chain to instantiated verification
+  artifacts, identify failures by artifact and defect type, and route remediation
+  before downstream release-adjacent or review work begins.
+role: null
+inputs:
+- verification-handoff
+- requirements-handoff
+- architecture-handoff
+- implementation-handoff
+outputs: []
+skills:
+- requirements-verification
+- handoff-packaging
+- research-documentation
+- meeting-notes-and-actions
+checks:
+- verification-traceability
+- qa-verification-boundary
+- verification-strategy
+- verification-matrix
+- evidence-review
+- verification-handoff
+handoff_to: []
+---
+
 # QA / Verification Quality Review
 
 ## Purpose

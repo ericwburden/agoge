@@ -1,3 +1,27 @@
+---
+id: technical-planner-handoff
+kind: workflow
+title: Technical Planner Handoff
+version: 1
+summary: Turn completed planning outputs into a downstream-ready handoff for implementation,
+  verification, and downstream review roles.
+role: technical-planner
+inputs:
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+outputs:
+- implementation-handoff
+skills:
+- handoff-packaging
+- research-documentation
+checks:
+- implementation-handoff
+- planning-traceability
+- technical-planner-boundary
+handoff_to: []
+---
+
 # Technical Planner Handoff
 
 ## Purpose

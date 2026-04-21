@@ -1,3 +1,31 @@
+---
+id: scenario-integration-map
+kind: check
+title: Scenario Integration Map Check
+version: 1
+summary: Validate that the scenario integration map makes the cross-role choreography,
+  handoff contracts, branching rules, synchronization points, and failure-routing
+  expectations explicit enough to support downstream adoption or execution planning.
+mode: headings
+severity: error
+applies_to:
+- scenario-integration-map
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Scenario In Scope
+- Participating Role-Owned Workflows
+- Workflow Inputs, Outputs, And Shared Artifacts
+- Handoff Contracts
+- Branching Rules And Decision Logic
+- Parallelism And Synchronization Points
+- Shared Context, State, And Dependency Assumptions
+- Failure Handling And Escalation Routing
+- Coordination Risks And Watchouts
+- Recommended Next Step
+---
+
 # Scenario Integration Map Check
 
 ## Purpose

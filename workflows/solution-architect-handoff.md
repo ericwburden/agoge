@@ -1,3 +1,27 @@
+---
+id: solution-architect-handoff
+kind: workflow
+title: Solution Architect Handoff
+version: 1
+summary: Turn completed architecture outputs into a downstream-ready handoff for planning,
+  implementation, and verification roles.
+role: solution-architect
+inputs:
+- solution-architecture
+- architecture-decisions
+- architecture-review
+outputs:
+- architecture-handoff
+skills:
+- architecture-handoff-packaging
+- research-documentation
+checks:
+- architecture-handoff
+- architecture-traceability
+- solution-architect-boundary
+handoff_to: []
+---
+
 # Solution Architect Handoff
 
 ## Purpose

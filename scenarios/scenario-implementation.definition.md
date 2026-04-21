@@ -1,3 +1,76 @@
+---
+id: scenario-implementation
+kind: scenario
+title: Scenario Implementation Definition
+version: 1
+summary: Capture the reusable `Scenario Implementation` scenario that turns a candidate
+  scenario idea into a reviewed, adoption-ready scenario package, together with any
+  participant-role hardening needed for that scenario to work operationally.
+roles:
+- scenario-designer
+- role-builder
+- security-compliance-specialist
+workflows:
+- scenario-designer-composition
+- scenario-designer-review
+- scenario-designer-quality-review
+- scenario-designer-handoff
+- role-builder-quality-review
+- role-builder-handoff
+- role-builder-support-system
+- role-builder-role-definition
+- security-compliance-specialist-scoping
+- security-compliance-specialist-review
+- security-compliance-specialist-handoff
+artifacts:
+- scenario-definition
+- scenario-integration-map
+- scenario-review
+- scenario-handoff
+- role-package-review
+- role-package-handoff
+- role-support-system
+- role-definition-brief
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+checks:
+- scenario-definition
+- scenario-integration-map
+- scenario-traceability
+- scenario-designer-boundary
+- scenario-review
+- scenario-handoff
+- role-package-review
+- role-package-traceability
+- role-builder-boundary
+- role-package-handoff
+- role-support-system
+- role-definition-brief
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+- security-compliance-review
+- security-compliance-handoff
+entry_conditions:
+- a-candidate-scenario-idea-recommendation-or-explicit-implementation-request-already-exists
+- the-likely-participating-role-packages-are-already-available-or-the-scenario-can-honestly-be-blocked-on-missing-role-support
+- the-work-is-to-create-a-reusable-scenario-package-rather-than-a-one-off-project-plan
+- the-repository-is-prepared-to-treat-participant-role-hardening-as-part-of-scenario-implementation-rather-than-as-unrelated-follow-up-work
+exit_conditions:
+- a-scenario-definition-artifact-for-the-new-scenario
+- a-scenario-integration-map-artifact-for-the-new-scenario
+- a-reviewed-scenario-posture-and-scenario-handoff
+- explicit-participant-role-fit-decisions
+- durable-participant-package-review-or-hardening-outcomes-where-those-decisions-materially-shaped-scenario-readiness
+- any-required-role-package-hardening-for-scenario-relevant-workflows-checks-artifacts-or-boundaries
+- explicit-skills-review-outcomes-including-new-skill-implementation-when-needed-for-scenario-critical-participant-work
+- downstream-adopters-can-use-the-new-scenario-package-without-reconstructing-its-choreography-and-without-discovering-only-at-execution-time-that-participant-roles-lack-the-support-needed-to-perform-their-scenario-relevant-work
+- the-package-may-be-marked-ready-only-after-the-full-scenario-designer-quality-review-check-chain-passes-across-the-completed-scenario-definition-integration-map-review-and-handoff-artifacts-with-no-unresolved-defect-that-still-requires-upstream-remediation-before-downstream-reuse
+---
+
 # Scenario Implementation Definition
 
 ## Purpose

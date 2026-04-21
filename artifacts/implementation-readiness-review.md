@@ -1,3 +1,18 @@
+---
+id: implementation-readiness-review
+kind: artifact
+title: Implementation Readiness Review
+version: 1
+summary: Capture the explicit self-review of an implementation package before it is
+  handed to downstream code review, verification, or release-adjacent roles.
+template: true
+default_output_path: docs/planning/implementation-readiness-review.md
+checks:
+- implementation-readiness-review
+- implementation-traceability
+- implementation-engineer-boundary
+---
+
 # Implementation Readiness Review
 
 ## Purpose

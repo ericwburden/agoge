@@ -1,3 +1,32 @@
+---
+id: product-direction
+kind: check
+title: Product Direction Check
+version: 1
+summary: Validate that the product direction artifact makes the current outcome focus,
+  target users or stakeholders, value frame, constraints, and scope boundaries explicit
+  enough to guide downstream work.
+mode: headings
+severity: error
+applies_to:
+- product-direction
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Decision Scope
+- Validated Inputs
+- Product Goal Or Outcome Focus
+- Target Users, Stakeholders, Or Beneficiaries
+- Value Hypotheses And Success Signals
+- Acceptance Intent And Behavioral Guardrails
+- Scope Boundaries And Non-Goals
+- Constraints And Decision Drivers
+- Priority Themes
+- Open Questions And Decision Needs
+- Recommended Next Step
+---
+
 # Product Direction Check
 
 ## Purpose

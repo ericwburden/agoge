@@ -1,3 +1,30 @@
+---
+id: implementation-evidence
+kind: check
+title: Implementation Evidence Check
+version: 1
+summary: Validate that the implementation evidence artifact honestly records what
+  local validation was attempted, what environments it applied to, what the observed
+  results were, and where confidence limits remain.
+mode: headings
+severity: error
+applies_to:
+- implementation-evidence
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Evidence Scope Summary
+- Revision And Environment Provenance
+- Validation Activities
+- Observed Results
+- Known Failures And Skipped Checks
+- Manual Verification Notes
+- Logs, Artifacts, And Supporting References
+- Evidence Gaps And Confidence Limits
+- Revalidation Watchouts
+---
+
 # Implementation Evidence Check
 
 ## Purpose

@@ -1,3 +1,26 @@
+---
+id: technical-planner-review
+kind: workflow
+title: Technical Planner Review
+version: 1
+summary: Review the drafted implementation planning package, record findings and remediation
+  decisions, and determine whether the plan is ready to move into downstream handoff.
+role: technical-planner
+inputs:
+- implementation-strategy
+- sequencing-and-dependencies
+outputs:
+- implementation-plan-review
+skills:
+- spec-to-implementation
+- research-documentation
+checks:
+- implementation-plan-review
+- planning-traceability
+- technical-planner-boundary
+handoff_to: []
+---
+
 # Technical Planner Review
 
 ## Purpose

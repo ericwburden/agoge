@@ -1,3 +1,18 @@
+---
+id: business-analyst
+kind: role
+title: Business Analyst
+version: 1
+summary: The Business Analyst helps identify, clarify, verify, and document business
+  requirements and business processes for a proposed system or project.
+default_workflows:
+- business-analyst-kickoff
+- business-analyst-process-analysis
+- business-analyst-quality-review
+- business-analyst-requirements-handoff
+skills: []
+---
+
 # Business Analyst
 
 ## Purpose

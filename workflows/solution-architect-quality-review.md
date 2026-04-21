@@ -1,3 +1,31 @@
+---
+id: solution-architect-quality-review
+kind: workflow
+title: Solution Architect Quality Review
+version: 1
+summary: Apply the Solution Architect check chain to instantiated architecture artifacts,
+  identify failures by artifact and defect type, and route remediation before downstream
+  planning, implementation, or verification work begins.
+role: solution-architect
+inputs:
+- architecture-handoff
+outputs: []
+skills:
+- architecture-review
+- architecture-design
+- architecture-handoff-packaging
+- research-documentation
+- meeting-notes-and-actions
+checks:
+- architecture-traceability
+- solution-architect-boundary
+- solution-architecture
+- architecture-decisions
+- architecture-review
+- architecture-handoff
+handoff_to: []
+---
+
 # Solution Architect Quality Review
 
 ## Purpose

@@ -1,3 +1,16 @@
+---
+id: security-compliance-traceability
+kind: check
+title: Security / Compliance Traceability Check
+version: 1
+summary: Validate that the Security / Compliance Specialist artifact chain preserves
+  linkage from reviewed delivery context and governing obligations through scope,
+  control mapping, review, and handoff.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Security / Compliance Traceability Check
 
 ## Purpose

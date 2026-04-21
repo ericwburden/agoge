@@ -1,3 +1,16 @@
+---
+id: qa-verification-lead
+kind: role
+title: QA / Verification Lead
+version: 1
+summary: The QA / Verification Lead turns reviewed planning and implementation evidence
+  into an explicit verification posture that downstream delivery roles can trust without
+  guessing what was actually checked, what remains weak, or whether the work is ready
+  to move forward.
+default_workflows: []
+skills: []
+---
+
 # QA / Verification Lead
 
 ## Purpose

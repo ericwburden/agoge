@@ -1,3 +1,29 @@
+---
+id: product-handoff
+kind: check
+title: Product Handoff Check
+version: 1
+summary: Validate that the product handoff artifact packages the current direction,
+  priorities, conditions, and next-step guidance clearly enough for downstream consumers.
+mode: headings
+severity: error
+applies_to:
+- product-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Current Product Direction
+- Product Package Included
+- Current Priority Posture
+- Priority And Acceptance Guidance
+- Deferred Scope And Open Tradeoffs
+- Follow-Up Owners
+- Revisit Triggers
+- Upstream Routing Notes
+- Recommended Next Consumer
+---
+
 # Product Handoff Check
 
 ## Purpose

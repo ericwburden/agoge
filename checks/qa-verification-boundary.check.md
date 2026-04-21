@@ -1,3 +1,17 @@
+---
+id: qa-verification-boundary
+kind: check
+title: QA / Verification Lead Boundary Check
+version: 1
+summary: Validate that QA / Verification Lead outputs stay inside verification role
+  boundaries and do not drift into redoing business discovery, re-architecting the
+  solution, re-planning execution, owning implementation changes, or taking over release
+  operations.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # QA / Verification Lead Boundary Check
 
 ## Purpose

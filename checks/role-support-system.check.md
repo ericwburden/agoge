@@ -1,3 +1,30 @@
+---
+id: role-support-system
+kind: check
+title: Role Support System Check
+version: 1
+summary: Validate that the proposed support system for a role makes the role operational
+  through an explicit artifact chain, workflow chain, check set, and skill map.
+mode: headings
+severity: error
+applies_to:
+- role-support-system
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Role In Scope
+- Artifact Set
+- Workflow Set
+- Check Set
+- Skill Support Map
+- Tooling Preferences
+- Allium Touchpoints
+- Lifecycle And Handoffs
+- Gaps And Risks
+- Open Questions
+---
+
 # Role Support System Check
 
 ## Purpose

@@ -1,3 +1,28 @@
+---
+id: code-reviewer-handoff
+kind: workflow
+title: Code Reviewer Handoff
+version: 1
+summary: Package the reviewed code-review outputs into a downstream-ready handoff
+  for implementation, verification, release-adjacent, or human approval consumers.
+role: code-reviewer
+inputs:
+- review-decision
+- code-review-scope
+- review-findings
+outputs:
+- review-handoff
+skills:
+- handoff-packaging
+- research-documentation
+- requirements-verification
+checks:
+- review-handoff
+- review-traceability
+- code-reviewer-boundary
+handoff_to: []
+---
+
 # Code Reviewer Handoff
 
 ## Purpose

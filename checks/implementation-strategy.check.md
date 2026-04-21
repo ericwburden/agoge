@@ -1,3 +1,34 @@
+---
+id: implementation-strategy
+kind: check
+title: Implementation Strategy Check
+version: 1
+summary: Validate that the implementation strategy artifact clearly expresses the
+  intended execution approach, slice structure, enabling work, and readiness assumptions
+  for the reviewed architecture.
+mode: headings
+severity: error
+applies_to:
+- implementation-strategy
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Planning Scope And Objective
+- Input Context
+- Traceability Map
+- Planning Assumptions And Constraints
+- Implementation Approach
+- Slice Strategy
+- Workstream Overview
+- Enabling Work And Spikes
+- Slice Exit Criteria
+- Readiness Conditions
+- Verification And Rollout Considerations
+- Deferred Or Not Included
+- Risks And Open Questions
+---
+
 # Implementation Strategy Check
 
 ## Purpose

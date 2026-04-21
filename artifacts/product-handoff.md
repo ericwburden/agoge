@@ -1,3 +1,19 @@
+---
+id: product-handoff
+kind: artifact
+title: Product Handoff
+version: 1
+summary: Package the completed Product Owner outputs into a downstream-ready handoff
+  that lets solutioning, planning, delivery, or approval consumers use the package
+  without reconstructing product intent, priorities, or tradeoffs from earlier artifacts.
+template: true
+default_output_path: docs/product/product-handoff.md
+checks:
+- product-handoff
+- product-traceability
+- product-owner-boundary
+---
+
 # Product Handoff
 
 ## Purpose

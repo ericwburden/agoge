@@ -1,3 +1,16 @@
+---
+id: release-handoff-manager-boundary
+kind: check
+title: Release / Handoff Manager Boundary Check
+version: 1
+summary: Validate that Release / Handoff Manager outputs stay inside release packaging
+  and downstream handoff role boundaries and do not drift into implementation, code
+  review, QA authority, or deployment execution ownership.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Release / Handoff Manager Boundary Check
 
 ## Purpose

@@ -1,3 +1,20 @@
+---
+id: release-handoff-manager
+kind: role
+title: Release / Handoff Manager
+version: 1
+summary: The Release / Handoff Manager turns reviewed implementation, independent
+  review, and verification outputs into a downstream-ready release or adoption package
+  that humans and downstream operators can trust without reconstructing rollout intent,
+  approval posture, or operational caveats from scattered artifacts.
+default_workflows:
+- release-handoff-manager-handoff
+- release-handoff-manager-packaging
+- release-handoff-manager-quality-review
+- release-handoff-manager-readiness-review
+skills: []
+---
+
 # Release / Handoff Manager
 
 ## Purpose

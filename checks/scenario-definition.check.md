@@ -1,3 +1,31 @@
+---
+id: scenario-definition
+kind: check
+title: Scenario Definition Check
+version: 1
+summary: Validate that the scenario definition artifact makes the scenario's purpose,
+  lifecycle window, participating roles, entry conditions, exit conditions, and core
+  sequence explicit enough to guide downstream scenario work.
+mode: headings
+severity: error
+applies_to:
+- scenario-definition
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Scenario Name And Intent
+- Lifecycle Window And Trigger Conditions
+- Participating Roles And Why
+- Entry Conditions
+- Target Outputs And Exit Conditions
+- Core Sequence
+- Decision Gates And Human Checkpoints
+- Scenario Constraints And Non-Goals
+- Open Questions And Design Gaps
+- Recommended Next Step
+---
+
 # Scenario Definition Check
 
 ## Purpose

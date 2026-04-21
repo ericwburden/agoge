@@ -1,3 +1,20 @@
+---
+id: technical-planner
+kind: role
+title: Technical Planner
+version: 1
+summary: The Technical Planner turns reviewed architecture and validated requirements
+  into an execution-ready plan that downstream implementation and verification roles
+  can use without inventing sequencing, work decomposition, or dependency handling
+  ad hoc.
+default_workflows:
+- technical-planner-handoff
+- technical-planner-planning
+- technical-planner-quality-review
+- technical-planner-review
+skills: []
+---
+
 # Technical Planner
 
 ## Purpose

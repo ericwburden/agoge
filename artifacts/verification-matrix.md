@@ -1,3 +1,18 @@
+---
+id: verification-matrix
+kind: artifact
+title: Verification Matrix
+version: 1
+summary: Capture the traceable map from requirements, architecture, and implementation-plan
+  commitments to the evidence expected or observed for each verification area.
+template: true
+default_output_path: docs/verification/verification-matrix.md
+checks:
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+---
+
 # Verification Matrix
 
 ## Purpose

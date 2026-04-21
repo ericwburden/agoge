@@ -1,3 +1,16 @@
+---
+id: scenario-traceability
+kind: check
+title: Scenario Traceability Check
+version: 1
+summary: Validate that scenario outputs stay traceable to the role-owned workflows,
+  artifact contracts, and gating assumptions they compose rather than inventing scenario
+  logic that cannot be grounded in the underlying role packages.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Scenario Traceability Check
 
 ## Purpose

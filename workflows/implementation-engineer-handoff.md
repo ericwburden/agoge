@@ -1,3 +1,28 @@
+---
+id: implementation-engineer-handoff
+kind: workflow
+title: Implementation Engineer Handoff
+version: 1
+summary: Turn reviewed implementation outputs into a downstream-ready implementation
+  package handoff for code review, verification, and release-adjacent roles.
+role: implementation-engineer
+inputs:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+outputs:
+- implementation-package-handoff
+skills:
+- implementation-package-prep
+- handoff-packaging
+- research-documentation
+checks:
+- implementation-package-handoff
+- implementation-traceability
+- implementation-engineer-boundary
+handoff_to: []
+---
+
 # Implementation Engineer Handoff
 
 ## Purpose

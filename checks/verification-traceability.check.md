@@ -1,3 +1,21 @@
+---
+id: verification-traceability
+kind: check
+title: Verification Traceability Check
+version: 1
+summary: Validate that the QA / Verification Lead artifact chain preserves traceability
+  from upstream requirements, architecture, planning, and implementation outputs to
+  the verification strategy, coverage matrix, evidence review, and downstream verification
+  handoff.
+mode: presence
+severity: error
+applies_to:
+- verification-strategy
+- verification-matrix
+- evidence-review
+- verification-handoff
+---
+
 # Verification Traceability Check
 
 ## Purpose

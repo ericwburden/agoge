@@ -1,3 +1,30 @@
+---
+id: scenario-designer-handoff
+kind: workflow
+title: Scenario Designer Handoff
+version: 1
+summary: Package reviewed scenario outputs into a downstream-ready handoff that adopters,
+  workflow authors, project leads, or execution-planning consumers can use without
+  reconstructing the multi-role scenario from earlier artifacts.
+role: scenario-designer
+inputs:
+- scenario-definition
+- scenario-integration-map
+- scenario-review
+outputs:
+- scenario-handoff
+skills:
+- scenario-composition
+- handoff-packaging
+- research-documentation
+- pattern-adaptation
+checks:
+- scenario-handoff
+- scenario-traceability
+- scenario-designer-boundary
+handoff_to: []
+---
+
 # Scenario Designer Handoff
 
 ## Purpose

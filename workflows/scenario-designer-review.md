@@ -1,3 +1,29 @@
+---
+id: scenario-designer-review
+kind: workflow
+title: Scenario Designer Review
+version: 1
+summary: Review the drafted scenario package, record the durable scenario posture,
+  and decide whether the package is ready, conditional, or blocked for downstream
+  adoption, tailoring, or execution use.
+role: scenario-designer
+inputs:
+- scenario-definition
+- scenario-integration-map
+outputs:
+- scenario-review
+skills:
+- scenario-composition
+- research-documentation
+- pattern-adaptation
+- meeting-notes-and-actions
+checks:
+- scenario-review
+- scenario-traceability
+- scenario-designer-boundary
+handoff_to: []
+---
+
 # Scenario Designer Review
 
 ## Purpose

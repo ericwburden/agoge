@@ -1,3 +1,30 @@
+---
+id: scenario-handoff
+kind: check
+title: Scenario Handoff Check
+version: 1
+summary: Validate that the scenario handoff artifact packages the scenario in a way
+  that downstream adopters, workflow authors, or execution-planning consumers can
+  use without reconstructing the multi-role logic from earlier artifacts.
+mode: headings
+severity: error
+applies_to:
+- scenario-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Current Scenario Summary
+- Scenario Package Included
+- Current Readiness Posture
+- Role And Workflow Routing Guidance
+- Entry Conditions For The Next Consumer
+- Active Conditions, Risks, And Watchouts
+- Follow-Up Owners
+- Revisit Triggers
+- Recommended Next Consumer
+---
+
 # Scenario Handoff Check
 
 ## Purpose

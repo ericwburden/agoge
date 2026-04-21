@@ -1,3 +1,18 @@
+---
+id: requirements-handoff
+kind: artifact
+title: Requirements Handoff
+version: 1
+summary: Capture the downstream-ready summary of verified requirements, traceability,
+  risks, unresolved questions, and role-to-role handoff information.
+template: true
+default_output_path: docs/discovery/requirements-handoff.md
+checks:
+- requirements-handoff
+- traceability
+- business-analyst-boundary
+---
+
 # Requirements Handoff
 
 ## Purpose

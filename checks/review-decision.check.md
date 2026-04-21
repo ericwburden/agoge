@@ -1,3 +1,33 @@
+---
+id: review-decision
+kind: check
+title: Review Decision Check
+version: 1
+summary: Validate that the review decision artifact expresses a clear approval posture,
+  ties that posture back to the findings, and makes required follow-up explicit.
+mode: headings
+severity: error
+applies_to:
+- review-decision
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Decision Scope
+- Reviewed Inputs
+- Overall Assessment
+- Review Status
+- Decision Owner Or Approver
+- Blocking Findings Driving The Decision
+- Non-Blocking Findings And Watchouts
+- Required Remediation And Conditions
+- Condition Owners
+- Residual Risks And Open Questions
+- Verification And Release Watchouts
+- Re-Review Triggers
+- Recommended Next Step
+---
+
 # Review Decision Check
 
 ## Purpose

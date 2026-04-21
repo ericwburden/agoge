@@ -1,3 +1,29 @@
+---
+id: scenario-review
+kind: check
+title: Scenario Review Check
+version: 1
+summary: Validate that the scenario review artifact records meaningful findings, remediation
+  decisions, and a defensible readiness assessment for the scenario package.
+mode: headings
+severity: error
+applies_to:
+- scenario-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Overall Assessment
+- Decision Status
+- Integration Risks And Failure Modes
+- Conditions And Remediation Decisions
+- Follow-Up Owners
+- Revisit Triggers
+- Recommended Next Step
+---
+
 # Scenario Review Check
 
 ## Purpose

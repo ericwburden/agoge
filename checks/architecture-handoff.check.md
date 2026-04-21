@@ -1,3 +1,32 @@
+---
+id: architecture-handoff
+kind: check
+title: Architecture Handoff Check
+version: 1
+summary: Validate that the architecture handoff is complete enough for downstream
+  roles to continue without reconstructing the solution shape or design rationale
+  from earlier artifacts.
+mode: headings
+severity: error
+applies_to:
+- architecture-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Handoff Summary
+- Architecture Summary
+- Review Status And Key Findings
+- Readiness Ownership And Conditions
+- Interface, Dependency, And Integration Hotspots
+- Verification Focus Areas
+- Architecture Fitness Criteria
+- Specification Relationship
+- Unresolved Decisions And Risks
+- Recommended Downstream Consumers
+- Next Decision Points
+---
+
 # Architecture Handoff Check
 
 ## Purpose

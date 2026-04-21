@@ -1,3 +1,27 @@
+---
+id: role-builder-role-definition
+kind: workflow
+title: Role Builder Role Definition
+version: 1
+summary: Turn a role idea, source references, and observed practice into a clear reusable
+  role definition that can support design of the role's artifact, workflow, and check
+  package.
+role: role-builder
+inputs: []
+outputs:
+- role-definition-brief
+skills:
+- role-definition
+- meeting-notes-and-actions
+- research-documentation
+- content-research-writer
+checks:
+- role-definition-brief
+- role-package-traceability
+- role-builder-boundary
+handoff_to: []
+---
+
 # Role Builder Role Definition
 
 ## Purpose

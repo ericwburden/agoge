@@ -1,3 +1,28 @@
+---
+id: role-builder-handoff
+kind: workflow
+title: Role Builder Handoff
+version: 1
+summary: Turn a reviewed reusable role package into an adoption-facing handoff that
+  another repo, team, or downstream designer can use without reconstructing the package
+  from earlier artifacts or chat history.
+role: role-builder
+inputs:
+- role-definition-brief
+- role-support-system
+- role-package-review
+outputs:
+- role-package-handoff
+skills:
+- role-handoff-packaging
+- research-documentation
+checks:
+- role-package-handoff
+- role-package-traceability
+- role-builder-boundary
+handoff_to: []
+---
+
 # Role Builder Handoff
 
 ## Purpose

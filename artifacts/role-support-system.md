@@ -1,3 +1,18 @@
+---
+id: role-support-system
+kind: artifact
+title: Role Support System
+version: 1
+summary: 'Capture the operational support package for a reusable agent role: artifacts,
+  workflows, checks, skills, and tool-preference decisions.'
+template: true
+default_output_path: docs/orpheum/role-support-system.md
+checks:
+- role-support-system
+- role-package-traceability
+- role-builder-boundary
+---
+
 # Role Support System
 
 ## Purpose

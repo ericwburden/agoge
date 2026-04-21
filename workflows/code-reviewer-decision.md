@@ -1,3 +1,28 @@
+---
+id: code-reviewer-decision
+kind: workflow
+title: Code Reviewer Decision
+version: 1
+summary: Review the drafted code review scope and findings, record the durable review
+  decision, and decide whether the implementation is approved, conditionally acceptable,
+  or blocked pending remediation.
+role: code-reviewer
+inputs:
+- code-review-scope
+- review-findings
+outputs:
+- review-decision
+skills:
+- research-documentation
+- handoff-packaging
+- requirements-verification
+checks:
+- review-decision
+- review-traceability
+- code-reviewer-boundary
+handoff_to: []
+---
+
 # Code Reviewer Decision
 
 ## Purpose

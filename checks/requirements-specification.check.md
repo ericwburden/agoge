@@ -1,3 +1,31 @@
+---
+id: requirements-specification
+kind: check
+title: Requirements Specification Check
+version: 1
+summary: Validate that the requirements specification artifact contains verified,
+  traceable, and business-grounded requirements rather than a mixed set of features,
+  assumptions, and implementation ideas.
+mode: headings
+severity: error
+applies_to:
+- requirements-specification
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Source Context
+- Requirement Summary
+- Verified Requirements
+- Non-Requirements
+- Assumptions
+- Open Questions
+- Constraints
+- Acceptance Considerations
+- Specification Relationship
+- Candidate Allium Promotion
+---
+
 # Requirements Specification Check
 
 ## Purpose

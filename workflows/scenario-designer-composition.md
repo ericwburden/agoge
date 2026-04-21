@@ -1,3 +1,30 @@
+---
+id: scenario-designer-composition
+kind: workflow
+title: Scenario Designer Composition
+version: 1
+summary: Turn a repeatable multi-role activity into an explicit scenario definition
+  and scenario integration map that downstream consumers can use without reconstructing
+  the role choreography from scattered role packages.
+role: scenario-designer
+inputs: []
+outputs:
+- scenario-definition
+- scenario-integration-map
+skills:
+- scenario-composition
+- research-documentation
+- pattern-adaptation
+- meeting-notes-and-actions
+- content-research-writer
+checks:
+- scenario-definition
+- scenario-integration-map
+- scenario-traceability
+- scenario-designer-boundary
+handoff_to: []
+---
+
 # Scenario Designer Composition
 
 ## Purpose

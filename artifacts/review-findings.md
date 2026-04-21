@@ -1,3 +1,19 @@
+---
+id: review-findings
+kind: artifact
+title: Review Findings
+version: 1
+summary: Capture the durable finding record for a code review pass, including the
+  concrete concerns, affected areas, severity, confidence, rationale, and requested
+  remediation or evidence.
+template: true
+default_output_path: docs/verification/review-findings.md
+checks:
+- review-findings
+- review-traceability
+- code-reviewer-boundary
+---
+
 # Review Findings
 
 ## Purpose

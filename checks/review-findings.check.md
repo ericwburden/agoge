@@ -1,3 +1,30 @@
+---
+id: review-findings
+kind: check
+title: Review Findings Check
+version: 1
+summary: Validate that the review findings artifact records concrete, actionable,
+  severity-aware findings rather than vague commentary or ungrounded preference.
+mode: headings
+severity: error
+applies_to:
+- review-findings
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Findings Summary
+- Review Coverage Note
+- Finding Log
+- Blocking Findings
+- Non-Blocking Findings
+- Missing Validation Or Weak Evidence Findings
+- Upstream Routing Findings
+- Reviewer Notes On Residual Risk
+- Re-Review Triggers
+- Suggested Next Action
+---
+
 # Review Findings Check
 
 ## Purpose

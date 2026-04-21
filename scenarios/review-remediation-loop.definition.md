@@ -1,3 +1,66 @@
+---
+id: review-remediation-loop
+kind: scenario
+title: Review Remediation Loop Scenario Definition
+version: 1
+summary: Capture the reusable `Review Remediation Loop` scenario that turns review
+  findings on a bounded delivery slice into explicit remediation work, refreshed implementation
+  evidence, and a renewed downstream review posture without forcing teams to improvise
+  the loop from scattered artifacts.
+roles:
+- code-reviewer
+- implementation-engineer
+- qa-verification-lead
+workflows:
+- code-reviewer-analysis
+- code-reviewer-decision
+- code-reviewer-handoff
+- implementation-engineer-execution
+- implementation-engineer-review
+- implementation-engineer-handoff
+- qa-verification-review
+- qa-verification-handoff
+artifacts:
+- code-review-scope
+- review-findings
+- review-decision
+- review-handoff
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+- evidence-review
+- verification-handoff
+checks:
+- code-review-scope
+- review-findings
+- review-traceability
+- code-reviewer-boundary
+- review-decision
+- review-handoff
+- implementation-record
+- implementation-evidence
+- implementation-traceability
+- implementation-engineer-boundary
+- implementation-readiness-review
+- implementation-package-handoff
+- evidence-review
+- verification-traceability
+- qa-verification-boundary
+- verification-handoff
+entry_conditions:
+- the-candidate-already-has-a-reviewed-implementation-package-and-a-concrete-findings-package-normally-from-implementation-and-release-prep
+- at-least-one-concrete-review-finding-condition-or-evidence-gap-exists-that-requires-remediation-before-downstream-trust-can-increase
+- the-remediation-target-is-still-one-bounded-slice-rather-than-a-broad-project-replanning-effort
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+exit_conditions:
+- a-refreshed-implementation-package-that-clearly-reflects-the-remediation-work-performed
+- an-updated-review-posture-that-explicitly-says-whether-the-candidate-is-now-approved-still-conditional-or-still-blocked
+- optional-refreshed-verification-posture-when-evidence-sensitive-findings-required-verification-re-engagement
+- explicit-re-review-or-re-verification-triggers-if-downstream-trust-still-depends-on-further-change
+- the-candidate-either-converges-back-into-the-normal-downstream-path-through-implementation-and-release-prep-or-verification-and-release-gate-or-is-explicitly-routed-out-of-the-loop-because-the-blocker-is-not-honest-remediation-work-inside-the-current-slice
+---
+
 # Review Remediation Loop Scenario Definition
 
 ## Purpose

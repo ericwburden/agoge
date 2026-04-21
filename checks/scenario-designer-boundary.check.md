@@ -1,3 +1,17 @@
+---
+id: scenario-designer-boundary
+kind: check
+title: Scenario Designer Boundary Check
+version: 1
+summary: Validate that Scenario Designer outputs stay inside reusable scenario composition,
+  integration mapping, review, and downstream handoff role boundaries and do not drift
+  into role-definition ownership, project management, architecture design, or project-instance
+  execution control.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Scenario Designer Boundary Check
 
 ## Purpose

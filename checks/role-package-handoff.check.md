@@ -1,3 +1,30 @@
+---
+id: role-package-handoff
+kind: check
+title: Role Package Handoff Check
+version: 1
+summary: Validate that a role-package handoff is downstream-usable without forcing
+  adopters to reconstruct the package from earlier artifacts or chat-only context.
+mode: headings
+severity: error
+applies_to:
+- role-package-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Role In Scope
+- Package Summary
+- Reviewed Inputs
+- Review Outcome
+- Adoption Guidance
+- Recommended Consumers
+- Current Limitations
+- Required Conventions And Preferences
+- Allium Expectations
+- Next Adoption Steps
+---
+
 # Role Package Handoff Check
 
 ## Purpose
