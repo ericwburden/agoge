@@ -166,6 +166,8 @@ Expected job:
 - preserve security/compliance conditions
 - package the final release or adoption gate honestly
 
+This scenario now has a reusable package in `scenarios/verification-and-release-gate.*` and should be used when the remaining work is evidence review, trust-boundary framing, and release gating rather than implementation or review remediation.
+
 ### 8. Release Feedback To Reprioritization
 
 Core roles:
