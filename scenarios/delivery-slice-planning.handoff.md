@@ -46,8 +46,8 @@ Use the scenario in this broad order:
 1. Product Owner direction, review, and handoff to select the next priority candidate and preserve current product guardrails
 2. Solution Architect design, review, and handoff when architecture-sensitive seams or constraints need explicit confirmation before that candidate becomes the next slice
 3. Technical Planner planning, review, and handoff to turn the selected candidate into a bounded implementation package
-4. optional QA / Verification Lead planning when verification expectations materially constrain the slice before implementation begins
-5. optional Security / Compliance Specialist scoping, review, and handoff when obligations, controls, or trust boundaries materially constrain the slice before implementation begins
+4. optional QA / Verification Lead planning before the slice is treated as settled when verification expectations materially constrain it before implementation begins
+5. optional Security / Compliance Specialist scoping, review, and handoff before the slice is treated as settled when obligations, controls, or trust boundaries materially constrain it before implementation begins
 6. hand the completed slice package downstream into `Implementation and Release Prep`
 
 Downstream consumers should preserve:
@@ -57,6 +57,7 @@ Downstream consumers should preserve:
 - the distinction between broader project planning and slice-sized downstream work
 - explicit slice exclusions, deferred scope, and dependency hotspots
 - the rule that architecture-sensitive seams should stay visible when the slice is shaped
+- the rule that optional QA / Verification Lead and Security / Compliance Specialist branches should land before the slice is treated as settled when they materially constrain it
 - the optional nature of QA / Verification Lead and Security / Compliance Specialist unless real slice-shaping triggers require them
 - the participant-fit judgment that the current core role packages are usable here as-is unless repeated usage proves otherwise
 

@@ -62,9 +62,9 @@ Exit condition:
 1. Consume the broader reviewed planning package and identify the next priority candidate through Product Owner outputs.
 2. Confirm that the candidate can become a bounded slice without silently crossing important architecture, interface, dependency, or trust-boundary seams.
 3. Turn that candidate into an explicit bounded slice through Solution Architect and Technical Planner outputs, including slice-sized implementation strategy, dependency posture, readiness view, and downstream implementation handoff.
-4. Optionally add early verification framing when confidence targets, evidence expectations, or acceptance-sensitive hotspots materially shape the slice before coding begins.
-5. Optionally add security/compliance framing when obligations, controls, or approval-sensitive constraints materially shape slice boundaries or readiness.
-6. Review the resulting slice package before it is treated as the next bounded delivery unit.
+4. Optionally bring in early QA / Verification Lead framing before the slice is treated as settled when confidence targets, evidence expectations, or acceptance-sensitive hotspots materially shape the slice before coding begins.
+5. Optionally bring in Security / Compliance Specialist framing before the slice is treated as settled when obligations, controls, or approval-sensitive constraints materially shape slice boundaries or readiness.
+6. Review the resulting slice package after any materially constraining optional branches have landed, then decide whether it is the next bounded delivery unit.
 7. Hand the completed slice package downstream to `Implementation and Release Prep`.
 
 ## Decision Gates And Human Checkpoints

@@ -214,9 +214,9 @@ Expected job:
 1. `Project Planning`
 2. `Delivery Slice Planning`
 3. `Implementation and Release Prep`
-4. `Sprint Preparation / Sprint Readiness`
-5. `Secure Delivery / Secure Feature Lifecycle`
-6. `Review Remediation Loop`
+4. `Review Remediation Loop`
+5. `Sprint Preparation / Sprint Readiness`
+6. `Secure Delivery / Secure Feature Lifecycle`
 7. `Verification And Release Gate`
 8. `Release Feedback To Reprioritization`
 9. `AI-Sensitive Feature Delivery`
