@@ -14,7 +14,7 @@ Start from the Scenario Designer package when creating or refining reusable mult
 
 The current default SDLC path is:
 
-- validated discovery as a role-covered upstream precondition
+- [`project-discovery.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.definition.md)
 - [`project-planning.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-planning.definition.md)
 - [`delivery-slice-planning.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/delivery-slice-planning.definition.md)
 - [`implementation-and-release-prep.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/implementation-and-release-prep.definition.md)
@@ -24,10 +24,12 @@ The current default SDLC path is:
 
 Use [`secure-delivery-feature-lifecycle.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md) instead of that standard chain when security/compliance, trust-boundary, or approval-sensitive concerns must shape the work end to end rather than appearing only as optional branches or a final gate.
 
-The repository does not yet have a first-class discovery scenario. Validated discovery is still an upstream role-covered precondition rather than a reusable scenario package.
-
 ## Current Scenarios
 
+- [`project-discovery.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.definition.md) defines the reusable Project Discovery scenario boundary, lifecycle window, participating roles, entry conditions, and target outputs for validated upstream discovery.
+- [`project-discovery.integration-map.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.integration-map.md) captures the BA-led discovery chain, optional product-readiness branch, and downstream routing into Project Planning.
+- [`project-discovery.review.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.review.md) records the current readiness, participant-fit basis, and upstream-discovery limits of the Project Discovery scenario package.
+- [`project-discovery.handoff.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-discovery.handoff.md) packages the Project Discovery scenario for downstream adoption and tailoring.
 - [`project-planning.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-planning.definition.md) defines the reusable Project Planning scenario boundary, lifecycle window, participating roles, entry conditions, and target outputs.
 - [`project-planning.integration-map.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-planning.integration-map.md) captures the role-owned workflow chain, handoffs, dependencies, branching rules, and coordination watchouts for Project Planning.
 - [`project-planning.review.md`](C:/Users/ericw/Projects/orpheum/scenarios/project-planning.review.md) records the current readiness and limits of the Project Planning scenario package.

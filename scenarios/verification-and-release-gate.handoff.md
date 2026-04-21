@@ -63,6 +63,7 @@ Downstream consumers should preserve:
 - the distinction between release preparation and actual deployment execution
 - the rule that this scenario normally consumes a candidate package already prepared by `Implementation And Release Prep` or `Secure Delivery / Secure Feature Lifecycle`
 - the rule that blocked or conditional findings are normal upstream producer input for remediation rather than language to be smoothed away
+- the rule that release or adoption learnings should route into `Release Feedback To Reprioritization` when they materially change product direction or priority posture
 
 ## Entry Conditions For The Next Consumer
 
@@ -102,6 +103,10 @@ Before using this scenario, the next consumer should confirm:
 
 ## Recommended Next Consumer
 
+- `Review Remediation Loop`
+  - when blocked or conditional gate findings show the candidate still belongs in the same bounded slice but needs another explicit remediation pass
+- `Release Feedback To Reprioritization`
+  - when release or adoption handling has happened and the resulting learnings now need to change product direction or priority posture
 - `Scenario Designer`
   - when tailoring this reusable scenario for another context
 - `Role Builder`

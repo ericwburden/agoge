@@ -8,15 +8,36 @@ This note translates public delivery and orchestration patterns into a pragmatic
 
 ## Recommendation Summary
 
-The first scenario to implement should be `Project Planning`.
+The first scenario in the default SDLC chain should now be `Project Discovery`.
 
-That is the highest-leverage first scenario because it uses a strong portion of the existing role set, has clear public precedent, and creates a reusable bridge between validated discovery and execution-oriented roles.
+That is the highest-leverage upstream scenario because it closes the earlier discovery gap explicitly and creates a reusable bridge between raw project signals and the validated discovery package that downstream planning expects.
 
 ## Recommended Initial Scenario Set
 
-### 1. Project Planning
+### 1. Project Discovery
 
-Implement this first.
+Implement this as the explicit upstream discovery scenario.
+
+Core roles:
+
+- `Business Analyst`
+- optional `Product Owner`
+
+Why:
+
+- This closes the remaining upstream SDLC gap before `Project Planning`.
+- It turns kickoff signals, rough stakeholder asks, and release-driven follow-up needs into validated discovery instead of leaving discovery as an implied role-only precondition.
+- It fits the current repository especially well because the Business Analyst package already has a strong kickoff -> process-analysis -> requirements-handoff chain.
+
+Expected job:
+
+- clarify the business problem and scope boundaries
+- capture process understanding and operational gaps
+- verify requirements and confirmation posture
+- hand a validated discovery package into planning
+- optionally add early product-readiness framing when needed before planning starts
+
+### 2. Project Planning
 
 Core roles:
 
@@ -40,7 +61,7 @@ Expected job:
 - turn reviewed architecture into an execution-ready planning package
 - optionally bring in security/compliance when the planning phase must carry explicit control or obligation framing
 
-### 2. Sprint Preparation / Sprint Readiness
+### 3. Sprint Preparation / Sprint Readiness
 
 Core roles:
 
@@ -61,7 +82,7 @@ Expected job:
 - make slice boundaries and dependencies explicit
 - identify verification-sensitive readiness conditions
 
-### 3. Delivery Slice Planning
+### 4. Delivery Slice Planning
 
 Core roles:
 
@@ -84,7 +105,7 @@ Expected job:
 - preserve architecture, dependency, verification, and optional security/compliance constraints that still shape the slice
 - hand one slice-sized package downstream into implementation-oriented work
 
-### 4. Implementation and Release Prep
+### 5. Implementation and Release Prep
 
 Core roles:
 
@@ -106,7 +127,7 @@ Expected job:
 - verify explicitly
 - package that slice-sized candidate for release or adoption handling
 
-### 5. Secure Delivery / Secure Feature Lifecycle
+### 6. Secure Delivery / Secure Feature Lifecycle
 
 Core roles:
 
@@ -130,7 +151,7 @@ Expected job:
 - keep controls, evidence, and approval-sensitive decisions explicit
 - preserve secure-delivery constraints through release posture
 
-### 6. Review Remediation Loop
+### 7. Review Remediation Loop
 
 Core roles:
 
@@ -149,7 +170,7 @@ Expected job:
 - repackage changed implementation evidence
 - re-evaluate review posture
 
-### 7. Verification And Release Gate
+### 8. Verification And Release Gate
 
 Core roles:
 
@@ -170,7 +191,7 @@ Expected job:
 
 This scenario now has a reusable package in `scenarios/verification-and-release-gate.*` and should be used when the remaining work is evidence review, trust-boundary framing, and final downstream gating rather than implementation, slice shaping, or review remediation.
 
-### 8. Release Feedback To Reprioritization
+### 9. Release Feedback To Reprioritization
 
 Core roles:
 
@@ -193,7 +214,7 @@ Status note:
 
 - this scenario is now implemented as a reusable package in `scenarios/`
 
-### 9. AI-Sensitive Feature Delivery
+### 10. AI-Sensitive Feature Delivery
 
 Core roles:
 
@@ -221,12 +242,13 @@ Expected job:
 
 The current default core SDLC chain is:
 
-1. `Project Planning`
-2. `Delivery Slice Planning`
-3. `Implementation and Release Prep`
-4. `Review Remediation Loop` when bounded remediation is needed
-5. `Verification And Release Gate` when a distinct final downstream gate is needed
-6. `Release Feedback To Reprioritization`
+1. `Project Discovery`
+2. `Project Planning`
+3. `Delivery Slice Planning`
+4. `Implementation and Release Prep`
+5. `Review Remediation Loop` when bounded remediation is needed
+6. `Verification And Release Gate` when a distinct final downstream gate is needed
+7. `Release Feedback To Reprioritization`
 
 Variants and specializations:
 
@@ -234,15 +256,15 @@ Variants and specializations:
 2. `Secure Delivery / Secure Feature Lifecycle`
 3. `AI-Sensitive Feature Delivery`
 
-## Why Project Planning Should Be First
+## Why Project Discovery Should Be First
 
 This recommendation is supported both by the current repository state and by public delivery patterns.
 
 From the current repo:
 
-- the upstream planning roles are already the strongest coherent chain in the repository
-- the scenario can be implemented with minimal invention because the current role set already covers discovery, product direction, architecture, and planning
-- it creates a reusable boundary between "we understand the work" and "we are ready to implement"
+- the Business Analyst package already has a strong kickoff -> process-analysis -> requirements-handoff chain
+- the repository had an explicit upstream gap because validated discovery was only a role-covered precondition
+- the scenario creates a reusable boundary between "we have a project signal" and "we have validated discovery ready for planning"
 
 From public delivery patterns:
 
@@ -253,14 +275,14 @@ From public delivery patterns:
 
 The common pattern is consistent:
 
-- upstream clarification and direction
-- architecture and planning
+- upstream clarification and validation
+- product, architecture, and planning
 - implementation and review
 - verification and release handling
 
-The current repository now covers most of that chain with implemented scenarios, but validated discovery itself is still a role-covered upstream precondition rather than a first-class scenario.
+The current repository now covers that chain with implemented scenarios, with `Project Discovery` establishing the validated discovery package that the rest of the SDLC can trust.
 
-That makes `Project Planning` the most natural first reusable scenario for the current repository.
+That makes `Project Discovery` the most natural first scenario in the default reusable chain for the current repository.
 
 ## Limitation
 

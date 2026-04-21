@@ -75,7 +75,7 @@ Exit condition:
 7. Turn the reviewed requirements, architecture, implementation evidence, and control posture into an explicit QA / Verification Lead strategy, evidence review, and verification handoff package.
 8. Reconverge the reviewed implementation, review, verification, and security/compliance packages before release-preparation packaging begins.
 9. Turn the reconverged package into a release candidate summary, release-readiness decision, rollout notes, and release handoff package.
-10. Hand the completed release-preparation package downstream for human approval, deployment handling, adoption handling, or other release-adjacent use.
+10. Hand the completed release-preparation package downstream for human approval, deployment handling, adoption handling, `Verification And Release Gate` when a distinct final downstream gate is still required, or other release-adjacent use.
 
 ## Decision Gates And Human Checkpoints
 
@@ -94,6 +94,7 @@ Exit condition:
 - This scenario is not the default mechanism for executing an entire project backlog or roadmap in one pass.
 - This scenario does not absorb actual deployment execution, incident response, or long-running operational ownership.
 - This scenario does not act as a legal opinion, formal audit sign-off, or blanket compliance authorization.
+- This scenario does not replace `Verification And Release Gate` when a distinct downstream gate owned mainly by verification, security/compliance, and release-handoff roles is still required after secure implementation work is complete.
 - This scenario should stay reusable across projects and should not be overfit to a single CI/CD stack, release ceremony, compliance regime, or environment model.
 
 ## Open Questions And Design Gaps

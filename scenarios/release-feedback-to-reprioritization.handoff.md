@@ -43,7 +43,7 @@ Use the scenario in this broad order:
 2. Product Owner turns those learnings into updated product direction and backlog prioritization
 3. Optional Business Analyst clarifies the cases where the feedback is actually a discovery gap
 4. Product Owner reviews and hands off the updated priority posture to downstream planning or discovery consumers
-5. If the feedback reveals a stable behavioral expectation or a specification gap, route that work to the appropriate specification path rather than burying it in backlog prose
+5. If the feedback reveals a stable behavioral expectation or a specification gap, route that work into `Project Discovery` or `Project Planning` rather than burying it in backlog prose
 
 Downstream consumers should preserve:
 
@@ -51,7 +51,7 @@ Downstream consumers should preserve:
 - the distinction between release packaging and product decision-making
 - the distinction between product reprioritization and implementation remediation
 - the optional nature of Business Analyst participation unless discovery uncertainty is genuinely present
-- the rule that stable behavioral expectations should not be left implicit if they are mature enough to sharpen into specification
+- the rule that stable behavioral expectations should not be left implicit if they are mature enough to sharpen into discovery or planning work
 - the rule that human approval remains visible when reprioritization materially changes roadmap commitments or stakeholder tradeoffs
 
 ## Entry Conditions For The Next Consumer
@@ -85,10 +85,16 @@ Before using this scenario, the next consumer should confirm:
 
 ## Recommended Next Consumer
 
-- `Product Owner`
-  - to reuse the scenario when release learnings should meaningfully change priority posture
 - `Business Analyst`
   - when the feedback reveals discovery gaps that need to be clarified before product direction is settled
+- `Project Discovery`
+  - when reprioritization reveals that the real missing asset is a fresh validated discovery package rather than only a product-priority adjustment
+- `Project Planning`
+  - when the updated product posture materially changes the broader reviewed plan and architecture or implementation planning should be refreshed explicitly
+- `Delivery Slice Planning`
+  - when the broader planning posture remains sound and the next honest step is to select or reshape one bounded delivery slice from the updated priorities
+- `Product Owner`
+  - to reuse the scenario when release learnings should meaningfully change priority posture
 - project leads or workflow authors
   - when downstream consumers need a reusable path from release learning to priority change
 

@@ -56,7 +56,7 @@ Basis for judgment:
 - Preserve explicit product-direction review before downstream planning depends on the reprioritized posture.
 - Preserve the optional Business Analyst branch for genuine discovery gaps rather than routine feedback noise.
 - Preserve the rule that implementation remediation and verification issues should route upstream instead of being flattened into product priority language.
-- Preserve the rule that stable behavioral expectations should route to specification work when they are mature enough to deserve it.
+- Preserve the rule that stable behavioral expectations should route into `Project Discovery` or `Project Planning` when they are mature enough to deserve explicit follow-on work.
 - If repeated usage shows the feedback loop usually arrives mixed with remediation or discovery defects, sharpen the branching rules in a future scenario hardening pass.
 
 ## Follow-Up Owners

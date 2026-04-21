@@ -66,7 +66,7 @@ Exit condition:
 - the release learnings must be traceable to an actual release, adoption, or handoff package rather than to vague commentary
 - product reprioritization must stay separate from release authorization, deployment execution, and implementation remediation
 - the Business Analyst branch should become explicit when the feedback reveals a discovery gap rather than a pure priority change
-- stable behavioral expectations that are clear enough to become or refine a specification should be routed to specification work rather than buried in prioritization prose
+- stable behavioral expectations that are clear enough to become or refine a specification should be routed into explicit discovery or planning work rather than buried in prioritization prose
 - human approval remains visible when reprioritization materially affects committed roadmap direction, stakeholder tradeoffs, or trust-boundary-sensitive behavior
 
 ## Scenario Constraints And Non-Goals
@@ -80,7 +80,7 @@ Exit condition:
 ## Open Questions And Design Gaps
 
 - If repeated usage shows that release learnings usually arrive mixed together with implementation defects and discovery gaps, the repository may need a narrower triage scenario before reprioritization.
-- If repeated usage shows that product reprioritization often exposes stable behavioral expectations, the repository may want a sharper handoff into specification work.
+- If repeated usage shows that product reprioritization often exposes stable behavioral expectations, the repository may want a sharper default split between `Project Discovery` and `Project Planning` for that follow-on work.
 
 ## Recommended Next Step
 
