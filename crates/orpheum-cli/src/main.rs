@@ -3,8 +3,9 @@ use std::process::ExitCode;
 use camino::{Utf8Path, Utf8PathBuf};
 use clap::{Args, Parser, Subcommand};
 use orpheum_core::{
-    Catalog, CheckRunReport, DoctorReport, OrpheumError, ResolvedScenario, ScenarioListItem,
-    apply_scenario, generate_current_prompt, init_project, read_session_files, run_doctor,
+    Catalog, CheckRunReport, CheckStatusValue, DoctorReport, OrpheumError, ResolvedScenario,
+    ScenarioListItem, apply_scenario, generate_current_prompt, init_project, read_session_files,
+    run_doctor,
 };
 
 #[derive(Debug, Parser)]
@@ -183,7 +184,7 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                     state
                         .check_status
                         .values()
-                        .filter(|status| *status == "failed")
+                        .filter(|status| matches!(status, CheckStatusValue::Failed))
                         .count()
                 );
             }
@@ -274,7 +275,7 @@ fn print_scenario_show(resolved: &ResolvedScenario) {
     }
     println!("Checks:");
     for check in &resolved.checks {
-        println!("  - {} ({})", check.id, check.mode);
+        println!("  - {} ({:?})", check.id, check.mode);
     }
 }
 

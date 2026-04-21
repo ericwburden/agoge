@@ -8,7 +8,28 @@ use time::{OffsetDateTime, format_description::well_known::Rfc3339};
 use uuid::Uuid;
 
 use crate::catalog::{Catalog, CheckDef, OutputMode};
+use crate::checks::{CheckRunReport, CheckStatusValue};
 use crate::error::{OrpheumError, OrpheumErrorCode};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum SessionMode {
+    Default,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum CleanupPolicy {
+    Explicit,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum SessionLifecycleState {
+    Active,
+    Suspended,
+    Finalized,
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SessionManifest {
@@ -19,18 +40,18 @@ pub struct SessionManifest {
     pub orpheum_source: Utf8PathBuf,
     pub source_revision: Option<String>,
     pub target_project_root: Utf8PathBuf,
-    pub mode: String,
-    pub cleanup_policy: String,
+    pub mode: SessionMode,
+    pub cleanup_policy: CleanupPolicy,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SessionState {
-    pub state: String,
+    pub state: SessionLifecycleState,
     pub current_phase: String,
     pub completed_workflows: Vec<String>,
     pub pending_workflows: Vec<String>,
     pub artifact_status: BTreeMap<String, String>,
-    pub check_status: BTreeMap<String, String>,
+    pub check_status: BTreeMap<String, CheckStatusValue>,
     pub suspended: bool,
     pub resumable: bool,
 }
@@ -64,7 +85,7 @@ pub struct SessionApplyResult {
     pub active_file: Utf8PathBuf,
     pub current_phase: String,
     pub next_command: String,
-    pub cleanup_policy: String,
+    pub cleanup_policy: CleanupPolicy,
 }
 
 pub fn session_files(project_root: &Utf8Path) -> SessionFiles {
@@ -128,11 +149,11 @@ pub fn apply_scenario(
         orpheum_source: catalog.paths.root.clone(),
         source_revision: git_revision(&catalog.paths.root),
         target_project_root: project_root.to_path_buf(),
-        mode: "default".into(),
-        cleanup_policy: "explicit".into(),
+        mode: SessionMode::Default,
+        cleanup_policy: CleanupPolicy::Explicit,
     };
     let state = SessionState {
-        state: "active".into(),
+        state: SessionLifecycleState::Active,
         current_phase: current_phase.clone(),
         completed_workflows: Vec::new(),
         pending_workflows: resolved
@@ -148,7 +169,7 @@ pub fn apply_scenario(
         check_status: resolved
             .checks
             .iter()
-            .map(|check| (check.id.clone(), "pending".into()))
+            .map(|check| (check.id.clone(), CheckStatusValue::Pending))
             .collect(),
         suspended: false,
         resumable: true,
@@ -170,9 +191,14 @@ pub fn apply_scenario(
         serde_json::to_string_pretty(&snapshot)?,
     )?;
     fs::write(&files.state_file, serde_json::to_string_pretty(&state)?)?;
+    let check_report = CheckRunReport {
+        scenario_id: resolved.scenario.id.clone(),
+        results: Vec::new(),
+        summary: BTreeMap::new(),
+    };
     fs::write(
         &files.check_log_file,
-        "{\n  \"results\": [],\n  \"summary\": {}\n}\n",
+        serde_json::to_string_pretty(&check_report)?,
     )?;
 
     let prompt = build_prompt(&snapshot, &state, OutputMode::Human);
@@ -190,7 +216,7 @@ pub fn apply_scenario(
         active_file: files.active_file,
         current_phase,
         next_command: "orpheum prompt current".into(),
-        cleanup_policy: "explicit".into(),
+        cleanup_policy: CleanupPolicy::Explicit,
     })
 }
 
@@ -265,7 +291,7 @@ pub fn build_prompt(
     let failed_checks = state
         .check_status
         .iter()
-        .filter(|(_, status)| *status == "failed")
+        .filter(|(_, status)| matches!(status, CheckStatusValue::Failed))
         .map(|(check, _)| format!("- `{check}`"))
         .collect::<Vec<_>>();
 
@@ -304,7 +330,7 @@ fn build_active_markdown(
         state
             .check_status
             .values()
-            .filter(|status| status.as_str() == "failed")
+            .filter(|status| matches!(status, CheckStatusValue::Failed))
             .count(),
         snapshot.scenario.exit_conditions.join(", "),
     )
@@ -329,21 +355,21 @@ fn git_revision(catalog_root: &Utf8Path) -> Option<String> {
 
 pub(crate) fn aggregate_check_status<'a>(
     check: &CheckDef,
-    artifact_results: impl Iterator<Item = &'a str>,
-) -> String {
+    artifact_results: impl Iterator<Item = &'a CheckStatusValue>,
+) -> CheckStatusValue {
     let mut saw_pass = false;
     for status in artifact_results {
         match status {
-            "failed" => return "failed".into(),
-            "passed" => saw_pass = true,
+            CheckStatusValue::Failed => return CheckStatusValue::Failed,
+            CheckStatusValue::Passed => saw_pass = true,
             _ => {}
         }
     }
     if check.applies_to.is_empty() {
-        "skipped".into()
+        CheckStatusValue::Skipped
     } else if saw_pass {
-        "passed".into()
+        CheckStatusValue::Passed
     } else {
-        "pending".into()
+        CheckStatusValue::Pending
     }
 }

@@ -4,7 +4,7 @@ use std::fs;
 use camino::Utf8Path;
 use serde::{Deserialize, Serialize};
 
-use crate::catalog::{Catalog, CheckDef};
+use crate::catalog::{Catalog, CheckDef, CheckMode};
 use crate::error::{OrpheumError, OrpheumErrorCode};
 use crate::session::{aggregate_check_status, read_session_files, refresh_state_files};
 
@@ -40,7 +40,7 @@ pub struct CheckStatus {
 pub struct CheckRunReport {
     pub scenario_id: String,
     pub results: Vec<CheckStatus>,
-    pub summary: BTreeMap<String, String>,
+    pub summary: BTreeMap<String, CheckStatusValue>,
 }
 
 pub fn run_checks(
@@ -68,12 +68,12 @@ pub fn run_checks(
         results.extend(run_check(project_root, catalog, check)?);
     }
 
-    let mut grouped: BTreeMap<String, Vec<&str>> = BTreeMap::new();
+    let mut grouped: BTreeMap<String, Vec<&CheckStatusValue>> = BTreeMap::new();
     for result in &results {
         grouped
             .entry(result.check_id.clone())
             .or_default()
-            .push(result.status.as_str());
+            .push(&result.status);
     }
 
     let summary = snapshot
@@ -101,7 +101,11 @@ pub fn run_checks(
         serde_json::to_string_pretty(&report)?,
     )?;
 
-    if report.summary.values().any(|status| status == "failed") {
+    if report
+        .summary
+        .values()
+        .any(|status| matches!(status, CheckStatusValue::Failed))
+    {
         return Err(OrpheumError::coded(
             OrpheumErrorCode::CheckFailed,
             "one or more checks failed",
@@ -148,14 +152,14 @@ fn run_check(
         }
 
         let content = fs::read_to_string(&target_path)?;
-        let status = match check.mode.as_str() {
-            "presence" => CheckStatus {
+        let status = match check.mode {
+            CheckMode::Presence => CheckStatus {
                 check_id: check.id.clone(),
                 artifact_id: Some(artifact_id.clone()),
                 status: CheckStatusValue::Passed,
                 message: format!("artifact present: {}", target_path),
             },
-            "headings" => {
+            CheckMode::Headings => {
                 let missing = check
                     .required_headings
                     .iter()
@@ -182,11 +186,11 @@ fn run_check(
                     }
                 }
             }
-            other => CheckStatus {
+            CheckMode::Unsupported => CheckStatus {
                 check_id: check.id.clone(),
                 artifact_id: Some(artifact_id.clone()),
                 status: CheckStatusValue::Skipped,
-                message: format!("unsupported check mode {other}; skipped"),
+                message: "unsupported check mode; skipped".into(),
             },
         };
         results.push(status);

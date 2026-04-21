@@ -63,14 +63,32 @@ pub struct ArtifactDef {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum CheckMode {
+    Presence,
+    Headings,
+    #[serde(other)]
+    Unsupported,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum CheckSeverity {
+    Error,
+    Warning,
+    #[serde(other)]
+    Unknown,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CheckDef {
     pub id: String,
     pub kind: String,
     pub title: String,
     pub version: u32,
     pub summary: String,
-    pub mode: String,
-    pub severity: String,
+    pub mode: CheckMode,
+    pub severity: CheckSeverity,
     pub applies_to: Vec<String>,
     #[serde(default)]
     pub required_headings: Vec<String>,
