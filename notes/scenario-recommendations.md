@@ -60,7 +60,7 @@ Expected job:
 - make slice boundaries and dependencies explicit
 - identify verification-sensitive readiness conditions
 
-### 3. Implementation To Release Readiness
+### 3. Implementation and Release Prep
 
 Core roles:
 
@@ -72,14 +72,15 @@ Core roles:
 Why:
 
 - This is one of the cleanest downstream scenarios in the current package set.
-- It captures implementation, review, verification, and release packaging as a reusable quality-gated sequence.
+- It captures implementation, review, verification, and release packaging for one bounded delivery slice or release candidate as a reusable quality-gated sequence.
+- The name makes it explicit that implementation is included while still keeping actual deployment out of scope.
 
 Expected job:
 
-- implement against reviewed upstream direction
+- implement one bounded delivery slice against reviewed upstream direction
 - review independently
 - verify explicitly
-- package the candidate for release or adoption handling
+- package that slice-sized candidate for release or adoption handling
 
 ### 4. Secure Delivery / Secure Feature Lifecycle
 
@@ -188,7 +189,7 @@ Expected job:
 ## Recommended Order
 
 1. `Project Planning`
-2. `Implementation To Release Readiness`
+2. `Implementation and Release Prep`
 3. `Sprint Preparation / Sprint Readiness`
 4. `Secure Delivery / Secure Feature Lifecycle`
 5. `Review Remediation Loop`
