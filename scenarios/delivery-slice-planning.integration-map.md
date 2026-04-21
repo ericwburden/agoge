@@ -87,8 +87,9 @@ Shared artifacts and context that move across the scenario:
 - The scenario must reconverge at:
   - an explicit slice boundary before Technical Planner work is treated as conclusive
   - reviewed architecture-sensitive constraints before the selected slice is treated as technically honest
+  - optional QA / Verification Lead framing before the slice is treated as settled when verification expectations materially constrain it
+  - optional Security / Compliance Specialist framing before the slice is treated as settled when obligations or controls materially constrain it
   - reviewed planning posture before downstream implementation consumes the package
-  - optional verification or security/compliance posture before the slice is treated as settled when those branches materially constrain it
 
 ## Shared Context, State, And Dependency Assumptions
 
@@ -111,7 +112,7 @@ Shared artifacts and context that move across the scenario:
 - Solution Architect and Technical Planner boundaries can blur if slice selection quietly redefines architecture-sensitive seams.
 - This scenario is easy to overread as sprint administration; it should stay focused on bounded slice shaping, not delivery-status tracking.
 - This scenario is also easy to underuse, with teams jumping directly from project planning to implementation; the explicit bounded-slice handoff should remain visible.
-- Optional QA / Verification Lead or Security / Compliance Specialist participation can become ceremonial if trigger conditions are not kept explicit.
+- Optional QA / Verification Lead or Security / Compliance Specialist participation can become ceremonial if trigger conditions are not kept explicit, or too late if those branches are treated like trailing packaging instead of slice-shaping constraints.
 
 ## Recommended Next Step
 

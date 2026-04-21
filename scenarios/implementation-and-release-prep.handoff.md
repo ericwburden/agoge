@@ -62,6 +62,7 @@ Downstream consumers should preserve:
 - the rule that verification depends on concrete evidence rather than assumption
 - the reconvergence rule that release preparation depends on explicit review and verification posture
 - the distinction between release preparation and actual deployment execution
+- the rule that concrete blocking or conditional review and verification findings are the normal upstream producer input for `Review Remediation Loop` when bounded remediation is the honest next step
 
 ## Entry Conditions For The Next Consumer
 
@@ -79,6 +80,7 @@ Before using this scenario, the next consumer should confirm:
 - avoid feeding the scenario whole-project scope when the real need is bounded slice planning
 - avoid delaying QA / Verification work until release packaging is already underway
 - avoid letting release preparation smooth over blocked review findings or weak evidence
+- avoid leaving blocked review or verification findings only in comments, tool state, or chat history when the next correct step is `Review Remediation Loop`
 - avoid treating this scenario as authority to deploy without the required human, environment, or operational approvals
 - avoid reading this scenario as a full SDLC or incident-management framework
 
@@ -95,6 +97,7 @@ Before using this scenario, the next consumer should confirm:
 - repeated usage shows QA / Verification timing needs a stronger default rule
 - repeated usage shows release-preparation consumers need stronger tailoring guidance
 - a future deployment-operations role is added that changes the right downstream boundary
+- repeated usage shows the handoff into `Review Remediation Loop` is still ambiguous or under-specified
 
 ## Recommended Next Consumer
 
