@@ -6,30 +6,30 @@ Capture how the `Secure Delivery / Secure Feature Lifecycle` scenario composes r
 
 ## Scenario In Scope
 
-This integration map applies to the reusable `Secure Delivery / Secure Feature Lifecycle` scenario defined in [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.definition.md).
+This integration map applies to the reusable `Secure Delivery / Secure Feature Lifecycle` scenario defined in [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md).
 
 ## Participating Role-Owned Workflows
 
-- [`business-analyst-kickoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/business-analyst-kickoff.md) or [`product-owner-direction.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/product-owner-direction.md)
-- [`solution-architect-design.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/solution-architect-design.md)
-- [`security-compliance-specialist-scoping.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/security-compliance-specialist-scoping.md)
-- [`security-compliance-specialist-review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/security-compliance-specialist-review.md)
-- [`security-compliance-specialist-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/security-compliance-specialist-handoff.md)
-- [`technical-planner-planning.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/technical-planner-planning.md)
-- [`technical-planner-review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/technical-planner-review.md)
-- [`technical-planner-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/technical-planner-handoff.md)
-- [`implementation-engineer-execution.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/implementation-engineer-execution.md)
-- [`implementation-engineer-review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/implementation-engineer-review.md)
-- [`implementation-engineer-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/implementation-engineer-handoff.md)
-- [`code-reviewer-analysis.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/code-reviewer-analysis.md)
-- [`code-reviewer-decision.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/code-reviewer-decision.md)
-- [`code-reviewer-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/code-reviewer-handoff.md)
-- [`qa-verification-planning.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/qa-verification-planning.md)
-- [`qa-verification-review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/qa-verification-review.md)
-- [`qa-verification-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/qa-verification-handoff.md)
-- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/release-handoff-manager-packaging.md)
-- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/release-handoff-manager-readiness-review.md)
-- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/workflows/release-handoff-manager-handoff.md)
+- [`business-analyst-kickoff.md`](C:/Users/ericw/Projects/orpheum/workflows/business-analyst-kickoff.md) or [`product-owner-direction.md`](C:/Users/ericw/Projects/orpheum/workflows/product-owner-direction.md)
+- [`solution-architect-design.md`](C:/Users/ericw/Projects/orpheum/workflows/solution-architect-design.md)
+- [`security-compliance-specialist-scoping.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-scoping.md)
+- [`security-compliance-specialist-review.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-review.md)
+- [`security-compliance-specialist-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-handoff.md)
+- [`technical-planner-planning.md`](C:/Users/ericw/Projects/orpheum/workflows/technical-planner-planning.md)
+- [`technical-planner-review.md`](C:/Users/ericw/Projects/orpheum/workflows/technical-planner-review.md)
+- [`technical-planner-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/technical-planner-handoff.md)
+- [`implementation-engineer-execution.md`](C:/Users/ericw/Projects/orpheum/workflows/implementation-engineer-execution.md)
+- [`implementation-engineer-review.md`](C:/Users/ericw/Projects/orpheum/workflows/implementation-engineer-review.md)
+- [`implementation-engineer-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/implementation-engineer-handoff.md)
+- [`code-reviewer-analysis.md`](C:/Users/ericw/Projects/orpheum/workflows/code-reviewer-analysis.md)
+- [`code-reviewer-decision.md`](C:/Users/ericw/Projects/orpheum/workflows/code-reviewer-decision.md)
+- [`code-reviewer-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/code-reviewer-handoff.md)
+- [`qa-verification-planning.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-planning.md)
+- [`qa-verification-review.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-review.md)
+- [`qa-verification-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-handoff.md)
+- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-packaging.md)
+- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-readiness-review.md)
+- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-handoff.md)
 
 ## Workflow Inputs, Outputs, And Shared Artifacts
 
@@ -162,3 +162,4 @@ Shared artifacts and context that move across the scenario:
 ## Recommended Next Step
 
 Use the Secure Delivery / Secure Feature Lifecycle review artifact to make readiness, limits, participant fit, and remediation routing explicit before treating this scenario as adoption-ready.
+

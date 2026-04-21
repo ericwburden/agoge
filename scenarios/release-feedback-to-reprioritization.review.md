@@ -8,8 +8,8 @@ Capture the current review posture for the reusable `Release Feedback To Reprior
 
 Scenario in scope:
 
-- [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.definition.md)
-- [release-feedback-to-reprioritization.integration-map.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.integration-map.md)
+- [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.definition.md)
+- [release-feedback-to-reprioritization.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.integration-map.md)
 
 Lifecycle window:
 
@@ -20,7 +20,7 @@ Lifecycle window:
 - the Scenario Designer role package
 - the participating role definitions for Release / Handoff Manager, Product Owner, and optional Business Analyst
 - the role-owned workflows referenced in the integration map
-- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/notes/scenario-recommendations.md)
+- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum/notes/scenario-recommendations.md)
 - participant-fit judgment that the current role packages are usable here as-is, with Business Analyst remaining an optional branch when feedback is actually discovery-shaped
 
 ## Overall Assessment

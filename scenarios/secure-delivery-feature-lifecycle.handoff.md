@@ -21,11 +21,11 @@ Primary participating roles:
 
 ## Scenario Package Included
 
-- [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.definition.md)
-- [secure-delivery-feature-lifecycle.integration-map.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.integration-map.md)
-- [secure-delivery-feature-lifecycle.review.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.review.md)
-- supporting rationale in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/scenario-recommendations.md)
-- participant-package rationale in [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/security-compliance-specialist-skill-sourcing.md), [implementation-engineer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/implementation-engineer-skill-sourcing.md), [code-reviewer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/code-reviewer-skill-sourcing.md), [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/qa-verification-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/release-handoff-manager-skill-sourcing.md)
+- [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md)
+- [secure-delivery-feature-lifecycle.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.integration-map.md)
+- [secure-delivery-feature-lifecycle.review.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.review.md)
+- supporting rationale in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum/notes/scenario-recommendations.md)
+- participant-package rationale in [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/security-compliance-specialist-skill-sourcing.md), [implementation-engineer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/implementation-engineer-skill-sourcing.md), [code-reviewer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/code-reviewer-skill-sourcing.md), [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/qa-verification-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/release-handoff-manager-skill-sourcing.md)
 - the explicit participant-fit judgment that the named role packages are currently usable in this scenario as-is
 
 ## Current Readiness Posture
@@ -42,6 +42,11 @@ Limits:
 - it does not replace upstream planning work
 - it does not include incident response or long-running operational control
 - it does not replace legal, audit, or deployment authorization
+
+Fork rule:
+
+- use this scenario instead of the standard `Project Planning` -> `Delivery Slice Planning` -> `Implementation And Release Prep` path when security/compliance, trust-boundary, or approval-sensitive concerns must shape the slice from planning through release preparation rather than appearing only as an optional branch or downstream gate
+- use the standard path when security/compliance is important but can remain an optional planning branch, a remediation concern, or a final gate concern rather than a full-lifecycle framing layer
 
 ## Role And Workflow Routing Guidance
 
@@ -117,3 +122,4 @@ Before using this scenario, the next consumer should confirm:
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors
   - when choosing and applying a reusable secure-delivery lifecycle scenario to real work
+

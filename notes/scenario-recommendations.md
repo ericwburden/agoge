@@ -52,6 +52,7 @@ Why:
 
 - This is a plausible planning-adjacent scenario for teams that need work to become slice-ready before implementation begins.
 - It fits the current roles without requiring a dedicated Scrum Master or Delivery Manager package.
+- It should be treated as a cadence-specific planning variant, not as part of the default core SDLC chain while `Delivery Slice Planning` is the main slice-shaping scenario.
 
 Expected job:
 
@@ -121,7 +122,7 @@ Why:
 
 - The current repository already has a distinct security/compliance role, which makes secure delivery a natural scenario rather than an afterthought.
 - This scenario is especially plausible for higher-risk or AI-sensitive work.
-- This scenario has now been implemented in [`secure-delivery-feature-lifecycle.definition.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.definition.md), [`secure-delivery-feature-lifecycle.integration-map.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.integration-map.md), [`secure-delivery-feature-lifecycle.review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.review.md), and [`secure-delivery-feature-lifecycle.handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.handoff.md).
+- This scenario has now been implemented in [`secure-delivery-feature-lifecycle.definition.md`](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md), [`secure-delivery-feature-lifecycle.integration-map.md`](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.integration-map.md), [`secure-delivery-feature-lifecycle.review.md`](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.review.md), and [`secure-delivery-feature-lifecycle.handoff.md`](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.handoff.md).
 
 Expected job:
 
@@ -167,7 +168,7 @@ Expected job:
 - preserve security/compliance conditions
 - package the final release or adoption gate honestly
 
-This scenario now has a reusable package in `scenarios/verification-and-release-gate.*` and should be used when the remaining work is evidence review, trust-boundary framing, and release gating rather than implementation or review remediation.
+This scenario now has a reusable package in `scenarios/verification-and-release-gate.*` and should be used when the remaining work is evidence review, trust-boundary framing, and final downstream gating rather than implementation, slice shaping, or review remediation.
 
 ### 8. Release Feedback To Reprioritization
 
@@ -218,15 +219,20 @@ Expected job:
 
 ## Recommended Order
 
+The current default core SDLC chain is:
+
 1. `Project Planning`
 2. `Delivery Slice Planning`
 3. `Implementation and Release Prep`
-4. `Review Remediation Loop`
-5. `Sprint Preparation / Sprint Readiness`
-6. `Secure Delivery / Secure Feature Lifecycle`
-7. `Verification And Release Gate`
-8. `Release Feedback To Reprioritization`
-9. `AI-Sensitive Feature Delivery`
+4. `Review Remediation Loop` when bounded remediation is needed
+5. `Verification And Release Gate` when a distinct final downstream gate is needed
+6. `Release Feedback To Reprioritization`
+
+Variants and specializations:
+
+1. `Sprint Preparation / Sprint Readiness`
+2. `Secure Delivery / Secure Feature Lifecycle`
+3. `AI-Sensitive Feature Delivery`
 
 ## Why Project Planning Should Be First
 
@@ -251,6 +257,8 @@ The common pattern is consistent:
 - architecture and planning
 - implementation and review
 - verification and release handling
+
+The current repository now covers most of that chain with implemented scenarios, but validated discovery itself is still a role-covered upstream precondition rather than a first-class scenario.
 
 That makes `Project Planning` the most natural first reusable scenario for the current repository.
 

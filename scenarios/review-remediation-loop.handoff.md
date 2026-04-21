@@ -55,6 +55,7 @@ Downstream consumers should preserve:
 - the optional nature of QA / Verification Lead unless evidence-sensitive blockers require it
 - the convergence rule that the loop should stop when the candidate is no longer materially improving or the blocker is no longer local to the current slice
 - the participant-fit judgment that the current core role packages are usable here as-is unless repeated usage proves otherwise
+- the rule that a successfully remediated candidate should normally re-enter `Implementation And Release Prep` or `Verification And Release Gate`, depending on what downstream work remains
 
 ## Entry Conditions For The Next Consumer
 
@@ -89,6 +90,8 @@ Before using this scenario, the next consumer should confirm:
 
 - `Scenario Designer`
   - when tailoring this reusable scenario for another context
+- `Implementation And Release Prep` or `Verification And Release Gate`
+  - when remediation has converged and the candidate needs to re-enter the normal downstream delivery path
 - `Role Builder`
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors

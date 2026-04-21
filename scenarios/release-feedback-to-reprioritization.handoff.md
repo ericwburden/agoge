@@ -16,9 +16,9 @@ Primary participating roles:
 
 ## Scenario Package Included
 
-- [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.definition.md)
-- [release-feedback-to-reprioritization.integration-map.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.integration-map.md)
-- [release-feedback-to-reprioritization.review.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.review.md)
+- [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.definition.md)
+- [release-feedback-to-reprioritization.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.integration-map.md)
+- [release-feedback-to-reprioritization.review.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.review.md)
 
 ## Current Readiness Posture
 
@@ -91,3 +91,4 @@ Before using this scenario, the next consumer should confirm:
   - when the feedback reveals discovery gaps that need to be clarified before product direction is settled
 - project leads or workflow authors
   - when downstream consumers need a reusable path from release learning to priority change
+

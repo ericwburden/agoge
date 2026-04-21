@@ -19,6 +19,7 @@ This scenario sits between reviewed implementation or remediation completion and
 Trigger it when:
 
 - reviewed implementation and code-review posture already exist for a bounded candidate
+- the candidate has usually already passed through `Implementation and Release Prep` or `Secure Delivery / Secure Feature Lifecycle`, and now needs a distinct final downstream gate
 - verification evidence needs to be reviewed explicitly before downstream release packaging
 - security or compliance constraints may materially affect release posture, conditions, or approval limits
 - the remaining work is to decide whether the candidate is ready, conditional, or blocked for release-adjacent handling
@@ -36,6 +37,7 @@ Trigger it when:
 ## Entry Conditions
 
 - reviewed implementation and code-review outputs already exist for the current bounded candidate
+- the current package is mature enough that the remaining work is final downstream gating rather than implementation execution or slice shaping
 - verification can be grounded in concrete evidence rather than assumption or optimism
 - if the candidate is trust-boundary-sensitive, compliance-sensitive, or approval-sensitive, the relevant security/compliance context is available or can be routed honestly upstream
 - the participating role packages are available and treated as the source of truth for role-local workflows

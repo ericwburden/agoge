@@ -6,19 +6,19 @@ Capture how the `Release Feedback To Reprioritization` scenario composes release
 
 ## Scenario In Scope
 
-This integration map applies to the reusable `Release Feedback To Reprioritization` scenario defined in [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/scenarios/release-feedback-to-reprioritization.definition.md).
+This integration map applies to the reusable `Release Feedback To Reprioritization` scenario defined in [release-feedback-to-reprioritization.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/release-feedback-to-reprioritization.definition.md).
 
 ## Participating Role-Owned Workflows
 
-- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/release-handoff-manager-packaging.md)
-- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/release-handoff-manager-readiness-review.md)
-- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/release-handoff-manager-handoff.md)
-- [`product-owner-direction.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/product-owner-direction.md)
-- [`product-owner-review.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/product-owner-review.md)
-- [`product-owner-handoff.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/product-owner-handoff.md)
-- optional [`business-analyst-kickoff.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/business-analyst-kickoff.md)
-- optional [`business-analyst-process-analysis.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/business-analyst-process-analysis.md)
-- optional [`business-analyst-requirements-handoff.md`](C:/Users/ericw/Projects/orpheum-release-feedback-reprioritization/workflows/business-analyst-requirements-handoff.md)
+- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-packaging.md)
+- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-readiness-review.md)
+- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-handoff.md)
+- [`product-owner-direction.md`](C:/Users/ericw/Projects/orpheum/workflows/product-owner-direction.md)
+- [`product-owner-review.md`](C:/Users/ericw/Projects/orpheum/workflows/product-owner-review.md)
+- [`product-owner-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/product-owner-handoff.md)
+- optional [`business-analyst-kickoff.md`](C:/Users/ericw/Projects/orpheum/workflows/business-analyst-kickoff.md)
+- optional [`business-analyst-process-analysis.md`](C:/Users/ericw/Projects/orpheum/workflows/business-analyst-process-analysis.md)
+- optional [`business-analyst-requirements-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/business-analyst-requirements-handoff.md)
 
 ## Workflow Inputs, Outputs, And Shared Artifacts
 
@@ -97,3 +97,4 @@ Shared artifacts and context that move across the scenario:
 ## Recommended Next Step
 
 Use the Release Feedback To Reprioritization review artifact to make readiness, conditions, and routing decisions explicit before treating the scenario as downstream-ready.
+

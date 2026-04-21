@@ -62,6 +62,7 @@ Downstream consumers should preserve:
 - the rule that verification depends on concrete evidence rather than assumption
 - the reconvergence rule that release preparation depends on explicit review and verification posture
 - the distinction between release preparation and actual deployment execution
+- the rule that `Verification And Release Gate` is the normal downstream continuation when the candidate still needs a distinct final gate after this scenario completes
 - the rule that concrete blocking or conditional review and verification findings are the normal upstream producer input for `Review Remediation Loop` when bounded remediation is the honest next step
 
 ## Entry Conditions For The Next Consumer
@@ -81,6 +82,7 @@ Before using this scenario, the next consumer should confirm:
 - avoid delaying QA / Verification work until release packaging is already underway
 - avoid letting release preparation smooth over blocked review findings or weak evidence
 - avoid leaving blocked review or verification findings only in comments, tool state, or chat history when the next correct step is `Review Remediation Loop`
+- avoid treating this scenario as the final gate when the real operating model still expects a separate `Verification And Release Gate`
 - avoid treating this scenario as authority to deploy without the required human, environment, or operational approvals
 - avoid reading this scenario as a full SDLC or incident-management framework
 
@@ -103,6 +105,8 @@ Before using this scenario, the next consumer should confirm:
 
 - `Scenario Designer`
   - when tailoring this reusable scenario for another context
+- `Verification And Release Gate`
+  - when the candidate is implementation-complete but still needs a distinct final downstream gate before release or adoption handling
 - `Role Builder`
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors

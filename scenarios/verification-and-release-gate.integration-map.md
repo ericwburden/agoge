@@ -6,19 +6,19 @@ Capture how the `Verification And Release Gate` scenario composes role-owned wor
 
 ## Scenario In Scope
 
-This integration map applies to the reusable `Verification And Release Gate` scenario defined in [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.definition.md).
+This integration map applies to the reusable `Verification And Release Gate` scenario defined in [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.definition.md).
 
 ## Participating Role-Owned Workflows
 
-- [`qa-verification-planning.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/qa-verification-planning.md)
-- [`qa-verification-review.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/qa-verification-review.md)
-- [`qa-verification-handoff.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/qa-verification-handoff.md)
-- optional [`security-compliance-specialist-scoping.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/security-compliance-specialist-scoping.md)
-- optional [`security-compliance-specialist-review.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/security-compliance-specialist-review.md)
-- optional [`security-compliance-specialist-handoff.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/security-compliance-specialist-handoff.md)
-- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/release-handoff-manager-packaging.md)
-- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/release-handoff-manager-readiness-review.md)
-- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum-verification-release-gate/workflows/release-handoff-manager-handoff.md)
+- [`qa-verification-planning.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-planning.md)
+- [`qa-verification-review.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-review.md)
+- [`qa-verification-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/qa-verification-handoff.md)
+- optional [`security-compliance-specialist-scoping.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-scoping.md)
+- optional [`security-compliance-specialist-review.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-review.md)
+- optional [`security-compliance-specialist-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/security-compliance-specialist-handoff.md)
+- [`release-handoff-manager-packaging.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-packaging.md)
+- [`release-handoff-manager-readiness-review.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-readiness-review.md)
+- [`release-handoff-manager-handoff.md`](C:/Users/ericw/Projects/orpheum/workflows/release-handoff-manager-handoff.md)
 
 ## Workflow Inputs, Outputs, And Shared Artifacts
 
@@ -104,3 +104,4 @@ Shared artifacts and context that move across the scenario:
 ## Recommended Next Step
 
 Use the Verification And Release Gate review artifact to make readiness, limits, and remediation routing explicit before treating this scenario as adoption-ready.
+

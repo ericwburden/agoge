@@ -16,11 +16,11 @@ Primary participating roles:
 
 ## Scenario Package Included
 
-- [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.definition.md)
-- [verification-and-release-gate.integration-map.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.integration-map.md)
-- [verification-and-release-gate.review.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.review.md)
-- supporting rationale in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/scenario-recommendations.md)
-- participant-package rationale in [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/qa-verification-skill-sourcing.md), [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/security-compliance-specialist-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/release-handoff-manager-skill-sourcing.md)
+- [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.definition.md)
+- [verification-and-release-gate.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.integration-map.md)
+- [verification-and-release-gate.review.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.review.md)
+- supporting rationale in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum/notes/scenario-recommendations.md)
+- participant-package rationale in [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/qa-verification-skill-sourcing.md), [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/security-compliance-specialist-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/release-handoff-manager-skill-sourcing.md)
 - the explicit participant-fit judgment that these role packages are currently usable in this scenario as-is
 
 ## Current Readiness Posture
@@ -61,6 +61,7 @@ Downstream consumers should preserve:
 - the distinction between evidence-supported readiness and actual deployment authority
 - the rule that release preparation depends on explicit verification and, when relevant, security/compliance posture
 - the distinction between release preparation and actual deployment execution
+- the rule that this scenario normally consumes a candidate package already prepared by `Implementation And Release Prep` or `Secure Delivery / Secure Feature Lifecycle`
 - the rule that blocked or conditional findings are normal upstream producer input for remediation rather than language to be smoothed away
 
 ## Entry Conditions For The Next Consumer
@@ -107,3 +108,4 @@ Before using this scenario, the next consumer should confirm:
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors
   - when choosing and applying a reusable downstream gate scenario to real work
+

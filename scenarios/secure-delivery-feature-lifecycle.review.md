@@ -8,8 +8,8 @@ Capture the current review posture for the reusable `Secure Delivery / Secure Fe
 
 Scenario in scope:
 
-- [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.definition.md)
-- [secure-delivery-feature-lifecycle.integration-map.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.integration-map.md)
+- [secure-delivery-feature-lifecycle.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.definition.md)
+- [secure-delivery-feature-lifecycle.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/secure-delivery-feature-lifecycle.integration-map.md)
 
 Lifecycle window:
 
@@ -20,8 +20,8 @@ Lifecycle window:
 - the Scenario Designer role package
 - the participating role definitions for Business Analyst or Product Owner, Solution Architect, Security / Compliance Specialist, Technical Planner, Implementation Engineer, Code Reviewer, QA / Verification Lead, and Release / Handoff Manager
 - the role-owned workflows referenced in the integration map
-- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/scenario-recommendations.md)
-- supporting role-package rationale in [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/security-compliance-specialist-skill-sourcing.md), [implementation-engineer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/implementation-engineer-skill-sourcing.md), [code-reviewer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/code-reviewer-skill-sourcing.md), [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/qa-verification-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/notes/release-handoff-manager-skill-sourcing.md)
+- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum/notes/scenario-recommendations.md)
+- supporting role-package rationale in [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/security-compliance-specialist-skill-sourcing.md), [implementation-engineer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/implementation-engineer-skill-sourcing.md), [code-reviewer-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/code-reviewer-skill-sourcing.md), [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/qa-verification-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/release-handoff-manager-skill-sourcing.md)
 - participant-fit judgment that the current Business Analyst or Product Owner, Solution Architect, Security / Compliance Specialist, Technical Planner, Implementation Engineer, Code Reviewer, QA / Verification Lead, and Release / Handoff Manager packages are usable in this scenario as-is, with no additional scenario-specific skills, workflows, artifacts, or checks currently required
 
 ## Overall Assessment
@@ -86,3 +86,4 @@ Basis for judgment:
 ## Recommended Next Step
 
 Use the Secure Delivery / Secure Feature Lifecycle handoff artifact to package this scenario for downstream adoption in `scenarios/`.
+

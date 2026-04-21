@@ -8,8 +8,8 @@ Capture the current review posture for the reusable `Verification And Release Ga
 
 Scenario in scope:
 
-- [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.definition.md)
-- [verification-and-release-gate.integration-map.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/scenarios/verification-and-release-gate.integration-map.md)
+- [verification-and-release-gate.definition.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.definition.md)
+- [verification-and-release-gate.integration-map.md](C:/Users/ericw/Projects/orpheum/scenarios/verification-and-release-gate.integration-map.md)
 
 Lifecycle window:
 
@@ -20,8 +20,8 @@ Lifecycle window:
 - the Scenario Designer role package
 - the participating role definitions for QA / Verification Lead, Security / Compliance Specialist, and Release / Handoff Manager
 - the role-owned workflows referenced in the integration map
-- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/scenario-recommendations.md)
-- supporting role-package rationale in [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/qa-verification-skill-sourcing.md), [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/security-compliance-specialist-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum-verification-release-gate/notes/release-handoff-manager-skill-sourcing.md)
+- the scenario recommendations note in [scenario-recommendations.md](C:/Users/ericw/Projects/orpheum/notes/scenario-recommendations.md)
+- supporting role-package rationale in [qa-verification-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/qa-verification-skill-sourcing.md), [security-compliance-specialist-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/security-compliance-specialist-skill-sourcing.md), and [release-handoff-manager-skill-sourcing.md](C:/Users/ericw/Projects/orpheum/notes/release-handoff-manager-skill-sourcing.md)
 - participant-fit judgment that these role packages are usable in this scenario as-is, with no additional scenario-specific skills, workflows, artifacts, or checks currently required
 
 ## Overall Assessment
@@ -86,3 +86,4 @@ Basis for judgment:
 ## Recommended Next Step
 
 Use the Verification And Release Gate handoff artifact to package this scenario for downstream adoption in `scenarios/`.
+

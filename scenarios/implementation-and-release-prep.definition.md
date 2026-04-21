@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Capture the reusable `Implementation and Release Prep` scenario that turns reviewed upstream planning into a reviewed implementation package, an explicit independent review posture, an evidence-based verification package, and a downstream-ready release-preparation package before actual deployment or adoption handling begins.
+Capture the reusable `Implementation and Release Prep` scenario that turns reviewed upstream planning into a reviewed implementation package, an explicit independent review posture, an evidence-based verification package, and a downstream-ready release-preparation package before actual deployment, adoption handling, or a distinct final downstream gate begins.
 
 Use this scenario when a team needs a clear multi-role downstream delivery phase rather than a loose transition from planning into coding, review, QA, and release packaging.
 
@@ -14,7 +14,7 @@ This scenario exists to compose the repository's downstream delivery roles into 
 
 ## Lifecycle Window And Trigger Conditions
 
-This scenario sits between reviewed project planning or slice planning and actual release, deployment, or adoption handling.
+This scenario sits between reviewed project planning or slice planning and actual release, deployment, adoption handling, or any distinct final downstream gate.
 
 Trigger it when:
 
@@ -52,7 +52,7 @@ The scenario completes successfully when the downstream delivery package include
 
 Exit condition:
 
-- downstream release-adjacent or human approval consumers can evaluate the current bounded slice or release candidate from durable implementation, review, verification, and release-preparation artifacts rather than reconstructing intent from commits, chat history, or scattered notes
+- downstream release-adjacent, final-gate, or human approval consumers can evaluate the current bounded slice or release candidate from durable implementation, review, verification, and release-preparation artifacts rather than reconstructing intent from commits, chat history, or scattered notes
 
 ## Core Sequence
 
@@ -63,7 +63,7 @@ Exit condition:
 5. Turn the reviewed planning inputs plus concrete implementation evidence into an explicit QA / Verification Lead strategy, evidence review, and verification handoff package.
 6. Reconverge the reviewed implementation, review, and verification packages before release-preparation packaging begins.
 7. Turn the reconverged downstream package into a release candidate summary, release-readiness decision, and release handoff package.
-8. Hand the completed release-preparation package for that bounded slice downstream for human approval, deployment handling, adoption handling, or other release-adjacent use.
+8. Hand the completed release-preparation package for that bounded slice downstream for human approval, deployment handling, adoption handling, or `Verification And Release Gate` when a distinct final downstream gate is required.
 
 ## Decision Gates And Human Checkpoints
 
@@ -79,6 +79,7 @@ Exit condition:
 - This scenario does not replace upstream discovery, product direction, architecture, or implementation planning.
 - This scenario is not the default mechanism for executing an entire project backlog or roadmap in one pass.
 - This scenario does not absorb actual deployment execution, incident response, or long-running operational ownership.
+- This scenario does not replace `Verification And Release Gate` when a distinct downstream gate owned mainly by verification, security/compliance, and release-handoff roles is still required after implementation work is complete.
 - This scenario should stay reusable across projects and should not be overfit to a single CI/CD stack, release ceremony, or environment model.
 
 ## Open Questions And Design Gaps

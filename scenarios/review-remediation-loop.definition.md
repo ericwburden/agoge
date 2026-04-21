@@ -50,7 +50,7 @@ The scenario completes successfully when the remediation effort yields:
 
 Exit condition:
 
-- the candidate either converges to a stronger downstream-ready posture or is explicitly routed out of the loop because the blocker is not honest remediation work inside the current slice
+- the candidate either converges back into the normal downstream path through `Implementation And Release Prep` or `Verification And Release Gate`, or is explicitly routed out of the loop because the blocker is not honest remediation work inside the current slice
 
 ## Core Sequence
 

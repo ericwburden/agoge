@@ -25,21 +25,21 @@ Trigger it when:
 
 ## Participating Roles And Why
 
-- [`Business Analyst`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/business-analyst.md) or [`Product Owner`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/product-owner.md)
+- [`Business Analyst`](C:/Users/ericw/Projects/orpheum/roles/business-analyst.md) or [`Product Owner`](C:/Users/ericw/Projects/orpheum/roles/product-owner.md)
   - provides the validated business need, product direction, or acceptance posture that frames the secure feature boundary
-- [`Solution Architect`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/solution-architect.md)
+- [`Solution Architect`](C:/Users/ericw/Projects/orpheum/roles/solution-architect.md)
   - frames the reviewed architecture, trust boundaries, and structural choices that security-sensitive implementation must honor
-- [`Security / Compliance Specialist`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/security-compliance-specialist.md)
+- [`Security / Compliance Specialist`](C:/Users/ericw/Projects/orpheum/roles/security-compliance-specialist.md)
   - turns the reviewed delivery context into explicit risks, obligations, controls, evidence expectations, and human control points for the secure feature
-- [`Technical Planner`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/technical-planner.md)
+- [`Technical Planner`](C:/Users/ericw/Projects/orpheum/roles/technical-planner.md)
   - turns the reviewed architecture and security/compliance constraints into an execution-shaped plan that stays bounded and control-aware
-- [`Implementation Engineer`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/implementation-engineer.md)
+- [`Implementation Engineer`](C:/Users/ericw/Projects/orpheum/roles/implementation-engineer.md)
   - turns the reviewed planning and control posture into a concrete code change set and implementation evidence
-- [`Code Reviewer`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/code-reviewer.md)
+- [`Code Reviewer`](C:/Users/ericw/Projects/orpheum/roles/code-reviewer.md)
   - independently challenges the implementation for defects, drift, weak validation, and security-sensitive regressions
-- [`QA / Verification Lead`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/qa-verification-lead.md)
+- [`QA / Verification Lead`](C:/Users/ericw/Projects/orpheum/roles/qa-verification-lead.md)
   - turns the reviewed requirements, architecture, implementation evidence, and control posture into an explicit verification judgment
-- [`Release / Handoff Manager`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/roles/release-handoff-manager.md)
+- [`Release / Handoff Manager`](C:/Users/ericw/Projects/orpheum/roles/release-handoff-manager.md)
   - packages the reviewed implementation, review, verification, and security posture into downstream-ready release or adoption guidance
 
 ## Entry Conditions
@@ -105,3 +105,4 @@ Exit condition:
 ## Recommended Next Step
 
 Use the Secure Delivery / Secure Feature Lifecycle integration map to make handoffs, dependencies, parallelism, reconvergence points, and downstream routing explicit.
+
