@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Turn validated BA outputs into a proposed solution architecture and explicit architecture decision record.
+Turn validated BA outputs and explicit product direction into a proposed solution architecture and explicit architecture decision record.
 
 ## When To Use
 
@@ -17,6 +17,7 @@ Turn validated BA outputs into a proposed solution architecture and explicit arc
   - an instantiated copy of [`artifacts/requirements-specification.md`](D:/Projects/agoge/artifacts/requirements-specification.md)
 - Optional:
   - instantiated copies of [`artifacts/business-objectives.md`](D:/Projects/agoge/artifacts/business-objectives.md) and [`artifacts/process-analysis.md`](D:/Projects/agoge/artifacts/process-analysis.md)
+  - instantiated copies of [`artifacts/product-direction.md`](D:/Projects/orpheum/artifacts/product-direction.md), [`artifacts/backlog-prioritization.md`](D:/Projects/orpheum/artifacts/backlog-prioritization.md), or [`artifacts/product-handoff.md`](D:/Projects/orpheum/artifacts/product-handoff.md) when explicit product posture should shape architectural drivers, tradeoffs, or sequencing assumptions
   - Allium specifications or other behavioral specifications when they already exist
   - architecture workshop notes
   - technical constraints or domain references
@@ -38,7 +39,7 @@ Turn validated BA outputs into a proposed solution architecture and explicit arc
 
 ## Sequence
 
-1. Read the requirements handoff and requirements specification together, using business objectives, process analysis, and existing Allium or behavioral specs as needed to clarify architecture drivers.
+1. Read the requirements handoff and requirements specification together, using business objectives, process analysis, Product Owner artifacts, and existing Allium or behavioral specs as needed to clarify architecture drivers.
 2. If architecture notes or workshop transcripts exist, normalize them with `meeting-notes-and-actions` before drafting.
 3. If technical or domain context is spread across multiple local files, use `research-documentation` to synthesize the relevant constraints and reference points.
 4. Instantiate [`artifacts/solution-architecture.md`](D:/Projects/agoge/artifacts/solution-architecture.md) and [`artifacts/architecture-decisions.md`](D:/Projects/agoge/artifacts/architecture-decisions.md) into the project workspace if working copies do not already exist.
@@ -49,6 +50,7 @@ Turn validated BA outputs into a proposed solution architecture and explicit arc
 ## Decision Points
 
 - If upstream BA artifacts are still ambiguous, record the gap and route it back upstream instead of solving it silently in architecture.
+- If explicit product direction exists and materially affects architectural tradeoffs, preserve that input explicitly instead of forcing the architecture to infer product posture from BA artifacts alone.
 - If Allium or other behavioral specifications are missing or unstable where architecture depends on them materially, route that gap back to discovery or specification work rather than inventing the behavior in architecture.
 - If multiple plausible solution directions exist, record the alternatives and decision drivers rather than defaulting to one without explanation.
 - If important boundaries depend on interface ownership or contract assumptions, make them explicit here instead of leaving them for downstream roles to infer.

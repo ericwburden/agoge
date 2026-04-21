@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Validate that the Solution Architect artifact chain preserves traceability from upstream BA outputs to the proposed solution shape, architectural decisions, and downstream architecture handoff.
+Validate that the Solution Architect artifact chain preserves traceability from upstream BA outputs and relevant Product Owner direction to the proposed solution shape, architectural decisions, and downstream architecture handoff.
 
 ## Applies To
 
@@ -15,7 +15,7 @@ Use after more than one Solution Architect artifact exists. Do not apply this ch
 
 ## Criteria
 
-- Architectural drivers connect back to business objectives, process needs, requirements, or explicit technical constraints.
+- Architectural drivers connect back to business objectives, process needs, requirements, relevant Product Owner direction, or explicit technical constraints.
 - Architectural treatment of existing behavioral specifications is explicit when those specifications materially constrain the design.
 - Architecture decisions reflect the actual solution architecture rather than an unstated alternative.
 - The architecture review reflects the actual strengths, risks, and unresolved issues in the architecture artifacts rather than inventing a separate narrative.
@@ -27,12 +27,13 @@ Use after more than one Solution Architect artifact exists. Do not apply this ch
 
 Pass/fail.
 
-The artifact chain passes only if a reviewer can follow the logic from upstream BA outputs to architecture to downstream handoff without relying on hidden assumptions.
+The artifact chain passes only if a reviewer can follow the logic from upstream BA outputs and relevant Product Owner direction to architecture to downstream handoff without relying on hidden assumptions.
 
 ## Evidence Required
 
 - The full Solution Architect artifact chain.
 - The relevant upstream BA artifact chain.
+- Relevant upstream Product Owner artifacts when product posture materially shaped the architecture.
 - Any supporting notes needed to interpret ambiguous architectural links.
 
 If one or more links cannot be demonstrated, fail the check and identify the broken connection.

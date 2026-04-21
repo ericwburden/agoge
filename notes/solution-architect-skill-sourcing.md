@@ -106,8 +106,11 @@ For this repository, the right move is:
 - keep the Solution Architect role repo-neutral
 - use existing local synthesis and note-normalization skills where they already fit
 - add dedicated architecture skills for design, review, and handoff
+- treat Product Owner direction as an explicit optional upstream input when product posture materially shapes architecture, rather than adding a separate scenario-only architecture skill
 - embed interface and contract coverage into the architecture artifacts and checks rather than adding a separate `integration-contracts` artifact or skill in v1
 
 ## Follow-Up Consideration
 
 If future Solution Architect work becomes heavily integration-centric, the next likely addition would be a dedicated interface-framing or integration-contracts skill. For now, that concern is handled inside the design, review, and handoff stages.
+
+The Project Planning hardening pass confirmed that no new Solution Architect skill was needed for scenario participation. The gap was upstream input clarity, not missing architecture method.

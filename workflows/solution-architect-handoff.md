@@ -16,7 +16,7 @@ Turn completed architecture outputs into a downstream-ready handoff for planning
   - an instantiated copy of [`artifacts/solution-architecture.md`](D:/Projects/agoge/artifacts/solution-architecture.md)
   - an instantiated copy of [`artifacts/architecture-decisions.md`](D:/Projects/agoge/artifacts/architecture-decisions.md)
   - an instantiated copy of [`artifacts/architecture-review.md`](D:/Projects/agoge/artifacts/architecture-review.md)
-- Optional: upstream BA handoff artifacts, technical constraints, and supporting review notes
+- Optional: upstream BA handoff artifacts, relevant Product Owner artifacts or product handoff, technical constraints, and supporting review notes
 
 ## Outputs
 
@@ -30,7 +30,7 @@ Turn completed architecture outputs into a downstream-ready handoff for planning
 
 ## Sequence
 
-1. Read the solution architecture, architecture decisions, and architecture review artifacts together.
+1. Read the solution architecture, architecture decisions, and architecture review artifacts together, using upstream BA and Product Owner artifacts as needed to preserve the reasoning chain honestly.
 2. If supporting notes or dependency references still need synthesis, use `research-documentation` first.
 3. Instantiate [`artifacts/architecture-handoff.md`](D:/Projects/agoge/artifacts/architecture-handoff.md) into the project workspace if a working copy does not already exist.
 4. Use `architecture-handoff-packaging` to populate the architecture handoff artifact with the architecture summary, review status and key findings, readiness ownership and conditions, interface or dependency hotspots, verification focus areas, architecture fitness criteria, specification relationship, unresolved decisions and risks, downstream consumers, and next decision points.

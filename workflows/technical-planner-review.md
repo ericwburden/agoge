@@ -17,7 +17,7 @@ Review the drafted implementation planning package, record findings and remediat
   - an instantiated copy of [`artifacts/sequencing-and-dependencies.md`](D:/Projects/agoge/artifacts/sequencing-and-dependencies.md)
 - Expected supporting context:
   - the corresponding instantiated architecture handoff and requirements handoff artifacts
-- Optional: supporting notes, dependency references, rollout constraints, and prior review findings
+- Optional: supporting notes, dependency references, rollout constraints, prior review findings, and relevant security/compliance artifacts when those constraints materially shaped the plan
 
 ## Outputs
 
@@ -31,7 +31,7 @@ Review the drafted implementation planning package, record findings and remediat
 
 ## Sequence
 
-1. Read the instantiated implementation strategy and sequencing artifact together with the architecture and requirements handoffs.
+1. Read the instantiated implementation strategy and sequencing artifact together with the architecture and requirements handoffs, using relevant security/compliance artifacts as needed to judge planning traceability honestly.
 2. If local context still needs synthesis before the review can be written clearly, use `research-documentation` first.
 3. Instantiate [`artifacts/implementation-plan-review.md`](D:/Projects/agoge/artifacts/implementation-plan-review.md) into the working location if a working copy does not already exist.
 4. Review the package for coherence, readiness, missing support, hidden dependencies, unsupported assumptions, sequencing weaknesses, and role drift.
@@ -44,6 +44,7 @@ Review the drafted implementation planning package, record findings and remediat
 - If the package is missing required planning structure, mark it not ready rather than hand-waving the gap.
 - If failures all trace back to the implementation strategy or sequencing artifact, route remediation there instead of patching the review artifact.
 - If the review reveals an upstream architecture or requirement gap, route remediation upstream rather than silently correcting it in the plan.
+- If the review reveals that planning depends on unresolved security/compliance posture, route remediation back to the Security / Compliance Specialist chain rather than silently normalizing the gap inside the plan.
 
 ## Validation
 

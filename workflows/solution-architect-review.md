@@ -17,6 +17,7 @@ Review drafted architecture artifacts, record explicit findings and readiness, a
   - an instantiated copy of [`artifacts/architecture-decisions.md`](D:/Projects/agoge/artifacts/architecture-decisions.md)
 - Optional:
   - relevant upstream BA artifacts
+  - relevant Product Owner artifacts when product posture materially shaped the design
   - architecture workshop notes or technical design notes
   - supporting technical references or comparison material
 
@@ -35,7 +36,7 @@ Review drafted architecture artifacts, record explicit findings and readiness, a
 
 ## Sequence
 
-1. Read the solution architecture and architecture decisions artifacts together, using upstream BA artifacts as needed to judge traceability honestly.
+1. Read the solution architecture and architecture decisions artifacts together, using upstream BA and Product Owner artifacts as needed to judge traceability honestly.
 2. If workshop notes or design-session transcripts exist, normalize them with `meeting-notes-and-actions` before drafting the review.
 3. If local technical context or external comparison material still needs synthesis, use `research-documentation` or `content-research-writer` first.
 4. Instantiate [`artifacts/architecture-review.md`](D:/Projects/agoge/artifacts/architecture-review.md) into the project workspace if a working copy does not already exist.

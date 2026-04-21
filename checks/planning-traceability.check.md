@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Validate that the Technical Planner artifact chain preserves traceability from upstream BA and architecture outputs to the implementation strategy, sequencing plan, review outcome, and downstream implementation handoff.
+Validate that the Technical Planner artifact chain preserves traceability from upstream BA and architecture outputs, plus relevant security/compliance guidance when it materially shapes planning, to the implementation strategy, sequencing plan, review outcome, and downstream implementation handoff.
 
 ## Applies To
 
@@ -15,7 +15,7 @@ Use after more than one Technical Planner artifact exists. Do not apply this che
 
 ## Criteria
 
-- Planning structure connects back to reviewed architecture, validated requirements, or explicit delivery constraints.
+- Planning structure connects back to reviewed architecture, validated requirements, relevant security/compliance guidance when applicable, or explicit delivery constraints.
 - Major slices or workstreams are explicitly mapped back to the upstream requirements, architecture decisions, or handoff hotspots that justify them.
 - Planning treatment of existing behavioral specifications is explicit when those specifications materially constrain execution order or verification framing.
 - The sequencing artifact reflects the actual implementation strategy rather than an unstated alternative.
@@ -28,12 +28,13 @@ Use after more than one Technical Planner artifact exists. Do not apply this che
 
 Pass/fail.
 
-The artifact chain passes only if a reviewer can follow the logic from upstream BA and architecture outputs to the execution plan and downstream handoff without relying on hidden assumptions.
+The artifact chain passes only if a reviewer can follow the logic from upstream BA and architecture outputs, plus relevant security/compliance guidance when applicable, to the execution plan and downstream handoff without relying on hidden assumptions.
 
 ## Evidence Required
 
 - The full Technical Planner artifact chain.
 - The relevant upstream BA and architecture artifact chains.
+- Relevant upstream security/compliance artifacts when obligations, controls, or approval-sensitive constraints materially shaped the planning package.
 - Any supporting notes needed to interpret ambiguous planning links.
 
 If one or more links cannot be demonstrated, fail the check and identify the broken connection.

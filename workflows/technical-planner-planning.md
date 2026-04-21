@@ -17,6 +17,7 @@ Turn reviewed architecture and validated requirements into an implementation str
   - an instantiated copy of [`artifacts/requirements-handoff.md`](D:/Projects/agoge/artifacts/requirements-handoff.md)
 - Optional:
   - instantiated copies of [`artifacts/solution-architecture.md`](D:/Projects/agoge/artifacts/solution-architecture.md), [`artifacts/architecture-decisions.md`](D:/Projects/agoge/artifacts/architecture-decisions.md), and [`artifacts/requirements-specification.md`](D:/Projects/agoge/artifacts/requirements-specification.md)
+  - instantiated copies of [`artifacts/security-compliance-handoff.md`](D:/Projects/orpheum/artifacts/security-compliance-handoff.md), [`artifacts/security-compliance-review.md`](D:/Projects/orpheum/artifacts/security-compliance-review.md), [`artifacts/security-compliance-scope.md`](D:/Projects/orpheum/artifacts/security-compliance-scope.md), or [`artifacts/controls-and-evidence-matrix.md`](D:/Projects/orpheum/artifacts/controls-and-evidence-matrix.md) when obligations, controls, or approval-sensitive constraints materially shape implementation planning
   - Allium specifications or other behavioral specifications when they already exist
   - planning workshop notes
   - dependency notes, rollout constraints, or integration references
@@ -38,7 +39,7 @@ Turn reviewed architecture and validated requirements into an implementation str
 
 ## Sequence
 
-1. Read the architecture handoff and requirements handoff together, using reviewed architecture artifacts, requirements specification, business context, and existing behavioral specs as needed to clarify planning drivers.
+1. Read the architecture handoff and requirements handoff together, using reviewed architecture artifacts, requirements specification, optional security/compliance artifacts, business context, and existing behavioral specs as needed to clarify planning drivers.
 2. If planning notes or workshop transcripts exist, normalize them with `meeting-notes-and-actions` before drafting.
 3. If planning or dependency context is spread across multiple local files, use `research-documentation` to synthesize the relevant constraints and reference points.
 4. Instantiate [`artifacts/implementation-strategy.md`](D:/Projects/agoge/artifacts/implementation-strategy.md) and [`artifacts/sequencing-and-dependencies.md`](D:/Projects/agoge/artifacts/sequencing-and-dependencies.md) into the project workspace if working copies do not already exist.
@@ -49,8 +50,10 @@ Turn reviewed architecture and validated requirements into an implementation str
 ## Decision Points
 
 - If upstream BA or architecture artifacts are still materially ambiguous, record the gap and route it upstream instead of solving it silently in the plan.
+- If security/compliance constraints materially shape sequencing, readiness, or decision gates, preserve those inputs explicitly instead of letting planning absorb them as unnamed assumptions.
 - If multiple plausible slice strategies exist, record the alternatives and planning drivers rather than defaulting to one without explanation.
 - If important sequencing depends on external approvals, migration constraints, or unresolved interface decisions, make those dependencies explicit here instead of leaving them for downstream roles to infer.
+- If important sequencing depends on unresolved security/compliance obligations, evidence expectations, or approval conditions, route that ambiguity back to Security / Compliance Specialist work rather than improvising a permanent answer inside the plan.
 - If the system includes AI-enabled or agentic behavior, record trust-boundary-sensitive sequencing and human control points explicitly.
 
 ## Validation

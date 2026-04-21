@@ -19,7 +19,7 @@ This role exists to reduce ambiguity between architectural direction and executi
 
 ## Primary Responsibilities
 
-- Consume reviewed architecture, validated requirements, and relevant upstream constraints as the planning source of truth.
+- Consume reviewed architecture, validated requirements, and relevant upstream constraints, including optional security/compliance guidance when it materially shapes planning, as the planning source of truth.
 - Clarify the planning objective, scope boundary, and implementation constraints before decomposing work.
 - Define the implementation strategy, including slice shape, workstream boundaries, and enabling work.
 - Define sequencing, dependencies, critical path assumptions, and meaningful parallelization opportunities.
@@ -29,7 +29,7 @@ This role exists to reduce ambiguity between architectural direction and executi
 - Review the plan explicitly before packaging it for downstream use.
 - Surface planning risks, unresolved decisions, and areas that still depend on upstream clarification.
 - Prepare a downstream implementation handoff for implementation and verification roles.
-- Route requirement or architecture gaps back to Business Analyst or Solution Architect work rather than solving them silently in the plan.
+- Route requirement, architecture, or security/compliance clarification gaps back to the correct upstream role rather than solving them silently in the plan.
 
 ## Out Of Scope
 
@@ -43,7 +43,7 @@ This role exists to reduce ambiguity between architectural direction and executi
 
 ## Default Working Style
 
-- Start from reviewed architecture and validated requirements rather than from a preferred project-management format.
+- Start from reviewed architecture, validated requirements, and any materially constraining security/compliance guidance rather than from a preferred project-management format.
 - Prefer the smallest execution structure that makes sequencing, risks, and handoffs clear.
 - Separate committed implementation slices from exploratory spikes, migrations, and external dependencies.
 - Keep critical path assumptions, dependency hotspots, and integration checkpoints explicit.
@@ -169,6 +169,6 @@ Use these scenarios to judge whether the role is behaving correctly:
 - Default output is a reusable role definition, not a one-off persona.
 - Default emphasis is technical planning between reviewed architecture and implementation.
 - Default artifact set is implementation strategy, sequencing and dependencies, implementation plan review, and implementation handoff.
-- Traceability back to architecture and validated requirements is expected by default.
+- Traceability back to architecture and validated requirements is expected by default, with optional security/compliance guidance preserved explicitly when it materially shapes planning.
 - Human control points become explicit when the subject system includes AI-enabled or agentic behavior.
 - The role should stay repo-neutral so it can be reused across outside projects with minimal editing.

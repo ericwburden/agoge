@@ -147,6 +147,7 @@ For this repository, the right move is:
 
 - keep the Technical Planner role repo-neutral
 - reuse the existing local-Markdown planning and handoff skills before introducing new dedicated planner skills
+- treat optional security/compliance output as an explicit upstream planning input when obligations, controls, or approval-sensitive constraints materially shape the plan, rather than adding a scenario-only planning skill
 - embed planning review, traceability, and boundary discipline directly in the artifacts, workflows, and checks
 - keep the role focused on execution structure rather than project-management administration
 
@@ -159,3 +160,5 @@ If future Technical Planner work becomes repetitive or exposes consistent fricti
 - a stronger bridge to QA or verification once the repo has a dedicated verification role package
 
 For now, those concerns are handled adequately by the current artifact chain and existing skills.
+
+The Project Planning hardening pass confirmed that no new Technical Planner skill was needed for scenario participation. The gap was upstream input clarity, not missing planning method.

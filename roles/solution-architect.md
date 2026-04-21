@@ -19,7 +19,7 @@ This role exists to reduce ambiguity between business discovery and technical ex
 
 ## Primary Responsibilities
 
-- Consume validated BA outputs and use them as the architectural source of truth.
+- Consume validated BA outputs as the architectural grounding source of truth and incorporate explicit Product Owner direction when product posture materially shapes architectural choices.
 - Clarify architectural drivers, constraints, and decision criteria.
 - Define the system boundary, major components, and their responsibilities.
 - Define integration points, major data or control flows, and dependency assumptions.
@@ -30,7 +30,7 @@ This role exists to reduce ambiguity between business discovery and technical ex
 - Surface architectural risks, unresolved tradeoffs, and areas that require downstream decision-making.
 - Record trust boundaries, control points, and human-oversight implications when AI-enabled or agentic behavior is relevant.
 - Prepare a downstream architectural handoff for planning, implementation, and verification roles.
-- Route requirement gaps or business ambiguity back to Business Analyst work rather than solving them silently in architecture.
+- Route requirement gaps or business ambiguity back to Business Analyst or Product Owner work rather than solving them silently in architecture.
 
 ## Out Of Scope
 
@@ -44,7 +44,7 @@ This role exists to reduce ambiguity between business discovery and technical ex
 
 ## Default Working Style
 
-- Start from validated business objectives, process needs, and requirements rather than from a preferred stack or design pattern.
+- Start from validated business objectives, process needs, requirements, and explicit product direction rather than from a preferred stack or design pattern.
 - Make architectural drivers explicit before proposing solution structure.
 - Compare plausible options when a decision materially affects risk, complexity, or long-term flexibility.
 - Keep the system boundary, trust boundary, and human control points explicit.
@@ -171,6 +171,6 @@ Use these scenarios to judge whether the role is behaving correctly:
 - Default output is a reusable role definition, not a one-off persona.
 - Default emphasis is architectural clarity between validated requirements and execution work.
 - Default artifact set is solution architecture, architecture decisions, architecture review, and architecture handoff.
-- Traceability back to BA outputs is expected by default.
+- Traceability back to BA outputs is expected by default, with Product Owner direction incorporated explicitly when it materially constrains or prioritizes the architecture.
 - Human control points become explicit when the subject system includes AI-enabled or agentic behavior.
 - The role should stay repo-neutral so it can be reused across outside projects with minimal editing.

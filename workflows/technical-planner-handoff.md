@@ -16,7 +16,7 @@ Turn completed planning outputs into a downstream-ready handoff for implementati
   - an instantiated copy of [`artifacts/implementation-strategy.md`](D:/Projects/agoge/artifacts/implementation-strategy.md)
   - an instantiated copy of [`artifacts/sequencing-and-dependencies.md`](D:/Projects/agoge/artifacts/sequencing-and-dependencies.md)
   - an instantiated copy of [`artifacts/implementation-plan-review.md`](D:/Projects/agoge/artifacts/implementation-plan-review.md)
-- Optional: upstream architecture handoff artifacts, requirements handoff artifacts, dependency notes, and supporting review notes
+- Optional: upstream architecture handoff artifacts, requirements handoff artifacts, relevant security/compliance artifacts, dependency notes, and supporting review notes
 
 ## Outputs
 
@@ -31,7 +31,7 @@ Turn completed planning outputs into a downstream-ready handoff for implementati
 
 ## Sequence
 
-1. Read the implementation strategy, sequencing and dependencies, and implementation plan review artifacts together.
+1. Read the implementation strategy, sequencing and dependencies, and implementation plan review artifacts together, using relevant security/compliance artifacts as needed to preserve planning constraints honestly in the handoff.
 2. If supporting notes or rollout references still need synthesis, use `research-documentation` first.
 3. Instantiate [`artifacts/implementation-handoff.md`](D:/Projects/agoge/artifacts/implementation-handoff.md) into the project workspace if a working copy does not already exist.
 4. Use `handoff-packaging` to populate the implementation handoff artifact with the planning summary, review status and key findings, readiness ownership and conditions, ordered slices and dependency hotspots, a slice exit criteria summary, verification touchpoints, rollout watchouts, specification relationship, unresolved decisions and risks, deferred or intentionally excluded work, downstream consumers, and next decision points.
