@@ -60,7 +60,30 @@ Expected job:
 - make slice boundaries and dependencies explicit
 - identify verification-sensitive readiness conditions
 
-### 3. Implementation and Release Prep
+### 3. Delivery Slice Planning
+
+Core roles:
+
+- `Product Owner`
+- `Solution Architect`
+- `Technical Planner`
+- optional `QA / Verification Lead`
+- optional `Security / Compliance Specialist`
+
+Why:
+
+- This is the clearest bridge between broader project planning and bounded downstream delivery.
+- It turns a reviewed project or initiative plan into one honest implementation-sized slice instead of forcing downstream roles to infer scope boundaries for themselves.
+- It fits the current repository well because Product Owner, Solution Architect, and Technical Planner already cover the core slice-shaping concerns.
+
+Expected job:
+
+- choose the next bounded delivery slice from the broader plan
+- make in-scope versus out-of-scope boundaries explicit
+- preserve architecture, dependency, verification, and optional security/compliance constraints that still shape the slice
+- hand one slice-sized package downstream into implementation-oriented work
+
+### 4. Implementation and Release Prep
 
 Core roles:
 
@@ -82,7 +105,7 @@ Expected job:
 - verify explicitly
 - package that slice-sized candidate for release or adoption handling
 
-### 4. Secure Delivery / Secure Feature Lifecycle
+### 5. Secure Delivery / Secure Feature Lifecycle
 
 Core roles:
 
@@ -105,7 +128,7 @@ Expected job:
 - keep controls, evidence, and approval-sensitive decisions explicit
 - preserve secure-delivery constraints through release posture
 
-### 5. Review Remediation Loop
+### 6. Review Remediation Loop
 
 Core roles:
 
@@ -124,7 +147,7 @@ Expected job:
 - repackage changed implementation evidence
 - re-evaluate review posture
 
-### 6. Verification And Release Gate
+### 7. Verification And Release Gate
 
 Core roles:
 
@@ -143,7 +166,7 @@ Expected job:
 - preserve security/compliance conditions
 - package the final release or adoption gate honestly
 
-### 7. Release Feedback To Reprioritization
+### 8. Release Feedback To Reprioritization
 
 Core roles:
 
@@ -162,7 +185,7 @@ Expected job:
 - reprioritize or redirect scope
 - route discovery gaps back upstream when needed
 
-### 8. AI-Sensitive Feature Delivery
+### 9. AI-Sensitive Feature Delivery
 
 Core roles:
 
@@ -189,13 +212,14 @@ Expected job:
 ## Recommended Order
 
 1. `Project Planning`
-2. `Implementation and Release Prep`
-3. `Sprint Preparation / Sprint Readiness`
-4. `Secure Delivery / Secure Feature Lifecycle`
-5. `Review Remediation Loop`
-6. `Verification And Release Gate`
-7. `Release Feedback To Reprioritization`
-8. `AI-Sensitive Feature Delivery`
+2. `Delivery Slice Planning`
+3. `Implementation and Release Prep`
+4. `Sprint Preparation / Sprint Readiness`
+5. `Secure Delivery / Secure Feature Lifecycle`
+6. `Review Remediation Loop`
+7. `Verification And Release Gate`
+8. `Release Feedback To Reprioritization`
+9. `AI-Sensitive Feature Delivery`
 
 ## Why Project Planning Should Be First
 
