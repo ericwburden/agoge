@@ -121,6 +121,7 @@ Why:
 
 - The current repository already has a distinct security/compliance role, which makes secure delivery a natural scenario rather than an afterthought.
 - This scenario is especially plausible for higher-risk or AI-sensitive work.
+- This scenario has now been implemented in [`secure-delivery-feature-lifecycle.definition.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.definition.md), [`secure-delivery-feature-lifecycle.integration-map.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.integration-map.md), [`secure-delivery-feature-lifecycle.review.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.review.md), and [`secure-delivery-feature-lifecycle.handoff.md`](C:/Users/ericw/Projects/orpheum-secure-delivery-lifecycle/scenarios/secure-delivery-feature-lifecycle.handoff.md).
 
 Expected job:
 
