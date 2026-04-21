@@ -56,6 +56,7 @@ Downstream consumers should preserve:
 - the rule that security/compliance constraints must land before architecture or planning is treated as settled when that branch is invoked
 - the role-package evidence that explains why Solution Architect and Technical Planner are ready for this scenario after the earlier hardening pass
 - the optional nature of the security/compliance branch unless local context requires it
+- the rule that `Project Discovery` is the normal upstream producer of the validated discovery package consumed here
 
 ## Entry Conditions For The Next Consumer
 
@@ -89,8 +90,12 @@ Before using this scenario, the next consumer should confirm:
 
 ## Recommended Next Consumer
 
+- `Delivery Slice Planning`
+  - when the broader reviewed planning package is complete and the next honest step is to turn it into one bounded delivery slice for downstream implementation work
 - `Scenario Designer`
   - when tailoring this reusable scenario for another context
+- `Project Discovery`
+  - when validated discovery is not yet strong enough for planning to begin honestly
 - `Role Builder`
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors

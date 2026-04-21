@@ -56,7 +56,7 @@ This integration map applies to the reusable `Project Planning` scenario defined
 
 Shared artifacts and context that move across the scenario:
 
-- validated requirements
+- validated discovery package, normally from `Project Discovery`
 - product direction and current priority posture
 - architecture constraints and major decisions
 - sequencing, dependency, and readiness assumptions
@@ -66,7 +66,7 @@ Shared artifacts and context that move across the scenario:
 ## Handoff Contracts
 
 - Business Analyst -> Product Owner
-  - Product Owner should receive validated requirements and discovery context without re-running discovery by default.
+  - Product Owner should receive the validated discovery package, normally from `Project Discovery`, without re-running discovery by default.
 - Business Analyst and Product Owner -> Solution Architect
   - Solution Architect should receive clear problem framing, current priorities, acceptance-sensitive constraints, and explicit unresolved business questions.
 - Solution Architect -> Technical Planner
@@ -79,6 +79,7 @@ Shared artifacts and context that move across the scenario:
 ## Branching Rules And Decision Logic
 
 - If validated discovery does not exist, the scenario should start with Business Analyst work rather than skipping directly to Product Owner or Solution Architect work.
+- If validated discovery does not yet exist as a coherent package, route upstream to `Project Discovery` rather than treating planning as the place where discovery begins.
 - If current priority direction is already explicit and stable, Product Owner work may be lighter but should not be silently omitted when priority posture still matters.
 - If security, compliance, or trust-boundary-sensitive constraints materially affect architecture or planning, invoke the Security / Compliance Specialist branch.
 - If product direction, architecture, or planning review is blocked, the scenario should route remediation back to the earliest blocking role package rather than moving forward optimistically.

@@ -53,13 +53,15 @@ Shared artifacts and context that move across the scenario:
   - Business Analyst should receive only the feedback that is genuinely discovery-shaped, so product reprioritization does not absorb requirements clarification by accident.
 - Product Owner -> downstream planning or discovery consumers
   - Downstream consumers should receive explicit product direction, ordered work, deferred scope, and reprioritization triggers rather than only a summary of release sentiment.
+- Product Owner -> `Project Discovery`, `Project Planning`, or `Delivery Slice Planning`
+  - the updated product posture should route into the narrowest honest downstream scenario, so the package does not jump straight into implementation or sit indefinitely in backlog language after the reprioritization decision is already explicit
 
 ## Branching Rules And Decision Logic
 
 - If the release learnings are not traceable to an actual release, adoption, or handoff package, stop and clarify the source before treating them as decision-grade input.
 - If the main issue is implementation remediation, review, or verification failure, route the problem to the earliest upstream delivery role instead of converting it into product reprioritization.
 - If the main issue is discovery ambiguity, route the gap to Business Analyst work rather than letting Product Owner guess at the missing business context.
-- If the feedback reveals stable behavioral expectations that are mature enough for specification, route that work to specification refinement rather than burying it in backlog prose.
+- If the feedback reveals stable behavioral expectations that are mature enough to shape future behavior explicitly, route that work into `Project Discovery` or `Project Planning` rather than burying it in backlog prose.
 - If the reprioritization materially affects roadmap commitments or stakeholder tradeoffs, preserve the human approval point explicitly.
 
 ## Parallelism And Synchronization Points
@@ -84,7 +86,7 @@ Shared artifacts and context that move across the scenario:
 - If the release learnings are weak, route back to the Release / Handoff Manager package rather than inventing product direction from sparse feedback.
 - If the feedback is actually a delivery defect, route to implementation, review, or verification remediation before reprioritizing.
 - If the feedback is actually a discovery gap, route to Business Analyst work before claiming the product posture is settled.
-- If the feedback exposes a stable behavioral expectation that should be sharpened, route to specification work rather than overloading the product backlog.
+- If the feedback exposes a stable behavioral expectation that should be sharpened, route to `Project Discovery` or `Project Planning` rather than overloading the product backlog.
 
 ## Coordination Risks And Watchouts
 

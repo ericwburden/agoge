@@ -104,6 +104,8 @@ Shared artifacts and context that move across the scenario:
   - Release / Handoff Manager should receive an explicit security/compliance posture, control expectations, unresolved gaps, and human-approval watchouts rather than a soft "security aware" label
 - Code Reviewer or QA / Verification Lead -> `Review Remediation Loop`
   - when review or verification surfaces concrete blocking or conditional findings whose honest next step is bounded remediation inside the current slice, those findings should be packaged explicitly as the normal upstream input to `Review Remediation Loop`
+- Release / Handoff Manager -> `Verification And Release Gate`
+  - when the secure candidate still needs a distinct final downstream gate after secure implementation, review, verification, and release preparation are complete, `Verification And Release Gate` should receive the reviewed candidate package rather than reconstructing it from branch history or approval chatter
 
 ## Branching Rules And Decision Logic
 
@@ -115,6 +117,7 @@ Shared artifacts and context that move across the scenario:
 - If QA / Verification Lead lacks at least one concrete evidence source for the verified scope, route remediation to evidence generation or a narrower verification claim rather than producing a fake verification posture.
 - If security/compliance review reveals blocked obligations, unresolved waivers, or missing approval limits, route remediation upstream or to the correct human approver rather than smoothing the issue into the release package.
 - If review or verification findings show that the candidate still belongs inside the same bounded slice but needs another explicit remediation pass, route that candidate into `Review Remediation Loop` with the concrete findings package preserved.
+- If the candidate is implementation-complete but still requires a distinct final downstream gate because approval structure, trust-boundary sensitivity, or operational separation demands it, route the package into `Verification And Release Gate` rather than stretching this scenario into deployment authority.
 - If release-readiness is blocked or materially conditional, preserve that posture explicitly instead of smoothing it into adoption-ready language.
 
 ## Parallelism And Synchronization Points

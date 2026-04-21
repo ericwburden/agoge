@@ -64,6 +64,7 @@ Downstream consumers should preserve:
 - the distinction between release preparation and actual deployment execution
 - the rule that `Verification And Release Gate` is the normal downstream continuation when the candidate still needs a distinct final gate after this scenario completes
 - the rule that concrete blocking or conditional review and verification findings are the normal upstream producer input for `Review Remediation Loop` when bounded remediation is the honest next step
+- the rule that release or adoption learnings should route into `Release Feedback To Reprioritization` when they materially change product direction or priority posture
 
 ## Entry Conditions For The Next Consumer
 
@@ -107,6 +108,8 @@ Before using this scenario, the next consumer should confirm:
   - when tailoring this reusable scenario for another context
 - `Verification And Release Gate`
   - when the candidate is implementation-complete but still needs a distinct final downstream gate before release or adoption handling
+- `Release Feedback To Reprioritization`
+  - when release or adoption handling has happened and the resulting learnings now need to change product direction or priority posture
 - `Role Builder`
   - when repeated usage reveals a missing role-package capability
 - project leads or workflow authors

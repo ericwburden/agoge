@@ -18,7 +18,7 @@ This scenario sits between validated discovery and implementation-oriented deliv
 
 Trigger it when:
 
-- validated business requirements or equivalent discovery already exist
+- validated business requirements or equivalent discovery already exist, normally from `Project Discovery`
 - product direction needs to be made explicit before technical design and planning proceed
 - architecture and implementation planning need a durable handoff chain rather than scattered notes
 - a project or major feature area is about to move from problem framing into execution preparation
@@ -39,6 +39,7 @@ Trigger it when:
 ## Entry Conditions
 
 - business objectives, process analysis, requirements specification, and requirements handoff already exist, or equivalent validated discovery inputs are available
+- `Project Discovery` has normally already produced the validated discovery package consumed here
 - the project or feature area is mature enough for product-direction and architecture work
 - the participating role packages are available and treated as the source of truth for role-local workflows
 - the scenario is being used as a reusable planning phase, not as a live project plan or staffing mechanism
@@ -58,7 +59,7 @@ Exit condition:
 
 ## Core Sequence
 
-1. Consume validated discovery and requirements from Business Analyst outputs.
+1. Consume validated discovery and requirements from Business Analyst outputs, normally produced by `Project Discovery`.
 2. Establish current product direction and prioritization posture through Product Owner outputs.
 3. Turn validated and prioritized inputs into reviewed architecture through Solution Architect outputs.
 4. Turn reviewed architecture into reviewed implementation planning through Technical Planner outputs.
