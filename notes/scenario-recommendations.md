@@ -185,6 +185,10 @@ Expected job:
 - reprioritize or redirect scope
 - route discovery gaps back upstream when needed
 
+Status note:
+
+- this scenario is now implemented as a reusable package in `scenarios/`
+
 ### 9. AI-Sensitive Feature Delivery
 
 Core roles:
