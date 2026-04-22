@@ -54,6 +54,10 @@ Catalog-dependent commands can locate the catalog in three ways:
 
 Commands like `init`, `status`, and `prompt current` are project-local and do not require catalog loading.
 
+If you are wiring Orpheum into a local agent workflow, use the dedicated consumer guide:
+
+- [docs/agent-usage.md](C:/Users/ericw/Projects/orpheum/docs/agent-usage.md)
+
 ## Quick Start
 
 Build and run the CLI from this repository:
