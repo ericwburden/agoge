@@ -1,3 +1,30 @@
+---
+id: product-owner-direction
+kind: workflow
+title: Product Owner Direction
+version: 1
+summary: Turn validated requirements, product feedback, and delivery learnings into
+  an explicit product direction and backlog prioritization package that downstream
+  solutioning and planning roles can use without reconstructing product intent.
+role: product-owner
+inputs: []
+outputs:
+- product-direction
+- backlog-prioritization
+skills:
+- product-priority-framing
+- requirements-verification
+- research-documentation
+- meeting-notes-and-actions
+- content-research-writer
+checks:
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+handoff_to: []
+---
+
 # Product Owner Direction
 
 ## Purpose

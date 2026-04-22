@@ -1,3 +1,25 @@
+---
+id: business-analyst-process-analysis
+kind: workflow
+title: Business Analyst Process Analysis
+version: 1
+summary: Turn discovery outputs into a clear analysis of current-state and future-state
+  process behavior, including rules, participants, exceptions, and operational gaps.
+role: business-analyst
+inputs:
+- business-objectives
+outputs:
+- process-analysis
+skills:
+- meeting-notes-and-actions
+- research-documentation
+checks:
+- process-analysis
+- traceability
+- business-analyst-boundary
+handoff_to: []
+---
+
 # Business Analyst Process Analysis
 
 ## Purpose

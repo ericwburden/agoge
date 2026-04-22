@@ -1,3 +1,30 @@
+---
+id: release-candidate-summary
+kind: check
+title: Release Candidate Summary Check
+version: 1
+summary: Validate that the release candidate summary makes the candidate scope, reviewed
+  inputs, supported boundaries, and release-sensitive hotspots explicit enough to
+  ground a defensible release package.
+mode: headings
+severity: error
+applies_to:
+- release-candidate-summary
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Release Or Adoption Objective
+- Reviewed Inputs
+- Candidate Scope Included
+- Explicitly Excluded Or Deferred Scope
+- Release Target And Consumers
+- Upstream Decision Anchors
+- Release-Sensitive Hotspots
+- Candidate Limits And Assumptions
+- Recommended Next Step
+---
+
 # Release Candidate Summary Check
 
 ## Purpose

@@ -1,3 +1,19 @@
+---
+id: release-readiness-decision
+kind: artifact
+title: Release Readiness Decision
+version: 1
+summary: Capture the durable decision record for a drafted release package, including
+  the release posture, approval limits, required conditions, unresolved risks, and
+  what should happen next.
+template: true
+default_output_path: docs/release/release-readiness-decision.md
+checks:
+- release-readiness-decision
+- release-traceability
+- release-handoff-manager-boundary
+---
+
 # Release Readiness Decision
 
 ## Purpose

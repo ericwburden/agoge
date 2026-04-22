@@ -1,3 +1,72 @@
+---
+id: verification-and-release-gate
+kind: scenario
+title: Verification And Release Gate Scenario Definition
+version: 1
+summary: Capture the reusable `Verification And Release Gate` scenario that turns
+  a verified delivery candidate into an explicit downstream gate package with honest
+  verification posture, security/compliance posture when relevant, and release-readiness
+  judgment before actual deployment or adoption handling begins.
+roles:
+- qa-verification-lead
+- security-compliance-specialist
+- release-handoff-manager
+workflows:
+- qa-verification-planning
+- qa-verification-review
+- qa-verification-handoff
+- security-compliance-specialist-scoping
+- security-compliance-specialist-review
+- security-compliance-specialist-handoff
+- release-handoff-manager-packaging
+- release-handoff-manager-readiness-review
+- release-handoff-manager-handoff
+artifacts:
+- verification-strategy
+- verification-matrix
+- evidence-review
+- verification-handoff
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-readiness-decision
+- release-handoff
+checks:
+- verification-strategy
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+- evidence-review
+- verification-handoff
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+- security-compliance-review
+- security-compliance-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+- release-readiness-decision
+- release-handoff
+entry_conditions:
+- reviewed-implementation-and-code-review-outputs-already-exist-for-the-current-bounded-candidate
+- the-current-package-is-mature-enough-that-the-remaining-work-is-final-downstream-gating-rather-than-implementation-execution-or-slice-shaping
+- verification-can-be-grounded-in-concrete-evidence-rather-than-assumption-or-optimism
+- if-the-candidate-is-trust-boundary-sensitive-compliance-sensitive-or-approval-sensitive-the-relevant-security-compliance-context-is-available-or-can-be-routed-honestly-upstream
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-downstream-gate-not-as-a-deployment-runbook-or-incident-management-framework
+exit_conditions:
+- a-reviewed-verification-posture-for-the-current-candidate-with-explicit-evidence-strength-gaps-and-readiness-judgment
+- a-security-compliance-posture-when-applicable-with-explicit-controls-obligations-residual-risk-and-approval-limits
+- a-release-readiness-package-for-the-same-candidate-with-explicit-current-posture-conditions-watchouts-and-downstream-handoff-guidance
+- downstream-release-adjacent-or-human-approval-consumers-can-evaluate-the-candidate-from-durable-verification-security-compliance-and-release-artifacts-rather-than-reconstructing-the-decision-from-commits-chat-history-or-scattered-notes
+---
+
 # Verification And Release Gate Scenario Definition
 
 ## Purpose

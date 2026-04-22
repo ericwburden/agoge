@@ -1,3 +1,18 @@
+---
+id: business-objectives
+kind: artifact
+title: Business Objectives
+version: 1
+summary: Capture the business problem, goals, stakeholders, success criteria, scope
+  boundaries, and business context for a proposed system or project.
+template: true
+default_output_path: docs/discovery/business-objectives.md
+checks:
+- business-objectives
+- traceability
+- business-analyst-boundary
+---
+
 # Business Objectives
 
 ## Purpose

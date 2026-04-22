@@ -1,3 +1,32 @@
+---
+id: verification-handoff
+kind: check
+title: Verification Handoff Check
+version: 1
+summary: Validate that the verification handoff artifact packages the reviewed verification
+  state accurately for downstream implementation, review, or release-adjacent use.
+mode: headings
+severity: error
+applies_to:
+- verification-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Handoff Summary
+- Verification Summary
+- Review Status And Key Findings
+- Evidence Provenance Summary
+- Readiness Ownership And Conditions
+- Coverage And Evidence Hotspots
+- Residual Risks And Weak Evidence
+- Specification Relationship
+- Scope Exclusions And Deferred Coverage
+- Reverification Triggers
+- Recommended Downstream Consumers
+- Next Decision Points
+---
+
 # Verification Handoff Check
 
 ## Purpose

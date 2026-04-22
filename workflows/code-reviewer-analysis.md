@@ -1,3 +1,34 @@
+---
+id: code-reviewer-analysis
+kind: workflow
+title: Code Reviewer Analysis
+version: 1
+summary: Turn a completed implementation package into an explicit review scope and
+  a durable findings set that independently challenges the change for defects, regressions,
+  architectural drift, and missing validation.
+role: code-reviewer
+inputs:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+outputs:
+- code-review-scope
+- review-findings
+skills:
+- review-findings-authoring
+- research-documentation
+- requirements-verification
+- webapp-testing
+- meeting-notes-and-actions
+checks:
+- code-review-scope
+- review-findings
+- review-traceability
+- code-reviewer-boundary
+handoff_to: []
+---
+
 # Code Reviewer Analysis
 
 ## Purpose

@@ -1,3 +1,16 @@
+---
+id: role-builder-boundary
+kind: check
+title: Role Builder Boundary Check
+version: 1
+summary: Validate that role-design work stays inside the boundaries of reusable role-package
+  design and does not drift into project-instance delivery work, implementation ownership,
+  or unsupported framework overhead.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Role Builder Boundary Check
 
 ## Purpose

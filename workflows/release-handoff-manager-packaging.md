@@ -1,3 +1,31 @@
+---
+id: release-handoff-manager-packaging
+kind: workflow
+title: Release / Handoff Manager Packaging
+version: 1
+summary: Turn reviewed implementation, code review, and verification outputs into
+  an explicit release candidate summary and rollout notes package that downstream
+  release-adjacent consumers can use without reconstructing the candidate from upstream
+  artifacts.
+role: release-handoff-manager
+inputs: []
+outputs:
+- release-candidate-summary
+- rollout-and-operations-notes
+skills:
+- release-readiness-packaging
+- research-documentation
+- handoff-packaging
+- requirements-verification
+- meeting-notes-and-actions
+checks:
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+handoff_to: []
+---
+
 # Release / Handoff Manager Packaging
 
 ## Purpose

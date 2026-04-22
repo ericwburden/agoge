@@ -1,3 +1,19 @@
+---
+id: role-package-handoff
+kind: artifact
+title: Role Package Handoff
+version: 1
+summary: Package a reviewed reusable role so another repo, team, or downstream designer
+  can adopt it without reconstructing the role package from earlier artifacts or chat
+  context.
+template: true
+default_output_path: docs/orpheum/role-package-handoff.md
+checks:
+- role-package-handoff
+- role-package-traceability
+- role-builder-boundary
+---
+
 # Role Package Handoff
 
 ## Purpose

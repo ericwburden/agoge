@@ -1,3 +1,29 @@
+---
+id: security-compliance-scope
+kind: check
+title: Security / Compliance Scope Check
+version: 1
+summary: Validate that the security/compliance scope artifact makes the in-scope systems,
+  obligations, threat surfaces, trust boundaries, and assumptions explicit enough
+  to guide downstream work.
+mode: headings
+severity: error
+applies_to:
+- security-compliance-scope
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Assessment Scope
+- Reviewed Inputs
+- Assets, Data, And Sensitive Surfaces
+- Trust Boundaries And Abuse Or Threat Surfaces
+- Applicable Obligations And Control Drivers
+- Assumptions, Exclusions, And Non-Goals
+- Open Questions And Escalation Needs
+- Recommended Next Step
+---
+
 # Security / Compliance Scope Check
 
 ## Purpose

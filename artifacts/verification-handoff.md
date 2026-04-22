@@ -1,3 +1,19 @@
+---
+id: verification-handoff
+kind: artifact
+title: Verification Handoff
+version: 1
+summary: Capture the downstream-ready verification summary, evidence status, residual
+  risks, readiness conditions, and unresolved issues that implementation, review,
+  or release-adjacent roles need to continue the work.
+template: true
+default_output_path: docs/verification/verification-handoff.md
+checks:
+- verification-handoff
+- verification-traceability
+- qa-verification-boundary
+---
+
 # Verification Handoff
 
 ## Purpose

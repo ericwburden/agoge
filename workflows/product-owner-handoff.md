@@ -1,3 +1,29 @@
+---
+id: product-owner-handoff
+kind: workflow
+title: Product Owner Handoff
+version: 1
+summary: Package reviewed product-direction outputs into a downstream-ready handoff
+  that solutioning, planning, delivery, or approval consumers can use without reconstructing
+  product intent, priorities, and tradeoffs from earlier artifacts.
+role: product-owner
+inputs:
+- product-direction
+- backlog-prioritization
+- product-decision-review
+outputs:
+- product-handoff
+skills:
+- handoff-packaging
+- research-documentation
+- requirements-verification
+checks:
+- product-handoff
+- product-traceability
+- product-owner-boundary
+handoff_to: []
+---
+
 # Product Owner Handoff
 
 ## Purpose

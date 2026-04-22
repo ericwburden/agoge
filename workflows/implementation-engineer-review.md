@@ -1,3 +1,31 @@
+---
+id: implementation-engineer-review
+kind: workflow
+title: Implementation Engineer Review
+version: 1
+summary: Review the drafted implementation package, record findings, and decide whether
+  it is ready for downstream code review, verification, or release-adjacent use.
+role: implementation-engineer
+inputs:
+- implementation-record
+- implementation-evidence
+- implementation-handoff
+- architecture-handoff
+- requirements-handoff
+outputs:
+- implementation-readiness-review
+skills:
+- implementation-package-prep
+- research-documentation
+- meeting-notes-and-actions
+- handoff-packaging
+checks:
+- implementation-readiness-review
+- implementation-traceability
+- implementation-engineer-boundary
+handoff_to: []
+---
+
 # Implementation Engineer Review
 
 ## Purpose

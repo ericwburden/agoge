@@ -1,3 +1,19 @@
+---
+id: code-reviewer
+kind: role
+title: Code Reviewer
+version: 1
+summary: The Code Reviewer turns a completed implementation package into an explicit
+  independent review judgment that downstream roles can trust without reverse-engineering
+  the code change, re-reading every diff, or guessing which risks still matter.
+default_workflows:
+- code-reviewer-analysis
+- code-reviewer-decision
+- code-reviewer-handoff
+- code-reviewer-quality-review
+skills: []
+---
+
 # Code Reviewer
 
 ## Purpose

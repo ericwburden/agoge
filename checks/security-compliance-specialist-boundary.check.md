@@ -1,3 +1,17 @@
+---
+id: security-compliance-specialist-boundary
+kind: check
+title: Security / Compliance Specialist Boundary Check
+version: 1
+summary: Validate that Security / Compliance Specialist outputs stay inside security/compliance
+  framing, control mapping, review, and downstream handoff role boundaries and do
+  not drift into legal sign-off, architecture design, implementation ownership, QA
+  authority, or release execution.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Security / Compliance Specialist Boundary Check
 
 ## Purpose

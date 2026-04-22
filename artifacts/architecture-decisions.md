@@ -1,3 +1,18 @@
+---
+id: architecture-decisions
+kind: artifact
+title: Architecture Decisions
+version: 1
+summary: Capture the major architectural decisions, alternatives, rationale, and consequences
+  that shape the solution.
+template: true
+default_output_path: docs/architecture/architecture-decisions.md
+checks:
+- architecture-decisions
+- architecture-traceability
+- solution-architect-boundary
+---
+
 # Architecture Decisions
 
 ## Purpose

@@ -1,3 +1,93 @@
+---
+id: delivery-slice-planning
+kind: scenario
+title: Delivery Slice Planning Scenario Definition
+version: 1
+summary: Capture the reusable `Delivery Slice Planning` scenario that turns a broader
+  reviewed planning package into one bounded delivery slice with explicit scope boundaries,
+  sequencing assumptions, readiness conditions, and downstream handoff context.
+roles:
+- product-owner
+- solution-architect
+- technical-planner
+- qa-verification-lead
+- security-compliance-specialist
+workflows:
+- product-owner-direction
+- product-owner-review
+- product-owner-handoff
+- solution-architect-design
+- solution-architect-review
+- solution-architect-handoff
+- technical-planner-planning
+- technical-planner-review
+- technical-planner-handoff
+- qa-verification-planning
+- security-compliance-specialist-scoping
+- security-compliance-specialist-review
+- security-compliance-specialist-handoff
+artifacts:
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+- solution-architecture
+- architecture-decisions
+- architecture-review
+- architecture-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+- implementation-handoff
+- verification-strategy
+- verification-matrix
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+checks:
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+- product-decision-review
+- product-handoff
+- solution-architecture
+- architecture-decisions
+- architecture-traceability
+- solution-architect-boundary
+- architecture-review
+- architecture-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- planning-traceability
+- technical-planner-boundary
+- implementation-plan-review
+- implementation-handoff
+- verification-strategy
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+- security-compliance-review
+- security-compliance-handoff
+entry_conditions:
+- a-broader-reviewed-planning-package-already-exists-typically-from-project-planning-or-an-equivalent-reviewed-planning-chain
+- the-next-delivery-target-is-still-broad-enough-that-a-bounded-slice-decision-is-required-before-implementation-begins
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-slice-shaping-phase-not-as-a-sprint-board-staffing-plan-or-status-ritual
+exit_conditions:
+- explicit-product-rationale-for-why-this-slice-is-next
+- explicit-in-scope-out-of-scope-and-deferred-boundaries-for-the-selected-slice
+- preserved-architectural-constraints-interface-seams-and-decision-hotspots-that-still-govern-the-slice
+- a-reviewed-slice-sized-implementation-strategy-sequencing-posture-and-implementation-handoff
+- optional-early-verification-framing-and-optional-security-compliance-guidance-when-those-concerns-materially-constrain-the-slice-before-implementation-begins
+- downstream-implementation-oriented-work-can-begin-on-one-bounded-delivery-slice-without-redefining-product-priority-architecture-constraints-or-planning-boundaries-from-the-broader-project-package
+---
+
 # Delivery Slice Planning Scenario Definition
 
 ## Purpose

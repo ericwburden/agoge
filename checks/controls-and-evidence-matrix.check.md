@@ -1,3 +1,29 @@
+---
+id: controls-and-evidence-matrix
+kind: check
+title: Controls And Evidence Matrix Check
+version: 1
+summary: Validate that the controls/evidence matrix makes required safeguards, expected
+  evidence, control owners, compensating controls, and unresolved gaps explicit enough
+  for downstream consumers.
+mode: headings
+severity: error
+applies_to:
+- controls-and-evidence-matrix
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Matrix Scope
+- Required Controls
+- Evidence Expectations
+- Control Owners
+- Compensating Controls Or Exceptions
+- Unresolved Gaps
+- Re-Review Or Re-Approval Triggers
+- Recommended Next Step
+---
+
 # Controls And Evidence Matrix Check
 
 ## Purpose

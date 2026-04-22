@@ -1,3 +1,72 @@
+---
+id: release-feedback-to-reprioritization
+kind: scenario
+title: Release Feedback To Reprioritization Scenario Definition
+version: 1
+summary: Capture the reusable `Release Feedback To Reprioritization` scenario that
+  turns release, adoption, and handoff learnings into explicit product direction and
+  reprioritized backlog posture without forcing downstream teams to reconstruct the
+  release story from scattered notes.
+roles:
+- release-handoff-manager
+- product-owner
+- business-analyst
+workflows:
+- release-handoff-manager-packaging
+- release-handoff-manager-readiness-review
+- release-handoff-manager-handoff
+- product-owner-direction
+- product-owner-review
+- product-owner-handoff
+- business-analyst-kickoff
+- business-analyst-process-analysis
+- business-analyst-requirements-handoff
+artifacts:
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-readiness-decision
+- release-handoff
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+- business-objectives
+- process-analysis
+- requirements-specification
+- requirements-handoff
+checks:
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+- release-readiness-decision
+- release-handoff
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+- product-decision-review
+- product-handoff
+- business-objectives
+- traceability
+- business-analyst-boundary
+- process-analysis
+- requirements-specification
+- requirements-handoff
+entry_conditions:
+- a-completed-release-adoption-or-handoff-package-exists-or-equivalent-release-learnings-are-available
+- there-is-enough-feedback-to-influence-priority-or-scope-decisions-honestly
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-reprioritization-loop-not-as-release-packaging-implementation-remediation-or-sprint-administration
+exit_conditions:
+- explicit-product-direction-that-reflects-the-release-learnings
+- explicit-backlog-prioritization-or-reprioritization-posture
+- explicit-deferred-scope-tradeoffs-and-reprioritization-triggers
+- explicit-routing-for-any-discovery-gaps-that-should-go-back-to-business-analyst-work
+- preserved-traceability-from-release-learnings-to-the-resulting-product-decision
+- downstream-planning-or-discovery-roles-can-act-on-the-updated-priority-posture-without-reconstructing-release-history-confusing-release-packaging-with-product-authority-or-losing-the-feedback-trail-that-changed-the-decision
+---
+
 # Release Feedback To Reprioritization Scenario Definition
 
 ## Purpose

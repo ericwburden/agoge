@@ -1,3 +1,31 @@
+---
+id: security-compliance-specialist-scoping
+kind: workflow
+title: Security / Compliance Specialist Scoping
+version: 1
+summary: Turn reviewed product, architecture, implementation, release, and obligation
+  context into an explicit security/compliance scope artifact and controls/evidence
+  matrix that downstream roles can use without reconstructing risk and obligation
+  posture.
+role: security-compliance-specialist
+inputs: []
+outputs:
+- security-compliance-scope
+- controls-and-evidence-matrix
+skills:
+- security-controls-and-exceptions
+- research-documentation
+- requirements-verification
+- meeting-notes-and-actions
+- content-research-writer
+checks:
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+handoff_to: []
+---
+
 # Security / Compliance Specialist Scoping
 
 ## Purpose

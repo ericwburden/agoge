@@ -1,3 +1,21 @@
+---
+id: security-compliance-specialist
+kind: role
+title: Security / Compliance Specialist
+version: 1
+summary: The Security / Compliance Specialist turns validated requirements, reviewed
+  architecture, implementation context, operational constraints, and governing obligations
+  into an explicit security and compliance posture that downstream delivery roles
+  can trust without reconstructing risk, control expectations, or audit-sensitive
+  decisions from scattered notes.
+default_workflows:
+- security-compliance-specialist-handoff
+- security-compliance-specialist-quality-review
+- security-compliance-specialist-review
+- security-compliance-specialist-scoping
+skills: []
+---
+
 # Security / Compliance Specialist
 
 ## Purpose

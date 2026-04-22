@@ -1,3 +1,16 @@
+---
+id: product-traceability
+kind: check
+title: Product Traceability Check
+version: 1
+summary: Validate that the Product Owner artifact chain preserves linkage from validated
+  discovery, feedback, or delivery evidence through product direction, prioritization,
+  review, and handoff.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Product Traceability Check
 
 ## Purpose

@@ -1,3 +1,32 @@
+---
+id: implementation-plan-review
+kind: check
+title: Implementation Plan Review Check
+version: 1
+summary: Validate that the implementation plan review artifact records a usable readiness
+  judgment, the material findings behind that judgment, and the remediation needed
+  before implementation handoff.
+mode: headings
+severity: error
+applies_to:
+- implementation-plan-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Overall Assessment
+- Readiness Or Approval Status
+- Decision Owner Or Approver
+- Key Findings
+- Dependency And Sequencing Observations
+- Unresolved Risks And Questions
+- Required Remediation
+- Condition Owners
+- Recommended Next Step
+---
+
 # Implementation Plan Review Check
 
 ## Purpose

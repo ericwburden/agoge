@@ -1,3 +1,21 @@
+---
+id: planning-traceability
+kind: check
+title: Planning Traceability Check
+version: 1
+summary: Validate that the Technical Planner artifact chain preserves traceability
+  from upstream BA and architecture outputs, plus relevant security/compliance guidance
+  when it materially shapes planning, to the implementation strategy, sequencing plan,
+  review outcome, and downstream implementation handoff.
+mode: presence
+severity: error
+applies_to:
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+- implementation-handoff
+---
+
 # Planning Traceability Check
 
 ## Purpose

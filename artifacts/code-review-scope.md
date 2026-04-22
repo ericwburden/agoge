@@ -1,3 +1,18 @@
+---
+id: code-review-scope
+kind: artifact
+title: Code Review Scope
+version: 1
+summary: Capture the review target, reviewed inputs, change boundary, conformance
+  anchors, risk hotspots, and explicit limits for a concrete code review pass.
+template: true
+default_output_path: docs/orpheum/code-review-scope.md
+checks:
+- code-review-scope
+- review-traceability
+- code-reviewer-boundary
+---
+
 # Code Review Scope
 
 ## Purpose

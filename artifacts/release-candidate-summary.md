@@ -1,3 +1,18 @@
+---
+id: release-candidate-summary
+kind: artifact
+title: Release Candidate Summary
+version: 1
+summary: Capture the release or adoption target, included and excluded scope, reviewed
+  upstream inputs, and release-sensitive hotspots for a concrete release candidate.
+template: true
+default_output_path: docs/release/release-candidate-summary.md
+checks:
+- release-candidate-summary
+- release-traceability
+- release-handoff-manager-boundary
+---
+
 # Release Candidate Summary
 
 ## Purpose

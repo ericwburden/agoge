@@ -1,3 +1,19 @@
+---
+id: implementation-package-handoff
+kind: artifact
+title: Implementation Package Handoff
+version: 1
+summary: Capture the downstream-ready implementation summary, change footprint, evidence
+  posture, review status, and revalidation triggers that code review, verification,
+  or release-adjacent roles need in order to continue the work safely.
+template: true
+default_output_path: docs/planning/implementation-package-handoff.md
+checks:
+- implementation-package-handoff
+- implementation-traceability
+- implementation-engineer-boundary
+---
+
 # Implementation Package Handoff
 
 ## Purpose

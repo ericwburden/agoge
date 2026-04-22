@@ -1,3 +1,18 @@
+---
+id: implementation-strategy
+kind: artifact
+title: Implementation Strategy
+version: 1
+summary: Capture the implementation approach that turns reviewed architecture and
+  validated requirements into a coherent execution structure.
+template: true
+default_output_path: docs/planning/implementation-strategy.md
+checks:
+- implementation-strategy
+- planning-traceability
+- technical-planner-boundary
+---
+
 # Implementation Strategy
 
 ## Purpose

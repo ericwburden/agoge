@@ -1,3 +1,19 @@
+---
+id: architecture-handoff
+kind: artifact
+title: Architecture Handoff
+version: 1
+summary: Capture the downstream-ready architecture summary, decision framing, dependency
+  hotspots, and unresolved issues that planning, implementation, and verification
+  roles need to continue the work.
+template: true
+default_output_path: docs/architecture/architecture-handoff.md
+checks:
+- architecture-handoff
+- architecture-traceability
+- solution-architect-boundary
+---
+
 # Architecture Handoff
 
 ## Purpose

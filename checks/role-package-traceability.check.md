@@ -1,3 +1,19 @@
+---
+id: role-package-traceability
+kind: check
+title: Role Package Traceability Check
+version: 1
+summary: Validate that the role package preserves traceability from the role definition
+  to the support-system design to the package review and final adoption handoff.
+mode: presence
+severity: error
+applies_to:
+- role-definition-brief
+- role-support-system
+- role-package-review
+- role-package-handoff
+---
+
 # Role Package Traceability Check
 
 ## Purpose

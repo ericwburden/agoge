@@ -1,3 +1,19 @@
+---
+id: requirements-specification
+kind: artifact
+title: Requirements Specification
+version: 1
+summary: Capture verified business requirements in a structured form that emphasizes
+  clarity, traceability, business rationale, scope, and separation from implementation
+  detail.
+template: true
+default_output_path: docs/discovery/requirements-specification.md
+checks:
+- requirements-specification
+- traceability
+- business-analyst-boundary
+---
+
 # Requirements Specification
 
 ## Purpose

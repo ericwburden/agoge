@@ -1,3 +1,18 @@
+---
+id: security-compliance-scope
+kind: artifact
+title: Security / Compliance Scope
+version: 1
+summary: Capture the current system, data, obligation, and trust-boundary scope that
+  should guide downstream security and compliance work.
+template: true
+default_output_path: docs/security/security-compliance-scope.md
+checks:
+- security-compliance-scope
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+---
+
 # Security / Compliance Scope
 
 ## Purpose

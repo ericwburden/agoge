@@ -1,3 +1,18 @@
+---
+id: role-definition-brief
+kind: artifact
+title: Role Definition Brief
+version: 1
+summary: Capture the core definition of a reusable agent role before building its
+  supporting artifacts, workflows, checks, and skill map.
+template: true
+default_output_path: docs/orpheum/role-definition-brief.md
+checks:
+- role-definition-brief
+- role-package-traceability
+- role-builder-boundary
+---
+
 # Role Definition Brief
 
 ## Purpose

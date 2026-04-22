@@ -1,3 +1,30 @@
+---
+id: rollout-and-operations-notes
+kind: check
+title: Rollout And Operations Notes Check
+version: 1
+summary: Validate that the rollout and operations notes preserve the environment,
+  approval, sequencing, monitoring, rollback, communication, and escalation details
+  that materially affect downstream rollout or adoption.
+mode: headings
+severity: error
+applies_to:
+- rollout-and-operations-notes
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Target Environments Or Adoption Context
+- Protection Rules And Approval Constraints
+- Sequencing Or Rollout Notes
+- Operational Assumptions
+- Monitoring And Validation Watchouts
+- Rollback, Pause, Or Escalation Triggers
+- Communication Notes
+- Trust-Boundary And Human-Control-Point Notes
+- Known Gaps Or Operational Unknowns
+---
+
 # Rollout And Operations Notes Check
 
 ## Purpose

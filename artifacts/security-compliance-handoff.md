@@ -1,3 +1,20 @@
+---
+id: security-compliance-handoff
+kind: artifact
+title: Security / Compliance Handoff
+version: 1
+summary: Package the completed security/compliance outputs into a downstream-ready
+  handoff that architecture, planning, implementation, verification, release, or approval
+  consumers can use without reconstructing risks, obligations, or control expectations
+  from earlier artifacts.
+template: true
+default_output_path: docs/security/security-compliance-handoff.md
+checks:
+- security-compliance-handoff
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+---
+
 # Security / Compliance Handoff
 
 ## Purpose

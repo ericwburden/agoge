@@ -1,3 +1,19 @@
+---
+id: scenario-definition
+kind: artifact
+title: Scenario Definition
+version: 1
+summary: Capture the intent, lifecycle window, trigger conditions, participating roles,
+  entry conditions, target outputs, exit conditions, and core sequence for a reusable
+  multi-role scenario.
+template: true
+default_output_path: docs/orpheum/scenario-definition.md
+checks:
+- scenario-definition
+- scenario-traceability
+- scenario-designer-boundary
+---
+
 # Scenario Definition
 
 ## Purpose

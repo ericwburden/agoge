@@ -1,3 +1,16 @@
+---
+id: review-traceability
+kind: check
+title: Review Traceability Check
+version: 1
+summary: Validate that review scope, findings, decision, and handoff stay traceable
+  to the implementation package and the upstream commitments that materially constrain
+  the reviewed change.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Review Traceability Check
 
 ## Purpose

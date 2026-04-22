@@ -1,3 +1,33 @@
+---
+id: solution-architecture
+kind: check
+title: Solution Architecture Check
+version: 1
+summary: Validate that the solution architecture artifact clearly expresses the intended
+  system shape, drivers, boundaries, and risks for the validated problem space.
+mode: headings
+severity: error
+applies_to:
+- solution-architecture
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Problem And Scope
+- Input Context
+- Architectural Drivers
+- System Boundary
+- Major Components And Responsibilities
+- Major Flows
+- Interfaces And Contracts
+- Integrations And External Dependencies
+- Constraints
+- Specification Relationship
+- Architecture Fitness Criteria
+- Trust Boundaries And Human Control Points
+- Risks And Open Questions
+---
+
 # Solution Architecture Check
 
 ## Purpose

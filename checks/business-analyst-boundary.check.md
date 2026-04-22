@@ -1,3 +1,16 @@
+---
+id: business-analyst-boundary
+kind: check
+title: Business Analyst Boundary Check
+version: 1
+summary: Validate that Business Analyst outputs stay inside BA role boundaries and
+  do not drift into solution ownership, delivery management, technical design, or
+  silent invention of business facts.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Business Analyst Boundary Check
 
 ## Purpose

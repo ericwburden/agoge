@@ -1,3 +1,32 @@
+---
+id: verification-strategy
+kind: check
+title: Verification Strategy Check
+version: 1
+summary: Validate that the verification strategy artifact clearly expresses the intended
+  verification scope, confidence goals, evidence expectations, and major risk focus
+  areas for the reviewed delivery package.
+mode: headings
+severity: error
+applies_to:
+- verification-strategy
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Verification Scope And Objective
+- Input Context
+- Verification Drivers And Risks
+- Confidence Goals
+- Verification Levels And Methods
+- Evidence Expectations
+- Scope Exclusions And Deferrals
+- Verification Constraints And Assumptions
+- Architecture, Planning, And Specification Watchouts
+- Readiness Decision Framing
+- Open Questions
+---
+
 # Verification Strategy Check
 
 ## Purpose

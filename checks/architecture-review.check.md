@@ -1,3 +1,32 @@
+---
+id: architecture-review
+kind: check
+title: Architecture Review Check
+version: 1
+summary: Validate that the architecture review artifact records a usable readiness
+  judgment, the material findings behind that judgment, and the remediation needed
+  before architecture is handed downstream.
+mode: headings
+severity: error
+applies_to:
+- architecture-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Overall Assessment
+- Readiness Or Approval Status
+- Decision Owner Or Approver
+- Key Findings
+- Interface And Contract Observations
+- Unresolved Risks And Questions
+- Required Remediation
+- Condition Owners
+- Recommended Next Step
+---
+
 # Architecture Review Check
 
 ## Purpose

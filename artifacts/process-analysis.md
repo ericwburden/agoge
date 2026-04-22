@@ -1,3 +1,18 @@
+---
+id: process-analysis
+kind: artifact
+title: Process Analysis
+version: 1
+summary: Capture current-state and future-state process understanding, including actors,
+  triggers, inputs, outputs, exceptions, business rules, and identified gaps.
+template: true
+default_output_path: docs/discovery/process-analysis.md
+checks:
+- process-analysis
+- traceability
+- business-analyst-boundary
+---
+
 # Process Analysis
 
 ## Purpose

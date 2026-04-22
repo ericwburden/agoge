@@ -1,3 +1,19 @@
+---
+id: product-direction
+kind: artifact
+title: Product Direction
+version: 1
+summary: Capture the current product goal, outcome focus, target users or stakeholders,
+  value framing, and scope boundaries that should guide downstream solutioning and
+  prioritization.
+template: true
+default_output_path: docs/product/product-direction.md
+checks:
+- product-direction
+- product-traceability
+- product-owner-boundary
+---
+
 # Product Direction
 
 ## Purpose

@@ -1,3 +1,99 @@
+---
+id: project-planning
+kind: scenario
+title: Project Planning Scenario Definition
+version: 1
+summary: Capture the reusable Project Planning scenario that turns validated discovery
+  and product direction into a reviewed architecture and downstream-ready implementation
+  planning package before implementation begins.
+roles:
+- business-analyst
+- product-owner
+- solution-architect
+- technical-planner
+- security-compliance-specialist
+workflows:
+- business-analyst-kickoff
+- business-analyst-process-analysis
+- business-analyst-requirements-handoff
+- product-owner-direction
+- product-owner-review
+- product-owner-handoff
+- solution-architect-design
+- solution-architect-review
+- solution-architect-handoff
+- technical-planner-planning
+- technical-planner-review
+- technical-planner-handoff
+- security-compliance-specialist-scoping
+- security-compliance-specialist-review
+- security-compliance-specialist-handoff
+artifacts:
+- business-objectives
+- process-analysis
+- requirements-specification
+- requirements-handoff
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+- solution-architecture
+- architecture-decisions
+- architecture-review
+- architecture-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+- implementation-handoff
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+checks:
+- business-objectives
+- traceability
+- business-analyst-boundary
+- process-analysis
+- requirements-specification
+- requirements-handoff
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+- product-decision-review
+- product-handoff
+- solution-architecture
+- architecture-decisions
+- architecture-traceability
+- solution-architect-boundary
+- architecture-review
+- architecture-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- planning-traceability
+- technical-planner-boundary
+- implementation-plan-review
+- implementation-handoff
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+- security-compliance-review
+- security-compliance-handoff
+entry_conditions:
+- business-objectives-process-analysis-requirements-specification-and-requirements-handoff-already-exist-or-equivalent-validated-discovery-inputs-are-available
+- project-discovery-has-normally-already-produced-the-validated-discovery-package-consumed-here
+- the-project-or-feature-area-is-mature-enough-for-product-direction-and-architecture-work
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-planning-phase-not-as-a-live-project-plan-or-staffing-mechanism
+exit_conditions:
+- explicit-product-direction-and-backlog-prioritization
+- reviewed-solution-architecture-and-architecture-handoff
+- reviewed-implementation-strategy-sequencing-and-dependencies-and-implementation-handoff
+- optional-reviewed-security-compliance-posture-and-downstream-handoff-when-the-context-requires-it
+- downstream-implementation-adjacent-roles-can-begin-with-reviewed-architecture-planning-outputs-and-any-materially-constraining-security-compliance-guidance-rather-than-reconstructing-intent-from-discovery-and-meeting-history
+---
+
 # Project Planning Scenario Definition
 
 ## Purpose

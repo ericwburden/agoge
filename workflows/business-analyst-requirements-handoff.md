@@ -1,3 +1,31 @@
+---
+id: business-analyst-requirements-handoff
+kind: workflow
+title: Business Analyst Requirements Handoff
+version: 1
+summary: Turn discovery and process analysis into verified business requirements and
+  a downstream-ready handoff package for product, architecture, delivery, or implementation
+  roles.
+role: business-analyst
+inputs:
+- business-objectives
+- process-analysis
+outputs:
+- requirements-specification
+- requirements-handoff
+skills:
+- research-documentation
+- requirements-verification
+- handoff-packaging
+- spec-to-implementation
+checks:
+- requirements-specification
+- requirements-handoff
+- traceability
+- business-analyst-boundary
+handoff_to: []
+---
+
 # Business Analyst Requirements Handoff
 
 ## Purpose

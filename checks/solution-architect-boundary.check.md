@@ -1,3 +1,16 @@
+---
+id: solution-architect-boundary
+kind: check
+title: Solution Architect Boundary Check
+version: 1
+summary: Validate that Solution Architect outputs stay inside architecture role boundaries
+  and do not drift into redoing business discovery, delivery management, detailed
+  implementation, or silent requirement invention.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Solution Architect Boundary Check
 
 ## Purpose

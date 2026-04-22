@@ -1,3 +1,32 @@
+---
+id: technical-planner-quality-review
+kind: workflow
+title: Technical Planner Quality Review
+version: 1
+summary: Apply the Technical Planner check chain to instantiated planning artifacts,
+  identify failures by artifact and defect type, and route remediation before downstream
+  implementation or verification work begins.
+role: technical-planner
+inputs:
+- implementation-handoff
+- architecture-handoff
+- requirements-handoff
+outputs: []
+skills:
+- spec-to-implementation
+- handoff-packaging
+- research-documentation
+- meeting-notes-and-actions
+checks:
+- planning-traceability
+- technical-planner-boundary
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+- implementation-handoff
+handoff_to: []
+---
+
 # Technical Planner Quality Review
 
 ## Purpose

@@ -1,3 +1,20 @@
+---
+id: scenario-designer
+kind: role
+title: Scenario Designer
+version: 1
+summary: The Scenario Designer turns a multi-role activity into an explicit reusable
+  scenario package that downstream teams or agents can execute without reconstructing
+  sequencing, role participation, handoffs, or integration requirements from scattered
+  role definitions and workflow files.
+default_workflows:
+- scenario-designer-composition
+- scenario-designer-handoff
+- scenario-designer-quality-review
+- scenario-designer-review
+skills: []
+---
+
 # Scenario Designer
 
 ## Purpose

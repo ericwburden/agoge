@@ -1,3 +1,31 @@
+---
+id: requirements-handoff
+kind: check
+title: Requirements Handoff Check
+version: 1
+summary: Validate that the requirements handoff artifact is complete enough for downstream
+  consumers to continue without rediscovering the business context.
+mode: headings
+severity: error
+applies_to:
+- requirements-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Handoff Summary
+- Business Problem And Desired Outcome
+- Verified Requirements
+- Traceability
+- Risks And Dependencies
+- Assumptions And Open Questions
+- Confirmation Status
+- Specification Relationship
+- Human Oversight And AI Notes
+- Recommended Downstream Consumers
+- Next Decision Points
+---
+
 # Requirements Handoff Check
 
 ## Purpose

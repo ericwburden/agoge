@@ -1,3 +1,138 @@
+---
+id: secure-delivery-feature-lifecycle
+kind: scenario
+title: Secure Delivery / Secure Feature Lifecycle Scenario Definition
+version: 1
+summary: Capture the reusable `Secure Delivery / Secure Feature Lifecycle` scenario
+  that carries a bounded feature, change set, or release candidate through reviewed
+  planning, security and compliance framing, implementation, independent review, verification,
+  and release-preparation packaging without losing the controls, evidence, or human
+  checkpoints that make the work honestly safe to move forward.
+roles:
+- business-analyst
+- product-owner
+- solution-architect
+- security-compliance-specialist
+- technical-planner
+- implementation-engineer
+- code-reviewer
+- qa-verification-lead
+- release-handoff-manager
+workflows:
+- business-analyst-kickoff
+- product-owner-direction
+- solution-architect-design
+- security-compliance-specialist-scoping
+- security-compliance-specialist-review
+- security-compliance-specialist-handoff
+- technical-planner-planning
+- technical-planner-review
+- technical-planner-handoff
+- implementation-engineer-execution
+- implementation-engineer-review
+- implementation-engineer-handoff
+- code-reviewer-analysis
+- code-reviewer-decision
+- code-reviewer-handoff
+- qa-verification-planning
+- qa-verification-review
+- qa-verification-handoff
+- release-handoff-manager-packaging
+- release-handoff-manager-readiness-review
+- release-handoff-manager-handoff
+artifacts:
+- business-objectives
+- product-direction
+- backlog-prioritization
+- solution-architecture
+- architecture-decisions
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-review
+- security-compliance-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- implementation-plan-review
+- implementation-handoff
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+- code-review-scope
+- review-findings
+- review-decision
+- review-handoff
+- verification-strategy
+- verification-matrix
+- evidence-review
+- verification-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-readiness-decision
+- release-handoff
+checks:
+- business-objectives
+- traceability
+- business-analyst-boundary
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+- solution-architecture
+- architecture-decisions
+- architecture-traceability
+- solution-architect-boundary
+- security-compliance-scope
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+- security-compliance-review
+- security-compliance-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- planning-traceability
+- technical-planner-boundary
+- implementation-plan-review
+- implementation-handoff
+- implementation-record
+- implementation-evidence
+- implementation-traceability
+- implementation-engineer-boundary
+- implementation-readiness-review
+- implementation-package-handoff
+- code-review-scope
+- review-findings
+- review-traceability
+- code-reviewer-boundary
+- review-decision
+- review-handoff
+- verification-strategy
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+- evidence-review
+- verification-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+- release-readiness-decision
+- release-handoff
+entry_conditions:
+- reviewed-requirements-architecture-and-implementation-planning-handoffs-already-exist-for-the-current-bounded-feature-or-release-candidate
+- the-security-sensitive-aspects-of-the-work-are-already-clear-enough-to-frame-controls-evidence-and-approval-limits-without-inventing-policy-in-the-scenario-layer
+- the-feature-boundary-is-narrow-enough-that-the-scenario-can-remain-honest-about-scope-and-downstream-readiness
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-lifecycle-pattern-not-as-a-deployment-runbook-or-compliance-authority
+exit_conditions:
+- a-reviewed-implementation-package-for-the-bounded-feature-or-candidate-with-explicit-traceability-and-evidence-posture
+- an-independent-code-review-package-with-explicit-findings-approval-posture-and-re-review-triggers
+- a-reviewed-verification-package-with-explicit-evidence-strength-gaps-readiness-and-re-verification-triggers
+- a-security-and-compliance-package-for-the-same-bounded-feature-or-candidate-with-explicit-risks-controls-evidence-expectations-and-human-control-point-guidance
+- a-release-preparation-package-for-the-same-bounded-feature-or-candidate-with-explicit-candidate-scope-current-release-posture-conditions-rollout-watchouts-and-downstream-handoff-guidance
+- downstream-release-adjacent-operational-or-human-approval-consumers-can-evaluate-the-secure-feature-or-candidate-from-durable-implementation-review-verification-and-security-compliance-artifacts-rather-than-reconstructing-intent-from-commits-chat-history-or-scattered-notes
+---
+
 # Secure Delivery / Secure Feature Lifecycle Scenario Definition
 
 ## Purpose

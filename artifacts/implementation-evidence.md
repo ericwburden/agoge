@@ -1,3 +1,18 @@
+---
+id: implementation-evidence
+kind: artifact
+title: Implementation Evidence
+version: 1
+summary: Capture the local validation activities, environments, observed results,
+  and evidence limits associated with an implementation slice.
+template: true
+default_output_path: docs/planning/implementation-evidence.md
+checks:
+- implementation-evidence
+- implementation-traceability
+- implementation-engineer-boundary
+---
+
 # Implementation Evidence
 
 ## Purpose

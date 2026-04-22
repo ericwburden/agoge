@@ -1,3 +1,16 @@
+---
+id: implementation-engineer-boundary
+kind: check
+title: Implementation Engineer Boundary Check
+version: 1
+summary: Validate that Implementation Engineer outputs stay inside implementation
+  role boundaries and do not drift into redoing discovery, re-architecting, re-planning,
+  formal QA authority, or release operations.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Implementation Engineer Boundary Check
 
 ## Purpose

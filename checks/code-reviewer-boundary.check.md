@@ -1,3 +1,16 @@
+---
+id: code-reviewer-boundary
+kind: check
+title: Code Reviewer Boundary Check
+version: 1
+summary: Validate that Code Reviewer outputs stay inside independent review role boundaries
+  and do not drift into re-implementation, formal QA ownership, release operations,
+  or upstream role redefinition.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Code Reviewer Boundary Check
 
 ## Purpose

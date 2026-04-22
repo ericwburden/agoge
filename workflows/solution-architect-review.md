@@ -1,3 +1,30 @@
+---
+id: solution-architect-review
+kind: workflow
+title: Solution Architect Review
+version: 1
+summary: Review drafted architecture artifacts, record explicit findings and readiness,
+  and decide whether the architecture is ready to be packaged for downstream use.
+role: solution-architect
+inputs:
+- solution-architecture
+- architecture-decisions
+outputs:
+- architecture-review
+skills:
+- architecture-review
+- meeting-notes-and-actions
+- research-documentation
+- content-research-writer
+checks:
+- solution-architecture
+- architecture-decisions
+- architecture-review
+- architecture-traceability
+- solution-architect-boundary
+handoff_to: []
+---
+
 # Solution Architect Review
 
 ## Purpose

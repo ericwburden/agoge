@@ -1,3 +1,86 @@
+---
+id: implementation-and-release-prep
+kind: scenario
+title: Implementation and Release Prep Scenario Definition
+version: 1
+summary: Capture the reusable `Implementation and Release Prep` scenario that turns
+  reviewed upstream planning into a reviewed implementation package, an explicit independent
+  review posture, an evidence-based verification package, and a downstream-ready release-preparation
+  package before actual deployment, adoption handling, or a distinct final downstream
+  gate begins.
+roles:
+- implementation-engineer
+- code-reviewer
+- qa-verification-lead
+- release-handoff-manager
+workflows:
+- implementation-engineer-execution
+- implementation-engineer-review
+- implementation-engineer-handoff
+- code-reviewer-analysis
+- code-reviewer-decision
+- code-reviewer-handoff
+- qa-verification-planning
+- qa-verification-review
+- qa-verification-handoff
+- release-handoff-manager-packaging
+- release-handoff-manager-readiness-review
+- release-handoff-manager-handoff
+artifacts:
+- implementation-record
+- implementation-evidence
+- implementation-readiness-review
+- implementation-package-handoff
+- code-review-scope
+- review-findings
+- review-decision
+- review-handoff
+- verification-strategy
+- verification-matrix
+- evidence-review
+- verification-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-readiness-decision
+- release-handoff
+checks:
+- implementation-record
+- implementation-evidence
+- implementation-traceability
+- implementation-engineer-boundary
+- implementation-readiness-review
+- implementation-package-handoff
+- code-review-scope
+- review-findings
+- review-traceability
+- code-reviewer-boundary
+- review-decision
+- review-handoff
+- verification-strategy
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+- evidence-review
+- verification-handoff
+- release-candidate-summary
+- rollout-and-operations-notes
+- release-traceability
+- release-handoff-manager-boundary
+- release-readiness-decision
+- release-handoff
+entry_conditions:
+- reviewed-requirements-architecture-and-implementation-planning-handoffs-already-exist-for-the-current-bounded-delivery-slice-or-equivalent-reviewed-upstream-planning-inputs-are-available
+- the-current-delivery-slice-is-stable-enough-to-begin-coding-without-inventing-missing-upstream-direction-in-code
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-downstream-delivery-phase-not-as-a-deployment-runbook-or-incident-management-framework
+exit_conditions:
+- a-reviewed-implementation-package-for-the-current-bounded-slice-with-explicit-evidence-posture-and-implementation-package-readiness
+- an-independent-code-review-package-with-explicit-findings-approval-posture-and-re-review-triggers
+- a-reviewed-verification-package-with-explicit-evidence-strength-gaps-readiness-and-re-verification-triggers
+- a-release-preparation-package-for-the-same-bounded-slice-or-release-candidate-with-explicit-candidate-scope-current-release-posture-conditions-rollout-watchouts-and-downstream-handoff-guidance
+- downstream-release-adjacent-final-gate-or-human-approval-consumers-can-evaluate-the-current-bounded-slice-or-release-candidate-from-durable-implementation-review-verification-and-release-preparation-artifacts-rather-than-reconstructing-intent-from-commits-chat-history-or-scattered-notes
+---
+
 # Implementation and Release Prep Scenario Definition
 
 ## Purpose

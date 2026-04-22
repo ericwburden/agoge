@@ -1,3 +1,34 @@
+---
+id: evidence-review
+kind: check
+title: Evidence Review Check
+version: 1
+summary: Validate that the evidence review artifact records a usable readiness judgment,
+  the evidence basis for that judgment, and the remediation needed before downstream
+  use.
+mode: headings
+severity: error
+applies_to:
+- evidence-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Evidence Provenance
+- Overall Assessment
+- Readiness Or Approval Status
+- Decision Owner Or Approver
+- Key Findings
+- Evidence Strength And Gaps
+- Requirement, Architecture, And Planning Observations
+- Unresolved Risks And Questions
+- Required Remediation
+- Condition Owners
+- Recommended Next Step
+---
+
 # Evidence Review Check
 
 ## Purpose

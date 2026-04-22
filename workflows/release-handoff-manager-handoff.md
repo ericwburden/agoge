@@ -1,3 +1,28 @@
+---
+id: release-handoff-manager-handoff
+kind: workflow
+title: Release / Handoff Manager Handoff
+version: 1
+summary: Package the reviewed release outputs into a downstream-ready handoff for
+  release-adjacent, operational, or adoption consumers.
+role: release-handoff-manager
+inputs:
+- release-readiness-decision
+- release-candidate-summary
+- rollout-and-operations-notes
+outputs:
+- release-handoff
+skills:
+- handoff-packaging
+- research-documentation
+- requirements-verification
+checks:
+- release-handoff
+- release-traceability
+- release-handoff-manager-boundary
+handoff_to: []
+---
+
 # Release / Handoff Manager Handoff
 
 ## Purpose

@@ -1,3 +1,19 @@
+---
+id: scenario-integration-map
+kind: artifact
+title: Scenario Integration Map
+version: 1
+summary: Capture how a reusable scenario composes role-owned workflows into one coherent
+  multi-role chain, including handoffs, dependencies, branching rules, synchronization
+  points, and failure-routing expectations.
+template: true
+default_output_path: docs/orpheum/scenario-integration-map.md
+checks:
+- scenario-integration-map
+- scenario-traceability
+- scenario-designer-boundary
+---
+
 # Scenario Integration Map
 
 ## Purpose

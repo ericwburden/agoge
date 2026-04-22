@@ -1,3 +1,33 @@
+---
+id: product-owner-quality-review
+kind: workflow
+title: Product Owner Quality Review
+version: 1
+summary: Run the Product Owner check chain across the product package, confirm whether
+  the package is coherent and downstream-usable, and route remediation to the earliest
+  artifact that introduced any defect.
+role: product-owner
+inputs:
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+outputs: []
+skills:
+- product-priority-framing
+- requirements-verification
+- research-documentation
+- handoff-packaging
+checks:
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+- product-traceability
+- product-owner-boundary
+handoff_to: []
+---
+
 # Product Owner Quality Review
 
 ## Purpose

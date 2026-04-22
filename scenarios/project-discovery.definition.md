@@ -1,3 +1,58 @@
+---
+id: project-discovery
+kind: scenario
+title: Project Discovery Scenario Definition
+version: 1
+summary: Capture the reusable `Project Discovery` scenario that turns a kickoff request,
+  vague initiative idea, release-driven follow-up need, or early stakeholder context
+  into a validated discovery package with explicit business objectives, process understanding,
+  requirements posture, and downstream readiness for planning.
+roles:
+- business-analyst
+- product-owner
+workflows:
+- business-analyst-kickoff
+- business-analyst-process-analysis
+- business-analyst-requirements-handoff
+- product-owner-direction
+- product-owner-review
+- product-owner-handoff
+artifacts:
+- business-objectives
+- process-analysis
+- requirements-specification
+- requirements-handoff
+- product-direction
+- backlog-prioritization
+- product-decision-review
+- product-handoff
+checks:
+- business-objectives
+- traceability
+- business-analyst-boundary
+- process-analysis
+- requirements-specification
+- requirements-handoff
+- product-direction
+- backlog-prioritization
+- product-traceability
+- product-owner-boundary
+- product-decision-review
+- product-handoff
+entry_conditions:
+- a-project-idea-problem-signal-stakeholder-request-or-equivalent-initiating-context-exists
+- validated-discovery-does-not-yet-exist-or-is-not-yet-strong-enough-to-support-downstream-planning-honestly
+- the-participating-role-packages-are-available-and-treated-as-the-source-of-truth-for-role-local-workflows
+- the-scenario-is-being-used-as-a-reusable-upstream-discovery-phase-not-as-architecture-design-sprint-planning-or-implementation-work
+exit_conditions:
+- explicit-business-objectives-with-scope-boundaries-stakeholders-success-criteria-and-confirmation-posture
+- explicit-current-state-and-future-state-process-understanding-with-process-needs-rules-exceptions-and-operational-gaps
+- a-verified-requirements-posture-with-clear-traceability-to-business-goals-and-process-needs
+- a-downstream-ready-requirements-handoff-that-names-risks-dependencies-unresolved-questions-and-confirmation-limits
+- optional-product-readiness-or-early-priority-framing-when-discovery-alone-is-not-enough-to-decide-whether-the-work-should-proceed-into-planning
+- downstream-planning-roles-can-begin-project-planning-with-validated-discovery-rather-than-reconstructing-the-business-problem-process-context-or-requirement-basis-from-kickoff-chatter
+---
+
 # Project Discovery Scenario Definition
 
 ## Purpose

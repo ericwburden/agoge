@@ -1,3 +1,31 @@
+---
+id: review-handoff
+kind: check
+title: Review Handoff Check
+version: 1
+summary: Validate that the review handoff artifact packages the review outputs for
+  downstream use without losing the approval posture, active findings, or follow-up
+  ownership.
+mode: headings
+severity: error
+applies_to:
+- review-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Reviewed Change Summary
+- Review Package Included
+- Current Approval Posture
+- Key Findings To Carry Forward
+- Required Follow-Up
+- Follow-Up Owners
+- Verification, Release, And Trust-Boundary Watchouts
+- Re-Review Triggers
+- Upstream Routing Notes
+- Recommended Next Consumer
+---
+
 # Review Handoff Check
 
 ## Purpose

@@ -1,3 +1,20 @@
+---
+id: architecture-traceability
+kind: check
+title: Architecture Traceability Check
+version: 1
+summary: Validate that the Solution Architect artifact chain preserves traceability
+  from upstream BA outputs and relevant Product Owner direction to the proposed solution
+  shape, architectural decisions, and downstream architecture handoff.
+mode: presence
+severity: error
+applies_to:
+- solution-architecture
+- architecture-decisions
+- architecture-review
+- architecture-handoff
+---
+
 # Architecture Traceability Check
 
 ## Purpose

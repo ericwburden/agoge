@@ -1,3 +1,19 @@
+---
+id: solution-architect
+kind: role
+title: Solution Architect
+version: 1
+summary: The Solution Architect turns validated business requirements into a feasible
+  solution shape that downstream planning and implementation roles can execute without
+  inventing architecture ad hoc.
+default_workflows:
+- solution-architect-design
+- solution-architect-handoff
+- solution-architect-quality-review
+- solution-architect-review
+skills: []
+---
+
 # Solution Architect
 
 ## Purpose

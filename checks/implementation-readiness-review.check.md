@@ -1,3 +1,29 @@
+---
+id: implementation-readiness-review
+kind: check
+title: Implementation Readiness Review Check
+version: 1
+summary: Validate that the implementation readiness review artifact records a clear
+  implementation-package readiness judgment, meaningful findings, required remediation,
+  and correct routing for upstream issues before downstream use.
+mode: headings
+severity: error
+applies_to:
+- implementation-readiness-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Inputs Reviewed
+- Readiness Decision
+- Findings
+- Remediation And Required Conditions
+- Residual Risks
+- Upstream Routing Notes
+- Recommendation For Downstream Use
+---
+
 # Implementation Readiness Review Check
 
 ## Purpose

@@ -1,3 +1,19 @@
+---
+id: architecture-review
+kind: artifact
+title: Architecture Review
+version: 1
+summary: Capture the durable review record for a drafted architecture package, including
+  findings, readiness, unresolved risks, and required remediation before the architecture
+  is handed downstream.
+template: true
+default_output_path: docs/architecture/architecture-review.md
+checks:
+- architecture-review
+- architecture-traceability
+- solution-architect-boundary
+---
+
 # Architecture Review
 
 ## Purpose

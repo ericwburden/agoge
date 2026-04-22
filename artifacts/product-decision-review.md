@@ -1,3 +1,19 @@
+---
+id: product-decision-review
+kind: artifact
+title: Product Decision Review
+version: 1
+summary: Capture the durable review outcome for a drafted Product Owner package, including
+  the current decision posture, risks, tradeoffs, conditions, and what should happen
+  next.
+template: true
+default_output_path: docs/product/product-decision-review.md
+checks:
+- product-decision-review
+- product-traceability
+- product-owner-boundary
+---
+
 # Product Decision Review
 
 ## Purpose

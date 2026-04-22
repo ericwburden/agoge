@@ -1,3 +1,35 @@
+---
+id: code-reviewer-quality-review
+kind: workflow
+title: Code Reviewer Quality Review
+version: 1
+summary: Run the Code Reviewer check chain across the review package, confirm whether
+  the package is coherent and downstream-usable, and route remediation to the earliest
+  artifact that introduced any defect.
+role: code-reviewer
+inputs:
+- code-review-scope
+- review-findings
+- review-decision
+- review-handoff
+outputs: []
+skills:
+- review-findings-authoring
+- research-documentation
+- handoff-packaging
+- requirements-verification
+- webapp-testing
+- implementation-skill-discovery
+checks:
+- code-review-scope
+- review-findings
+- review-decision
+- review-handoff
+- review-traceability
+- code-reviewer-boundary
+handoff_to: []
+---
+
 # Code Reviewer Quality Review
 
 ## Purpose

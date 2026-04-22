@@ -1,3 +1,19 @@
+---
+id: implementation-plan-review
+kind: artifact
+title: Implementation Plan Review
+version: 1
+summary: Capture the durable review record for a drafted implementation planning package,
+  including findings, readiness, unresolved risks, and required remediation before
+  the plan is handed downstream.
+template: true
+default_output_path: docs/planning/implementation-plan-review.md
+checks:
+- implementation-plan-review
+- planning-traceability
+- technical-planner-boundary
+---
+
 # Implementation Plan Review
 
 ## Purpose

@@ -1,3 +1,29 @@
+---
+id: security-compliance-specialist-review
+kind: workflow
+title: Security / Compliance Specialist Review
+version: 1
+summary: Review the drafted security/compliance package, record the durable posture,
+  and decide whether the package is ready, conditional, or blocked for downstream
+  design, planning, implementation, verification, or release-adjacent use.
+role: security-compliance-specialist
+inputs:
+- security-compliance-scope
+- controls-and-evidence-matrix
+outputs:
+- security-compliance-review
+skills:
+- security-controls-and-exceptions
+- research-documentation
+- requirements-verification
+- meeting-notes-and-actions
+checks:
+- security-compliance-review
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+handoff_to: []
+---
+
 # Security / Compliance Specialist Review
 
 ## Purpose

@@ -1,3 +1,19 @@
+---
+id: review-handoff
+kind: artifact
+title: Review Handoff
+version: 1
+summary: Package the completed code review outputs into a downstream-ready handoff
+  that lets implementation, verification, release-adjacent, or human decision-making
+  roles use the review without reconstructing it from raw comments.
+template: true
+default_output_path: docs/verification/review-handoff.md
+checks:
+- review-handoff
+- review-traceability
+- code-reviewer-boundary
+---
+
 # Review Handoff
 
 ## Purpose

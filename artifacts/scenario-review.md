@@ -1,3 +1,19 @@
+---
+id: scenario-review
+kind: artifact
+title: Scenario Review
+version: 1
+summary: Capture the explicit review posture for a drafted scenario package, including
+  readiness, integration risks, conditions, and remediation decisions before the scenario
+  is handed off for adoption or execution.
+template: true
+default_output_path: docs/orpheum/scenario-review.md
+checks:
+- scenario-review
+- scenario-traceability
+- scenario-designer-boundary
+---
+
 # Scenario Review
 
 ## Purpose

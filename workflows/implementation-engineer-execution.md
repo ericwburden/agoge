@@ -1,3 +1,36 @@
+---
+id: implementation-engineer-execution
+kind: workflow
+title: Implementation Engineer Execution
+version: 1
+summary: Turn reviewed planning and architecture handoff into a concrete implementation
+  record and implementation evidence package.
+role: implementation-engineer
+inputs:
+- implementation-handoff
+- architecture-handoff
+- requirements-handoff
+- implementation-strategy
+- sequencing-and-dependencies
+- solution-architecture
+- architecture-decisions
+outputs:
+- implementation-record
+- implementation-evidence
+skills:
+- implementation-package-prep
+- research-documentation
+- meeting-notes-and-actions
+- webapp-testing
+- content-research-writer
+checks:
+- implementation-record
+- implementation-evidence
+- implementation-traceability
+- implementation-engineer-boundary
+handoff_to: []
+---
+
 # Implementation Engineer Execution
 
 ## Purpose

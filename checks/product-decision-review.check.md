@@ -1,3 +1,31 @@
+---
+id: product-decision-review
+kind: check
+title: Product Decision Review Check
+version: 1
+summary: Validate that the product decision review artifact states the current decision
+  posture, conditions, risks, tradeoffs, and ownership clearly enough for downstream
+  consumers.
+mode: headings
+severity: error
+applies_to:
+- product-decision-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Overall Assessment
+- Decision Status
+- Decision Owner
+- Key Risks, Tradeoffs, And Tensions
+- Conditions And Required Follow-Up
+- Follow-Up Owners
+- Revisit Triggers
+- Recommended Next Step
+---
+
 # Product Decision Review Check
 
 ## Purpose

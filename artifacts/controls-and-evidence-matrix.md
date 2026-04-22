@@ -1,3 +1,19 @@
+---
+id: controls-and-evidence-matrix
+kind: artifact
+title: Controls And Evidence Matrix
+version: 1
+summary: Capture the required controls, expected evidence, control owners, compensating
+  controls, waivers, and unresolved gaps that shape the current security and compliance
+  posture.
+template: true
+default_output_path: docs/security/controls-and-evidence-matrix.md
+checks:
+- controls-and-evidence-matrix
+- security-compliance-traceability
+- security-compliance-specialist-boundary
+---
+
 # Controls And Evidence Matrix
 
 ## Purpose

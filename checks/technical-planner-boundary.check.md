@@ -1,3 +1,16 @@
+---
+id: technical-planner-boundary
+kind: check
+title: Technical Planner Boundary Check
+version: 1
+summary: Validate that Technical Planner outputs stay inside planning role boundaries
+  and do not drift into redoing business discovery, re-architecting the solution,
+  delivery administration, or detailed implementation ownership.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Technical Planner Boundary Check
 
 ## Purpose

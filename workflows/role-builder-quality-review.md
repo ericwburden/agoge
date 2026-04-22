@@ -1,3 +1,27 @@
+---
+id: role-builder-quality-review
+kind: workflow
+title: Role Builder Quality Review
+version: 1
+summary: Review the full role package for coherence, record findings and remediation
+  decisions, and determine whether the role is ready to move into adoption handoff
+  or still needs rework.
+role: role-builder
+inputs:
+- role-definition-brief
+- role-support-system
+outputs:
+- role-package-review
+skills:
+- role-package-review
+- research-documentation
+checks:
+- role-package-review
+- role-package-traceability
+- role-builder-boundary
+handoff_to: []
+---
+
 # Role Builder Quality Review
 
 ## Purpose

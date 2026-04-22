@@ -1,3 +1,18 @@
+---
+id: implementation-record
+kind: artifact
+title: Implementation Record
+version: 1
+summary: Capture the implementation scope, source context, traceability, changed areas,
+  and material deviations for a concrete implementation slice.
+template: true
+default_output_path: docs/planning/implementation-record.md
+checks:
+- implementation-record
+- implementation-traceability
+- implementation-engineer-boundary
+---
+
 # Implementation Record
 
 ## Purpose

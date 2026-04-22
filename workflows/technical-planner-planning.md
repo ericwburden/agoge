@@ -1,3 +1,37 @@
+---
+id: technical-planner-planning
+kind: workflow
+title: Technical Planner Planning
+version: 1
+summary: Turn reviewed architecture and validated requirements into an implementation
+  strategy and explicit sequencing plan.
+role: technical-planner
+inputs:
+- architecture-handoff
+- requirements-handoff
+- solution-architecture
+- architecture-decisions
+- requirements-specification
+- security-compliance-handoff
+- security-compliance-review
+- security-compliance-scope
+- controls-and-evidence-matrix
+outputs:
+- implementation-strategy
+- sequencing-and-dependencies
+skills:
+- spec-to-implementation
+- meeting-notes-and-actions
+- research-documentation
+- content-research-writer
+checks:
+- implementation-strategy
+- sequencing-and-dependencies
+- planning-traceability
+- technical-planner-boundary
+handoff_to: []
+---
+
 # Technical Planner Planning
 
 ## Purpose

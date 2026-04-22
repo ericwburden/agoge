@@ -1,3 +1,32 @@
+---
+id: release-readiness-decision
+kind: check
+title: Release Readiness Decision Check
+version: 1
+summary: Validate that the release readiness decision expresses a clear release posture,
+  ties that posture back to the reviewed package, and makes conditions, owners, and
+  re-approval triggers explicit.
+mode: headings
+severity: error
+applies_to:
+- release-readiness-decision
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Decision Scope
+- Reviewed Inputs
+- Overall Assessment
+- Release Status
+- Decision Owner Or Approver
+- Conditions And Required Follow-Up
+- Condition Owners
+- Residual Risks And Open Questions
+- Environment, Rollout, And Monitoring Watchouts
+- Re-Review Or Re-Approval Triggers
+- Recommended Next Step
+---
+
 # Release Readiness Decision Check
 
 ## Purpose

@@ -1,3 +1,17 @@
+---
+id: product-owner-boundary
+kind: check
+title: Product Owner Boundary Check
+version: 1
+summary: Validate that Product Owner outputs stay inside product direction, prioritization,
+  acceptance framing, and downstream handoff role boundaries and do not drift into
+  discovery execution, architecture design, project administration, implementation
+  ownership, or release operations.
+mode: presence
+severity: error
+applies_to: []
+---
+
 # Product Owner Boundary Check
 
 ## Purpose

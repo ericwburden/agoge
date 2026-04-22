@@ -1,3 +1,25 @@
+---
+id: business-analyst-kickoff
+kind: workflow
+title: Business Analyst Kickoff
+version: 1
+summary: Turn a project kickoff prompt, rough notes, transcript, or prior documentation
+  into a clear discovery baseline centered on the business problem and desired outcome.
+role: business-analyst
+inputs: []
+outputs:
+- business-objectives
+skills:
+- meeting-intelligence
+- meeting-notes-and-actions
+- research-documentation
+checks:
+- business-objectives
+- traceability
+- business-analyst-boundary
+handoff_to: []
+---
+
 # Business Analyst Kickoff
 
 ## Purpose

@@ -1,3 +1,31 @@
+---
+id: security-compliance-review
+kind: check
+title: Security / Compliance Review Check
+version: 1
+summary: Validate that the security/compliance review artifact states the current
+  posture, conditions, risks, gaps, and approval limits clearly enough for downstream
+  consumers.
+mode: headings
+severity: error
+applies_to:
+- security-compliance-review
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Scope
+- Reviewed Inputs
+- Overall Assessment
+- Decision Status
+- Decision Owner Or Required Approver
+- Key Risks, Gaps, And Control Watchouts
+- Conditions And Required Follow-Up
+- Follow-Up Owners
+- Re-Review Or Re-Approval Triggers
+- Recommended Next Step
+---
+
 # Security / Compliance Review Check
 
 ## Purpose

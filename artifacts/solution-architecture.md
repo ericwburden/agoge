@@ -1,3 +1,19 @@
+---
+id: solution-architecture
+kind: artifact
+title: Solution Architecture
+version: 1
+summary: Capture the proposed solution shape for a validated problem space, including
+  architectural drivers, system boundary, major components, interfaces, integrations,
+  constraints, and risks.
+template: true
+default_output_path: docs/architecture/solution-architecture.md
+checks:
+- solution-architecture
+- architecture-traceability
+- solution-architect-boundary
+---
+
 # Solution Architecture
 
 ## Purpose

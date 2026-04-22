@@ -1,3 +1,30 @@
+---
+id: code-review-scope
+kind: check
+title: Code Review Scope Check
+version: 1
+summary: Validate that the code review scope artifact makes the review target, reviewed
+  inputs, change boundary, hotspots, and limits explicit enough to support a defensible
+  review pass.
+mode: headings
+severity: error
+applies_to:
+- code-review-scope
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Review Objective
+- Reviewed Inputs
+- Change Boundary Summary
+- Upstream Conformance Anchors
+- Review Hotspots And Risk Areas
+- Evidence And Context Sources
+- Review Constraints And Limits
+- Explicitly Out Of Scope
+- Expected Follow-Up Consumers
+---
+
 # Code Review Scope Check
 
 ## Purpose

@@ -1,3 +1,35 @@
+---
+id: qa-verification-planning
+kind: workflow
+title: QA / Verification Planning
+version: 1
+summary: Turn reviewed requirements, architecture, planning, and implementation context
+  into a verification strategy and explicit coverage matrix.
+role: null
+inputs:
+- requirements-handoff
+- architecture-handoff
+- implementation-handoff
+- requirements-specification
+- solution-architecture
+- implementation-strategy
+- sequencing-and-dependencies
+outputs:
+- verification-strategy
+- verification-matrix
+skills:
+- requirements-verification
+- research-documentation
+- meeting-notes-and-actions
+- content-research-writer
+checks:
+- verification-strategy
+- verification-matrix
+- verification-traceability
+- qa-verification-boundary
+handoff_to: []
+---
+
 # QA / Verification Planning
 
 ## Purpose

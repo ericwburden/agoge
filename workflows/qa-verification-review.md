@@ -1,3 +1,28 @@
+---
+id: qa-verification-review
+kind: workflow
+title: QA / Verification Review
+version: 1
+summary: Review the drafted verification package and the available implementation
+  evidence, record findings and remediation decisions, and determine whether the verification
+  package is ready to move into downstream handoff.
+role: null
+inputs:
+- verification-strategy
+- verification-matrix
+- implementation-handoff
+outputs:
+- evidence-review
+skills:
+- requirements-verification
+- research-documentation
+checks:
+- evidence-review
+- verification-traceability
+- qa-verification-boundary
+handoff_to: []
+---
+
 # QA / Verification Review
 
 ## Purpose

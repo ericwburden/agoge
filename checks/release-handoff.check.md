@@ -1,3 +1,30 @@
+---
+id: release-handoff
+kind: check
+title: Release Handoff Check
+version: 1
+summary: Validate that the release handoff packages the release outputs for downstream
+  use without losing the current release posture, active conditions, operational caveats,
+  or next-step instructions.
+mode: headings
+severity: error
+applies_to:
+- release-handoff
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Candidate Summary
+- Release Package Included
+- Current Release Posture
+- Active Conditions And Follow-Up
+- Follow-Up Owners
+- Rollout, Monitoring, And Trust-Boundary Watchouts
+- Re-Review Or Re-Approval Triggers
+- Upstream Routing Notes
+- Recommended Next Consumer
+---
+
 # Release Handoff Check
 
 ## Purpose

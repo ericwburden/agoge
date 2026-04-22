@@ -1,3 +1,34 @@
+---
+id: release-handoff-manager-quality-review
+kind: workflow
+title: Release / Handoff Manager Quality Review
+version: 1
+summary: Run the Release / Handoff Manager check chain across the release package,
+  confirm whether the package is coherent and downstream-usable, and route remediation
+  to the earliest artifact that introduced any defect.
+role: release-handoff-manager
+inputs:
+- release-candidate-summary
+- release-readiness-decision
+- rollout-and-operations-notes
+- release-handoff
+outputs: []
+skills:
+- release-readiness-packaging
+- research-documentation
+- handoff-packaging
+- requirements-verification
+- webapp-testing
+checks:
+- release-candidate-summary
+- release-readiness-decision
+- rollout-and-operations-notes
+- release-handoff
+- release-traceability
+- release-handoff-manager-boundary
+handoff_to: []
+---
+
 # Release / Handoff Manager Quality Review
 
 ## Purpose

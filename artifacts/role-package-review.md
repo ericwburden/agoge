@@ -1,3 +1,18 @@
+---
+id: role-package-review
+kind: artifact
+title: Role Package Review
+version: 1
+summary: Capture the coherence review of a reusable role package before it is treated
+  as ready for adoption or reuse.
+template: true
+default_output_path: docs/orpheum/role-package-review.md
+checks:
+- role-package-review
+- role-package-traceability
+- role-builder-boundary
+---
+
 # Role Package Review
 
 ## Purpose

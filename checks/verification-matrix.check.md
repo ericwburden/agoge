@@ -1,3 +1,28 @@
+---
+id: verification-matrix
+kind: check
+title: Verification Matrix Check
+version: 1
+summary: Validate that the verification matrix artifact clearly maps important requirements,
+  architectural commitments, planning hotspots, and implementation slices to the evidence
+  expected or reviewed for each one.
+mode: headings
+severity: error
+applies_to:
+- verification-matrix
+required_headings:
+- Purpose
+- Completion Guidance
+- Related Checks
+- Matrix Scope
+- Source Inputs
+- Coverage Map
+- Hotspot Summary
+- Contradictions And Weak Signals
+- Deferred Coverage
+- Upstream Routing Notes
+---
+
 # Verification Matrix Check
 
 ## Purpose
