@@ -1,10 +1,18 @@
 pub mod catalog;
+mod catalog_loading;
+mod catalog_runtime;
+pub mod catalog_types;
+mod catalog_validation;
 pub mod checks;
 pub mod doctor;
 pub mod error;
 pub mod frontmatter;
 pub mod init;
 pub mod session;
+mod session_apply;
+mod session_fs;
+mod session_render;
+pub mod session_types;
 
 pub use catalog::{
     ArtifactDef, ArtifactEntry, Catalog, CatalogHealth, CatalogPaths, CheckDef, CheckEntry,
