@@ -17,6 +17,8 @@ required_headings:
 - Handoff Summary
 - Planning Summary
 - Review Status And Key Findings
+- Locked Decisions To Preserve
+- Semantic Review Status
 - Readiness Ownership And Conditions
 - Ordered Slices And Dependency Hotspots
 - Slice Exit Criteria Summary
@@ -45,6 +47,8 @@ Validate that the implementation handoff is complete enough for downstream imple
 
 - The implementation plan being handed off is summarized clearly.
 - Review status and material planning findings are visible.
+- Locked decisions to preserve are explicit.
+- Semantic review status is visible when semantic review is required for scenario completion.
 - Readiness ownership and any material handoff conditions are explicit when the plan is not simply ready.
 - Ordered slices and dependency hotspots are visible.
 - Slice exit criteria or equivalent handoff-completion conditions are visible.

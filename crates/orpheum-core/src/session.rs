@@ -1,6 +1,6 @@
 pub use crate::session_types::{
-    CleanupPolicy, SessionApplyResult, SessionFiles, SessionLifecycleState, SessionManifest,
-    SessionMode, SessionScenarioSnapshot, SessionState,
+    ArtifactStatusValue, CleanupPolicy, SessionApplyResult, SessionFiles, SessionLifecycleState,
+    SessionManifest, SessionMode, SessionScenarioSnapshot, SessionState,
 };
 
 pub use crate::session_apply::apply_scenario;

@@ -26,6 +26,15 @@ pub enum SessionLifecycleState {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ArtifactStatusValue {
+    Pending,
+    Present,
+    Verified,
+    Failed,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SessionManifest {
     pub session_id: String,
     pub scenario_id: String,
@@ -44,7 +53,7 @@ pub struct SessionState {
     pub current_phase: String,
     pub completed_workflows: Vec<String>,
     pub pending_workflows: Vec<String>,
-    pub artifact_status: BTreeMap<String, String>,
+    pub artifact_status: BTreeMap<String, ArtifactStatusValue>,
     pub check_status: BTreeMap<String, CheckStatusValue>,
     pub suspended: bool,
     pub resumable: bool,

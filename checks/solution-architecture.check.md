@@ -22,6 +22,8 @@ required_headings:
 - Interfaces And Contracts
 - Integrations And External Dependencies
 - Constraints
+- Decisions Made
+- Locked Constraints
 - Specification Relationship
 - Architecture Fitness Criteria
 - Trust Boundaries And Human Control Points
@@ -50,6 +52,7 @@ Validate that the solution architecture artifact clearly expresses the intended 
 - Major flows, interface seams, and integration points are described clearly enough for downstream use.
 - Important contract assumptions or failure expectations are explicit when they materially affect the design.
 - Constraints, risks, and open questions are visible.
+- Decisions already made and locked constraints are explicit enough that downstream roles do not have to infer them from surrounding prose.
 - The relationship to any existing behavioral specification is explicit when specification work materially constrains the architecture.
 - Architecture fitness criteria are explicit enough for downstream verification or planning to use.
 - Trust boundaries and human control points are recorded when AI-enabled or agentic behavior is relevant.

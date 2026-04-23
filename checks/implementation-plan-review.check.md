@@ -20,6 +20,9 @@ required_headings:
 - Readiness Or Approval Status
 - Decision Owner Or Approver
 - Key Findings
+- Semantic Review Findings
+- Decision Changes Since Draft
+- Cross-Artifact Reconciliation
 - Dependency And Sequencing Observations
 - Unresolved Risks And Questions
 - Required Remediation
@@ -46,6 +49,8 @@ Validate that the implementation plan review artifact records a usable readiness
 - Readiness or approval status is stated clearly.
 - A decision owner or approver is explicit when readiness is not purely self-evident.
 - Key findings are visible and materially relevant.
+- Semantic review findings and decision changes are explicit when review materially changed the package.
+- Cross-artifact reconciliation is visible when semantic review required updates elsewhere in the package.
 - Dependency and sequencing observations are surfaced when execution order is part of the review concern.
 - Unresolved risks and questions are explicit.
 - Required remediation is routed to the earliest artifact that should be reworked.

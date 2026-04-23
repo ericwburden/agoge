@@ -68,6 +68,18 @@ If downstream implementation commitment, scheduling, or release still requires s
 
 Describe the material product risks, competing priorities, or stakeholder tensions that still matter.
 
+## Semantic Review Findings
+
+Capture the most important semantic corrections surfaced by human review, especially when they changed product framing, scope boundaries, or acceptance intent.
+
+## Decision Changes Since Draft
+
+List the decisions that changed during review and what downstream consumers should now treat as current.
+
+## Cross-Artifact Reconciliation
+
+Record the cross-artifact updates required to keep the product package internally consistent after semantic review.
+
 ## Conditions And Required Follow-Up
 
 Record the clarification, approval, evidence gathering, discovery, or reprioritization work required before the product posture should change.

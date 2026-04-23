@@ -49,6 +49,17 @@ For each major decision, capture:
 - consequences or follow-on impacts
 - interface or contract implications when the decision materially affects a boundary
 
+## Locked Decisions And Downstream Non-Negotiables
+
+Summarize the decisions, constraints, or interface commitments that downstream roles should preserve unless a human explicitly reopens them.
+
+Capture:
+
+- what is locked
+- why it is locked
+- which downstream roles must preserve it
+- what kind of change would justify reopening it
+
 ## Deferred Decisions
 
 List meaningful architectural decisions that remain open and why they were deferred.

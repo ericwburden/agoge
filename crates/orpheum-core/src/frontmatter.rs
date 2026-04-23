@@ -18,15 +18,26 @@ pub fn split_frontmatter(text: &str) -> Result<(&str, &str), OrpheumError> {
         ));
     }
 
-    let (yaml_end, body_start) = if let Some(idx) = text.find("\r\n---\r\n") {
-        (idx, idx + 8)
-    } else if let Some(idx) = text.find("\n---\n") {
-        (idx, idx + 5)
-    } else {
-        return Err(OrpheumError::coded(
-            OrpheumErrorCode::InvalidMetadata,
-            "frontmatter terminator not found",
-        ));
+    let remainder = &text[opening_len..];
+    let mut yaml_len = 0usize;
+    let mut body_start = None;
+
+    for segment in remainder.split_inclusive(['\n']) {
+        if segment == "---\n" || segment == "---\r\n" || segment == "---" {
+            body_start = Some(opening_len + yaml_len + segment.len());
+            break;
+        }
+        yaml_len += segment.len();
+    }
+
+    let (yaml_end, body_start) = match body_start {
+        Some(body_start) => (opening_len + yaml_len, body_start),
+        None => {
+            return Err(OrpheumError::coded(
+                OrpheumErrorCode::InvalidMetadata,
+                "frontmatter terminator not found",
+            ));
+        }
     };
 
     if body_start <= opening_len || yaml_end < opening_len {

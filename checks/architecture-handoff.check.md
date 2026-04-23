@@ -17,6 +17,8 @@ required_headings:
 - Handoff Summary
 - Architecture Summary
 - Review Status And Key Findings
+- Locked Decisions To Preserve
+- Semantic Review Status
 - Readiness Ownership And Conditions
 - Interface, Dependency, And Integration Hotspots
 - Verification Focus Areas
@@ -43,6 +45,8 @@ Validate that the architecture handoff is complete enough for downstream roles t
 
 - The architecture being handed off is summarized clearly.
 - Review status and material architecture findings are visible.
+- Locked decisions to preserve are explicit.
+- Semantic review status is visible when semantic review is required for scenario completion.
 - Readiness ownership and any material handoff conditions are explicit when the architecture is not simply ready.
 - Major interface, dependency, or integration hotspots are visible.
 - Verification focus areas are explicit.

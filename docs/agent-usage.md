@@ -83,6 +83,8 @@ Use them like this:
 It:
 
 - installs a local skill at `.codex/skills/orpheum/SKILL.md`
+- persists the resolved catalog root at `.codex/orpheum/config.json`
+- writes a repo-root `ORPHEUM.md` onboarding file
 - appends `.orpheum/` to an existing `.gitignore` if that line is missing
 
 It does not:
@@ -107,6 +109,7 @@ It does not:
 - If there is an active session, start with `status --json`.
 - If check status is stale or unclear, run `check run --json`.
 - If the project looks partially initialized, run `doctor --json`.
+- During semantic artifact review for discovery or planning scenarios, use Planning Mode or the host environment's nearest equivalent until decision changes and cross-artifact reconciliation are complete.
 
 ## Non-Goals
 

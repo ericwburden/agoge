@@ -20,7 +20,7 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Commands {
-    Init(OutputArgs),
+    Init(InitArgs),
     Scenario(ScenarioCommand),
     Status(OutputArgs),
     Prompt(PromptCommand),
@@ -30,6 +30,14 @@ enum Commands {
 
 #[derive(Debug, Args)]
 struct OutputArgs {
+    #[arg(long)]
+    json: bool,
+}
+
+#[derive(Debug, Args)]
+struct InitArgs {
+    #[arg(long)]
+    catalog: Option<String>,
     #[arg(long)]
     json: bool,
 }
@@ -104,12 +112,20 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
 
     match cli.command {
         Commands::Init(args) => {
-            let result = init_project(&cwd)?;
+            let explicit_catalog = args.catalog.as_deref().map(Utf8Path::new);
+            let result = init_project(&cwd, explicit_catalog)?;
             if args.json {
                 println!("{}", serde_json::to_string_pretty(&result)?);
             } else {
                 println!("Initialized Orpheum guidance for {}", result.project_root);
+                println!("Project state: {}", result.project_state.as_str());
                 println!("Local skill: {}", result.skill_file);
+                println!("Catalog source: {}", result.catalog_source.as_str());
+                if let Some(catalog_root) = &result.catalog_root {
+                    println!("Catalog root: {}", catalog_root);
+                }
+                println!("Local config: {}", result.local_config_file);
+                println!("Onboarding file: {}", result.onboarding_file);
                 match &result.gitignore_file {
                     Some(path) if result.gitignore_updated => {
                         println!("Updated .gitignore: {}", path);
@@ -221,8 +237,8 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
             }
         },
         Commands::Doctor(args) => {
-            let catalog = load_catalog(catalog_arg, &cwd)?;
-            let report = run_doctor(&catalog, &cwd)?;
+            let explicit_catalog = catalog_arg.map(Utf8Path::new);
+            let report = run_doctor(explicit_catalog, &cwd)?;
             if args.json {
                 println!("{}", serde_json::to_string_pretty(&report)?);
             } else {
@@ -306,8 +322,15 @@ fn emit_check_report(report: &CheckRunReport, json: bool) -> Result<(), OrpheumE
 }
 
 fn print_doctor(report: &DoctorReport) {
-    println!("Catalog root: {}", report.catalog_root);
+    println!("Project state: {}", report.project_state.as_str());
+    println!("Catalog source: {}", report.catalog_source.as_str());
+    match &report.catalog_root {
+        Some(root) => println!("Catalog root: {}", root),
+        None => println!("Catalog root: unresolved"),
+    }
     println!("Project root: {}", report.project_root);
+    println!("Local config: {}", report.local_config.file);
+    println!("Local config valid: {}", report.local_config.valid);
     println!(
         "Counts: scenarios={} workflows={} roles={} artifacts={} checks={} skills={}",
         report.counts.scenarios,
@@ -323,6 +346,12 @@ fn print_doctor(report: &DoctorReport) {
         println!("Warnings:");
         for warning in &report.warnings {
             println!("  - {}: {}", warning.code, warning.message);
+        }
+    }
+    if !report.recovery_commands.is_empty() {
+        println!("Recovery commands:");
+        for command in &report.recovery_commands {
+            println!("  - {command}");
         }
     }
 }

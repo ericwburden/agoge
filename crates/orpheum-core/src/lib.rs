@@ -8,6 +8,7 @@ pub mod doctor;
 pub mod error;
 pub mod frontmatter;
 pub mod init;
+pub mod project_config;
 pub mod session;
 mod session_apply;
 mod session_fs;
@@ -24,7 +25,10 @@ pub use checks::{CheckRunReport, CheckStatus, CheckStatusValue};
 pub use doctor::run_doctor;
 pub use error::{OrpheumError, OrpheumErrorCode};
 pub use init::{InitResult, init_project};
+pub use project_config::{
+    CatalogSource, LocalConfigStatus, ProjectState, inspect_local_config, local_config_file,
+};
 pub use session::{
-    SessionApplyResult, SessionFiles, SessionManifest, SessionState, apply_scenario,
-    generate_current_prompt, read_active_summary, read_session_files,
+    ArtifactStatusValue, SessionApplyResult, SessionFiles, SessionManifest, SessionState,
+    apply_scenario, generate_current_prompt, read_active_summary, read_session_files,
 };

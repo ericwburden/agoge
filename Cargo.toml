@@ -10,7 +10,7 @@ edition = "2024"
 license = "MIT"
 repository = "https://github.com/ericwburden/orpheum"
 homepage = "https://github.com/ericwburden/orpheum"
-version = "0.1.0"
+version = "0.2.0"
 
 [workspace.dependencies]
 assert_cmd = "2.0.17"

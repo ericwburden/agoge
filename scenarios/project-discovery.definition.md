@@ -50,6 +50,8 @@ exit_conditions:
 - a-verified-requirements-posture-with-clear-traceability-to-business-goals-and-process-needs
 - a-downstream-ready-requirements-handoff-that-names-risks-dependencies-unresolved-questions-and-confirmation-limits
 - optional-product-readiness-or-early-priority-framing-when-discovery-alone-is-not-enough-to-decide-whether-the-work-should-proceed-into-planning
+- semantic-artifact-review-completed-in-planning-mode-or-the-host-equivalent
+- changed-decisions-captured-explicitly-and-reconciled-across-the-discovery-package
 - downstream-planning-roles-can-begin-project-planning-with-validated-discovery-rather-than-reconstructing-the-business-problem-process-context-or-requirement-basis-from-kickoff-chatter
 ---
 
@@ -113,8 +115,9 @@ Exit condition:
 3. Turn the validated discovery baseline into explicit current-state and future-state process understanding through Business Analyst process-analysis work.
 4. Turn the discovery and process context into a verified requirements posture and downstream-ready requirements handoff through Business Analyst requirements-handoff work.
 5. Optionally bring in Product Owner framing when discovery outputs already need a clear product-readiness, value, or priority judgment before the work should proceed into planning.
-6. Review the resulting discovery package and decide whether it is ready to feed `Project Planning`, should stay in discovery, or should route elsewhere.
-7. Hand the completed discovery package downstream to `Project Planning`.
+6. Run a required semantic artifact review with the human, artifact by artifact, using Planning Mode or the host environment's nearest equivalent, and stay in that mode until semantic questions, decision changes, and cross-artifact reconciliation are complete.
+7. Review the resulting discovery package and decide whether it is ready to feed `Project Planning`, should stay in discovery, or should route elsewhere.
+8. Hand the completed discovery package downstream to `Project Planning`.
 
 ## Decision Gates And Human Checkpoints
 
@@ -123,6 +126,7 @@ Exit condition:
 - requirements verification must be explicit before the package is treated as planning-ready
 - stakeholder confirmation status must stay visible rather than being implied
 - optional Product Owner participation should become explicit when the main unresolved issue is whether the discovered work deserves downstream planning priority
+- semantic artifact review is a required checkpoint before closure; the review should happen in Planning Mode or the host environment's nearest equivalent
 - human approval remains visible when discovery exposes sensitive tradeoffs, unresolved scope disputes, or trust-boundary-sensitive behavior
 
 ## Scenario Constraints And Non-Goals

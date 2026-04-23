@@ -163,28 +163,32 @@ fn status_without_session_fails() {
 #[test]
 fn doctor_reports_missing_gitignore() {
     let project = tempdir().expect("tempdir");
-    let catalog_path = repo_root().to_string_lossy().to_string();
     Command::cargo_bin("orpheum")
         .expect("binary")
         .current_dir(project.path())
-        .args(["--catalog", &catalog_path, "doctor", "--json"])
+        .args(["doctor", "--json"])
         .assert()
         .success()
+        .stdout(predicate::str::contains(
+            "\"catalog_source\": \"runtime_discovery\"",
+        ))
         .stdout(predicate::str::contains("GITIGNORE_MISSING"));
 }
 
 #[test]
-fn init_installs_local_skill_and_updates_existing_gitignore() {
+fn init_installs_local_skill_updates_existing_gitignore_and_persists_local_config() {
     let project = tempdir().expect("tempdir");
     fs::write(project.path().join(".gitignore"), "node_modules/\n").expect("gitignore");
+    let catalog_path = repo_root().to_string_lossy().to_string();
 
     Command::cargo_bin("orpheum")
         .expect("binary")
         .current_dir(project.path())
-        .args(["init", "--json"])
+        .args(["init", "--catalog", &catalog_path, "--json"])
         .assert()
         .success()
-        .stdout(predicate::str::contains("\"gitignore_updated\": true"));
+        .stdout(predicate::str::contains("\"gitignore_updated\": true"))
+        .stdout(predicate::str::contains("\"catalog_source\": \"explicit\""));
 
     let skill_file = project
         .path()
@@ -193,27 +197,76 @@ fn init_installs_local_skill_and_updates_existing_gitignore() {
         .join("orpheum")
         .join("SKILL.md");
     assert!(skill_file.exists(), "local orpheum skill should exist");
+    assert!(
+        project
+            .path()
+            .join(".codex")
+            .join("orpheum")
+            .join("config.json")
+            .exists(),
+        "local config should exist"
+    );
+    assert!(
+        project.path().join("ORPHEUM.md").exists(),
+        "onboarding file should exist"
+    );
 
     let gitignore = fs::read_to_string(project.path().join(".gitignore")).expect("gitignore");
     assert!(gitignore.contains(".orpheum/"));
 }
 
 #[test]
-fn init_skips_gitignore_creation_when_missing() {
+fn init_skips_gitignore_creation_when_missing_but_writes_setup_files() {
     let project = tempdir().expect("tempdir");
+    let catalog_path = repo_root().to_string_lossy().to_string();
 
     Command::cargo_bin("orpheum")
         .expect("binary")
         .current_dir(project.path())
-        .args(["init", "--json"])
+        .args(["init", "--catalog", &catalog_path, "--json"])
         .assert()
         .success()
-        .stdout(predicate::str::contains("\"gitignore_file\": null"));
+        .stdout(predicate::str::contains("\"gitignore_file\": null"))
+        .stdout(predicate::str::contains(
+            "\"project_state\": \"initialized\"",
+        ));
 
     assert!(
         !project.path().join(".gitignore").exists(),
         "init should not create a .gitignore file"
     );
+    assert!(project.path().join("ORPHEUM.md").exists());
+}
+
+#[test]
+fn init_persists_catalog_from_environment_when_available() {
+    let project = tempdir().expect("tempdir");
+    let catalog_path = repo_root().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .env("ORPHEUM_CATALOG", &catalog_path)
+        .args(["init", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"catalog_source\": \"env\""));
+}
+
+#[test]
+fn init_uses_runtime_discovery_when_no_other_catalog_source_exists() {
+    let project = tempdir().expect("tempdir");
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .env_remove("ORPHEUM_CATALOG")
+        .args(["init"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains(
+            "Catalog source: runtime_discovery",
+        ));
 }
 
 #[test]
@@ -268,4 +321,57 @@ fn check_run_passes_with_expected_artifacts() {
         .assert()
         .success()
         .stdout(predicate::str::contains("\"summary\""));
+}
+
+#[test]
+fn status_reflects_verified_artifacts_after_successful_check_run() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+    let catalog_path = repo_root().to_string_lossy().to_string();
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-discovery",
+            "--project",
+            &project_path,
+        ])
+        .assert()
+        .success();
+
+    copy_expected_artifacts(project.path());
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["--catalog", &catalog_path, "check", "run", "--json"])
+        .assert()
+        .success();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["status", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"verified\""));
+}
+
+#[test]
+fn doctor_reports_local_config_status_and_recovery_commands() {
+    let project = tempdir().expect("tempdir");
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["doctor", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"recovery_commands\""))
+        .stdout(predicate::str::contains(
+            "\"catalog_source\": \"runtime_discovery\"",
+        ))
+        .stdout(predicate::str::contains(
+            "\"message\": \"local Orpheum config file not found\"",
+        ));
 }

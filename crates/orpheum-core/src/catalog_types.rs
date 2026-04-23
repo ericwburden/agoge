@@ -3,6 +3,8 @@ use std::collections::{BTreeMap, BTreeSet};
 use camino::Utf8PathBuf;
 use serde::{Deserialize, Serialize};
 
+use crate::project_config::{CatalogSource, LocalConfigStatus, ProjectState};
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ScenarioDef {
     pub id: String,
@@ -194,12 +196,16 @@ pub struct DoctorWarning {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DoctorReport {
-    pub catalog_root: Utf8PathBuf,
+    pub project_state: ProjectState,
+    pub catalog_root: Option<Utf8PathBuf>,
+    pub catalog_source: CatalogSource,
     pub project_root: Utf8PathBuf,
+    pub local_config: LocalConfigStatus,
     pub counts: HealthCounts,
     pub active_session_present: bool,
     pub orpheum_gitignored: bool,
     pub warnings: Vec<DoctorWarning>,
+    pub recovery_commands: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

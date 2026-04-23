@@ -17,6 +17,8 @@ required_headings:
 - Product Package Included
 - Current Priority Posture
 - Priority And Acceptance Guidance
+- Locked Decisions To Preserve
+- Semantic Review Status
 - Deferred Scope And Open Tradeoffs
 - Follow-Up Owners
 - Revisit Triggers
@@ -41,6 +43,8 @@ Validate that the product handoff artifact packages the current direction, prior
 - The current priority posture is explicit and properly scoped.
 - The handoff does not imply implementation commitment, sprint commitment, or release approval when further downstream authorization is still required.
 - Priority and acceptance guidance is strong enough for downstream consumers to preserve the product intent.
+- Locked decisions to preserve are explicit.
+- Semantic review status is visible when semantic review is required for scenario completion.
 - Deferred scope, open tradeoffs, and follow-up owners are explicit.
 - Revisit triggers are visible.
 - The recommended next consumer is named and the routing logic is clear.

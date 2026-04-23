@@ -21,6 +21,7 @@ required_headings:
 - Assumptions
 - Open Questions
 - Constraints
+- Locked Business Constraints
 - Acceptance Considerations
 - Specification Relationship
 - Candidate Allium Promotion
@@ -47,6 +48,7 @@ Validate that the requirements specification artifact contains verified, traceab
 - Non-requirements are separated from verified requirements.
 - Assumptions and open questions are separated from verified requirements.
 - Constraints are captured.
+- Locked business constraints are captured when downstream roles should preserve them.
 - Business constraints and AI or agent-specific constraints are separated when relevant.
 - Acceptance considerations are present.
 - The relationship to any existing or candidate Allium specification is explicit when specification work is in scope.

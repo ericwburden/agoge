@@ -15,6 +15,7 @@ required_headings:
 - Related Checks
 - Decision Summary
 - Major Decisions
+- Locked Decisions And Downstream Non-Negotiables
 - Deferred Decisions
 - Architecture Assumptions
 - Risks And Tradeoffs
@@ -39,6 +40,7 @@ Validate that architectural decisions are explicit, traceable, and supported by 
 - Meaningful alternatives are visible when the choice was non-trivial.
 - The chosen direction and rationale are explicit.
 - Consequences, tradeoffs, or follow-on impacts are visible.
+- Locked downstream non-negotiables are surfaced when later roles are expected to preserve them.
 - Interface or contract implications are visible when the decision materially affects a system boundary.
 - Deferred decisions and assumptions are surfaced rather than hidden.
 

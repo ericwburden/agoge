@@ -46,6 +46,14 @@ Summarize the implementation approach, major workstreams, and key sequencing dec
 
 Summarize the current planning review status, the most important findings, and any material conditions on downstream use.
 
+## Locked Decisions To Preserve
+
+Summarize the planning decisions, slice boundaries, sequencing commitments, and readiness constraints that downstream roles should not silently revisit.
+
+## Semantic Review Status
+
+State whether semantic artifact review is complete, what materially changed during that review, and whether any cross-artifact reconciliation is still pending.
+
 ## Readiness Ownership And Conditions
 
 If the plan is not simply ready, make the ownership and clearance conditions explicit.

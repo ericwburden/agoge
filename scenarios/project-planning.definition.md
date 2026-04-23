@@ -91,6 +91,8 @@ exit_conditions:
 - reviewed-solution-architecture-and-architecture-handoff
 - reviewed-implementation-strategy-sequencing-and-dependencies-and-implementation-handoff
 - optional-reviewed-security-compliance-posture-and-downstream-handoff-when-the-context-requires-it
+- semantic-artifact-review-completed-in-planning-mode-or-the-host-equivalent
+- changed-decisions-captured-explicitly-and-reconciled-across-the-planning-package
 - downstream-implementation-adjacent-roles-can-begin-with-reviewed-architecture-planning-outputs-and-any-materially-constraining-security-compliance-guidance-rather-than-reconstructing-intent-from-discovery-and-meeting-history
 ---
 
@@ -160,7 +162,8 @@ Exit condition:
 3. Turn validated and prioritized inputs into reviewed architecture through Solution Architect outputs.
 4. Turn reviewed architecture into reviewed implementation planning through Technical Planner outputs.
 5. Optionally insert security/compliance framing before or alongside architecture and planning when obligations or trust boundaries materially constrain the work.
-6. Hand the completed planning package downstream for implementation and verification-oriented work.
+6. Run a required semantic artifact review with the human, artifact by artifact, using Planning Mode or the host environment's nearest equivalent, and stay in that mode until semantic questions, decision changes, and cross-artifact reconciliation are complete.
+7. Hand the completed planning package downstream for implementation and verification-oriented work.
 
 ## Decision Gates And Human Checkpoints
 
@@ -168,6 +171,7 @@ Exit condition:
 - architecture review must be explicit before planning outputs are treated as stable
 - planning review must be explicit before downstream implementation work relies on the package
 - security/compliance review should become an explicit gate when obligations, data sensitivity, or trust boundaries materially affect the project
+- semantic artifact review is a required checkpoint before closure; the review should happen in Planning Mode or the host environment's nearest equivalent
 - human approval remains visible when product, architecture, or compliance tradeoffs exceed the scenario's default authority
 
 ## Scenario Constraints And Non-Goals

@@ -66,6 +66,18 @@ If the status is `ready with conditions` or `blocked pending remediation`, this 
 
 Record the most important findings, grouped by artifact, design area, or defect type.
 
+## Semantic Review Findings
+
+Capture the most important semantic corrections surfaced by human review, especially when they changed the intended end state, package boundaries, or architectural framing.
+
+## Decision Changes Since Draft
+
+List the architecture decisions or locked constraints that changed during review and what downstream roles should now treat as current.
+
+## Cross-Artifact Reconciliation
+
+Record the cross-artifact updates required to keep the architecture package internally consistent after semantic review.
+
 ## Interface And Contract Observations
 
 Call out the interface seams, ownership boundaries, or contract assumptions that deserve special attention before downstream work begins.

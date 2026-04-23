@@ -4,7 +4,9 @@ use crate::catalog::{CheckDef, OutputMode};
 use crate::checks::CheckStatusValue;
 use crate::error::OrpheumError;
 use crate::session_fs::read_session_files;
-use crate::session_types::{SessionManifest, SessionScenarioSnapshot, SessionState};
+use crate::session_types::{
+    ArtifactStatusValue, SessionManifest, SessionScenarioSnapshot, SessionState,
+};
 
 pub fn generate_current_prompt(project_root: &Utf8Path) -> Result<String, OrpheumError> {
     let (_, snapshot, state, files) = read_session_files(project_root)?;
@@ -21,7 +23,22 @@ pub(crate) fn build_prompt(
     let expected_artifacts = snapshot
         .artifacts
         .iter()
-        .map(|artifact| format!("- `{}` -> `{}`", artifact.id, artifact.default_output_path))
+        .map(|artifact| {
+            let status = state
+                .artifact_status
+                .get(&artifact.id)
+                .map(|value| match value {
+                    ArtifactStatusValue::Pending => "pending",
+                    ArtifactStatusValue::Present => "present",
+                    ArtifactStatusValue::Verified => "verified",
+                    ArtifactStatusValue::Failed => "failed",
+                })
+                .unwrap_or("pending");
+            format!(
+                "- `{}` -> `{}` ({status})",
+                artifact.id, artifact.default_output_path
+            )
+        })
         .collect::<Vec<_>>()
         .join("\n");
     let failed_checks = state
@@ -30,9 +47,10 @@ pub(crate) fn build_prompt(
         .filter(|(_, status)| matches!(status, CheckStatusValue::Failed))
         .map(|(check, _)| format!("- `{check}`"))
         .collect::<Vec<_>>();
+    let semantic_review_guidance = semantic_review_guidance(snapshot.scenario.id.as_str());
 
     format!(
-        "# Current Orpheum Prompt\n\nScenario: `{}`\n\nSummary: {}\n\nCurrent phase: `{}`\n\nPending workflows:\n{}\n\nExpected artifacts:\n{}\n\nBlocking checks:\n{}\n",
+        "# Current Orpheum Prompt\n\nScenario: `{}`\n\nSummary: {}\n\nCurrent phase: `{}`\n\nPending workflows:\n{}\n\nExpected artifacts:\n{}\n\nBlocking checks:\n{}\n{}\n",
         snapshot.scenario.id,
         snapshot.scenario.summary,
         state.current_phase,
@@ -47,7 +65,8 @@ pub(crate) fn build_prompt(
             "- none".to_string()
         } else {
             failed_checks.join("\n")
-        }
+        },
+        semantic_review_guidance,
     )
 }
 
@@ -85,10 +104,21 @@ pub(crate) fn aggregate_check_status<'a>(
         }
     }
     if check.applies_to.is_empty() {
-        CheckStatusValue::Skipped
+        CheckStatusValue::NotEvaluableInV1
     } else if saw_pass {
         CheckStatusValue::Passed
     } else {
         CheckStatusValue::Pending
+    }
+}
+
+fn semantic_review_guidance(scenario_id: &str) -> String {
+    if matches!(
+        scenario_id,
+        "project-discovery" | "project-planning" | "delivery-slice-planning"
+    ) {
+        "\nSemantic review checkpoint:\n- required before discovery or planning closeout\n- review artifacts one by one with the human for semantic correctness, package boundaries, unwanted architecture drift, and locked decisions\n- use Planning Mode when available, or the host environment's nearest equivalent\n- stay in Planning Mode until questions are resolved, decision changes are captured durably, and cross-artifact reconciliation is complete".to_string()
+    } else {
+        String::new()
     }
 }

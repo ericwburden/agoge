@@ -5,6 +5,11 @@
 
 `orpheum` is a scenario catalog and Rust CLI for applying reusable AI-assisted SDLC workflows to real projects.
 
+Current release documentation:
+
+- [CHANGELOG.md](C:/Users/ericw/Projects/orpheum/CHANGELOG.md)
+- [Orpheum 0.2.0 Release Notes](C:/Users/ericw/Projects/orpheum/docs/release/0.2.0.md)
+
 This repository now has two closely related responsibilities:
 
 - maintain the canonical catalog of scenarios, roles, workflows, artifacts, and checks
@@ -52,6 +57,7 @@ The CLI is intentionally metadata-first. It resolves scenarios from YAML frontma
 Catalog-dependent commands can locate the catalog in three ways:
 
 - `--catalog <path>`
+- repo-local `.codex/orpheum/config.json` written by `orpheum init`
 - `ORPHEUM_CATALOG=<path>`
 - runtime discovery from the current working directory or executable location when you are working from the Orpheum repo itself
 
@@ -93,6 +99,12 @@ Initialize a consumer project for local agents:
 cargo run -p orpheum -- init
 ```
 
+Initialize a consumer project and persist an explicit catalog root:
+
+```bash
+cargo run -p orpheum -- init --catalog /path/to/orpheum
+```
+
 Inspect a scenario:
 
 ```bash
@@ -124,7 +136,7 @@ orpheum check run
 orpheum doctor
 ```
 
-`orpheum init` installs or refreshes a project-local skill at `.codex/skills/orpheum/SKILL.md` so local agents have an explicit Orpheum usage contract. If a `.gitignore` already exists, `init` also adds `.orpheum/` when that entry is missing.
+`orpheum init` installs or refreshes a project-local skill at `.codex/skills/orpheum/SKILL.md`, persists a resolved catalog root in `.codex/orpheum/config.json`, writes a repo-root `ORPHEUM.md` onboarding file, and adds `.orpheum/` to an existing `.gitignore` when that entry is missing.
 
 ## Default SDLC Scenario Chain
 

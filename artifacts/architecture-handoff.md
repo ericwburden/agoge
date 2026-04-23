@@ -46,6 +46,14 @@ Summarize the proposed solution shape, major components, and key architectural d
 
 Summarize the current architecture review status, the most important findings, and any material conditions on downstream use.
 
+## Locked Decisions To Preserve
+
+Summarize the architecture decisions, constraints, boundary commitments, and interface expectations that downstream roles should not silently revisit.
+
+## Semantic Review Status
+
+State whether semantic artifact review is complete, what materially changed during that review, and whether any cross-artifact reconciliation is still pending.
+
 ## Readiness Ownership And Conditions
 
 If the architecture is not simply ready, make the ownership and clearance conditions explicit.

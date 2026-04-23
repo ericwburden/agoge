@@ -20,6 +20,9 @@ required_headings:
 - Decision Status
 - Decision Owner
 - Key Risks, Tradeoffs, And Tensions
+- Semantic Review Findings
+- Decision Changes Since Draft
+- Cross-Artifact Reconciliation
 - Conditions And Required Follow-Up
 - Follow-Up Owners
 - Revisit Triggers
@@ -45,6 +48,8 @@ Validate that the product decision review artifact states the current decision p
 - Any scope, timing, evidence, or approval limits are clear.
 - The review makes it clear when product-priority readiness is not the same thing as implementation commitment, sprint commitment, or release approval.
 - Key risks, tradeoffs, and stakeholder tensions are visible.
+- Semantic review findings and decision changes are explicit when review materially changed the package.
+- Cross-artifact reconciliation is visible when semantic review required updates elsewhere in the package.
 - Conditions, required follow-up, and follow-up owners are explicit when the package is conditional or blocked.
 - Revisit triggers and the recommended next step are explicit.
 

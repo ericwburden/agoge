@@ -141,6 +141,10 @@ impl Catalog {
     }
 }
 
+pub fn load_catalog_for_root(root: &Utf8Path) -> Result<Catalog, OrpheumError> {
+    Catalog::load(root)
+}
+
 fn load_map<T, E, F, P>(
     dir: &Utf8Path,
     make_entry: F,

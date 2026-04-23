@@ -75,6 +75,21 @@ List the major integrations, external systems, and dependency assumptions the ar
 
 Capture the technical, policy, platform, operational, or delivery constraints that materially shape the architecture.
 
+## Decisions Made
+
+Capture the architecture choices that should be treated as already selected rather than still under open design discussion.
+
+For each decision, capture:
+
+- the decision statement
+- why it was chosen now
+- the architectural consequence
+- what downstream roles should preserve
+
+## Locked Constraints
+
+Capture the constraints, boundaries, or interface commitments that downstream roles should treat as non-negotiable unless a human explicitly reopens them.
+
 ## Specification Relationship
 
 If Allium or another behavioral specification is in scope, record how the proposed architecture relates to it.

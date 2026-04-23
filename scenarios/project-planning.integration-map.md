@@ -61,6 +61,7 @@ Shared artifacts and context that move across the scenario:
 - architecture constraints and major decisions
 - sequencing, dependency, and readiness assumptions
 - optional risk, control, and approval-sensitive guidance
+- semantic-review findings, changed decisions, and cross-artifact reconciliations completed before downstream handoff
 - participant-role hardening evidence when upstream role-package changes materially explain why the scenario is ready for adoption
 
 ## Handoff Contracts
@@ -75,6 +76,8 @@ Shared artifacts and context that move across the scenario:
   - When included, the security/compliance package should preserve obligation, control, and approval-sensitive constraints without drifting into detailed implementation ownership.
 - Technical Planner -> downstream implementation-oriented work
   - Downstream consumers should receive a reviewed implementation strategy and implementation handoff rather than only an architecture summary.
+- planning package -> semantic artifact review
+  - semantic artifact review should happen artifact by artifact with the human in Planning Mode or the host environment's nearest equivalent, and should capture decision changes durably before downstream handoff
 
 ## Branching Rules And Decision Logic
 
@@ -82,6 +85,7 @@ Shared artifacts and context that move across the scenario:
 - If validated discovery does not yet exist as a coherent package, route upstream to `Project Discovery` rather than treating planning as the place where discovery begins.
 - If current priority direction is already explicit and stable, Product Owner work may be lighter but should not be silently omitted when priority posture still matters.
 - If security, compliance, or trust-boundary-sensitive constraints materially affect architecture or planning, invoke the Security / Compliance Specialist branch.
+- If semantic artifact review exposes wrong architecture, package-boundary drift, missing locked decisions, or cross-artifact contradictions, route remediation back to the earliest affected planning artifact before downstream handoff.
 - If product direction, architecture, or planning review is blocked, the scenario should route remediation back to the earliest blocking role package rather than moving forward optimistically.
 
 ## Parallelism And Synchronization Points
@@ -92,6 +96,7 @@ Shared artifacts and context that move across the scenario:
   - reviewed product posture before architecture depends on it
   - reviewed architecture before implementation planning depends on it
   - reviewed planning posture before downstream implementation consumes the package
+  - completed semantic artifact review and cross-artifact reconciliation before downstream implementation consumes the package
 
 ## Shared Context, State, And Dependency Assumptions
 
@@ -107,6 +112,7 @@ Shared artifacts and context that move across the scenario:
 - If architecture is blocked, route back to Solution Architect rather than letting planning invent the missing solution shape.
 - If planning is blocked, route back to Technical Planner rather than treating downstream implementation as the place to discover the missing plan.
 - If security/compliance constraints are unresolved and materially affect planning, route back to Security / Compliance Specialist before downstream implementation starts.
+- If semantic review changes decisions in one planning artifact, reconcile the affected planning artifacts before treating the package as closed.
 
 ## Coordination Risks And Watchouts
 
@@ -115,6 +121,7 @@ Shared artifacts and context that move across the scenario:
 - Solution Architect and Technical Planner boundaries can blur if planning starts inventing the missing solution shape.
 - Optional security/compliance participation can become performative if the trigger conditions are not kept explicit.
 - This scenario is easy to over-expand into a general project-management layer; downstream routing and review gates must stay visible.
+- A structurally complete planning package can still be directionally wrong; semantic artifact review must stay visible as a separate closeout requirement.
 
 ## Recommended Next Step
 

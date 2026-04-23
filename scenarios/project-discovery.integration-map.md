@@ -37,6 +37,7 @@ Shared artifacts and context that move across the scenario:
 - current-state and future-state process understanding
 - verified requirements, assumptions, dependencies, and unresolved questions
 - optional early product-readiness framing when downstream planning should not proceed on discovery alone
+- semantic-review findings, changed decisions, and cross-artifact reconciliations completed before planning handoff
 
 ## Handoff Contracts
 
@@ -50,12 +51,15 @@ Shared artifacts and context that move across the scenario:
   - Product Owner should receive a validated discovery package when product-readiness or early priority framing is the unresolved question, rather than being asked to invent discovery from vague requirements language
 - Business Analyst or optional Product Owner -> `Project Planning`
   - `Project Planning` should receive validated discovery and any material product-readiness framing rather than treating planning as the place where the business problem is first clarified
+- discovery package -> semantic artifact review
+  - semantic artifact review should happen artifact by artifact with the human in Planning Mode or the host environment's nearest equivalent, and should capture decision changes durably before planning handoff
 
 ## Branching Rules And Decision Logic
 
 - If the initiating request is still too weak to describe a business problem honestly, keep the work inside Business Analyst kickoff rather than pretending discovery is complete.
 - If process understanding remains too weak to support verified requirements, keep the work inside discovery rather than routing vague assumptions into planning.
 - If the main unresolved issue is early product value or priority framing rather than discovery completeness, route through Product Owner before treating the package as planning-ready.
+- If semantic artifact review exposes wrong architecture, package-boundary drift, or missing locked decisions, route remediation back to the earliest affected discovery artifact before planning handoff.
 - If the issue revealed by discovery is actually a product reprioritization decision driven by recent release evidence, `Release Feedback To Reprioritization` may be the better entry path than new-project discovery.
 - If the discovery package is stable and validated, route it downstream into `Project Planning`.
 
@@ -67,6 +71,7 @@ Shared artifacts and context that move across the scenario:
   - explicit process analysis before requirements are treated as verified
   - explicit requirements handoff before downstream planning relies on the discovery package
   - optional explicit product-readiness posture before the package is treated as ready for `Project Planning` when product framing materially affects readiness
+  - completed semantic artifact review and cross-artifact reconciliation before downstream planning consumes the package
 
 ## Shared Context, State, And Dependency Assumptions
 
@@ -82,12 +87,14 @@ Shared artifacts and context that move across the scenario:
 - If discovery reveals a stable release-driven learning that mainly requires product reprioritization rather than fresh business analysis, route to `Release Feedback To Reprioritization`.
 - If the package is not getting materially stronger, stop and make the missing discovery evidence explicit rather than handing weak discovery downstream.
 - If stakeholder confirmation is still pending, preserve that uncertainty explicitly rather than implying planning-ready certainty.
+- If semantic review changes decisions in one artifact, reconcile the affected discovery artifacts before treating the package as closed.
 
 ## Coordination Risks And Watchouts
 
 - Business Analyst and Product Owner boundaries can blur if product-priority language starts replacing actual discovery validation.
 - This scenario is easy to underuse, with teams jumping straight from a request into planning; the explicit discovery handoff should remain visible.
 - This scenario is also easy to overread as indefinite research; once the discovery package is validated enough for planning, it should route forward rather than staying open by habit.
+- A structurally complete discovery package can still be directionally wrong; semantic artifact review must stay visible as a separate closeout requirement.
 
 ## Recommended Next Step
 

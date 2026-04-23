@@ -66,6 +66,18 @@ If the status is `ready with conditions` or `blocked pending remediation`, this 
 
 Record the most important findings, grouped by artifact, workstream, or defect type.
 
+## Semantic Review Findings
+
+Capture the most important semantic corrections surfaced by human review, especially when they changed slice boundaries, readiness framing, or execution assumptions.
+
+## Decision Changes Since Draft
+
+List the planning decisions or locked constraints that changed during review and what downstream roles should now treat as current.
+
+## Cross-Artifact Reconciliation
+
+Record the cross-artifact updates required to keep the planning package internally consistent after semantic review.
+
 ## Dependency And Sequencing Observations
 
 Call out the dependency hotspots, weak sequencing assumptions, or critical-path concerns that deserve special attention before downstream work begins.

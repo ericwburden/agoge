@@ -72,6 +72,17 @@ List constraints that materially affect the requirement set.
 
 If the project includes AI-enabled or agentic behavior, keep business constraints and AI or agent-specific constraints clearly separated.
 
+## Locked Business Constraints
+
+Capture business constraints that downstream planning, architecture, or implementation should treat as fixed unless a human explicitly reopens them.
+
+For each locked constraint, capture:
+
+- the constraint statement
+- why it is currently fixed
+- the downstream implications
+- what would justify reopening it
+
 ## Acceptance Considerations
 
 Describe what would allow a stakeholder to verify that the requirement has been met.

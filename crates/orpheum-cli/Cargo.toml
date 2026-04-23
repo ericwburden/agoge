@@ -13,7 +13,7 @@ camino.workspace = true
 clap.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-orpheum-core = { version = "0.1.0", path = "../orpheum-core" }
+orpheum-core = { version = "0.2.0", path = "../orpheum-core" }
 
 [dev-dependencies]
 assert_cmd.workspace = true

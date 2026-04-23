@@ -3,7 +3,9 @@ use std::fs;
 use camino::{Utf8Path, Utf8PathBuf};
 use serde::{Deserialize, Serialize};
 
-use crate::error::OrpheumError;
+use crate::catalog_runtime::runtime_catalog_resolution;
+use crate::error::{OrpheumError, OrpheumErrorCode};
+use crate::project_config::{CatalogSource, ProjectState, write_local_config};
 
 const ORPHEUM_SKILL_BODY: &str = r#"---
 name: orpheum
@@ -62,6 +64,9 @@ Treat these as derived views rather than source of truth:
 It:
 
 - installs this local skill at `.codex/skills/orpheum/SKILL.md`
+- validates a usable catalog source for the project
+- persists the resolved catalog root in `.codex/orpheum/config.json`
+- writes a repo-root `ORPHEUM.md` onboarding file
 - appends `.orpheum/` to an existing `.gitignore` if that line is missing
 
 It does not:
@@ -112,6 +117,7 @@ Use them like this:
 - If a session exists, start with `orpheum status --json`.
 - If check status is unclear or stale, run `orpheum check run --json`.
 - If the environment looks misconfigured, run `orpheum doctor --json`.
+- During semantic artifact review for discovery or planning scenarios, use Planning Mode or the host environment's nearest equivalent before changing the artifact set.
 
 ## What Not To Do
 
@@ -124,14 +130,22 @@ Use them like this:
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct InitResult {
     pub project_root: Utf8PathBuf,
+    pub project_state: ProjectState,
     pub skill_dir: Utf8PathBuf,
     pub skill_file: Utf8PathBuf,
     pub skill_installed: bool,
     pub gitignore_file: Option<Utf8PathBuf>,
     pub gitignore_updated: bool,
+    pub local_config_file: Utf8PathBuf,
+    pub onboarding_file: Utf8PathBuf,
+    pub catalog_source: CatalogSource,
+    pub catalog_root: Option<Utf8PathBuf>,
 }
 
-pub fn init_project(project_root: &Utf8Path) -> Result<InitResult, OrpheumError> {
+pub fn init_project(
+    project_root: &Utf8Path,
+    explicit_catalog_root: Option<&Utf8Path>,
+) -> Result<InitResult, OrpheumError> {
     let skill_dir = project_root.join(".codex").join("skills").join("orpheum");
     let skill_file = skill_dir.join("SKILL.md");
     fs::create_dir_all(&skill_dir)?;
@@ -142,6 +156,21 @@ pub fn init_project(project_root: &Utf8Path) -> Result<InitResult, OrpheumError>
             fs::write(&skill_file, ORPHEUM_SKILL_BODY)?;
             true
         }
+    };
+
+    let resolution = runtime_catalog_resolution(explicit_catalog_root, project_root).map_err(|_| {
+        OrpheumError::coded(
+            OrpheumErrorCode::CatalogNotFound,
+            "unable to resolve an Orpheum catalog for this project; run `orpheum init --catalog <path>` to configure a catalog root, or set ORPHEUM_CATALOG as a compatibility fallback",
+        )
+    })?;
+
+    let local_config_file = write_local_config(project_root, &resolution.root)?;
+    let onboarding_file = project_root.join("ORPHEUM.md");
+    let project_state = if project_root.join(".orpheum").exists() {
+        ProjectState::Active
+    } else {
+        ProjectState::Initialized
     };
 
     let gitignore_file = project_root.join(".gitignore");
@@ -162,14 +191,67 @@ pub fn init_project(project_root: &Utf8Path) -> Result<InitResult, OrpheumError>
         (None, false)
     };
 
+    fs::write(
+        &onboarding_file,
+        build_onboarding_markdown(
+            project_root,
+            project_state,
+            &skill_file,
+            &local_config_file,
+            &resolution.root,
+            resolution.source,
+        ),
+    )?;
+
     Ok(InitResult {
         project_root: project_root.to_path_buf(),
+        project_state,
         skill_dir,
         skill_file,
         skill_installed,
         gitignore_file: gitignore_path,
         gitignore_updated,
+        local_config_file,
+        onboarding_file,
+        catalog_source: resolution.source,
+        catalog_root: Some(resolution.root),
     })
+}
+
+fn build_onboarding_markdown(
+    project_root: &Utf8Path,
+    project_state: ProjectState,
+    skill_file: &Utf8Path,
+    local_config_file: &Utf8Path,
+    catalog_root: &Utf8Path,
+    catalog_source: CatalogSource,
+) -> String {
+    let next_commands = if matches!(project_state, ProjectState::Active) {
+        vec![
+            "- `orpheum status --json`",
+            "- `orpheum prompt current --json`",
+            "- `orpheum check run --json`",
+        ]
+    } else {
+        vec![
+            "- `orpheum scenario list --json`",
+            "- `orpheum scenario show <id> --json`",
+            "- `orpheum scenario apply <id> --json`",
+        ]
+    };
+
+    format!(
+        "# ORPHEUM\n\n- Project root: `{}`\n- Project state: `{}`\n- Local skill: `{}`\n- Local catalog config: `{}`\n- Catalog root: `{}`\n- Catalog source: `{}`\n- Active session present: `{}`\n\n## Next Commands\n\n{}\n\n## Notes\n\n- `orpheum init` makes the project Orpheum-capable, but does not apply a scenario.\n- Later catalog-dependent commands will use the repo-local config before falling back to `ORPHEUM_CATALOG`.\n- Compatibility fallback: `ORPHEUM_CATALOG={}`\n",
+        project_root,
+        project_state.as_str(),
+        skill_file,
+        local_config_file,
+        catalog_root,
+        catalog_source.as_str(),
+        project_root.join(".orpheum").exists(),
+        next_commands.join("\n"),
+        catalog_root,
+    )
 }
 
 #[cfg(test)]
@@ -179,22 +261,41 @@ mod tests {
     use camino::Utf8PathBuf;
     use tempfile::tempdir;
 
+    use crate::catalog_loading::load_catalog_for_root;
+    use crate::project_config::read_local_config;
+
     use super::{ORPHEUM_SKILL_BODY, init_project};
 
+    fn repo_root() -> Utf8PathBuf {
+        Utf8PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .parent()
+            .expect("crate dir has parent")
+            .parent()
+            .expect("workspace root")
+            .to_path_buf()
+    }
+
     #[test]
-    fn init_installs_skill_and_updates_existing_gitignore() {
+    fn init_installs_skill_updates_gitignore_and_persists_local_config() {
         let project = tempdir().expect("tempdir");
         let project_root =
             Utf8PathBuf::from_path_buf(project.path().to_path_buf()).expect("utf8 temp path");
         fs::write(project_root.join(".gitignore"), "node_modules/\n").expect("gitignore");
 
-        let result = init_project(&project_root).expect("init should succeed");
+        let result =
+            init_project(&project_root, Some(repo_root().as_ref())).expect("init should succeed");
 
         assert!(result.skill_file.exists());
         assert!(result.skill_installed);
         assert!(result.gitignore_updated);
+        assert!(result.onboarding_file.exists());
+        assert!(result.local_config_file.exists());
         let gitignore = fs::read_to_string(project_root.join(".gitignore")).expect("gitignore");
         assert!(gitignore.contains(".orpheum/"));
+        let config = read_local_config(&project_root)
+            .expect("config read")
+            .expect("config");
+        load_catalog_for_root(&config.catalog_root).expect("catalog should load");
     }
 
     #[test]
@@ -215,7 +316,8 @@ mod tests {
         .expect("skill body");
         fs::write(project_root.join(".gitignore"), ".orpheum/\n").expect("gitignore");
 
-        let result = init_project(&project_root).expect("init should succeed");
+        let result =
+            init_project(&project_root, Some(repo_root().as_ref())).expect("init should succeed");
 
         assert!(!result.skill_installed);
         assert!(!result.gitignore_updated);
@@ -238,7 +340,8 @@ mod tests {
         )
         .expect("stale skill body");
 
-        let result = init_project(&project_root).expect("init should succeed");
+        let result =
+            init_project(&project_root, Some(repo_root().as_ref())).expect("init should succeed");
         let installed = fs::read_to_string(result.skill_file).expect("skill file");
 
         assert!(result.skill_installed);

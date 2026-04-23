@@ -54,6 +54,14 @@ If further planning, implementation commitment, scheduling, or release approval 
 
 Describe the most important must-have outcomes, acceptance-oriented conditions, and guardrails that downstream roles should preserve.
 
+## Locked Decisions To Preserve
+
+Summarize the product decisions, constraints, or scope boundaries that downstream roles should not silently revisit.
+
+## Semantic Review Status
+
+State whether semantic artifact review is complete, what materially changed during that review, and whether any cross-artifact reconciliation is still pending.
+
 ## Deferred Scope And Open Tradeoffs
 
 Describe what has been deferred, what tensions remain active, and what downstream roles should not silently expand.

@@ -56,6 +56,7 @@ Shared artifacts and context that move across the scenario:
 - architecture constraints, interface seams, and dependency hotspots that still govern the slice
 - slice-level sequencing, readiness conditions, and implementation handoff context
 - optional early verification expectations and optional security/compliance constraints when those concerns materially shape slice selection
+- semantic-review findings, changed decisions, and cross-artifact reconciliations completed before downstream handoff
 
 ## Handoff Contracts
 
@@ -69,6 +70,8 @@ Shared artifacts and context that move across the scenario:
   - QA / Verification Lead should receive a slice-sized implementation handoff when early verification framing is needed before implementation begins
 - Technical Planner and optional QA / Verification Lead or Security / Compliance Specialist -> downstream implementation-oriented work
   - `Implementation and Release Prep` should receive one bounded slice package with explicit readiness conditions instead of a broad project plan or vague milestone theme
+- slice package -> semantic artifact review
+  - semantic artifact review should happen artifact by artifact with the human in Planning Mode or the host environment's nearest equivalent, and should capture decision changes durably before downstream handoff
 
 ## Branching Rules And Decision Logic
 
@@ -78,6 +81,7 @@ Shared artifacts and context that move across the scenario:
 - If the selected slice still represents too much of the project to act as one honest implementation boundary, keep slicing rather than handing the package downstream as though it were ready.
 - If early verification expectations materially shape what counts as a viable slice, invoke QA / Verification Lead before implementation begins.
 - If obligations, controls, trust boundaries, or approval-sensitive evidence materially shape what counts as a viable slice, invoke Security / Compliance Specialist before the slice is treated as settled.
+- If semantic artifact review exposes wrong package boundaries, missing locked decisions, or cross-artifact contradictions, route remediation back to the earliest affected slice artifact before downstream handoff.
 
 ## Parallelism And Synchronization Points
 
@@ -90,6 +94,7 @@ Shared artifacts and context that move across the scenario:
   - optional QA / Verification Lead framing before the slice is treated as settled when verification expectations materially constrain it
   - optional Security / Compliance Specialist framing before the slice is treated as settled when obligations or controls materially constrain it
   - reviewed planning posture before downstream implementation consumes the package
+  - completed semantic artifact review and cross-artifact reconciliation before downstream implementation consumes the package
 
 ## Shared Context, State, And Dependency Assumptions
 
@@ -105,6 +110,7 @@ Shared artifacts and context that move across the scenario:
 - If the slice cannot be expressed as one bounded implementation unit, continue narrowing it or route back to broader planning rather than pushing oversized scope downstream.
 - If verification constraints are the main blocker, route to QA / Verification Lead rather than hiding the issue in planning prose.
 - If security/compliance constraints are the main blocker, route to Security / Compliance Specialist before downstream implementation begins.
+- If semantic review changes decisions in one slice artifact, reconcile the affected slice artifacts before treating the package as closed.
 
 ## Coordination Risks And Watchouts
 
@@ -113,6 +119,7 @@ Shared artifacts and context that move across the scenario:
 - This scenario is easy to overread as sprint administration; it should stay focused on bounded slice shaping, not delivery-status tracking.
 - This scenario is also easy to underuse, with teams jumping directly from project planning to implementation; the explicit bounded-slice handoff should remain visible.
 - Optional QA / Verification Lead or Security / Compliance Specialist participation can become ceremonial if trigger conditions are not kept explicit, or too late if those branches are treated like trailing packaging instead of slice-shaping constraints.
+- A structurally complete slice package can still preserve the wrong architecture or slice boundary; semantic artifact review must stay visible as a separate closeout requirement.
 
 ## Recommended Next Step
 

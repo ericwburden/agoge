@@ -12,8 +12,8 @@ use crate::error::{OrpheumError, OrpheumErrorCode};
 use crate::session_fs::session_files;
 use crate::session_render::{build_active_markdown, build_prompt};
 use crate::session_types::{
-    CleanupPolicy, SessionApplyResult, SessionLifecycleState, SessionManifest, SessionMode,
-    SessionScenarioSnapshot, SessionState,
+    ArtifactStatusValue, CleanupPolicy, SessionApplyResult, SessionLifecycleState, SessionManifest,
+    SessionMode, SessionScenarioSnapshot, SessionState,
 };
 
 pub fn apply_scenario(
@@ -79,7 +79,7 @@ pub fn apply_scenario(
         artifact_status: resolved
             .artifacts
             .iter()
-            .map(|artifact| (artifact.id.clone(), "pending".into()))
+            .map(|artifact| (artifact.id.clone(), ArtifactStatusValue::Pending))
             .collect(),
         check_status: resolved
             .checks

@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::catalog::{Catalog, CheckDef, CheckMode};
 use crate::error::{OrpheumError, OrpheumErrorCode};
 use crate::session::{aggregate_check_status, read_session_files, refresh_state_files};
+use crate::session_types::ArtifactStatusValue;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -14,7 +15,7 @@ pub enum CheckStatusValue {
     Passed,
     Failed,
     Pending,
-    Skipped,
+    NotEvaluableInV1,
 }
 
 impl CheckStatusValue {
@@ -23,7 +24,7 @@ impl CheckStatusValue {
             Self::Passed => "passed",
             Self::Failed => "failed",
             Self::Pending => "pending",
-            Self::Skipped => "skipped",
+            Self::NotEvaluableInV1 => "not_evaluable_in_v1",
         }
     }
 }
@@ -89,6 +90,34 @@ pub fn run_checks(
         .collect::<BTreeMap<_, _>>();
 
     state.check_status = summary.clone();
+    state.artifact_status = snapshot
+        .artifacts
+        .iter()
+        .map(|artifact| {
+            let target_path = project_root.join(&artifact.default_output_path);
+            let directly_applicable = results
+                .iter()
+                .filter(|result| result.artifact_id.as_deref() == Some(artifact.id.as_str()))
+                .collect::<Vec<_>>();
+            let status = if !target_path.exists() {
+                ArtifactStatusValue::Pending
+            } else if directly_applicable
+                .iter()
+                .any(|result| matches!(result.status, CheckStatusValue::Failed))
+            {
+                ArtifactStatusValue::Failed
+            } else if !directly_applicable.is_empty()
+                && directly_applicable
+                    .iter()
+                    .any(|result| matches!(result.status, CheckStatusValue::Passed))
+            {
+                ArtifactStatusValue::Verified
+            } else {
+                ArtifactStatusValue::Present
+            };
+            (artifact.id.clone(), status)
+        })
+        .collect();
     refresh_state_files(project_root, &snapshot, &state, &manifest)?;
 
     let report = CheckRunReport {
@@ -124,8 +153,8 @@ fn run_check(
         return Ok(vec![CheckStatus {
             check_id: check.id.clone(),
             artifact_id: None,
-            status: CheckStatusValue::Skipped,
-            message: "check has no applies_to artifact; skipped by v1 runner".into(),
+            status: CheckStatusValue::NotEvaluableInV1,
+            message: "check has no applies_to artifact; not evaluable in v1".into(),
         }]);
     }
 
@@ -189,8 +218,8 @@ fn run_check(
             CheckMode::Unsupported => CheckStatus {
                 check_id: check.id.clone(),
                 artifact_id: Some(artifact_id.clone()),
-                status: CheckStatusValue::Skipped,
-                message: "unsupported check mode; skipped".into(),
+                status: CheckStatusValue::NotEvaluableInV1,
+                message: "unsupported check mode; not evaluable in v1".into(),
             },
         };
         results.push(status);

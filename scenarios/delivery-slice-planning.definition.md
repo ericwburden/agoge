@@ -85,6 +85,8 @@ exit_conditions:
 - preserved-architectural-constraints-interface-seams-and-decision-hotspots-that-still-govern-the-slice
 - a-reviewed-slice-sized-implementation-strategy-sequencing-posture-and-implementation-handoff
 - optional-early-verification-framing-and-optional-security-compliance-guidance-when-those-concerns-materially-constrain-the-slice-before-implementation-begins
+- semantic-artifact-review-completed-in-planning-mode-or-the-host-equivalent
+- changed-decisions-captured-explicitly-and-reconciled-across-the-slice-package
 - downstream-implementation-oriented-work-can-begin-on-one-bounded-delivery-slice-without-redefining-product-priority-architecture-constraints-or-planning-boundaries-from-the-broader-project-package
 ---
 
@@ -154,8 +156,9 @@ Exit condition:
 3. Turn that candidate into an explicit bounded slice through Solution Architect and Technical Planner outputs, including slice-sized implementation strategy, dependency posture, readiness view, and downstream implementation handoff.
 4. Optionally bring in early QA / Verification Lead framing before the slice is treated as settled when confidence targets, evidence expectations, or acceptance-sensitive hotspots materially shape the slice before coding begins.
 5. Optionally bring in Security / Compliance Specialist framing before the slice is treated as settled when obligations, controls, or approval-sensitive constraints materially shape slice boundaries or readiness.
-6. Review the resulting slice package after any materially constraining optional branches have landed, then decide whether it is the next bounded delivery unit.
-7. Hand the completed slice package downstream to `Implementation and Release Prep`.
+6. Run a required semantic artifact review with the human, artifact by artifact, using Planning Mode or the host environment's nearest equivalent, and stay in that mode until semantic questions, decision changes, and cross-artifact reconciliation are complete.
+7. Review the resulting slice package after any materially constraining optional branches have landed, then decide whether it is the next bounded delivery unit.
+8. Hand the completed slice package downstream to `Implementation and Release Prep`.
 
 ## Decision Gates And Human Checkpoints
 
@@ -164,6 +167,7 @@ Exit condition:
 - architecture-sensitive constraints must remain explicit when the selected slice crosses important seams or dependencies
 - planning review must be explicit before the slice is treated as implementation-ready
 - verification or security/compliance review should become explicit gates when those concerns materially constrain what counts as an honest slice
+- semantic artifact review is a required checkpoint before closure; the review should happen in Planning Mode or the host environment's nearest equivalent
 - human approval remains visible when the slice boundary depends on unresolved tradeoffs, sensitive controls, or risky scope compression
 
 ## Scenario Constraints And Non-Goals
