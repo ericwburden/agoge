@@ -27,6 +27,7 @@ Validate that Technical Planner outputs stay inside planning role boundaries and
 
 - The output does not redefine business objectives or requirements without routing those issues upstream.
 - The output does not silently re-architect the solution when the issue belongs in architecture.
+- The output does not confuse the standing Definition of Done with slice-local exit criteria, release authority, or broad product acceptance judgment.
 - The output does not collapse into sprint administration, staffing management, or ongoing delivery-status ownership.
 - The output does not turn into detailed implementation design or production code ownership.
 - Planning assumptions are explicit rather than treated as confirmed facts.

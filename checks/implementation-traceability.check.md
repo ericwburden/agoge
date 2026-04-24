@@ -4,9 +4,9 @@ kind: check
 title: Implementation Traceability Check
 version: 1
 summary: Validate that the Implementation Engineer artifact chain preserves traceability
-  from upstream requirements, architecture, planning, and relevant specifications
-  through the implementation record, evidence package, readiness review, and downstream
-  handoff.
+  from upstream requirements, architecture, planning, Definition of Done commitments,
+  and relevant specifications through the implementation record, evidence package,
+  readiness review, and downstream handoff.
 mode: presence
 severity: error
 applies_to:
@@ -20,7 +20,7 @@ applies_to:
 
 ## Purpose
 
-Validate that the Implementation Engineer artifact chain preserves traceability from upstream requirements, architecture, planning, and relevant specifications through the implementation record, evidence package, readiness review, and downstream handoff.
+Validate that the Implementation Engineer artifact chain preserves traceability from upstream requirements, architecture, planning, Definition of Done commitments, and relevant specifications through the implementation record, evidence package, readiness review, and downstream handoff.
 
 ## Applies To
 
@@ -34,6 +34,7 @@ Use after more than one Implementation Engineer artifact exists. Do not apply th
 ## Criteria
 
 - The implemented scope connects back to reviewed requirements, reviewed architecture, reviewed implementation planning, or explicit delivery constraints.
+- The implementation package makes it explicit how the slice relates to the standing project Definition of Done rather than silently substituting local completion claims.
 - Major changed areas are explicitly mapped to the upstream requirement, architecture, planning, or specification sources that justified them.
 - Implementation evidence applies to the same slice described in the implementation record rather than to a different or unstated scope.
 - The readiness review reflects the actual strengths, gaps, deviations, and unresolved issues shown in the implementation record and implementation evidence rather than inventing a separate narrative.
@@ -45,7 +46,7 @@ Use after more than one Implementation Engineer artifact exists. Do not apply th
 
 Pass/fail.
 
-The artifact chain passes only if a reviewer can follow the logic from upstream requirements, architecture, planning, and relevant specifications through the implemented change set and into the downstream handoff without relying on hidden assumptions.
+The artifact chain passes only if a reviewer can follow the logic from upstream requirements, architecture, planning, Definition-of-Done commitments, and relevant specifications through the implemented change set and into the downstream handoff without relying on hidden assumptions.
 
 ## Evidence Required
 

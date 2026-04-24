@@ -56,6 +56,16 @@ Summarize the implementation-package readiness review state, the most important 
 
 Keep this separate from future independent code review findings or downstream verification judgments.
 
+## Definition Of Done Status
+
+Summarize the current status of the project Definition of Done for this slice.
+
+Capture:
+
+- which standing Definition-of-Done conditions appear satisfied
+- which conditions still depend on downstream review, verification, approval, or release-adjacent work
+- whether the package should be treated as implemented-but-not-yet-done, conditionally done, or aligned with the current Definition of Done subject to downstream confirmation
+
 ## Known Issues And Residual Risks
 
 List the defects, blockers, weak evidence, or residual implementation risks that downstream roles should preserve explicitly.

@@ -59,6 +59,7 @@ The intended Solution Architect lifecycle is: select template, instantiate worki
 
 The next concrete artifact set in this directory is aligned to the [`Technical Planner`](D:/Projects/agoge/roles/technical-planner.md) role.
 
+- [`definition-of-done.md`](D:/Projects/orpheum/artifacts/definition-of-done.md) defines the reusable structure for capturing the standing project-level completion standard that downstream implementation, review, verification, and release-adjacent roles should preserve.
 - [`implementation-strategy.md`](D:/Projects/agoge/artifacts/implementation-strategy.md) defines the reusable structure for capturing the implementation approach, slice strategy, workstream framing, enabling work, readiness conditions, and planning risks.
 - [`sequencing-and-dependencies.md`](D:/Projects/agoge/artifacts/sequencing-and-dependencies.md) defines the reusable structure for capturing execution order, dependency structure, critical path assumptions, and parallelization opportunities.
 - [`implementation-plan-review.md`](D:/Projects/agoge/artifacts/implementation-plan-review.md) defines the reusable structure for capturing durable planning review findings, readiness, remediation, and unresolved concerns before handoff.
@@ -66,7 +67,7 @@ The next concrete artifact set in this directory is aligned to the [`Technical P
 
 Use this set when reviewed architecture and validated requirements need to be turned into a downstream-ready execution plan. Instantiate the needed artifact files into the project workspace before filling them out.
 
-The intended Technical Planner lifecycle is: select template, instantiate working copy, define the implementation strategy, make sequencing and dependencies explicit, review the planning package, package the implementation handoff, run checks, remediate failures, and only then move the plan downstream.
+The intended Technical Planner lifecycle is: select template, instantiate working copy, define the project Definition of Done, define the implementation strategy, make sequencing and dependencies explicit, review the planning package, package the implementation handoff, run checks, remediate failures, and only then move the plan downstream.
 
 ## QA / Verification Lead Artifacts
 

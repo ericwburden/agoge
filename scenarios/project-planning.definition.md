@@ -5,7 +5,8 @@ title: Project Planning Scenario Definition
 version: 1
 summary: Capture the reusable Project Planning scenario that turns validated discovery
   and product direction into a reviewed architecture and downstream-ready implementation
-  planning package before implementation begins.
+  planning package, including an explicit project Definition of Done, before implementation
+  begins.
 roles:
 - business-analyst
 - product-owner
@@ -42,6 +43,7 @@ artifacts:
 - architecture-review
 - architecture-handoff
 - implementation-strategy
+- definition-of-done
 - sequencing-and-dependencies
 - implementation-plan-review
 - implementation-handoff
@@ -69,6 +71,7 @@ checks:
 - architecture-review
 - architecture-handoff
 - implementation-strategy
+- definition-of-done
 - sequencing-and-dependencies
 - planning-traceability
 - technical-planner-boundary
@@ -89,7 +92,7 @@ entry_conditions:
 exit_conditions:
 - explicit-product-direction-and-backlog-prioritization
 - reviewed-solution-architecture-and-architecture-handoff
-- reviewed-implementation-strategy-sequencing-and-dependencies-and-implementation-handoff
+- reviewed-definition-of-done-implementation-strategy-sequencing-and-dependencies-and-implementation-handoff
 - optional-reviewed-security-compliance-posture-and-downstream-handoff-when-the-context-requires-it
 - semantic-artifact-review-completed-in-planning-mode-or-the-host-equivalent
 - changed-decisions-captured-explicitly-and-reconciled-across-the-planning-package
@@ -100,7 +103,7 @@ exit_conditions:
 
 ## Purpose
 
-Capture the reusable Project Planning scenario that turns validated discovery and product direction into a reviewed architecture and downstream-ready implementation planning package before implementation begins.
+Capture the reusable Project Planning scenario that turns validated discovery and product direction into a reviewed architecture and downstream-ready implementation planning package, including an explicit project Definition of Done, before implementation begins.
 
 Use this scenario when a team needs a clear multi-role planning phase rather than ad hoc transition from requirements into coding.
 
@@ -148,7 +151,7 @@ The scenario completes successfully when the downstream planning package include
 
 - explicit product direction and backlog prioritization
 - reviewed solution architecture and architecture handoff
-- reviewed implementation strategy, sequencing and dependencies, and implementation handoff
+- reviewed definition of done, implementation strategy, sequencing and dependencies, and implementation handoff
 - optional reviewed security/compliance posture and downstream handoff when the context requires it
 
 Exit condition:
@@ -160,7 +163,7 @@ Exit condition:
 1. Consume validated discovery and requirements from Business Analyst outputs, normally produced by `Project Discovery`.
 2. Establish current product direction and prioritization posture through Product Owner outputs.
 3. Turn validated and prioritized inputs into reviewed architecture through Solution Architect outputs.
-4. Turn reviewed architecture into reviewed implementation planning through Technical Planner outputs.
+4. Turn reviewed architecture into reviewed implementation planning, including the standing project Definition of Done, through Technical Planner outputs.
 5. Optionally insert security/compliance framing before or alongside architecture and planning when obligations or trust boundaries materially constrain the work.
 6. Run a required semantic artifact review with the human, artifact by artifact, using Planning Mode or the host environment's nearest equivalent, and stay in that mode until semantic questions, decision changes, and cross-artifact reconciliation are complete.
 7. Hand the completed planning package downstream for implementation and verification-oriented work.

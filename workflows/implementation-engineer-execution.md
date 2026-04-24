@@ -3,11 +3,12 @@ id: implementation-engineer-execution
 kind: workflow
 title: Implementation Engineer Execution
 version: 1
-summary: Turn reviewed planning and architecture handoff into a concrete implementation
-  record and implementation evidence package.
+summary: Turn reviewed planning, Definition of Done, and architecture handoff into
+  a concrete implementation record and implementation evidence package.
 role: implementation-engineer
 inputs:
 - implementation-handoff
+- definition-of-done
 - architecture-handoff
 - requirements-handoff
 - implementation-strategy
@@ -47,6 +48,7 @@ Turn reviewed planning and architecture handoff into a concrete implementation r
 
 - Required:
   - an instantiated copy of [`artifacts/implementation-handoff.md`](D:/Projects/orpheum/artifacts/implementation-handoff.md)
+  - an instantiated copy of [`artifacts/definition-of-done.md`](D:/Projects/orpheum/artifacts/definition-of-done.md)
   - an instantiated copy of [`artifacts/architecture-handoff.md`](D:/Projects/orpheum/artifacts/architecture-handoff.md)
   - an instantiated copy of [`artifacts/requirements-handoff.md`](D:/Projects/orpheum/artifacts/requirements-handoff.md)
 - Optional:
@@ -72,12 +74,12 @@ Turn reviewed planning and architecture handoff into a concrete implementation r
 
 ## Sequence
 
-1. Read the implementation handoff, architecture handoff, and requirements handoff together, using reviewed planning and architecture artifacts plus existing behavioral specifications as needed to clarify the approved implementation boundary.
+1. Read the implementation handoff, Definition of Done, architecture handoff, and requirements handoff together, using reviewed planning and architecture artifacts plus existing behavioral specifications as needed to clarify the approved implementation boundary and the completion standard this slice must preserve.
 2. If implementation notes or working-session transcripts exist, normalize them with `meeting-notes-and-actions` before drafting the implementation package.
 3. If the local implementation context is spread across multiple artifacts, use `research-documentation` to synthesize the relevant scope, constraints, dependencies, and change rationale.
 4. Instantiate [`artifacts/implementation-record.md`](D:/Projects/orpheum/artifacts/implementation-record.md) and [`artifacts/implementation-evidence.md`](D:/Projects/orpheum/artifacts/implementation-evidence.md) into the project workspace if working copies do not already exist.
 5. Implement the approved slice in code, keeping actual scope, changed areas, deviations, and affected interfaces explicit as the change set takes shape.
-6. Use `implementation-package-prep` to populate the implementation record artifact with implementation scope, input context, a change-level traceability map, target slice boundary, planned-versus-actual scope, change summary, concrete change inventory, affected areas, interface or contract effects, deviations from plan or specification, blockers, and deferred work.
+6. Use `implementation-package-prep` to populate the implementation record artifact with implementation scope, input context, a change-level traceability map, target slice boundary, planned-versus-actual scope, Definition-of-Done alignment, change summary, concrete change inventory, affected areas, interface or contract effects, deviations from plan or specification, blockers, and deferred work.
 7. Run local validation that is appropriate to the implemented slice, using `webapp-testing` when browser-based or web-application evidence is materially important and applicable.
 8. Use `implementation-package-prep` to populate the implementation evidence artifact with evidence scope, provenance, validation activities including commands or manual procedures when relevant, observed results, known failures and skipped checks, manual verification notes, supporting references, evidence gaps, and revalidation watchouts.
 10. Run [`implementation-record.check.md`](D:/Projects/orpheum/checks/implementation-record.check.md), [`implementation-evidence.check.md`](D:/Projects/orpheum/checks/implementation-evidence.check.md), [`implementation-traceability.check.md`](D:/Projects/orpheum/checks/implementation-traceability.check.md), and [`implementation-engineer-boundary.check.md`](D:/Projects/orpheum/checks/implementation-engineer-boundary.check.md).
@@ -86,6 +88,7 @@ Turn reviewed planning and architecture handoff into a concrete implementation r
 
 - If requirement, architecture, planning, or specification ambiguity makes the implementation boundary unstable, record the gap and route it upstream instead of solving it silently in code.
 - If the actual implementation must deviate materially from the reviewed plan, make that deviation explicit here rather than letting downstream roles infer it from diffs.
+- If the slice cannot satisfy a standing Definition of Done condition, make that gap explicit rather than implying the slice is done because coding stopped.
 - If local validation is unavailable, partial, or environment-bound, capture that limitation honestly instead of implying stronger confidence.
 - If the system includes AI-enabled or agentic behavior, record trust-boundary-sensitive implementation details and human control points explicitly.
 

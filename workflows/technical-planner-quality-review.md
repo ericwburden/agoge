@@ -4,10 +4,11 @@ kind: workflow
 title: Technical Planner Quality Review
 version: 1
 summary: Apply the Technical Planner check chain to instantiated planning artifacts,
-  identify failures by artifact and defect type, and route remediation before downstream
-  implementation or verification work begins.
+  including the Definition of Done, identify failures by artifact and defect type,
+  and route remediation before downstream implementation or verification work begins.
 role: technical-planner
 inputs:
+- definition-of-done
 - implementation-handoff
 - architecture-handoff
 - requirements-handoff
@@ -20,6 +21,7 @@ skills:
 checks:
 - planning-traceability
 - technical-planner-boundary
+- definition-of-done
 - implementation-strategy
 - sequencing-and-dependencies
 - implementation-plan-review
@@ -35,7 +37,7 @@ Apply the Technical Planner check chain to instantiated planning artifacts, iden
 
 ## When To Use
 
-- The implementation handoff has been drafted and the full Technical Planner artifact chain exists.
+- The implementation handoff has been drafted and the full Technical Planner artifact chain exists, including the project Definition of Done.
 - A downstream technical consumer needs final definition-of-done confidence that the full planning chain is self-sufficient and within role boundaries.
 - A check has failed and the work needs a standard rework path instead of ad hoc editing.
 
@@ -43,7 +45,7 @@ Apply the Technical Planner check chain to instantiated planning artifacts, iden
 
 - Required:
   - an instantiated copy of [`artifacts/implementation-handoff.md`](D:/Projects/agoge/artifacts/implementation-handoff.md)
-  - the corresponding instantiated implementation strategy, sequencing and dependencies, and implementation plan review artifacts
+  - the corresponding instantiated definition-of-done, implementation strategy, sequencing and dependencies, and implementation plan review artifacts
   - the upstream instantiated [`artifacts/architecture-handoff.md`](D:/Projects/agoge/artifacts/architecture-handoff.md) and [`artifacts/requirements-handoff.md`](D:/Projects/agoge/artifacts/requirements-handoff.md) artifacts needed to apply [`planning-traceability.check.md`](D:/Projects/agoge/checks/planning-traceability.check.md) honestly
 - Expected supporting context:
 - Optional: additional upstream BA or architecture artifacts, supporting notes, dependency references, or prior check results
@@ -66,12 +68,16 @@ Apply the Technical Planner check chain to instantiated planning artifacts, iden
 2. Run the primary checks for the supporting planning artifacts and the handoff artifact.
 3. Run [`planning-traceability.check.md`](D:/Projects/agoge/checks/planning-traceability.check.md) across the full chain.
 4. Run [`technical-planner-boundary.check.md`](D:/Projects/agoge/checks/technical-planner-boundary.check.md) across all artifacts in scope.
-5. Record failures by artifact and defect type: weak slice strategy, missing slice-level traceability, hidden dependencies, missing dependency ownership, unstable critical path assumptions, broken traceability, missing readiness ownership, poor specification relationship, rollout blind spots, or role drift.
+5. Record failures by artifact and defect type: weak Definition-of-Done framing, weak slice strategy, missing slice-level traceability, hidden dependencies, missing dependency ownership, unstable critical path assumptions, broken traceability, missing readiness ownership, poor specification relationship, rollout blind spots, or role drift.
 6. Route remediation to the appropriate earlier Technical Planner, architecture, or BA artifact rather than patching the latest artifact in isolation.
 7. Re-run the failed checks until the full chain passes or until remaining gaps are explicitly recorded as unresolved and the work is intentionally held open.
 
 ## Required Check Set
 
+- Definition of Done review:
+  - [`definition-of-done.check.md`](D:/Projects/orpheum/checks/definition-of-done.check.md)
+  - [`planning-traceability.check.md`](D:/Projects/agoge/checks/planning-traceability.check.md)
+  - [`technical-planner-boundary.check.md`](D:/Projects/agoge/checks/technical-planner-boundary.check.md)
 - Implementation strategy review:
   - [`implementation-strategy.check.md`](D:/Projects/agoge/checks/implementation-strategy.check.md)
   - [`planning-traceability.check.md`](D:/Projects/agoge/checks/planning-traceability.check.md)

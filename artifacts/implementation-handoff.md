@@ -42,6 +42,12 @@ Provide a short summary of what implementation plan is being handed off and why.
 
 Summarize the implementation approach, major workstreams, and key sequencing decisions.
 
+## Project Definition Of Done Summary
+
+Summarize the standing project-level Definition of Done that downstream implementation, review, and verification roles are expected to preserve.
+
+Keep this section focused on enduring completion rules. Do not restate slice-local exit criteria here as though they were the whole Definition of Done.
+
 ## Review Status And Key Findings
 
 Summarize the current planning review status, the most important findings, and any material conditions on downstream use.
@@ -70,7 +76,7 @@ List the intended implementation order, major slice boundaries, external depende
 
 ## Slice Exit Criteria Summary
 
-Summarize the most important slice-level completion or handoff conditions that downstream implementation and verification roles must preserve.
+Summarize the most important slice-level completion or handoff conditions that downstream implementation and verification roles must preserve in addition to the project Definition of Done.
 
 ## Verification And Test Strategy Touchpoints
 

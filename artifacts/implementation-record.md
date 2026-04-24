@@ -67,6 +67,16 @@ Capture:
 - what changed shape during implementation
 - whether any scope expansion or contraction occurred and why
 
+## Definition Of Done Alignment
+
+Describe how the implemented slice currently aligns with the project Definition of Done.
+
+Capture:
+
+- which standing Definition-of-Done conditions are satisfied by this implementation pass
+- which conditions remain partially satisfied, deferred, or still depend on downstream review or verification
+- whether any completion claim should stay conditional rather than being stated as fully done
+
 ## Change Summary
 
 Summarize the major code, configuration, data, contract, migration, or asset changes that were made.

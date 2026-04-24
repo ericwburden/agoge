@@ -19,6 +19,7 @@ required_headings:
 - Change Footprint Summary
 - Evidence Posture Summary
 - Review Status And Key Findings
+- Definition Of Done Status
 - Known Issues And Residual Risks
 - Specification Relationship
 - Revalidation Triggers
@@ -44,6 +45,7 @@ Validate that the implementation package handoff artifact preserves the implemen
 - The change footprint summary highlights the code or interface areas that matter most downstream.
 - The evidence posture summary reflects the real strengths and weaknesses already captured in the implementation evidence artifact.
 - The review status and key findings match the implementation-package readiness review rather than inventing a cleaner narrative.
+- Definition-of-Done status is explicit and does not confuse implemented scope with a broader project-level claim that the slice is fully done.
 - The handoff does not blur implementation-package readiness with future independent code review or downstream verification.
 - Known issues and residual risks are explicit.
 - Specification relationship is clear when existing behavioral specifications materially constrain the implementation.

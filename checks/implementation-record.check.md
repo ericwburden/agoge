@@ -19,6 +19,7 @@ required_headings:
 - Traceability Map
 - Target Slice Or Change Boundary
 - Planned Versus Actual Scope
+- Definition Of Done Alignment
 - Change Summary
 - Change Inventory
 - Changed Components And Affected Areas
@@ -47,6 +48,7 @@ Validate that the implementation record artifact clearly expresses what implemen
 - An explicit traceability map connects major change areas back to validated requirements, reviewed architecture, reviewed planning, and governing specifications where relevant.
 - The target slice or change boundary is clear.
 - Planned versus actual scope is explained.
+- Definition-of-Done alignment is explicit enough that downstream roles can distinguish implemented scope from a full claim that the slice is already done.
 - Major changes and affected areas are visible.
 - A concrete change inventory makes the implementation footprint auditable.
 - Interface, schema, or contract effects are explicit when they materially affect downstream work.

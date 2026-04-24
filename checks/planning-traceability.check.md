@@ -5,11 +5,12 @@ title: Planning Traceability Check
 version: 1
 summary: Validate that the Technical Planner artifact chain preserves traceability
   from upstream BA and architecture outputs, plus relevant security/compliance guidance
-  when it materially shapes planning, to the implementation strategy, sequencing plan,
-  review outcome, and downstream implementation handoff.
+  when it materially shapes planning, to the Definition of Done, implementation strategy,
+  sequencing plan, review outcome, and downstream implementation handoff.
 mode: presence
 severity: error
 applies_to:
+- definition-of-done
 - implementation-strategy
 - sequencing-and-dependencies
 - implementation-plan-review
@@ -20,10 +21,11 @@ applies_to:
 
 ## Purpose
 
-Validate that the Technical Planner artifact chain preserves traceability from upstream BA and architecture outputs, plus relevant security/compliance guidance when it materially shapes planning, to the implementation strategy, sequencing plan, review outcome, and downstream implementation handoff.
+Validate that the Technical Planner artifact chain preserves traceability from upstream BA and architecture outputs, plus relevant security/compliance guidance when it materially shapes planning, to the Definition of Done, implementation strategy, sequencing plan, review outcome, and downstream implementation handoff.
 
 ## Applies To
 
+- instantiated copies of [`artifacts/definition-of-done.md`](D:/Projects/orpheum/artifacts/definition-of-done.md)
 - instantiated copies of [`artifacts/implementation-strategy.md`](D:/Projects/agoge/artifacts/implementation-strategy.md)
 - instantiated copies of [`artifacts/sequencing-and-dependencies.md`](D:/Projects/agoge/artifacts/sequencing-and-dependencies.md)
 - instantiated copies of [`artifacts/implementation-plan-review.md`](D:/Projects/agoge/artifacts/implementation-plan-review.md)
@@ -34,11 +36,12 @@ Use after more than one Technical Planner artifact exists. Do not apply this che
 ## Criteria
 
 - Planning structure connects back to reviewed architecture, validated requirements, relevant security/compliance guidance when applicable, or explicit delivery constraints.
+- The Definition of Done connects back to validated requirements, architecture constraints, evidence expectations, and any project-level acceptance or approval commitments that justify it.
 - Major slices or workstreams are explicitly mapped back to the upstream requirements, architecture decisions, or handoff hotspots that justify them.
 - Planning treatment of existing behavioral specifications is explicit when those specifications materially constrain execution order or verification framing.
 - The sequencing artifact reflects the actual implementation strategy rather than an unstated alternative.
 - The plan review reflects the actual strengths, risks, and unresolved issues in the planning artifacts rather than inventing a separate narrative.
-- The implementation handoff preserves the reasoning, readiness state, and hotspots already captured in earlier planning artifacts.
+- The implementation handoff preserves the Definition of Done, reasoning, readiness state, and hotspots already captured in earlier planning artifacts.
 - Requirement or architecture ambiguity is surfaced explicitly rather than solved silently inside the plan.
 - Contradictions, missing links, or unsupported planning assumptions are explicit.
 
@@ -46,7 +49,7 @@ Use after more than one Technical Planner artifact exists. Do not apply this che
 
 Pass/fail.
 
-The artifact chain passes only if a reviewer can follow the logic from upstream BA and architecture outputs, plus relevant security/compliance guidance when applicable, to the execution plan and downstream handoff without relying on hidden assumptions.
+The artifact chain passes only if a reviewer can follow the logic from upstream BA and architecture outputs, plus relevant security/compliance guidance when applicable, to the Definition of Done, execution plan, and downstream handoff without relying on hidden assumptions.
 
 ## Evidence Required
 

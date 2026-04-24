@@ -45,9 +45,11 @@ Validate that the implementation strategy artifact clearly expresses the intende
 
 - The planning scope and objective are stated explicitly.
 - Input context from upstream architecture and requirements artifacts is identified.
+- Input context makes the relationship between the implementation strategy and the project Definition of Done explicit.
 - An explicit traceability map connects major slices or workstreams back to validated requirements, architecture, and handoff hotspots.
 - Planning assumptions and constraints are explicit.
 - The implementation approach and slice strategy are clear.
+- Slice exit criteria are presented as slice-local additions to the Definition of Done rather than a silent replacement for the project completion standard.
 - The artifact makes the current slice or execution decomposition explicit without rewriting broader product or architecture posture as though it were slice-local.
 - Major workstreams and their responsibilities are visible.
 - Enabling work and spikes are surfaced rather than hidden inside committed slices.

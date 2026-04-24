@@ -43,7 +43,7 @@ If this strategy covers the currently selected bounded slice, say so explicitly 
 
 ## Input Context
 
-Reference the architecture handoff, reviewed architecture artifacts, requirements artifacts, and any existing behavioral specifications this plan depends on.
+Reference the architecture handoff, reviewed architecture artifacts, requirements artifacts, the project Definition of Done, and any existing behavioral specifications this plan depends on.
 
 ## Traceability Map
 
@@ -81,6 +81,8 @@ List the exploratory work, migrations, technical spikes, environment setup, or p
 ## Slice Exit Criteria
 
 Describe what must be true for each major slice or workstream to be treated as ready to hand off, integrate, or close.
+
+These criteria should inherit the standing Definition of Done and then add only the slice-local conditions that are specific to this implementation structure.
 
 For each major slice or workstream, capture:
 

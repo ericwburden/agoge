@@ -16,6 +16,7 @@ required_headings:
 - Related Checks
 - Handoff Summary
 - Planning Summary
+- Project Definition Of Done Summary
 - Review Status And Key Findings
 - Locked Decisions To Preserve
 - Semantic Review Status
@@ -46,12 +47,14 @@ Validate that the implementation handoff is complete enough for downstream imple
 ## Criteria
 
 - The implementation plan being handed off is summarized clearly.
+- The project Definition of Done is summarized clearly enough that downstream roles can tell what standing completion rule still governs the slice.
 - Review status and material planning findings are visible.
 - Locked decisions to preserve are explicit.
 - Semantic review status is visible when semantic review is required for scenario completion.
 - Readiness ownership and any material handoff conditions are explicit when the plan is not simply ready.
 - Ordered slices and dependency hotspots are visible.
 - Slice exit criteria or equivalent handoff-completion conditions are visible.
+- The handoff preserves the distinction between the enduring Definition of Done and slice-local exit criteria.
 - Verification and test-strategy touchpoints are explicit.
 - Rollout, migration, or control-point watchouts are visible when they materially affect downstream execution.
 - The relationship to any existing behavioral specification is explicit when specification work materially constrains the plan.

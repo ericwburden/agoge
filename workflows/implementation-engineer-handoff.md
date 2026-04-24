@@ -60,12 +60,13 @@ Turn reviewed implementation outputs into a downstream-ready implementation pack
 1. Read the implementation record, implementation evidence, and implementation readiness review artifacts together.
 2. If supporting notes or implementation references still need synthesis, use `research-documentation` first.
 3. Instantiate [`artifacts/implementation-package-handoff.md`](D:/Projects/orpheum/artifacts/implementation-package-handoff.md) into the project workspace if a working copy does not already exist.
-4. Use `implementation-package-prep` first and `handoff-packaging` as needed to populate the implementation package handoff artifact with the implemented scope summary, change footprint summary, evidence posture summary, review status and key findings, known issues and residual risks, specification relationship, explicit revalidation triggers, downstream consumers, and next decision points.
+4. Use `implementation-package-prep` first and `handoff-packaging` as needed to populate the implementation package handoff artifact with the implemented scope summary, change footprint summary, evidence posture summary, review status and key findings, Definition-of-Done status, known issues and residual risks, specification relationship, explicit revalidation triggers, downstream consumers, and next decision points.
 5. Run [`implementation-package-handoff.check.md`](D:/Projects/orpheum/checks/implementation-package-handoff.check.md), [`implementation-traceability.check.md`](D:/Projects/orpheum/checks/implementation-traceability.check.md), and [`implementation-engineer-boundary.check.md`](D:/Projects/orpheum/checks/implementation-engineer-boundary.check.md).
 
 ## Decision Points
 
 - If the readiness review status is blocked or materially conditional, keep implementation work open instead of packaging a misleading handoff.
+- If the current slice is implemented but does not yet satisfy the standing Definition of Done, preserve that status explicitly instead of packaging it as fully done.
 - If unresolved requirement, architecture, planning, or specification ambiguity still shapes the implementation package materially, route that ambiguity upstream rather than hiding it in the handoff.
 - If the current implementation package would become misleading under foreseeable code, environment, or dependency changes, make those revalidation triggers explicit rather than leaving them to downstream inference.
 - If the handoff starts turning into a bug tracker, code review artifact, or release script, remove that drift and leave those concerns to downstream roles.
