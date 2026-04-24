@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-04-24
+
+### Added
+
+- New `definition-of-done` artifact and check so project planning can produce an explicit standing completion standard for implementation-phase work.
+- Technical Planner workflow and role guidance for creating, reviewing, handing off, and quality-checking the Definition of Done as part of `project-planning`.
+- Downstream implementation-package fields that preserve Definition-of-Done alignment and status through implementation handoff and downstream review or verification preparation.
+- Release notes for this minor version at `docs/release/1.1.0.md`.
+
+### Changed
+
+- Bumped the workspace crates from `1.0.0` to `1.1.0`.
+- `project-planning` now treats Definition of Done as a first-class planning output instead of leaving implementation completion rules implicit.
+- Technical Planner traceability and boundary checks now verify the distinction between project-level Definition of Done rules and slice-local exit criteria.
+- Implementation planning and implementation-package artifacts now carry Definition-of-Done context forward so “implemented” is less likely to be mistaken for “done.”
+
 ## [1.0.0] - 2026-04-23
 
 ### Added

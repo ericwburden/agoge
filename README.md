@@ -8,7 +8,7 @@
 Current release documentation:
 
 - [CHANGELOG.md](C:/Users/ericw/Projects/orpheum/CHANGELOG.md)
-- [Orpheum 1.0.0 Release Notes](C:/Users/ericw/Projects/orpheum/docs/release/1.0.0.md)
+- [Orpheum 1.1.0 Release Notes](C:/Users/ericw/Projects/orpheum/docs/release/1.1.0.md)
 
 This repository now has two closely related responsibilities:
 
