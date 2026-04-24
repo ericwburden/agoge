@@ -4,8 +4,8 @@ use camino::{Utf8Path, Utf8PathBuf};
 use clap::{Args, Parser, Subcommand};
 use orpheum_core::{
     Catalog, CheckRunReport, CheckStatusValue, DoctorReport, OrpheumError, ResolvedScenario,
-    ScenarioListItem, apply_scenario, cli_refresh_notice, generate_current_prompt, init_project,
-    read_session_files, run_doctor,
+    ScenarioListItem, apply_scenario, cli_refresh_notice, close_session, generate_current_prompt,
+    init_project, read_session_files, run_doctor, session_cleanup_status,
 };
 
 #[derive(Debug, Parser)]
@@ -23,6 +23,7 @@ enum Commands {
     Init(InitArgs),
     Update(InitArgs),
     Scenario(ScenarioCommand),
+    Session(SessionCommand),
     Status(OutputArgs),
     Prompt(PromptCommand),
     Check(CheckCommand),
@@ -71,7 +72,21 @@ struct ScenarioApplyArgs {
     #[arg(long)]
     force: bool,
     #[arg(long)]
+    archive_current: bool,
+    #[arg(long)]
     json: bool,
+}
+
+#[derive(Debug, Subcommand)]
+enum SessionSubcommand {
+    #[command(visible_alias = "archive")]
+    Close(OutputArgs),
+}
+
+#[derive(Debug, Args)]
+struct SessionCommand {
+    #[command(subcommand)]
+    command: SessionSubcommand,
 }
 
 #[derive(Debug, Args)]
@@ -171,7 +186,13 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                     .project
                     .map(Utf8PathBuf::from)
                     .unwrap_or_else(|| cwd.clone());
-                let result = apply_scenario(&catalog, &project, &args.scenario, args.force)?;
+                let result = apply_scenario(
+                    &catalog,
+                    &project,
+                    &args.scenario,
+                    args.force,
+                    args.archive_current,
+                )?;
                 if args.json {
                     println!("{}", serde_json::to_string_pretty(&result)?);
                 } else {
@@ -183,8 +204,21 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                 }
             }
         },
+        Commands::Session(cmd) => match cmd.command {
+            SessionSubcommand::Close(args) => {
+                let result = close_session(&cwd)?;
+                if args.json {
+                    println!("{}", serde_json::to_string_pretty(&result)?);
+                } else {
+                    println!("Closed session `{}`", result.session_id);
+                    println!("Scenario: {}", result.scenario_id);
+                    println!("Archived control dir: {}", result.archived_control_dir);
+                }
+            }
+        },
         Commands::Status(args) => {
             let (manifest, snapshot, state, _) = read_session_files(&cwd)?;
+            let cleanup = session_cleanup_status(&state);
             let value = serde_json::json!({
                 "session_id": manifest.session_id,
                 "scenario_id": snapshot.scenario.id,
@@ -193,13 +227,16 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                 "pending_workflows": state.pending_workflows,
                 "artifact_status": state.artifact_status,
                 "check_status": state.check_status,
-                "cleanup_ready": false
+                "cleanup_ready": cleanup.cleanup_ready,
+                "cleanup_reason": cleanup.reason,
+                "recommended_next_command": cleanup.recommended_next_command
             });
             if args.json {
                 println!("{}", serde_json::to_string_pretty(&value)?);
             } else {
                 println!("Scenario: {}", snapshot.scenario.title);
                 println!("Current phase: {}", state.current_phase);
+                println!("State: {:?}", state.state);
                 println!("Pending workflows: {}", state.pending_workflows.len());
                 println!("Artifacts: {}", state.artifact_status.len());
                 println!(
@@ -209,6 +246,12 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                         .values()
                         .filter(|status| matches!(status, CheckStatusValue::Failed))
                         .count()
+                );
+                println!("Cleanup ready: {}", cleanup.cleanup_ready);
+                println!("Cleanup reason: {}", cleanup.reason);
+                println!(
+                    "Recommended next command: {}",
+                    cleanup.recommended_next_command
                 );
             }
         }

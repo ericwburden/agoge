@@ -54,6 +54,11 @@ When there is an active session:
 4. `orpheum check run --json`
 5. `orpheum status --json` again if you need refreshed session state
 
+When a session is finalized and `status --json` reports `cleanup_ready: true`:
+
+1. `orpheum session close --json`
+2. `orpheum scenario apply <id> --json`
+
 When the environment looks wrong:
 
 1. `orpheum doctor --json`
@@ -108,6 +113,7 @@ It does not:
 - Do not create `.orpheum/` by hand. Use `orpheum scenario apply <id>`.
 - Do not guess the active scenario from nearby docs if `.orpheum/scenario.json` exists.
 - Run `orpheum check run --json` before claiming scenario-associated outputs are ready.
+- Use `orpheum session close --json` instead of touching `.orpheum/` by hand when a finalized session is ready to be archived safely.
 - If current session files disagree with chat context, trust the current session files.
 
 ## Recommended Decisions
@@ -115,6 +121,7 @@ It does not:
 - If there is no active session, start with `scenario list` or `scenario show`.
 - If there is an active session, start with `status --json`.
 - If check status is stale or unclear, run `check run --json`.
+- If `status --json` says `cleanup_ready` is true, run `session close --json` before applying the next scenario.
 - If the project looks partially initialized, run `doctor --json`.
 - If you need a project to follow a local development checkout of the catalog, run `orpheum update --catalog <path>`.
 - During semantic artifact review for discovery or planning scenarios, use Planning Mode or the host environment's nearest equivalent until decision changes and cross-artifact reconciliation are complete.

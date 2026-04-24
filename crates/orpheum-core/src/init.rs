@@ -91,7 +91,9 @@ It does not:
    - `orpheum prompt current --json`
 6. Run validation checks:
    - `orpheum check run --json`
-7. Diagnose catalog or project setup:
+7. Close a finalized session safely when ready:
+   - `orpheum session close --json`
+8. Diagnose catalog or project setup:
    - `orpheum doctor --json`
 
 ## Session Files
@@ -117,6 +119,7 @@ Use them like this:
 - If there is no active session, use `orpheum scenario list` or `orpheum scenario show`, then apply a scenario if appropriate.
 - If a session exists, start with `orpheum status --json`.
 - If check status is unclear or stale, run `orpheum check run --json`.
+- If a session is finalized and `cleanup_ready` is true, run `orpheum session close --json` before applying a new scenario.
 - If the environment looks misconfigured, run `orpheum doctor --json`.
 - During semantic artifact review for discovery or planning scenarios, use Planning Mode or the host environment's nearest equivalent before changing the artifact set.
 

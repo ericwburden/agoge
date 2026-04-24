@@ -64,6 +64,41 @@ fn set_session_cli_version(project_root: &std::path::Path, version: Option<&str>
     .expect("session file updated");
 }
 
+fn set_session_lifecycle_state(
+    project_root: &std::path::Path,
+    state: &str,
+    pending_workflows: &[&str],
+) {
+    let state_file = project_root.join(".orpheum").join("state.json");
+    let mut session_state: Value =
+        serde_json::from_str(&fs::read_to_string(&state_file).expect("state file readable"))
+            .expect("state json");
+    session_state["state"] = Value::String(state.to_string());
+    session_state["pending_workflows"] = Value::Array(
+        pending_workflows
+            .iter()
+            .map(|workflow| Value::String((*workflow).to_string()))
+            .collect(),
+    );
+    if state == "finalized" && pending_workflows.is_empty() {
+        if let Some(artifact_status) = session_state["artifact_status"].as_object_mut() {
+            for value in artifact_status.values_mut() {
+                *value = Value::String("verified".to_string());
+            }
+        }
+        if let Some(check_status) = session_state["check_status"].as_object_mut() {
+            for value in check_status.values_mut() {
+                *value = Value::String("passed".to_string());
+            }
+        }
+    }
+    fs::write(
+        state_file,
+        serde_json::to_string_pretty(&session_state).expect("state json write"),
+    )
+    .expect("state file updated");
+}
+
 #[test]
 fn scenario_list_works() {
     Command::cargo_bin("orpheum")
@@ -161,6 +196,144 @@ fn apply_and_status_work() {
         .assert()
         .success()
         .stdout(predicate::str::contains("Current Orpheum Prompt"));
+}
+
+#[test]
+fn status_reports_cleanup_guidance_for_finalized_session() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-planning",
+            "--project",
+            &project_path,
+            "--json",
+        ])
+        .assert()
+        .success();
+
+    set_session_lifecycle_state(project.path(), "finalized", &[]);
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["status", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"cleanup_ready\": true"))
+        .stdout(predicate::str::contains(
+            "\"recommended_next_command\": \"orpheum session close --json\"",
+        ));
+}
+
+#[test]
+fn session_close_archives_finalized_session() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-planning",
+            "--project",
+            &project_path,
+            "--json",
+        ])
+        .assert()
+        .success();
+
+    set_session_lifecycle_state(project.path(), "finalized", &[]);
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["session", "close", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"archived_control_dir\""));
+
+    assert!(
+        !project.path().join(".orpheum").exists(),
+        "active control dir should be removed after close"
+    );
+    assert!(
+        project.path().join(".orpheum-archive").exists(),
+        "archive root should exist after close"
+    );
+}
+
+#[test]
+fn scenario_apply_can_archive_current_finalized_session() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-planning",
+            "--project",
+            &project_path,
+            "--json",
+        ])
+        .assert()
+        .success();
+
+    set_session_lifecycle_state(project.path(), "finalized", &[]);
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args([
+            "scenario",
+            "apply",
+            "project-discovery",
+            "--archive-current",
+            "--json",
+        ])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains(
+            "\"scenario_id\": \"project-discovery\"",
+        ));
+}
+
+#[test]
+fn scenario_apply_reports_safe_transition_when_session_already_exists() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-planning",
+            "--project",
+            &project_path,
+            "--json",
+        ])
+        .assert()
+        .success();
+
+    set_session_lifecycle_state(project.path(), "finalized", &[]);
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["scenario", "apply", "project-discovery"])
+        .assert()
+        .failure()
+        .stderr(predicate::str::contains("SESSION_ALREADY_ACTIVE"))
+        .stderr(predicate::str::contains("orpheum session close --json"))
+        .stderr(predicate::str::contains("--archive-current"));
 }
 
 #[test]

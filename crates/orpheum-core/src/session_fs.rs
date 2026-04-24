@@ -1,11 +1,14 @@
 use std::fs;
 
-use camino::Utf8Path;
+use camino::{Utf8Path, Utf8PathBuf};
 
 use crate::catalog::OutputMode;
 use crate::error::{OrpheumError, OrpheumErrorCode};
 use crate::session_render::{build_active_markdown, build_prompt};
-use crate::session_types::{SessionFiles, SessionManifest, SessionScenarioSnapshot, SessionState};
+use crate::session_types::{
+    SessionCleanupStatus, SessionCloseResult, SessionFiles, SessionLifecycleState, SessionManifest,
+    SessionScenarioSnapshot, SessionState,
+};
 
 pub fn current_orpheum_cli_version() -> &'static str {
     env!("CARGO_PKG_VERSION")
@@ -57,6 +60,69 @@ pub fn read_active_summary(project_root: &Utf8Path) -> Result<String, OrpheumErr
     Ok(fs::read_to_string(files.active_file)?)
 }
 
+pub fn session_cleanup_status(state: &SessionState) -> SessionCleanupStatus {
+    if !matches!(state.state, SessionLifecycleState::Finalized) {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: format!(
+                "active session state is `{}`; only finalized sessions are ready to close safely",
+                session_state_label(&state.state)
+            ),
+            recommended_next_command: "orpheum prompt current --json".into(),
+        };
+    }
+
+    if !state.pending_workflows.is_empty() {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: "finalized session still records pending workflows".into(),
+            recommended_next_command: "orpheum status --json".into(),
+        };
+    }
+
+    if state
+        .artifact_status
+        .values()
+        .any(|status| matches!(status, crate::session_types::ArtifactStatusValue::Pending))
+    {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: "one or more tracked artifacts are still pending".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .check_status
+        .values()
+        .any(|status| matches!(status, crate::checks::CheckStatusValue::Failed))
+    {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: "one or more checks are failing".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .check_status
+        .values()
+        .any(|status| matches!(status, crate::checks::CheckStatusValue::Pending))
+    {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: "one or more checks are still pending".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    SessionCleanupStatus {
+        cleanup_ready: true,
+        reason: "session is finalized and ready to close safely".into(),
+        recommended_next_command: "orpheum session close --json".into(),
+    }
+}
+
 pub fn refresh_state_files(
     project_root: &Utf8Path,
     snapshot: &SessionScenarioSnapshot,
@@ -72,6 +138,36 @@ pub fn refresh_state_files(
         build_active_markdown(manifest, snapshot, state),
     )?;
     Ok(())
+}
+
+pub fn close_session(project_root: &Utf8Path) -> Result<SessionCloseResult, OrpheumError> {
+    let (manifest, snapshot, state, files) = read_session_files(project_root)?;
+    let cleanup = session_cleanup_status(&state);
+    if !cleanup.cleanup_ready {
+        return Err(OrpheumError::coded(
+            OrpheumErrorCode::InvalidSessionState,
+            format!(
+                "active session `{}` for scenario `{}` is not ready to close safely: {}. Recommended next command: {}",
+                manifest.session_id,
+                snapshot.scenario.id,
+                cleanup.reason,
+                cleanup.recommended_next_command
+            ),
+        ));
+    }
+
+    let archive_root = project_root.join(".orpheum-archive");
+    fs::create_dir_all(&archive_root)?;
+    let archived_control_dir = next_archive_dir(&archive_root, &manifest.session_id);
+    fs::rename(&files.control_dir, &archived_control_dir)?;
+
+    Ok(SessionCloseResult {
+        session_id: manifest.session_id,
+        scenario_id: snapshot.scenario.id,
+        project_root: project_root.to_path_buf(),
+        archived_control_dir,
+        previous_state: state.state,
+    })
 }
 
 pub fn refresh_session_cli_version(project_root: &Utf8Path) -> Result<bool, OrpheumError> {
@@ -118,6 +214,30 @@ pub fn cli_refresh_notice(project_root: &Utf8Path) -> Result<Option<String>, Orp
 
 fn version_is_newer(current: &str, recorded: &str) -> bool {
     compare_version_parts(current, recorded).is_gt()
+}
+
+fn next_archive_dir(archive_root: &Utf8Path, session_id: &str) -> Utf8PathBuf {
+    let base = archive_root.join(session_id);
+    if !base.exists() {
+        return base;
+    }
+
+    let mut index = 2usize;
+    loop {
+        let candidate = archive_root.join(format!("{session_id}-{index}"));
+        if !candidate.exists() {
+            return candidate;
+        }
+        index += 1;
+    }
+}
+
+fn session_state_label(state: &SessionLifecycleState) -> &'static str {
+    match state {
+        SessionLifecycleState::Active => "active",
+        SessionLifecycleState::Suspended => "suspended",
+        SessionLifecycleState::Finalized => "finalized",
+    }
 }
 
 fn compare_version_parts(left: &str, right: &str) -> std::cmp::Ordering {

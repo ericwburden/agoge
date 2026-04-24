@@ -30,6 +30,7 @@ pub use project_config::{
 };
 pub use session::{
     ArtifactStatusValue, SessionApplyResult, SessionFiles, SessionManifest, SessionState,
-    apply_scenario, cli_refresh_notice, current_orpheum_cli_version, generate_current_prompt,
-    read_active_summary, read_session_files, refresh_session_cli_version,
+    apply_scenario, cli_refresh_notice, close_session, current_orpheum_cli_version,
+    generate_current_prompt, read_active_summary, read_session_files, refresh_session_cli_version,
+    session_cleanup_status,
 };

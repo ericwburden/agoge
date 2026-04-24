@@ -9,7 +9,7 @@ use uuid::Uuid;
 use crate::catalog::{Catalog, OutputMode};
 use crate::checks::{CheckRunReport, CheckStatusValue};
 use crate::error::{OrpheumError, OrpheumErrorCode};
-use crate::session_fs::session_files;
+use crate::session_fs::{close_session, read_session_files, session_cleanup_status, session_files};
 use crate::session_render::{build_active_markdown, build_prompt};
 use crate::session_types::{
     ArtifactStatusValue, CleanupPolicy, SessionApplyResult, SessionLifecycleState, SessionManifest,
@@ -21,16 +21,42 @@ pub fn apply_scenario(
     project_root: &Utf8Path,
     scenario_id: &str,
     force: bool,
+    archive_current: bool,
 ) -> Result<SessionApplyResult, OrpheumError> {
     let files = session_files(project_root);
     if files.session_file.exists() && !force {
-        return Err(OrpheumError::coded(
-            OrpheumErrorCode::SessionAlreadyActive,
-            format!(
-                "an active Orpheum session already exists for this project: {}",
-                files.session_file
-            ),
-        ));
+        let (manifest, snapshot, state, _) = read_session_files(project_root)?;
+        let cleanup = session_cleanup_status(&state);
+        if archive_current {
+            if cleanup.cleanup_ready {
+                let _ = close_session(project_root)?;
+            } else {
+                return Err(OrpheumError::coded(
+                    OrpheumErrorCode::InvalidSessionState,
+                    format!(
+                        "cannot archive the active session for scenario `{}` because it is not ready to close safely: {}. Recommended next command: {}",
+                        snapshot.scenario.id, cleanup.reason, cleanup.recommended_next_command
+                    ),
+                ));
+            }
+        } else {
+            return Err(OrpheumError::coded(
+                OrpheumErrorCode::SessionAlreadyActive,
+                format!(
+                    "an active Orpheum session already exists for this project: {} (session=`{}`, scenario=`{}`, state=`{}`). If this session is finalized, run `orpheum session close --json` or retry with `orpheum scenario apply {} --archive-current --json`. Otherwise continue the active session with `{}`.",
+                    files.session_file,
+                    manifest.session_id,
+                    snapshot.scenario.id,
+                    match state.state {
+                        SessionLifecycleState::Active => "active",
+                        SessionLifecycleState::Suspended => "suspended",
+                        SessionLifecycleState::Finalized => "finalized",
+                    },
+                    scenario_id,
+                    cleanup.recommended_next_command
+                ),
+            ));
+        }
     }
 
     let resolved = catalog.resolve_scenario(scenario_id)?;

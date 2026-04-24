@@ -92,3 +92,19 @@ pub struct SessionApplyResult {
     pub next_command: String,
     pub cleanup_policy: CleanupPolicy,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SessionCleanupStatus {
+    pub cleanup_ready: bool,
+    pub reason: String,
+    pub recommended_next_command: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SessionCloseResult {
+    pub session_id: String,
+    pub scenario_id: String,
+    pub project_root: Utf8PathBuf,
+    pub archived_control_dir: Utf8PathBuf,
+    pub previous_state: SessionLifecycleState,
+}

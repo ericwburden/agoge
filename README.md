@@ -40,6 +40,7 @@ The Rust workspace lives at the repo root and currently ships these v1 commands:
 - `orpheum scenario list`
 - `orpheum scenario show <id>`
 - `orpheum scenario apply <id>`
+- `orpheum session close`
 - `orpheum status`
 - `orpheum prompt current`
 - `orpheum check run`
@@ -133,6 +134,7 @@ From the target project root, you can then run:
 ```bash
 orpheum init
 orpheum update
+orpheum session close
 orpheum status
 orpheum prompt current
 orpheum check run
@@ -142,6 +144,8 @@ orpheum doctor
 `orpheum init` installs or refreshes a project-local skill at `.codex/skills/orpheum/SKILL.md`, uses the embedded catalog by default, persists `.codex/orpheum/config.json` only when an external catalog override is active, writes a repo-root `ORPHEUM.md` onboarding file, and adds `.orpheum/` to an existing `.gitignore` when that entry is missing.
 
 `orpheum update` is the explicit refresh path for existing projects. Use it when a newer CLI warns that local Orpheum guidance should be refreshed.
+
+`orpheum session close` is the explicit safe-close path for finalized sessions. It archives the current `.orpheum/` control directory into `.orpheum-archive/` so a project can move on to the next scenario without manual cleanup.
 
 ## Default SDLC Scenario Chain
 
