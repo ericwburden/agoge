@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-04-24
+
+### Added
+
+- New `orpheum session close` command to archive finalized sessions safely into `.orpheum-archive/`.
+- Status-level cleanup guidance via `cleanup_ready`, `cleanup_reason`, and `recommended_next_command`.
+- `scenario apply --archive-current` as an explicit safe transition path when the current session is finalized and ready to close.
+
+### Changed
+
+- Bumped the workspace crates from `1.1.0` to `1.2.0`.
+- `SESSION_ALREADY_ACTIVE` errors now include active-session context and a recommended safe transition command.
+- The installed Orpheum skill and consumer docs now direct agents to close finalized sessions explicitly instead of touching `.orpheum/` by hand.
+
 ## [1.1.0] - 2026-04-24
 
 ### Added
