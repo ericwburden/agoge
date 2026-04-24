@@ -29,8 +29,9 @@ pub use project_config::{
     CatalogSource, LocalConfigStatus, ProjectState, inspect_local_config, local_config_file,
 };
 pub use session::{
-    ArtifactStatusValue, SessionApplyResult, SessionFiles, SessionManifest, SessionState,
-    apply_scenario, cli_refresh_notice, close_session, current_orpheum_cli_version,
-    generate_current_prompt, read_active_summary, read_session_files, refresh_session_cli_version,
-    session_cleanup_status,
+    ArtifactStatusValue, SessionApplyResult, SessionFiles, SessionFinalizeResult,
+    SessionFinalizeStatus, SessionManifest, SessionState, apply_scenario, cli_refresh_notice,
+    close_session, current_orpheum_cli_version, finalize_session, generate_current_prompt,
+    read_active_summary, read_session_files, refresh_session_cli_version, session_cleanup_status,
+    session_finalize_status,
 };

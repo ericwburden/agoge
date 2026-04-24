@@ -52,7 +52,8 @@ When there is an active session:
 2. `orpheum prompt current --json`
 3. perform the current slice of work
 4. `orpheum check run --json`
-5. `orpheum status --json` again if you need refreshed session state
+5. `orpheum session finalize --json` when checks pass and the scenario is complete
+6. `orpheum status --json` again if you need refreshed session state
 
 When a session is finalized and `status --json` reports `cleanup_ready: true`:
 
@@ -113,6 +114,7 @@ It does not:
 - Do not create `.orpheum/` by hand. Use `orpheum scenario apply <id>`.
 - Do not guess the active scenario from nearby docs if `.orpheum/scenario.json` exists.
 - Run `orpheum check run --json` before claiming scenario-associated outputs are ready.
+- Use `orpheum session finalize --json` as the explicit step that moves a completed scenario into finalized session state.
 - Use `orpheum session close --json` instead of touching `.orpheum/` by hand when a finalized session is ready to be archived safely.
 - If current session files disagree with chat context, trust the current session files.
 
@@ -121,6 +123,7 @@ It does not:
 - If there is no active session, start with `scenario list` or `scenario show`.
 - If there is an active session, start with `status --json`.
 - If check status is stale or unclear, run `check run --json`.
+- If `status --json` says `finalize_ready` is true, run `session finalize --json`.
 - If `status --json` says `cleanup_ready` is true, run `session close --json` before applying the next scenario.
 - If the project looks partially initialized, run `doctor --json`.
 - If you need a project to follow a local development checkout of the catalog, run `orpheum update --catalog <path>`.

@@ -4,8 +4,9 @@ use camino::{Utf8Path, Utf8PathBuf};
 use clap::{Args, Parser, Subcommand};
 use orpheum_core::{
     Catalog, CheckRunReport, CheckStatusValue, DoctorReport, OrpheumError, ResolvedScenario,
-    ScenarioListItem, apply_scenario, cli_refresh_notice, close_session, generate_current_prompt,
-    init_project, read_session_files, run_doctor, session_cleanup_status,
+    ScenarioListItem, apply_scenario, cli_refresh_notice, close_session, finalize_session,
+    generate_current_prompt, init_project, read_session_files, run_doctor, session_cleanup_status,
+    session_finalize_status,
 };
 
 #[derive(Debug, Parser)]
@@ -79,6 +80,7 @@ struct ScenarioApplyArgs {
 
 #[derive(Debug, Subcommand)]
 enum SessionSubcommand {
+    Finalize(OutputArgs),
     #[command(visible_alias = "archive")]
     Close(OutputArgs),
 }
@@ -205,6 +207,17 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
             }
         },
         Commands::Session(cmd) => match cmd.command {
+            SessionSubcommand::Finalize(args) => {
+                let result = finalize_session(&cwd)?;
+                if args.json {
+                    println!("{}", serde_json::to_string_pretty(&result)?);
+                } else {
+                    println!("Finalized session `{}`", result.session_id);
+                    println!("Scenario: {}", result.scenario_id);
+                    println!("Current phase: {}", result.current_phase);
+                    println!("Next command: {}", result.recommended_next_command);
+                }
+            }
             SessionSubcommand::Close(args) => {
                 let result = close_session(&cwd)?;
                 if args.json {
@@ -218,18 +231,23 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
         },
         Commands::Status(args) => {
             let (manifest, snapshot, state, _) = read_session_files(&cwd)?;
+            let finalize = session_finalize_status(&state);
             let cleanup = session_cleanup_status(&state);
+            let recommended_next_command = recommended_status_command(&state, &finalize, &cleanup);
             let value = serde_json::json!({
                 "session_id": manifest.session_id,
                 "scenario_id": snapshot.scenario.id,
                 "state": state.state,
                 "current_phase": state.current_phase,
+                "completed_workflows": state.completed_workflows,
                 "pending_workflows": state.pending_workflows,
                 "artifact_status": state.artifact_status,
                 "check_status": state.check_status,
+                "finalize_ready": finalize.finalize_ready,
+                "finalize_reason": finalize.reason.clone(),
                 "cleanup_ready": cleanup.cleanup_ready,
-                "cleanup_reason": cleanup.reason,
-                "recommended_next_command": cleanup.recommended_next_command
+                "cleanup_reason": cleanup.reason.clone(),
+                "recommended_next_command": recommended_next_command
             });
             if args.json {
                 println!("{}", serde_json::to_string_pretty(&value)?);
@@ -237,6 +255,7 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                 println!("Scenario: {}", snapshot.scenario.title);
                 println!("Current phase: {}", state.current_phase);
                 println!("State: {:?}", state.state);
+                println!("Completed workflows: {}", state.completed_workflows.len());
                 println!("Pending workflows: {}", state.pending_workflows.len());
                 println!("Artifacts: {}", state.artifact_status.len());
                 println!(
@@ -247,11 +266,13 @@ fn run(cli: Cli) -> Result<(), OrpheumError> {
                         .filter(|status| matches!(status, CheckStatusValue::Failed))
                         .count()
                 );
+                println!("Finalize ready: {}", finalize.finalize_ready);
+                println!("Finalize reason: {}", finalize.reason);
                 println!("Cleanup ready: {}", cleanup.cleanup_ready);
                 println!("Cleanup reason: {}", cleanup.reason);
                 println!(
                     "Recommended next command: {}",
-                    cleanup.recommended_next_command
+                    recommended_status_command(&state, &finalize, &cleanup)
                 );
             }
         }
@@ -320,6 +341,25 @@ fn current_dir_utf8() -> Result<Utf8PathBuf, OrpheumError> {
 fn load_catalog(catalog_arg: Option<&str>, cwd: &Utf8Path) -> Result<Catalog, OrpheumError> {
     let explicit = catalog_arg.map(Utf8Path::new);
     Catalog::load_runtime(explicit, cwd)
+}
+
+fn recommended_status_command(
+    state: &orpheum_core::session::SessionState,
+    finalize: &orpheum_core::SessionFinalizeStatus,
+    cleanup: &orpheum_core::session::SessionCleanupStatus,
+) -> String {
+    if cleanup.cleanup_ready {
+        cleanup.recommended_next_command.clone()
+    } else if finalize.finalize_ready {
+        finalize.recommended_next_command.clone()
+    } else if matches!(
+        state.state,
+        orpheum_core::session::SessionLifecycleState::Finalized
+    ) {
+        cleanup.recommended_next_command.clone()
+    } else {
+        finalize.recommended_next_command.clone()
+    }
 }
 
 fn print_scenario_list(scenarios: &[ScenarioListItem]) {

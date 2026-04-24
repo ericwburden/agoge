@@ -101,6 +101,25 @@ pub struct SessionCleanupStatus {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SessionFinalizeStatus {
+    pub finalize_ready: bool,
+    pub reason: String,
+    pub recommended_next_command: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SessionFinalizeResult {
+    pub session_id: String,
+    pub scenario_id: String,
+    pub project_root: Utf8PathBuf,
+    pub previous_state: SessionLifecycleState,
+    pub state: SessionLifecycleState,
+    pub current_phase: String,
+    pub finalized_workflows: Vec<String>,
+    pub recommended_next_command: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SessionCloseResult {
     pub session_id: String,
     pub scenario_id: String,

@@ -8,7 +8,7 @@
 Current release documentation:
 
 - [CHANGELOG.md](C:/Users/ericw/Projects/orpheum/CHANGELOG.md)
-- [Orpheum 1.2.0 Release Notes](C:/Users/ericw/Projects/orpheum/docs/release/1.2.0.md)
+- [Orpheum 1.3.0 Release Notes](C:/Users/ericw/Projects/orpheum/docs/release/1.3.0.md)
 
 This repository now has two closely related responsibilities:
 
@@ -40,6 +40,7 @@ The Rust workspace lives at the repo root and currently ships these v1 commands:
 - `orpheum scenario list`
 - `orpheum scenario show <id>`
 - `orpheum scenario apply <id>`
+- `orpheum session finalize`
 - `orpheum session close`
 - `orpheum status`
 - `orpheum prompt current`
@@ -134,6 +135,7 @@ From the target project root, you can then run:
 ```bash
 orpheum init
 orpheum update
+orpheum session finalize
 orpheum session close
 orpheum status
 orpheum prompt current
@@ -144,6 +146,8 @@ orpheum doctor
 `orpheum init` installs or refreshes a project-local skill at `.codex/skills/orpheum/SKILL.md`, uses the embedded catalog by default, persists `.codex/orpheum/config.json` only when an external catalog override is active, writes a repo-root `ORPHEUM.md` onboarding file, and adds `.orpheum/` to an existing `.gitignore` when that entry is missing.
 
 `orpheum update` is the explicit refresh path for existing projects. Use it when a newer CLI warns that local Orpheum guidance should be refreshed.
+
+`orpheum session finalize` is the explicit lifecycle handoff from active work into finalized session state. It validates that required artifacts are no longer pending or failed, that blocking checks are no longer pending or failed, and then marks remaining pending workflows complete so the session can be closed safely afterward.
 
 `orpheum session close` is the explicit safe-close path for finalized sessions. It archives the current `.orpheum/` control directory into `.orpheum-archive/` so a project can move on to the next scenario without manual cleanup.
 
@@ -198,6 +202,8 @@ The v1 check engine is intentionally narrow. It currently supports:
 - required heading checks
 
 `orpheum check run` records results in `.orpheum/logs/checks.json` and mirrors summarized status back into `.orpheum/state.json`.
+
+When checks pass but the session is still active, `orpheum status --json` now reports `finalize_ready: true` and recommends `orpheum session finalize --json` as the next lifecycle step.
 
 ## Product Specification Convention
 

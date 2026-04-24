@@ -224,10 +224,133 @@ fn status_reports_cleanup_guidance_for_finalized_session() {
         .args(["status", "--json"])
         .assert()
         .success()
+        .stdout(predicate::str::contains("\"finalize_ready\": false"))
         .stdout(predicate::str::contains("\"cleanup_ready\": true"))
         .stdout(predicate::str::contains(
             "\"recommended_next_command\": \"orpheum session close --json\"",
         ));
+}
+
+#[test]
+fn status_recommends_finalize_when_checks_pass_but_session_is_still_active() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+    let catalog_path = repo_root().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-discovery",
+            "--project",
+            &project_path,
+        ])
+        .assert()
+        .success();
+
+    copy_expected_artifacts(project.path());
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["--catalog", &catalog_path, "check", "run", "--json"])
+        .assert()
+        .success();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["status", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"state\": \"active\""))
+        .stdout(predicate::str::contains("\"finalize_ready\": true"))
+        .stdout(predicate::str::contains("\"cleanup_ready\": false"))
+        .stdout(predicate::str::contains(
+            "\"recommended_next_command\": \"orpheum session finalize --json\"",
+        ));
+}
+
+#[test]
+fn session_finalize_promotes_pending_workflows_and_updates_state() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+    let catalog_path = repo_root().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-discovery",
+            "--project",
+            &project_path,
+        ])
+        .assert()
+        .success();
+
+    copy_expected_artifacts(project.path());
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["--catalog", &catalog_path, "check", "run", "--json"])
+        .assert()
+        .success();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["session", "finalize", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"state\": \"finalized\""))
+        .stdout(predicate::str::contains(
+            "\"recommended_next_command\": \"orpheum session close --json\"",
+        ));
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["status", "--json"])
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("\"state\": \"finalized\""))
+        .stdout(predicate::str::contains(
+            "\"current_phase\": \"session-finalized\"",
+        ))
+        .stdout(predicate::str::contains("\"pending_workflows\": []"))
+        .stdout(predicate::str::contains("\"cleanup_ready\": true"));
+}
+
+#[test]
+fn session_finalize_fails_when_required_artifacts_are_still_missing() {
+    let project = tempdir().expect("tempdir");
+    let project_path = project.path().to_string_lossy().to_string();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .args([
+            "scenario",
+            "apply",
+            "project-discovery",
+            "--project",
+            &project_path,
+            "--json",
+        ])
+        .assert()
+        .success();
+
+    Command::cargo_bin("orpheum")
+        .expect("binary")
+        .current_dir(project.path())
+        .args(["session", "finalize", "--json"])
+        .assert()
+        .failure()
+        .stderr(predicate::str::contains("INVALID_SESSION_STATE"))
+        .stderr(predicate::str::contains("not ready to finalize"))
+        .stderr(predicate::str::contains("orpheum check run --json"));
 }
 
 #[test]

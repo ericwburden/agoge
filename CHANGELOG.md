@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-04-24
+
+### Added
+
+- New `orpheum session finalize` command as the explicit lifecycle transition from active scenario work into finalized session state.
+- Status-level finalization guidance via `finalize_ready`, `finalize_reason`, and `recommended_next_command` when checks pass but the session is still active.
+
+### Changed
+
+- Bumped the workspace crates from `1.2.0` to `1.3.0`.
+- Finalizing a session now promotes remaining pending workflows into completed workflows and updates the session phase to `session-finalized`.
+- Agent-facing Orpheum docs and the installed local skill now describe the full lifecycle as check, finalize, close, then apply the next scenario.
+
 ## [1.2.0] - 2026-04-24
 
 ### Added

@@ -57,6 +57,7 @@ Treat these as derived views rather than source of truth:
 - Do not infer scenario dependencies from prose files when the CLI or session JSON can tell you directly.
 - Do not create `.orpheum/` by hand. Use `orpheum scenario apply <id>`.
 - Run `orpheum check run` before claiming scenario-associated outputs are ready.
+- Use `orpheum session finalize --json` as the explicit lifecycle step that marks a completed scenario finalized.
 
 ## What `orpheum init` Does
 
@@ -91,9 +92,11 @@ It does not:
    - `orpheum prompt current --json`
 6. Run validation checks:
    - `orpheum check run --json`
-7. Close a finalized session safely when ready:
+7. Finalize the session when checks pass and the scenario is complete:
+   - `orpheum session finalize --json`
+8. Close a finalized session safely when ready:
    - `orpheum session close --json`
-8. Diagnose catalog or project setup:
+9. Diagnose catalog or project setup:
    - `orpheum doctor --json`
 
 ## Session Files
@@ -119,6 +122,7 @@ Use them like this:
 - If there is no active session, use `orpheum scenario list` or `orpheum scenario show`, then apply a scenario if appropriate.
 - If a session exists, start with `orpheum status --json`.
 - If check status is unclear or stale, run `orpheum check run --json`.
+- If `status --json` reports `finalize_ready`, run `orpheum session finalize --json`.
 - If a session is finalized and `cleanup_ready` is true, run `orpheum session close --json` before applying a new scenario.
 - If the environment looks misconfigured, run `orpheum doctor --json`.
 - During semantic artifact review for discovery or planning scenarios, use Planning Mode or the host environment's nearest equivalent before changing the artifact set.

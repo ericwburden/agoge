@@ -6,8 +6,9 @@ use crate::catalog::OutputMode;
 use crate::error::{OrpheumError, OrpheumErrorCode};
 use crate::session_render::{build_active_markdown, build_prompt};
 use crate::session_types::{
-    SessionCleanupStatus, SessionCloseResult, SessionFiles, SessionLifecycleState, SessionManifest,
-    SessionScenarioSnapshot, SessionState,
+    SessionCleanupStatus, SessionCloseResult, SessionFiles, SessionFinalizeResult,
+    SessionFinalizeStatus, SessionLifecycleState, SessionManifest, SessionScenarioSnapshot,
+    SessionState,
 };
 
 pub fn current_orpheum_cli_version() -> &'static str {
@@ -60,15 +61,88 @@ pub fn read_active_summary(project_root: &Utf8Path) -> Result<String, OrpheumErr
     Ok(fs::read_to_string(files.active_file)?)
 }
 
+pub fn session_finalize_status(state: &SessionState) -> SessionFinalizeStatus {
+    if matches!(state.state, SessionLifecycleState::Finalized) {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "session is already finalized".into(),
+            recommended_next_command: "orpheum session close --json".into(),
+        };
+    }
+
+    if matches!(state.state, SessionLifecycleState::Suspended) || state.suspended {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "suspended sessions cannot be finalized until active work resumes".into(),
+            recommended_next_command: "orpheum prompt current --json".into(),
+        };
+    }
+
+    if state
+        .artifact_status
+        .values()
+        .any(|status| matches!(status, crate::session_types::ArtifactStatusValue::Pending))
+    {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "one or more required artifacts are still pending".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .artifact_status
+        .values()
+        .any(|status| matches!(status, crate::session_types::ArtifactStatusValue::Failed))
+    {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "one or more required artifacts are failing validation".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .check_status
+        .values()
+        .any(|status| matches!(status, crate::checks::CheckStatusValue::Failed))
+    {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "one or more blocking checks are failing".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .check_status
+        .values()
+        .any(|status| matches!(status, crate::checks::CheckStatusValue::Pending))
+    {
+        return SessionFinalizeStatus {
+            finalize_ready: false,
+            reason: "one or more blocking checks are still pending".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    SessionFinalizeStatus {
+        finalize_ready: true,
+        reason: "required artifacts are present or verified and blocking checks have passed".into(),
+        recommended_next_command: "orpheum session finalize --json".into(),
+    }
+}
+
 pub fn session_cleanup_status(state: &SessionState) -> SessionCleanupStatus {
     if !matches!(state.state, SessionLifecycleState::Finalized) {
+        let finalize = session_finalize_status(state);
         return SessionCleanupStatus {
             cleanup_ready: false,
             reason: format!(
                 "active session state is `{}`; only finalized sessions are ready to close safely",
                 session_state_label(&state.state)
             ),
-            recommended_next_command: "orpheum prompt current --json".into(),
+            recommended_next_command: finalize.recommended_next_command,
         };
     }
 
@@ -88,6 +162,18 @@ pub fn session_cleanup_status(state: &SessionState) -> SessionCleanupStatus {
         return SessionCleanupStatus {
             cleanup_ready: false,
             reason: "one or more tracked artifacts are still pending".into(),
+            recommended_next_command: "orpheum check run --json".into(),
+        };
+    }
+
+    if state
+        .artifact_status
+        .values()
+        .any(|status| matches!(status, crate::session_types::ArtifactStatusValue::Failed))
+    {
+        return SessionCleanupStatus {
+            cleanup_ready: false,
+            reason: "one or more tracked artifacts are failing validation".into(),
             recommended_next_command: "orpheum check run --json".into(),
         };
     }
@@ -121,6 +207,48 @@ pub fn session_cleanup_status(state: &SessionState) -> SessionCleanupStatus {
         reason: "session is finalized and ready to close safely".into(),
         recommended_next_command: "orpheum session close --json".into(),
     }
+}
+
+pub fn finalize_session(project_root: &Utf8Path) -> Result<SessionFinalizeResult, OrpheumError> {
+    let (manifest, snapshot, mut state, _) = read_session_files(project_root)?;
+    let finalize = session_finalize_status(&state);
+    if !finalize.finalize_ready {
+        return Err(OrpheumError::coded(
+            OrpheumErrorCode::InvalidSessionState,
+            format!(
+                "active session `{}` for scenario `{}` is not ready to finalize: {}. Recommended next command: {}",
+                manifest.session_id,
+                snapshot.scenario.id,
+                finalize.reason,
+                finalize.recommended_next_command
+            ),
+        ));
+    }
+
+    let previous_state = state.state.clone();
+    let finalized_workflows = state.pending_workflows.clone();
+    for workflow in &finalized_workflows {
+        if !state.completed_workflows.contains(workflow) {
+            state.completed_workflows.push(workflow.clone());
+        }
+    }
+    state.pending_workflows.clear();
+    state.state = SessionLifecycleState::Finalized;
+    state.current_phase = "session-finalized".into();
+    state.suspended = false;
+    state.resumable = false;
+    refresh_state_files(project_root, &snapshot, &state, &manifest)?;
+
+    Ok(SessionFinalizeResult {
+        session_id: manifest.session_id,
+        scenario_id: snapshot.scenario.id,
+        project_root: project_root.to_path_buf(),
+        previous_state,
+        state: state.state,
+        current_phase: state.current_phase,
+        finalized_workflows,
+        recommended_next_command: "orpheum session close --json".into(),
+    })
 }
 
 pub fn refresh_state_files(
